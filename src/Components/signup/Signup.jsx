@@ -89,7 +89,7 @@ function Signinpage() {
                         </div>
                         <div className={signpage.branch}>
                             <div className={signpage.formGroup}>
-                                <input
+                                <input className={signpage.diff}
                                     type="text"
                                     name="branch"
                                     placeholder="Branch"
@@ -97,7 +97,7 @@ function Signinpage() {
                                 />
                             </div>
                             <div className={signpage.formGroup}>
-                                <input
+                                <input className={signpage.diff}
                                     type="number"
                                     name="number"
                                     placeholder="Year"

@@ -72,9 +72,7 @@ h1{
     transform: translate(-50%, -50%) scale(1);
 }
 
-input [type = "checkbox"]:checked .otp {
-    display:block;
-}
+
 .branch{
     display:flex;
     flex-direction: row;
@@ -82,6 +80,10 @@ input [type = "checkbox"]:checked .otp {
     
       
 }
+.diff{
+    width: 18vw;
+}
+
 
 
 
@@ -140,6 +142,10 @@ input {
         margin-top: 1px;
         height:12px;
     }
+    .diff{
+        width: 26vw;
+    }
+    
    
    
 }
@@ -157,5 +163,7 @@ input {
     .signupBtn {
         width: 80%;
     }
-    
+    .diff{
+        width: 20vw;
+    }
 }  
