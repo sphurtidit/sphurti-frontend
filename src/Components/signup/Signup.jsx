@@ -12,7 +12,7 @@ function Signinpage() {
 
     return (
         <>
-            <div className={signpage.Container}>
+            <div className={`${signpage.Container} ${isOtpVisible ? signpage.blur : ""}`}>
                 <div className={signpage.Box}>
                     <h1>
                         <p>Welcome to</p>
@@ -43,32 +43,7 @@ function Signinpage() {
                             </div>
 
                             {/* OTP Popup */}
-                            <div
-                                className={`${signpage.otp} ${
-                                    isOtpVisible ? signpage.openpopup : ""
-                                }`}
-                                id="otp"
-                            >
-                                <h1>Enter the OTP</h1>
-                                <input
-                                    type="password"
-                                    placeholder="Enter the OTP"
-                                    required
-                                />
-                                <button
-                                    type="button"
-                                    className={signpage.signinBtn}
-                                    onClick={closepopup}
-                                >
-                                    OK
-                                </button>
-                                <button
-                                    type="button"
-                                    className={signpage.signinBtn}
-                                >
-                                    Resend OTP
-                                </button>
-                            </div>
+                           
                         </div>
 
                         <div className={signpage.formGroup}>
@@ -120,6 +95,32 @@ function Signinpage() {
                     </form>
                 </div>
             </div>
+            <div
+                                className={`${signpage.otp} ${
+                                    isOtpVisible ? signpage.openpopup : ""
+                                }`}
+                                id="otp"
+                            >
+                                <h1>Enter the OTP</h1>
+                                <input
+                                    type="password"
+                                    placeholder="Enter the OTP"
+                                    required
+                                />
+                                <button
+                                    type="button"
+                                    className={signpage.signinBtn}
+                                    onClick={closepopup}
+                                >
+                                    OK
+                                </button>
+                                <button
+                                    type="button"
+                                    className={signpage.signinBtn}
+                                >
+                                    Resend OTP
+                                </button>
+                            </div>
         </>
     );
 }
