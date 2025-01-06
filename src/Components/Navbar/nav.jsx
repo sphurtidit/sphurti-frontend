@@ -48,9 +48,12 @@ function Nav() {
                     <Link to="nav-sports" offset={-80}><li onClick={showNav}>SPORTS</li></Link>
                     <Link to="acc-section" offset={-80}><li onClick={showNav}>ACCOMMODATION</li></Link>
                     <Link to="team-nav" offset={-80}><li onClick={showNav}>CONTACT</li></Link>
+                    <Link to="" offset={-80}><li onClick={showNav} >LOGIN</li></Link>
+                    <Link to="" offset={-80}><li onClick={showNav} >SIGNIN</li></Link>
                     {/* <Link to="home" offset={-80}><a>RESULTS</a></Link> */}
                     {/* <a  rel="noreferrer"><li className='reg-nav-button'>GALLERY</li></a> */}
                     <Gallery_Button />
+                    
                 </div>
                 <button className='nav-button nav-close-button' onClick={showNav}>
                     <MdClose />
