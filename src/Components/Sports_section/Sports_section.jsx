@@ -1,42 +1,125 @@
-import SportsContainer from '../Sports_container/sports_container';
-import './Sports_section.css';
-import badmintonimg from '../../assets/badminton.png'
-import cricketimg from '../../assets/cricket.png'
-import footballimg from '../../assets/football.png'
-import volleyballimg from '../../assets/volleyball.png'
-import basketballimg from '../../assets/basketball.png'
-import tabletennisimg from '../../assets/table tennis.png'
-import { PropTypes } from 'prop-types';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import SportsContainer from "../Sports_container/sports_container";
+import "./Sports_section.css";
+import badmintonimg from "../../assets/badminton.png";
+import cricketimg from "../../assets/cricket.png";
+import footballimg from "../../assets/football.png";
+import volleyballimg from "../../assets/volleyball.png";
+import basketballimg from "../../assets/basketball.png";
+import tabletennisimg from "../../assets/table tennis.png";
 
-const SportsSection = ({rule ,cricket,badminton ,tabletennis ,football ,volleyball,basketball}) => {
+const SportsSection = ({ rule }) => {
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const eventResponse = await axios.get(
+          "https://sphurti-backend.onrender.com/api/events"
+        );
+        const categoryResponse = await axios.get(
+          "https://sphurti-backend.onrender.com/api/eventCategory"
+        );
+        if (
+          eventResponse.data &&
+          categoryResponse.data.eventCategories
+        ) {
+          const mergedEvents = eventResponse.data.map((event) => {
+            const category = categoryResponse.data.eventCategories.find(
+              (cat) => cat.eventId === event._id
+            );
+            return {
+              ...event,
+              category: category || {},
+            };
+          });
 
-    return (
-        <div className='nav-sports'>
-            {badminton ? (<div className='parent-container-sports'>
-                <div className='heading'><h1>SPORTS</h1></div>
-                <div className='allsports'>
-                    <SportsContainer rule = {rule} game={badminton} type="1" image={badmintonimg} key={badminton['index']}/>
-                    <SportsContainer rule = {rule} game={basketball} type="2" image={basketballimg} key={basketball['index']}/>
-                    <SportsContainer rule = {rule} game={cricket} type="3" image={cricketimg} key={cricket['index']}/>
-                    <SportsContainer rule = {rule} game={volleyball} type="3" image={volleyballimg} key={volleyball['index']}/>
-                    <SportsContainer rule = {rule} game={tabletennis} type="1" image={tabletennisimg} key={tabletennis['index']}/>
-                    <SportsContainer rule = {rule} game={football} type="2" image={footballimg} key={football['index']}/>
-                </div>
-            </div>) : <div className='loading'>Loading...</div>}
+          setEvents(mergedEvents);
+        } else {
+          console.error("Invalid data structure from backend");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-        </div>
-    );
-};
+    fetchEvents();
+  }, []);
 
-SportsSection.propTypes = {
-    cricket: PropTypes.map,
-    badminton: PropTypes.map,
-    tabletennis: PropTypes.map,
-    football: PropTypes.map,
-    volleyball: PropTypes.map,
-    basketball: PropTypes.map,
-    rule: PropTypes.string,
+  const getImageForEvent = (eventName) => {
+    switch (eventName.toLowerCase()) {
+      case "badminton":
+        return badmintonimg;
+      case "cricket":
+        return cricketimg;
+      case "football":
+        return footballimg;
+      case "volleyball":
+        return volleyballimg;
+      case "basketball":
+        return basketballimg;
+      case "table tennis":
+        return tabletennisimg;
+      default:
+        return "";
+    }
   };
+
+  const getEventType = (index) => {
+    return (index % 3) + 1;  
+  };
+
+  return (
+    <div className="nav-sports">
+      {loading ? (
+        <div className="loading">Loading...</div>
+      ) : events.length === 0 ? (
+        <div>No events available</div>
+      ) : (
+        <div className="parent-container-sports">
+          <div className="heading">
+            <h1>SPORTS</h1>
+          </div>
+          <div className="allsports">
+            {events.map((event, index) => (
+              <SportsContainer
+                key={event._id}
+                rule={rule}
+                game={{
+                  name: event.name,
+                  rulebook: event.rulebook,
+                  coordinators: {
+                    [event.coordinator1]: event.coordinator1Contact,
+                    [event.coordinator2]: event.coordinator2Contact,
+                  },
+                  fees: event.category
+                    ? event.category.registrationFees
+                    : "N/A",
+                  winnerPrize: event.category
+                    ? event.category.prizeWinner
+                    : "N/A",
+                  runnerUpPrize: event.category
+                    ? event.category.prizeRunnerUp
+                    : "N/A",
+                  schedule: event.schedule || "",
+                  showprize: true,
+                  separate: event.category
+                    ? event.category.minNumber !== event.category.maxNumber
+                    : false,
+                }}
+                type={getEventType(index)}
+                image={getImageForEvent(event.name)}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default SportsSection;

@@ -10,7 +10,7 @@ const SportsContainer = ({ rule, game, type, image }) => {
     setShowContent(!showContent);
   };
   let col = type == 1 ? "yellow" : type == 2 ? "red" : "purple";
-  let exp = showContent ? "expanded" : "";
+  let exp = showContent ? "" : "";
   let sch = game["schedule"] == "" ? false : true;
 
   console.log(game["name"])
@@ -19,12 +19,12 @@ const SportsContainer = ({ rule, game, type, image }) => {
       <div className="left-column">
         <div className="container">
           <p className="sports-heading">{game["name"]}</p>
-          <div className="reg">
+          {/* <div className="reg">
             <img src={flag}></img>
             <p className="reg-text">REGISTRATION</p>
             <img src={flag}></img>
-          </div>
-          <div className="fee">
+          </div> */}
+          {/* <div className="fee">
             <div className="fee-text">
               <p className="fees">FEES</p>
               <p className="team">PER TEAM</p>
@@ -38,21 +38,22 @@ const SportsContainer = ({ rule, game, type, image }) => {
                 {game["name"] == "TABLE TENNIS" ? <p className="cate">MIXED (Doubles)</p> : <p className="cate">GIRLS</p>}
                 <p className="cate-fees">₹{game['fees-girls']}</p>
               </div> </> : <></>}
-          </div>
+          </div> */}
 
           <div className="buttons">
             <button
               title={game['registrationOpen'] ? "Register" : "Registration Closed"}
-              className={`primary-s ` + (game['registrationOpen'] ? "" : "disabled-reg")}
-              disabled={!game['registrationOpen']}
-              onClick={() => {
-                window.open("https://forms.gle/m6F4P47PQ86q53Hy9", "_blank");
-              }}
+              className="primary-s" 
+              // disabled={!game['registrationOpen']}
+              // onClick={() => {
+              //   window.open("https://forms.gle/m6F4P47PQ86q53Hy9", "_blank");
+              // }}
             >
-              Register
+              Girls
             </button>
-            <button title="detail" className="secondary" onClick={viewDetails}>
-              {showContent ? (
+            <button title="detail" className="primary-s" onClick={viewDetails}>
+              <> Boys </>
+              {/* {showContent ? (
                 <>
                   View Less <MdKeyboardArrowUp />{" "}
                 </>
@@ -60,11 +61,11 @@ const SportsContainer = ({ rule, game, type, image }) => {
                 <>
                   View More <MdKeyboardArrowDown />{" "}
                 </>
-              )}
+              )} */}
             </button>
           </div>
         </div>
-        {showContent && (
+        {/* {showContent && (
           <div className="details">
             <div className="hr">
               <hr></hr>
@@ -115,7 +116,7 @@ const SportsContainer = ({ rule, game, type, image }) => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
       <div className="right-column">
         <img src={image} className="image"></img>
