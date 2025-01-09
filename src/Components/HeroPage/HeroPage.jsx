@@ -18,10 +18,10 @@ const HeroPage = () => {
      
         <div className="left-container">
         <img src={LeftBGI} alt="" className="left"/>
-        <button title='Register' className='primary' onClick={() => {
+        <button title='Register'disabled className='primary' onClick={() => {
                             window.open('https://forms.gle/m6F4P47PQ86q53Hy9', '_blank');
                         }}>Register</button>
-        </div>
+        </div> 
         <div className="center-container">
         <img src={CenterBGI} alt="" className="center"/>
         </div>
