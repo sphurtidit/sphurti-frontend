@@ -28,7 +28,7 @@ const AccommodationSection = ({rules}) => {
             <h1 className="registration-date">
               <span className="star-red">*</span>
               <span className="star-yellow">*</span>
-              <span className="star-purple">*</span>MARCH 10TH 2024
+              <span className="star-purple">*</span>MARCH 24TH 2025
               <span className="star-red">*</span>
               <span className="star-yellow">*</span>
               <span className="star-purple">*</span>
