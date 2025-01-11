@@ -22,6 +22,9 @@
     justify-content: center;
 }
 
+.csoon{
+    width: 70%;
+}
 .cards img {
     height: 50vh;
     padding: 1rem;

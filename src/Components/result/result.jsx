@@ -26,7 +26,7 @@ const Result = () => {
   return (
     <>
       <div className="heading">
-        <h1>RESULTS</h1>
+        <h1>REPORT</h1>
       </div>
       <div className="result-container">
         <div className="left-column">
@@ -47,7 +47,7 @@ const Result = () => {
               onClick={() => { }}
             >
               <FaArrowDown />
-              2024 Results
+              2024 Report
             </button>
             </Link>
             <button
@@ -56,7 +56,7 @@ const Result = () => {
                 console.log(link);
                 openLink(link);
               }}>
-              <FaArrowDown /> 2023 Results
+              <FaArrowDown /> 2023 Report
             </button>
           </div>
         </div>

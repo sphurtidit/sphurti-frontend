@@ -5,6 +5,7 @@ import RightBGI from "../../assets/Back_3.png";
 import Sphurti from "../../assets/sphurti.png";
 import Naac from "../../assets/naac.png";
 import Dit from "../../assets/DIT.png";
+import dates from "../../assets/dates.png"
 
 const HeroPage = () => {
   return (
@@ -15,12 +16,16 @@ const HeroPage = () => {
         <img src={Sphurti} alt="" className="logo_1"/>
         <img src={Naac} alt="" className="logo_2"/>
         <img src={Dit} alt="" className="logo_3"/>
-     
+        
         <div className="left-container">
         <img src={LeftBGI} alt="" className="left"/>
-        <button title='Register'disabled className='primary' onClick={() => {
+        <img src={dates}  className="dates" alt="Dates" />
+        {/* <button title='Register'disabled className='primary' onClick={() => {
                             window.open('https://forms.gle/m6F4P47PQ86q53Hy9', '_blank');
-                        }}>Register</button>
+                        }}>Register</button> */}
+                         
+
+
         </div> 
         <div className="center-container">
         <img src={CenterBGI} alt="" className="center"/>
