@@ -4,7 +4,10 @@ import Main_HeroPage from "./Components/Main_HeroPage/Main_HeroPage";
 import Timer from "./Components/timer/timer";
 import TeamSec from "./Components/team_sec/team_sec";
 import Footer from "./Components/Footer/Footer";
-import Tribute from "./Components/Tribute/tribute";
+// import Tribute from "./Components/Tribute/tribute";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ComingSoon from "./Components/comingsoon/comingsoon";
 
 import Result from "./Components/result/result";
 // import Messages from "./Components/Messages/Messages";
@@ -112,7 +115,7 @@ function App() {
           <Main_HeroPage />
           <Timer />
           <MessageSection />
-          <Tribute />
+          {/* <Tribute /> */}
           <SportsSection
             rule={rule}
             cricket={cricket}
@@ -132,6 +135,8 @@ function App() {
         <Lines customLoading={loading} />
       </React.Fragment>
     </>
+
+    
   );
 }
 

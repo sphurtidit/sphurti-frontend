@@ -44,15 +44,15 @@ function TeamSec({teams,sport}) {
       <div className="subheading">
         <h1>FACULTY COORDINATOR</h1>
       </div>
-      <div className="FacultyCard">
+      {/* <div className="FacultyCard">
         {sport.map((sport)=>{
          return <TeamCard key={sport.name} name={sport.name} designation={sport.category} phone={sport.phone} image={sport.image} type={sport.color} />
 
         })}
 
-      </div>
-
-      <div className="subheading">
+      </div> */}
+      <TeamCard key={"-----"} name={"-------"} designation={"--------"} phone={"---------"} image={"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.alamy.com%2Fcolorful-coming-soon-composition-with-flat-design-coming-soon-sign-color-vector-illustration-image450751939.html&psig=AOvVaw1i3l08IohZxPSu-97Sk6jx&ust=1736530763077000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjE8dCJ6YoDFQAAAAAdAAAAABAK"} type={"---------"} />
+      {/* <div className="subheading">
         <h1>STUDENT COORDINATOR</h1>
       </div>
       <div className="StudentCard">
@@ -60,7 +60,7 @@ function TeamSec({teams,sport}) {
          return <TeamCard key={sport.name} name={sport.name} designation={sport.category} phone={sport.phone} image={sport.image} type={sport.color} />
 
         })}
-      </div>
+      </div> */}
     </div>
   )
 }

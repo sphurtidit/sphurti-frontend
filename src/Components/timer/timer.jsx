@@ -9,9 +9,11 @@ const Timer = () => {
 
 
   useEffect(() => {
-    const targetDate = new Date(2024, 2, 13, 0, 0, 0);
+    const targetDate = new Date(2025, 0, 13, 0, 0, 0);
     const interval = setInterval(() => {
       const now = new Date();
+      console.log(now);
+      console.log(targetDate);
       const distance = targetDate.getTime() - now.getTime();
 
       if (distance < 60) {
