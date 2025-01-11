@@ -26,11 +26,11 @@ const Footer = () => {
     <>
       <div className="footerContainer">
         <div className="footercontent">
-        <p className="footerheader">This website is developed and maintained by the IEEE Student Branch, DIT University.</p>
+        <p className="footerheader">This website is developed and maintained by the <b>IEEE Student Branch , DIT University.</b> </p>
           {/* <Link to="/developers" ><p className="footermiddle"><img src={LinkIcon} alt="Link Icon" />IEEE technical team</p></Link> */}
-         <p className="footermiddle">IEEE technical team</p>
+         {/* <p className="footermiddle">IEEE technical team</p>
 
-          <p className="footerbottom">Sphurti 2025</p>
+          <p className="footerbottom">Sphurti 2025</p> */}
         </div>
         <div className="footerlogos">
         <img src={IEEE_Blue} alt="" className="IEEE" />
