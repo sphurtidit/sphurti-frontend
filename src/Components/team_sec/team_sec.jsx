@@ -38,7 +38,7 @@ function TeamSec({ teams, sport }) {
     <div className="whole team team-nav">
       <div className="heading">{/* <h1>OUR TEAM</h1> */}</div>
       <div className="subheading">
-        <h1>SPORTS COORDINATOR</h1>
+        <h1>CONTACT</h1>
         {/* <img className='csoon' src={comingsoon} alt="csoon" /> */}
       </div>
       {/* <div className="FacultyCard">

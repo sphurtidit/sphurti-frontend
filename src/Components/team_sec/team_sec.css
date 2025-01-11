@@ -5,6 +5,8 @@
     line-height: 5vh;
     margin-top: 5vh;
 }
+
+
 .Heading1{
     font-family: 'Outfit',sans-serif;
     font-size: 64px;
@@ -29,6 +31,9 @@
   /* border: 2px solid black; */
 }
 
+h1{
+  color: #000;
+}
       
 
 

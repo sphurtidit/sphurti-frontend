@@ -13,7 +13,7 @@ const SportsContainer = ({ rule, game, type, image }) => {
   let exp = showContent ? "expanded" : "";
   let sch = game["schedule"] == "" ? false : true;
 
-  console.log(game["name"])
+  console.log(game["name"]);
   return (
     <div className={`sports-container ${col} ${exp}`}>
       <div className="left-column">
@@ -31,24 +31,35 @@ const SportsContainer = ({ rule, game, type, image }) => {
             </div>
             <div className="fee-text">
               <p className="cate">BOYS</p>
-              <p className="cate-fees">₹
-                {/* {game['fees-boys']} */}
-                </p>
+
+              <p className="cate-fees">₹{/* {game['fees-boys']} */}</p>
             </div>
-            {game['separate'] ? <><div className="vertical-line"></div>
-              <div className="fee-text">
-                {game["name"] == "TABLE TENNIS" ? <p className="cate">MIXED (Doubles)</p> : <p className="cate">GIRLS</p>}
-                <p className="cate-fees">₹
-                  {/* {game['fees-girls']} */}
-                  </p>
-              </div> </> : <></>}
+            {game["separate"] ? (
+              <>
+                <div className="vertical-line"></div>
+                <div className="fee-text">
+                  {game["name"] == "TABLE TENNIS" ? (
+                    <p className="cate">MIXED (Doubles)</p>
+                  ) : (
+                    <p className="cate">GIRLS</p>
+                  )}
+                  <p className="cate-fees">₹{/* {game['fees-girls']} */}</p>
+                </div>{" "}
+              </>
+            ) : (
+              <></>
+            )}
           </div>
 
           <div className="buttons">
             <button
-              title={game['registrationOpen'] ? "Register" : "Registration Closed"}
-              className={`primary-s ` + (game['registrationOpen'] ? "" : "disabled-reg")}
-              disabled={!game['registrationOpen']}
+              title={
+                game["registrationOpen"] ? "Register" : "Registration Closed"
+              }
+              className={
+                `primary-s ` + (game["registrationOpen"] ? "" : "disabled-reg")
+              }
+              disabled={!game["registrationOpen"]}
               onClick={() => {
                 window.open("https://forms.gle/m6F4P47PQ86q53Hy9", "_blank");
               }}
