@@ -8,23 +8,23 @@ import basketballimg from '../../assets/basketball.png'
 import tabletennisimg from '../../assets/table tennis.png'
 import { PropTypes } from 'prop-types';
 
-const SportsSection = ({rule ,cricket,badminton ,tabletennis ,football ,volleyball,basketball}) => {
-
+// const SportsSection = ({rule ,cricket,badminton ,tabletennis ,football ,volleyball,basketball}) => {
+const SportsSection = () => {
 
     return (
         <div className='nav-sports'>
-            {badminton ? (<div className='parent-container-sports'>
+            {/* {badminton ? () : <div className='loading'>Loading...</div>} */}
+            <div className='parent-container-sports'>
                 <div className='heading'><h1>SPORTS</h1></div>
                 <div className='allsports'>
-                    <SportsContainer rule = {rule} game={badminton} type="1" image={badmintonimg} key={badminton['index']}/>
-                    <SportsContainer rule = {rule} game={basketball} type="2" image={basketballimg} key={basketball['index']}/>
-                    <SportsContainer rule = {rule} game={cricket} type="3" image={cricketimg} key={cricket['index']}/>
-                    <SportsContainer rule = {rule} game={volleyball} type="3" image={volleyballimg} key={volleyball['index']}/>
-                    <SportsContainer rule = {rule} game={tabletennis} type="1" image={tabletennisimg} key={tabletennis['index']}/>
-                    <SportsContainer rule = {rule} game={football} type="2" image={footballimg} key={football['index']}/>
+                    <SportsContainer type="1" image={badmintonimg} key={'badminton'} name="Badminton"/>
+                    <SportsContainer type="2" image={basketballimg} key={'basketball'} name="Basketball"/>
+                    <SportsContainer type="3" image={cricketimg} key={'cricket'} name="Cricket"/>
+                    <SportsContainer type="3" image={volleyballimg} key={'volleyball'} name="Volley Ball"/>
+                    <SportsContainer type="1" image={tabletennisimg} key={'tabletennis'} name="Table Tennis"/>
+                    <SportsContainer type="2" image={footballimg} key={'football'} name="Football"/>
                 </div>
-            </div>) : <div className='loading'>Loading...</div>}
-
+            </div>
         </div>
     );
 };
