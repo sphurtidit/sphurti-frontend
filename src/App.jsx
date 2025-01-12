@@ -23,8 +23,6 @@ import React, { useState, useEffect } from "react";
 import AccommodationSection from "./Components/Accomodation/Accommodation";
 
 import AccomodationCard from "./Components/Accomodation_2nd/Accomodation_2nd";
-import Navbar from "./Pages/Result Page/Navbar/Navbar";
-import FootballScore from "./Pages/Result Page/Football/FootballScore";
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -39,73 +37,73 @@ function App() {
   const [rule, setrule] = useState();
   const [acc, setAcc] = useState();
 
-  useEffect(() => {
-    const r = getDocs(collection(db, "Team"))
-      .then((querySnapshot) => {
-        setLoading(true);
-        const temp = querySnapshot.docs.map((doc) => doc.data());
-        temp.sort((a, b) => a.precedence - b.precedence);
-        // console.log("heading");
-        const sports = [];
-        const teams = [];
-        temp.map((t) => {
-          if (t.precedence == -1) {
-            // console.log(t);
-            sports.push(t);
-          } else {
-            teams.push(t);
-          }
-        });
+  // useEffect(() => {
+  //   const r = getDocs(collection(db, "Team"))
+  //     .then((querySnapshot) => {
+  //       setLoading(true);
+  //       const temp = querySnapshot.docs.map((doc) => doc.data());
+  //       temp.sort((a, b) => a.precedence - b.precedence);
+  //       // console.log("heading");
+  //       const sports = [];
+  //       const teams = [];
+  //       temp.map((t) => {
+  //         if (t.precedence == -1) {
+  //           // console.log(t);
+  //           sports.push(t);
+  //         } else {
+  //           teams.push(t);
+  //         }
+  //       });
 
-        return { sports, teams };
-      })
-      .then(({ sports, teams }) => {
-        // console.log(sports,teams)
-        setSports(sports);
-        setTeam(teams);
-      })
-      .then(() => {
-        const r = getDoc(doc(collection(db, "misc"), "links")).then((docu) => {
-          setrule(docu.data()["rulebook"]);
-          setAcc(docu.data()["accrule"]);
-          // console.log(docu.data()['rulebook']);
-        });
-        const unsub = getDocs(collection(db, "sportDetails")).then(
-          (querySnapshot) => {
-            const tempdata = querySnapshot.docs.map((doc) => doc.data());
-            for (let i = 0; i < tempdata.length; i++) {
-              if (tempdata[i]["index"] == 1) {
-                setbadminton(tempdata[i]);
-              } else if (tempdata[i]["index"] == 2) {
-                setbasketball(tempdata[i]);
-              } else if (tempdata[i]["index"] == 3) {
-                setcricket(tempdata[i]);
-              } else if (tempdata[i]["index"] == 4) {
-                setvolleyball(tempdata[i]);
-              } else if (tempdata[i]["index"] == 5) {
-                settabletennis(tempdata[i]);
-              } else if (tempdata[i]["index"] == 6) {
-                setfootball(tempdata[i]);
-              }
-            }
-          }
-        );
-        console.log(r);
-        console.log(unsub);
-      })
-      .then(() => {
-        setLoading(false);
-      })
-      .catch((error) => {
-        setLoading(true);
-        console.log(error);
-      });
+  //       return { sports, teams };
+  //     })
+  //     .then(({ sports, teams }) => {
+  //       // console.log(sports,teams)
+  //       setSports(sports);
+  //       setTeam(teams);
+  //     })
+  //     .then(() => {
+  //       const r = getDoc(doc(collection(db, "misc"), "links")).then((docu) => {
+  //         setrule(docu.data()["rulebook"]);
+  //         setAcc(docu.data()["accrule"]);
+  //         // console.log(docu.data()['rulebook']);
+  //       });
+  //       const unsub = getDocs(collection(db, "sportDetails")).then(
+  //         (querySnapshot) => {
+  //           const tempdata = querySnapshot.docs.map((doc) => doc.data());
+  //           for (let i = 0; i < tempdata.length; i++) {
+  //             if (tempdata[i]["index"] == 1) {
+  //               setbadminton(tempdata[i]);
+  //             } else if (tempdata[i]["index"] == 2) {
+  //               setbasketball(tempdata[i]);
+  //             } else if (tempdata[i]["index"] == 3) {
+  //               setcricket(tempdata[i]);
+  //             } else if (tempdata[i]["index"] == 4) {
+  //               setvolleyball(tempdata[i]);
+  //             } else if (tempdata[i]["index"] == 5) {
+  //               settabletennis(tempdata[i]);
+  //             } else if (tempdata[i]["index"] == 6) {
+  //               setfootball(tempdata[i]);
+  //             }
+  //           }
+  //         }
+  //       );
+  //       console.log(r);
+  //       console.log(unsub);
+  //     })
+  //     .then(() => {
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       setLoading(true);
+  //       console.log(error);
+  //     });
 
-    return () => {
-      r;
-    };
-  }, []);
-  // console.log(sport,team);
+  //   return () => {
+  //     r;
+  //   };
+  // }, []);
+  // // console.log(sport,team);
 
   return (
     <>
@@ -113,26 +111,18 @@ function App() {
         <div className="background-container">
           <Nav />
           <Main_HeroPage />
-          <Timer />
+          {/* <Timer /> */}
           <MessageSection />
           {/* <Tribute /> */}
-          <SportsSection
-            rule={rule}
-            cricket={cricket}
-            badminton={badminton}
-            tabletennis={tabletennis}
-            football={football}
-            volleyball={volleyball}
-            basketball={basketball}
-          />
+          <SportsSection/>
           <AccomodationCard />
-          <AccommodationSection rules={acc} />
-          <TeamSec teams={team} sport={sport} />
+          <AccommodationSection/>
+          <TeamSec/>
           <Result />
 
           <Footer />
         </div>
-        <Lines customLoading={loading} />
+        {/* <Lines customLoading={loading} /> */}
       </React.Fragment>
     </>
 

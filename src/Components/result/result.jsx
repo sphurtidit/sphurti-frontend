@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import { Link } from "react-router-dom";
+import REPORT from "../../assets/REPORT.svg"
 
 const Result = () => {
   const [link, setlink] = useState();
@@ -32,13 +33,13 @@ const Result = () => {
         <div className="left-column">
           <div className="leftimage">
             <img src={leftimage} />
-          </div>
+          </div>  
         </div>
 
         <div className="middle-column">
           <div className="middlemain">
             <p className="middle-heading">SPHURTI</p>
-            <img className="resultimage" src={result} />
+            <img className="resultimage" src={REPORT} />
           </div>
           <div className="result-buttons">
             <Link to="/live-results">
