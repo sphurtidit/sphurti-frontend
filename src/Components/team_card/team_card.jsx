@@ -7,7 +7,7 @@ const TeamCard = ({ type, name, designation,phone,image }) => {
   return (
     <div className={`parent-container ${type}`}>
       <div className="image-container">
-        <img src={image} className="image" />
+        <img src={"https://c8.alamy.com/comp/2H59EKF/colorful-coming-soon-composition-with-flat-design-coming-soon-sign-color-vector-illustration-2H59EKF.jpg"} className="image" />
       </div>
       <div className="contentContainerr">
         <p className="name">{name}</p>

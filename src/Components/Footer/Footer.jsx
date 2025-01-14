@@ -5,6 +5,7 @@ import LinkIcon from "../../assets/link.svg";
 import Sphurti from "../../assets/sphurti.png";
 import Naac from "../../assets/naac.png";
 import Dit from "../../assets/DIT.png";
+import IEEE_Blue from "../../assets/IEEE_Blue.png"
 // import { collection, getDoc, doc } from "firebase/firestore";
 // import { db } from "../../firebase";
 // import { useEffect, useState } from "react";
@@ -25,12 +26,14 @@ const Footer = () => {
     <>
       <div className="footerContainer">
         <div className="footercontent">
-          <p className="footerheader">Made with ❤️ and efforts</p>
-          
-          <Link to="/developers" ><p className="footermiddle"><img src={LinkIcon} alt="Link Icon" />Design Team X technical team</p></Link>
-          <p className="footerbottom">Sphurti 2024</p>
+        <p className="footerheader">This website is developed and maintained by the <b>IEEE Student Branch , DIT University.</b> </p>
+          {/* <Link to="/developers" ><p className="footermiddle"><img src={LinkIcon} alt="Link Icon" />IEEE technical team</p></Link> */}
+         {/* <p className="footermiddle">IEEE technical team</p>
+
+          <p className="footerbottom">Sphurti 2025</p> */}
         </div>
         <div className="footerlogos">
+        <img src={IEEE_Blue} alt="" className="IEEE" />
           <img src={Sphurti} alt="" className="sphurti" />
           <img src={Naac} alt="" className="naac" />
           <img src={Dit} alt="" className="dit" />

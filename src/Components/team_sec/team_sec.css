@@ -5,6 +5,8 @@
     line-height: 5vh;
     margin-top: 5vh;
 }
+
+
 .Heading1{
     font-family: 'Outfit',sans-serif;
     font-size: 64px;
@@ -15,6 +17,49 @@
     text-transform: uppercase;
 
 }
+
+.sport-card {
+
+
+  /* align-items: end; */
+  margin-left: 20px;
+  width: 22%;
+  height: 60vh;
+  
+  /* display:flex; */
+  /* position: relative; */
+  /* border: 2px solid black; */
+}
+
+h1{
+  color: #000;
+}
+      
+
+
+
+
+.detail{
+  border: 1px solid black;
+  width: 12vw;
+  margin-left: 4px;
+}
+.officer{
+  width: 25vw;
+  height: auto;
+  margin-left: 500px;
+  /* padding-bottom: 10vh; */
+
+  /* position: absolute; */
+  /* margin-bottom: 10x; */
+  /* align-items: end; */
+  
+}
+
+/* .csoon{
+  width: 70%;
+  height: auto;
+} */
 .Heading2{
     font-family: 'Outfit', sans-serif;
     font-size: 32px;
