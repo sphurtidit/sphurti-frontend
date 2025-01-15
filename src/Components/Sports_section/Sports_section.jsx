@@ -8,10 +8,20 @@ import footballimg from "../../assets/football.png";
 import volleyballimg from "../../assets/volleyball.png";
 import basketballimg from "../../assets/basketball.png";
 import tabletennisimg from "../../assets/table tennis.png";
+import SportsCard from "../Sport_Card/Sport_Card"; // Import the BasketballEvent component
 
 const SportsSection = ({ rule }) => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+
+  const openModal = () => {
+    setIsModalOpen(true); // Open the modal
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal
+  };
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -22,10 +32,7 @@ const SportsSection = ({ rule }) => {
         const categoryResponse = await axios.get(
           "https://sphurti-backend.onrender.com/api/eventCategory"
         );
-        if (
-          eventResponse.data &&
-          categoryResponse.data.eventCategories
-        ) {
+        if (eventResponse.data && categoryResponse.data.eventCategories) {
           const mergedEvents = eventResponse.data.map((event) => {
             const category = categoryResponse.data.eventCategories.find(
               (cat) => cat.eventId === event._id
@@ -70,7 +77,7 @@ const SportsSection = ({ rule }) => {
   };
 
   const getEventType = (index) => {
-    return (index % 3) + 1;  
+    return (index % 3) + 1;
   };
 
   return (
@@ -87,6 +94,8 @@ const SportsSection = ({ rule }) => {
           <div className="allsports">
             {events.map((event, index) => (
               <SportsContainer
+                openModal={openModal}
+                closeModal={closeModal}
                 key={event._id}
                 rule={rule}
                 game={{
@@ -118,6 +127,7 @@ const SportsSection = ({ rule }) => {
           </div>
         </div>
       )}
+      <SportsCard isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 };
