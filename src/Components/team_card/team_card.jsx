@@ -9,8 +9,9 @@ const TeamCard = ({ type, name, designation,phone,image }) => {
       <div className="image-container">
         <img src={"https://c8.alamy.com/comp/2H59EKF/colorful-coming-soon-composition-with-flat-design-coming-soon-sign-color-vector-illustration-2H59EKF.jpg"} className="image" />
       </div>
-      <div className="contentContainerr">
+      <div className="contentContainer">
         <p className="name">{name}</p>
+        <p>hello</p>
         <p className="designation">{designation}</p>
         <p className="phone">{phone}</p>
       </div>
