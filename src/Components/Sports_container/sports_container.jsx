@@ -19,7 +19,7 @@ const SportsContainer = ({ rule, game, type, image, openModal, closeModal }) => 
               // disabled={true}
               title="Registration not open yet"
               className="primary-s"
-              onClick={openModal} // Open the modal on button click
+              onClick={() => openModal(game)} // Open the modal on button click
             >
               Girls
             </button>
@@ -32,8 +32,6 @@ const SportsContainer = ({ rule, game, type, image, openModal, closeModal }) => 
       <div className="right-column">
         <img src={image} className="image" alt="Sports event" />
       </div>
-
-      {/* Modal Component */}
     </div>
   );
 };

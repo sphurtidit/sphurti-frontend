@@ -8,14 +8,15 @@ import footballimg from "../../assets/football.png";
 import volleyballimg from "../../assets/volleyball.png";
 import basketballimg from "../../assets/basketball.png";
 import tabletennisimg from "../../assets/table tennis.png";
-import SportsCard from "../Sport_Card/Sport_Card"; // Import the BasketballEvent component
+import SportsCard from "../Sport_Card/Sport_Card"; 
 
-const SportsSection = ({ rule }) => {
-  const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(true);
+const SportsSection = ({ rule , events}) => {
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+  const [gameDetails, setIsGameDetails] = useState({});
 
-  const openModal = () => {
+  const openModal = (game) => {
+    console.log(game)
+    setIsGameDetails(game);
     setIsModalOpen(true); // Open the modal
   };
 
@@ -23,40 +24,7 @@ const SportsSection = ({ rule }) => {
     setIsModalOpen(false); // Close the modal
   };
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const eventResponse = await axios.get(
-          "https://sphurti-backend.onrender.com/api/events"
-        );
-        const categoryResponse = await axios.get(
-          "https://sphurti-backend.onrender.com/api/eventCategory"
-        );
-        if (eventResponse.data && categoryResponse.data.eventCategories) {
-          const mergedEvents = eventResponse.data.map((event) => {
-            const category = categoryResponse.data.eventCategories.find(
-              (cat) => cat.eventId === event._id
-            );
-            return {
-              ...event,
-              category: category || {},
-            };
-          });
-
-          setEvents(mergedEvents);
-        } else {
-          console.error("Invalid data structure from backend");
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchEvents();
-  }, []);
-
+  
   const getImageForEvent = (eventName) => {
     switch (eventName.toLowerCase()) {
       case "badminton":
@@ -79,14 +47,9 @@ const SportsSection = ({ rule }) => {
   const getEventType = (index) => {
     return (index % 3) + 1;
   };
-
+  
   return (
     <div className="nav-sports">
-      {loading ? (
-        <div className="loading">Loading...</div>
-      ) : events.length === 0 ? (
-        <div>No events available</div>
-      ) : (
         <div className="parent-container-sports">
           <div className="heading">
             <h1>SPORTS</h1>
@@ -126,8 +89,7 @@ const SportsSection = ({ rule }) => {
             ))}
           </div>
         </div>
-      )}
-      <SportsCard isOpen={isModalOpen} onClose={closeModal} />
+      <SportsCard isOpen={isModalOpen} onClose={closeModal} gameDetails={gameDetails}/>
     </div>
   );
 };
