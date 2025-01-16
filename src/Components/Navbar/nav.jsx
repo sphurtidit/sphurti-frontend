@@ -26,14 +26,17 @@ function Nav() {
   };
 
   const handleNavigation = (path) => {
-    toggleModal(); // Close the modal before navigation
+    toggleModal(); // Close the modal before navigation (if modal is open)
     navigate(path); // Redirect to the specified path
   };
 
   return (
     <nav>
       <div className="logo-left">
-        <img src={SPH} alt="SPHURTI" className="logo" />
+        {/* Link the SPHURTI logo to the "home" section */}
+        <Link to="home" offset={-80} smooth={true} duration={500}>
+          <img src={SPH} alt="SPHURTI" className="logo" />
+        </Link>
       </div>
       <div className="main-nav" ref={navRef}>
         <div className="nav-logo-container">
@@ -42,12 +45,12 @@ function Nav() {
           <img src={SPHURTI} alt="SPHURTI" className="nav-logo" />
         </div>
         <div className="center-button">
-          <Link to="home" offset={-80}>
+          <Link to="home" offset={-80} smooth={true} duration={500}>
             <li onClick={showNav}>HOME</li>
           </Link>
           <Link to="" offset={-80}>
             <li onClick={showNav}>
-              <div className="A_section" >ARCHIVE</div>
+              <div className="A_section">ARCHIVE</div>
               <FaCaretDown />
               <ul className="dropdown">
                 {[...Array(11).keys()].map((i) => {
@@ -63,23 +66,23 @@ function Nav() {
               </ul>
             </li>
           </Link>
-          <Link to="nav-sports" offset={-80}>
+          <Link to="nav-sports" offset={-80} smooth={true} duration={500}>
             <li onClick={showNav}>SPORTS</li>
           </Link>
-          <Link to="acc-section" offset={-80}>
+          <Link to="acc-section" offset={-80} smooth={true} duration={500}>
             <li onClick={showNav}>ACCOMMODATION</li>
           </Link>
-          <Link to="team-nav" offset={-80}>
+          <Link to="team-nav" offset={-80} smooth={true} duration={500}>
             <li onClick={showNav}>CONTACT</li>
           </Link>
 
           <Gallery_Button />
-          <Link to="" offset={-80}>
-            <li onClick={showNav}>LOGIN</li>
-          </Link>
-          <Link to="" offset={-80}>
-            <li onClick={showNav}>SIGNUP</li>
-          </Link>
+
+          {/* LOGIN and SIGNUP links */}
+          <div className="login_signup">
+            <li onClick={() => handleNavigation("/Loginpage")}>LOGIN</li>
+            <li onClick={() => handleNavigation("/Signinpage")}>SIGNUP</li>
+          </div>
         </div>
         <button className="nav-button nav-close-button" onClick={showNav}>
           <MdClose />
