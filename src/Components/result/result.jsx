@@ -43,7 +43,7 @@ const Result = () => {
           </div>
           <div className="result-buttons">
             <Link to="/live-results">
-            <button
+            <button className="ResultButton"
               title="2024 Results"
               onClick={() => { }}
             >
