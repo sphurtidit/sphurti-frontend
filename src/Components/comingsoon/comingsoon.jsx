@@ -1,14 +1,12 @@
 import React from 'react';
 import './comingsoon.css'; 
+import soon from "../../assets/soon.svg"
+
 
 const ComingSoon = ({ message }) => {
   return (
     <div className="coming-soon-container">
-      <div className="coming-soon-content">
-        <h1 className="coming-soon-title">{message || "Coming Soon!"}</h1>
-        <p className="coming-soon-subtitle">We’re working hard to bring you this feature. Stay tuned!</p>
-        <div className="loader"></div>
-      </div>
+        <img className='img' src={soon} alt="" />
     </div>
   );
 };
