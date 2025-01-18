@@ -80,8 +80,8 @@ function Nav() {
 
           {/* LOGIN and SIGNUP links */}
           <div className="login_signup">
-            <li onClick={() => handleNavigation("/Loginpage")}>LOGIN</li>
-            <li onClick={() => handleNavigation("/Signinpage")}>SIGNUP</li>
+            <li onClick={() => handleNavigation("/comingsoon")}>LOGIN</li>
+            <li onClick={() => handleNavigation("/comingsoon")}>SIGNUP</li>
           </div>
         </div>
         <button className="nav-button nav-close-button" onClick={showNav}>

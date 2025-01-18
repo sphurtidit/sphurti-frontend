@@ -9,11 +9,8 @@ const AccomodationCard = () => {
     <div className="cards-container">
     <div className="heading"><h1>ACCOMMODATION</h1></div>
     <br />
-    <br />
-    <br />
-    <br />
     <img src={comingsoon} className="csoon" alt="comingsoon" />
-    <br /><br /><br />
+  <br />
     {/* <div className="cards">
         <img src={Card} alt="" className="card-img"></img>
     </div>

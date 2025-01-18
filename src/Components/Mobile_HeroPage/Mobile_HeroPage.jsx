@@ -12,9 +12,9 @@ const Mobile_HeroPage = () => {
             <div className="bottom-section">
                 <img src={MobileBG_2} alt="" className="top"/>
             </div>
-            <div className="button-section">
+            {/* <div className="button-section">
                 <button href="/" className="register">Register</button>
-            </div>
+            </div> */}
         </div>
         </>
     )

@@ -19,11 +19,19 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  text-align: center;
+  margin: 0;
 }
 
 /* button {
@@ -44,6 +52,51 @@ button:hover {
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 } */
+@media (max-width: 768px) {
+  .contact {
+    font-size: 1em;
+    margin: 0.8em 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    font-size: 0.9em;
+    margin: 0.5em 0;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    font-size: 90%;
+  }
+
+  body {
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 80%;
+  }
+
+  body {
+    padding: 0.5em;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -71,3 +124,4 @@ button:focus-visible {
   font-family: "Outfit";
   src: url('./fonts/outfit/Outfit-Bold.ttf') format('woff2');
 }
+
