@@ -1,17 +1,17 @@
-// import React from 'react';
+import React, { useEffect, useState } from "react";
 import "./result.css";
 import leftimage from "../../assets/left-image.png";
 import rightimage from "../../assets/right-image.png";
 import result from "../../assets/result.png";
 import { FaArrowDown } from "react-icons/fa6";
-import { useEffect, useState } from "react";
 import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import { Link } from "react-router-dom";
-import REPORT from "../../assets/REPORT.svg"
+import REPORT from "../../assets/REPORT.svg";
 
 const Result = () => {
   const [link, setlink] = useState();
+
   useEffect(() => {
     const l = getDoc(doc(collection(db, "misc"), "links")).then((docu) => {
       setlink(docu.data()["2023"]);
@@ -21,9 +21,16 @@ const Result = () => {
     };
   }, []);
 
+  const openPdf = () => {
+    window.open('/Sphurti-2024 Report.pdf', '_blank');
+  };
+  
+  
+
   let openLink = (dest) => {
     window.open(dest, "_blank");
-  }
+  };
+
   return (
     <>
       <div className="heading">
@@ -33,7 +40,7 @@ const Result = () => {
         <div className="left-column">
           <div className="leftimage">
             <img src={leftimage} />
-          </div>  
+          </div>
         </div>
 
         <div className="middle-column">
@@ -42,25 +49,26 @@ const Result = () => {
             <img className="resultimage" src={REPORT} />
           </div>
           <div className="result-buttons">
-            <Link to="/live-results">
             <button
               title="2024 Results"
-              onClick={() => { }}
+              onClick={openPdf}
             >
               <FaArrowDown />
               2024 Report
             </button>
-            </Link>
-            <button
+            {/* <button
               title="2023 Results"
               onClick={() => {
                 console.log(link);
                 openLink(link);
-              }}>
-              <FaArrowDown /> 2023 Report
-            </button>
+              }}
+            >
+              <FaArrowDown />
+              2023 Report
+            </button> */}
           </div>
         </div>
+
         <div className="right-column-result">
           <div className="rightimage">
             <img src={rightimage} />
