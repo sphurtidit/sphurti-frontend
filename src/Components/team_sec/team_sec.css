@@ -1,139 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
-.whole{
-    width:100vw;
-    line-height: 5vh;
-    margin-top: 5vh;
+.whole {
+  width: 100vw;
+  line-height: 5vh;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-.Heading1{
-    font-family: 'Outfit',sans-serif;
-    font-size: 64px;
-    font-weight:900;
-    height:81px;
-    color: #000000;
-    text-align: center;
-    text-transform: uppercase;
-
+.Heading1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 64px;
+  font-weight: 900;
+  height: 81px;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.sport-card {
-
-
-  /* align-items: end; */
-  margin-left: 20px;
-  width: 22%;
-  height: 60vh;
-  
-  /* display:flex; */
-  /* position: relative; */
-  /* border: 2px solid black; */
-}
-
-h1{
+h1 {
   color: #000;
 }
-      
 
-
-
-
-.detail{
+.detail {
   border: 1px solid black;
   width: 12vw;
   margin-left: 4px;
 }
-.officer{
+.officer {
   width: 25vw;
   height: auto;
-  margin-left: 500px;
-  /* padding-bottom: 10vh; */
-
-  /* position: absolute; */
-  /* margin-bottom: 10x; */
-  /* align-items: end; */
-  
 }
 
 /* .csoon{
   width: 70%;
   height: auto;
 } */
-.Heading2{
-    font-family: 'Outfit', sans-serif;
-    font-size: 32px;
-    margin: 2.5vh 0;
-    font-weight: 800;
-    color: #000000;
-    text-align: center;
-    text-transform: uppercase;
+.Heading2 {
+  font-family: "Outfit", sans-serif;
+  font-size: 32px;
+  margin: 2.5vh 0;
+  font-weight: 800;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
 }
-.FacultyCard{
- display: flex;
- justify-content: center;
- align-items: center;
+.FacultyCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.StudentCard,.FacultyCard{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-    row-gap: 2rem;
-    /* column-gap: 3rem; */
+.StudentCard,
+.FacultyCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  row-gap: 2rem;
+  /* column-gap: 3rem; */
 }
 
 /* .StudentCard>div{
     flex: 0 0 calc(25% - 80px);
 } */
 
-.StudentCard>div {
-    flex-basis: 22%; /* Calculate width for three items in a row with gap */
+.StudentCard > div {
+  flex-basis: 22%; /* Calculate width for three items in a row with gap */
 }
 
 @media (max-width: 800px) {
-    .StudentCard {
-      /* flex-direction: column; */
+  .StudentCard {
+    /* flex-direction: column; */
     justify-content: center;
-
-    }
-    .StudentCard > div {
-      flex-basis: 30%;
-    }
-    .FacultyCard {
-        /* flex-direction: column; */
-      justify-content: center;
-  
-      }
-      .FacultyCard > div {
-        flex-basis: 30%;
-      }
-      
-      .whole{
-        
-        line-height: 3vh;
-        margin-top: 5vh;
-    }
-    .Heading1{
-        font-size: 3rem;
-    }
-    .Heading2{font-size: 1.5rem;}
   }
-  @media (max-width: 500px) {
-    .StudentCard {
-      /* flex-direction: column; */
+  .StudentCard > div {
+    flex-basis: 30%;
+  }
+  .FacultyCard {
+    /* flex-direction: column; */
     justify-content: center;
-
-    }
-    .StudentCard > div {
-      flex-basis: 60%;
-    }
-    .FacultyCard {
-        /* flex-direction: column; */
-      justify-content: center;
-  
-      }
-      .FacultyCard > div {
-        flex-basis: 60%;
-      }
   }
+  .FacultyCard > div {
+    flex-basis: 30%;
+  }
+  .officer {
+    width: 60vw;
+
+  }
+  .whole {
+    line-height: 3vh;
+    margin-top: 5vh;
+  }
+  .Heading1 {
+    font-size: 3rem;
+  }
+  .Heading2 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 500px) {
+  .StudentCard {
+    /* flex-direction: column; */
+    justify-content: center;
+  }
+  .StudentCard > div {
+    flex-basis: 60%;
+  }
+  .FacultyCard {
+    /* flex-direction: column; */
+    justify-content: center;
+  }
+  .FacultyCard > div {
+    flex-basis: 60%;
+  }
+}
