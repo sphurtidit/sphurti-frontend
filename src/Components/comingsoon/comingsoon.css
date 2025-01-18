@@ -1,13 +1,17 @@
-/* ComingSoon.css */
-
-
-/* comingsoon.css */
-
-/* Ensure the parent elements take full screen */
-
-
-.coming-soon-container .img {
+.coming-soon-container img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover; /* Makes the image cover the container */
+/* overflow: hidden; */
+}
+.coming-soon-container{
+  padding-top: 80px;
+}
+
+
+
+.main-div-comingsoon {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
