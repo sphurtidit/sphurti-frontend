@@ -1,49 +1,13 @@
 /* ComingSoon.css */
 
-.coming-soon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1e1e2f; 
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .coming-soon-content {
-    text-align: center;
-  }
-  
-  .coming-soon-title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #f39c12; /* Yellow color */
-  }
-  
-  .coming-soon-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    color: #ddd;
-  }
-  
-  .loader {
-    border: 8px solid #ddd; /* Light gray */
-    border-top: 8px solid #f39c12; /* Yellow */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    margin: 0 auto;
-  }
-  
-  /* Loader animation */
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
+
+/* comingsoon.css */
+
+/* Ensure the parent elements take full screen */
+
+
+.coming-soon-container .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Makes the image cover the container */
+}
