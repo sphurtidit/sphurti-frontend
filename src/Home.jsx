@@ -6,6 +6,7 @@ import Gallery_Section from "./Pages/Gallery_Section/Gallery_Section"
 import DevelopersPage from "./Pages/Developers Page/developers"
 import Loginpage from "./Components/Login/Loginpage"
 import Signinpage from "./Components/signup/Signup"
+import ProfilePage from "./Components/Profilepage/profile"
 
 export const Home=()=>{
     return(
@@ -20,6 +21,7 @@ export const Home=()=>{
         <Route path="/developers" element={<DevelopersPage/>} />
         <Route path="/Loginpage" element={<Loginpage/>}/>
         <Route path="/Signinpage" element={<Signinpage/>}/>
+        <Route path="/profilepage" element={<ProfilePage/>}/>
         </Routes>
        </Router>
        </main>
