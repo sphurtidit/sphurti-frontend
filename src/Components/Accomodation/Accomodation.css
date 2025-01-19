@@ -1,21 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 .Accommodation-Rules {
   font-family: "Outfit";
-  text-align: start;
+  text-align: center;
   width: fit-content;
   color: black;
-  
-  font-size: 1vmin;
-  margin-top: 10vmin;
-  margin-left: 18vw;
+  align-items: center;
+  font-size: 1rem;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.Accommodation-Rules h1{
+  text-align: center;
 }
 .rules-container {
   background-color: white;
   margin-top: 3vmin;
   border: 1px solid #000;
-  width: 65vw;
+  width: 100%;
   height: fit-content;
-  padding: 0vw 5vw;
+  padding: 0rem auto;
   overflow: hidden;
 }
 .download-box {

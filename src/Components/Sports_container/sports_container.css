@@ -1,13 +1,6 @@
 .sports-container {
   --ratio: 3/2;
   transition: all 0.3s;
-  aspect-ratio: var(--ratio); /* Ensures the aspect ratio is maintained */
-  overflow: hidden; /* Hide overflow for clean visuals */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-}
-
-.sports-container:hover {
-  transform: scale(1.05); /* Adds a hover effect for better interaction */
 }
 
 .expanded {
@@ -21,7 +14,7 @@
   display: flex;
   background-color: white;
   width: 35vw;
-  height: 18vw;
+  height: fit-content;
   aspect-ratio: var(--ratio);
 }
 
@@ -41,9 +34,8 @@
 }
 
 .sports-heading {
-  padding-top: 5%;
   margin-top: 2.5rem;
-  font-family: "SF Sports Night";
+  font-family: 'SF Sports Night';
   color: var(--primary-color);
   font-size: 2.9vw;
   max-width: 100%;
@@ -58,11 +50,11 @@
 
 .reg img {
   margin-right: 5px;
-  height: 1.9vw;
+  height: 1.8vw;
 }
 
 .reg-text {
-  font-family: "SF Sports Upright";
+  font-family: 'SF Sports Upright';
   font-size: 2.4vw;
   color: black;
   margin: 0 5px;
@@ -107,25 +99,25 @@
   color: var(--primary-color);
   font-weight: bold;
   font-size: 1.5vw;
-  font-family: "SF Sports Upright";
+  font-family: 'SF Sports Upright';
 }
 
 .team {
   color: black;
   font-size: 0.75vw;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
 }
 
 .cate {
   color: black;
   font-size: 1.1vw;
-  font-family: "SF Sports Upright";
+  font-family: 'SF Sports Upright';
 }
 
 .cate-fees {
   color: var(--primary-color);
   font-size: 1.1vw;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
 }
 
 .buttons {
@@ -133,6 +125,7 @@
   justify-content: start;
   margin-top: 1vh;
   width: 100%;
+
 }
 
 .primary-s {
@@ -146,7 +139,6 @@
   margin-right: 1vw;
   border: none;
   pointer-events: auto;
-  width: 100%;
 }
 
 .disabled-reg {
@@ -166,7 +158,7 @@
 .details {
   color: black;
   font-size: 16px;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
   max-width: 100%;
   max-height: 50%;
 }
@@ -174,7 +166,7 @@
 .amount {
   color: black;
   font-size: 1.1vw;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
   margin-top: 5px;
   margin-bottom: 10px;
   display: flex;
@@ -197,7 +189,7 @@
 .sch-text {
   color: black;
   font-size: 1.1vw;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
   margin-right: 0.25rem;
 }
 
@@ -240,12 +232,11 @@ a:hover {
 .cinfo {
   flex: 1;
   display: flex;
+
 }
 
 .image {
   transition: none;
-  width: auto;
-  height: 35vw;
 }
 
 .cinfo p {
@@ -264,308 +255,269 @@ a:hover {
 .coord-text {
   color: black;
   font-size: 16px;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
 }
 
 .container {
   max-width: 100%;
   width: auto;
   max-height: 50%;
+
 }
 
 @media only screen and (max-width: 1330px) {
   .expanded {
-    --ratio: 3/3.5;
+      --ratio: 3/3.5;
   }
+
 }
 
 @media only screen and (max-width: 1160px) {
   .sports-container {
-    --ratio: 4/2.5;
+      --ratio: 4/2.5;
   }
 
   .sports-heading {
-    margin-top: 2vw;
+      margin-top: 2vw;
   }
 
   .expanded {
-    --ratio: 3/3.5;
+      --ratio: 3/3.5;
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width:1000px) {
   .sports-container {
-    width: 90vw;
-    --ratio: 2/1.2;
+      width: 90vw;
+      --ratio: 2/1.2;
   }
 
   .expanded {
-    --ratio: 3/3;
+      --ratio: 3/3;
   }
 
   .sports-heading {
-    font-size: 4.5vw;
+      font-size: 4.5vw;
   }
 
   .reg img {
-    height: 2.5vw;
+      height: 2.5vw;
   }
 
   .reg-text {
-    font-size: 3.5vw;
+
+      font-size: 3.5vw;
   }
 
   .primary-s {
-    font-size: 2.2vw;
-    padding: 1.4vw 1.4vw;
-    margin-top: 2.5vw;
-    margin-right: 1vw;
+      font-size: 2.2vw;
+      padding: 1.4vw 1.4vw;
+      margin-top: 2.5vw;
+      margin-right: 1vw;
   }
 
   .secondary {
-    font-size: 2.2vw;
-    padding: 1.4vw 1.4vw;
-    margin-top: 2.5vw;
+      font-size: 2.2vw;
+      padding: 1.4vw 1.4vw;
+      margin-top: 2.5vw;
   }
 
   .fees {
-    font-size: 3vw;
+      font-size: 3vw;
   }
 
   .fee {
-    padding: 5px 0;
-    justify-content: space-around;
+      padding: 5px 0;
+      justify-content: space-around;
   }
 
   .team {
-    font-size: 1.5vw;
+      font-size: 1.5vw;
   }
 
   .cate {
-    font-size: 2.2vw;
+      font-size: 2.2vw;
   }
 
   .cate-fees {
-    font-size: 2.2vw;
+      font-size: 2.2vw;
   }
 
   .sch-text {
-    font-size: 2vw;
+      font-size: 2vw;
   }
 
   a {
-    font-size: 2vw;
+      font-size: 2vw;
   }
 
   .prize {
-    font-size: 2vw;
+      font-size: 2vw;
   }
 
   .winner {
-    font-size: 2vw;
+      font-size: 2vw;
   }
 
   .runner {
-    font-size: 2vw;
+      font-size: 2vw;
   }
 
   .coord-text {
-    font-size: 2vw;
+      font-size: 2vw;
   }
 
   .cinfo {
-    font-size: 2vw;
+      font-size: 2vw;
   }
 
   .hr {
-    margin-top: 2.5vh;
-    margin-bottom: 2.5vh;
+      margin-top: 2.5vh;
+      margin-bottom: 2.5vh;
+
   }
 }
 
 @media only screen and (max-width: 730px) {
   .sports-container {
-    --ratio: 3/2.2;
+      --ratio: 3/2.2;
   }
 
   .sports-heading {
-    font-size: 5.5vw;
+      font-size: 5.5vw;
   }
 
   .expanded {
-    --ratio: 3/3.2;
+      --ratio: 3/3.2;
   }
 
   .hr {
-    margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
+      margin-top: 1.5vh;
+      margin-bottom: 1.5vh;
+
   }
 }
 
 @media only screen and (max-width: 450px) {
   .sports-container {
-    --ratio: 3/2.3;
+      --ratio: 3/2.3;
   }
 
   .right-column {
-    display: none;
-    visibility: hidden;
+      display: none;
+      visibility: hidden;
   }
 
   .left-column {
-    margin-left: auto;
-    margin-right: auto;
+      margin-left: auto;
+      margin-right: auto;
+
   }
 
   .expanded {
-    --ratio: 3/4.3;
+      --ratio: 3/4.3;
   }
 
   .sports-heading {
-    font-size: 7vw;
-    text-align: center;
+      font-size: 7vw;
+      text-align: center;
   }
 
   .reg {
-    justify-content: center;
+      justify-content: center;
   }
 
   .reg img {
-    height: 3vw;
+      height: 3vw;
   }
 
   .reg-text {
-    font-size: 6vw;
+      font-size: 6vw;
   }
 
   .fee {
-    padding: 10px 0;
-    justify-content: space-around;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+      padding: 10px 0;
+      justify-content: space-around;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
   }
 
   .fees {
-    font-size: 4vw;
+      font-size: 4vw;
   }
 
   .fee-text {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
   }
 
   .team {
-    font-size: 2.1vw;
+      font-size: 2.1vw;
   }
 
   .cate {
-    font-size: 4vw;
+      font-size: 4vw;
   }
 
   .cate-fees {
-    font-size: 3vw;
+      font-size: 3vw;
   }
 
   .buttons {
-    justify-content: center;
+      justify-content: center;
   }
 
   .primary-s {
-    font-size: 3.5vw;
-    padding: 1.4vw 1.4vw;
-    margin-top: 2.5vw;
-    margin-right: 1vw;
+      font-size: 3.5vw;
+      padding: 1.4vw 1.4vw;
+      margin-top: 2.5vw;
+      margin-right: 1vw;
   }
 
   .secondary {
-    font-size: 3.5vw;
-    padding: 1.4vw 1.4vw;
-    margin-top: 2.5vw;
+      font-size: 3.5vw;
+      padding: 1.4vw 1.4vw;
+      margin-top: 2.5vw;
   }
 
   .hr {
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+
   }
 
   .sch-text {
-    font-size: 3.5vw;
+      font-size: 3.5vw;
   }
 
   a {
-    font-size: 3.5vw;
+      font-size: 3.5vw;
   }
 
   .coord-text {
-    font-size: 3.5vw;
+      font-size: 3.5vw;
   }
 
   .cinfo p {
-    font-size: 3.5vw;
-    padding: 0rem;
+      font-size: 3.5vw;
+      padding: 0rem;
+
   }
 
   .details {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
   }
 
   .prize,
   .winner,
   .runner {
-    font-size: 3.5vw;
+      font-size: 3.5vw;
   }
-  .cmob {
-    margin-left: 0.2rem;
-  }
-}
-
-/* Default styles for larger screens (desktop) */
-.sports-container {
-  --ratio: 3/2;
-  transition: all 0.3s;
-  aspect-ratio: var(--ratio);
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 2px solid var(--secondary-color);
-  display: flex;
-  background-color: white;
-  width: 35vw;
-  height: 18vw;
-}
-
-/* Hover effect */
-.sports-container:hover {
-  transform: scale(1.05);
-}
-
-/* Expanded style */
-.expanded {
-  --ratio: 3/3.2;
-}
-
-/* Media query for tablets (768px and below) */
-@media (max-width: 768px) {
-  .sports-container {
-    width: 50vw; /* Adjust size for smaller screens */
-    height: auto; /* Maintain aspect ratio */
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Slightly smaller shadow */
-  }
-}
-
-/* Media query for mobile devices (480px and below) */
-@media (max-width: 480px) {
-  .sports-container {
-    width: 80vw; /* Take most of the viewport width */
-    height: auto; /* Maintain aspect ratio */
-    border: 1px solid var(--secondary-color); /* Lighter border for small screens */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow */
-  }
-
-  .sports-container:hover {
-    transform: scale(1); /* Disable hover scaling on small screens */
+  .cmob{
+      margin-left: 0.2rem;
   }
 }

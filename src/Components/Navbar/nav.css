@@ -18,31 +18,38 @@ nav li{
 
 }
 
-.A_section{
+.A_section {
     padding-right: 10px;
 }
-nav li:hover{
+
+nav li:hover {
     font-weight: 600;
     cursor: pointer;
 }
-nav li ul.dropdown li{
-    display: block;
-   
-}
-nav li ul.dropdown{
-width: 100%;
-background:  white;
-position: absolute;
-top: 100%; 
-left: 30%; 
-transform: translateX(-120%);
-z-index: 999;
-display: none;
-width: 10vw;
-height: 20vw;
-overflow-y: auto;
-border: 3px solid #ffcc32;
 
+nav li {
+    position: relative; /* Ensure the dropdown positions itself relative to its parent */
+}
+
+nav li ul.dropdown {
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 100%;
+    left: 120%;
+    transform: translateX(-120%);
+    z-index: 999;
+    display: none; /* Hide by default */
+    width: 10vw;
+    height: 20vw;
+    overflow-y: auto;
+    border: 3px solid #ffcc32;
+}
+
+/* Show the dropdown when hovering over the parent `li` or the dropdown itself */
+nav li:hover ul.dropdown,
+nav li ul.dropdown:hover {
+    display: block; /* Make the dropdown visible */
 }
 
 nav li ul.dropdown::-webkit-scrollbar {
@@ -50,19 +57,20 @@ nav li ul.dropdown::-webkit-scrollbar {
 }
 
 nav li ul.dropdown::-webkit-scrollbar-thumb {
-    background-color: #EE0942; 
-    border-radius: 10px; 
+    background-color: #EE0942;
+    border-radius: 10px;
 }
 
 nav li ul.dropdown::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #f1f1f1;
     border-radius: 10px;
 }
 
 /* For Firefox */
 nav li ul.dropdown {
-    scrollbar-color: #ffcc32 #f1f1f1; 
+    scrollbar-color: #ffcc32 #f1f1f1;
 }
+
 
 .content{
     background-color: #f9f9f9;
@@ -100,6 +108,19 @@ nav li ul.dropdown {
     gap: 10px;
     
 }
+
+
+
+
+
+
+
+.login_signup{
+    display: flex;
+    font-size: 20px;
+    color: #EE0942;
+}
+
 .yeldivlin{
   width:10px;
   height:30vh;
@@ -162,7 +183,7 @@ nav li:hover ul.dropdown{
 
 .center-button li{
     color: #000;
-    font-size: 1.0rem;
+    font-size: 1.1rem;
     padding: 10px;
 
 
