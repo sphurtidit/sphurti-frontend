@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Sport_Card.css";
 
-const SportsCard = ({ isOpen, onClose, gameDetails = {} }) => {
+const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {} , eventName}) => {
   if (!isOpen) return null;
 
+  // Destructure category details
   const {
-    name = "N/A",
-    fees = "N/A",
-    winnerPrize = "N/A",
-    runnerUpPrize = "N/A",
-    schedule,
-    rulebook,
-    coordinators = {},
-  } = gameDetails;
+    categoryName = "N/A",
+    registrationFees = "N/A",
+    prizeWinner = "N/A",
+    prizeRunnerUp = "N/A",
+    minNumber = "N/A",
+    maxNumber = "N/A",
+  } = category;
 
   return (
     <div className="modal-overlay">
@@ -23,52 +23,21 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {} }) => {
         <div className="modal-content">
           {/* Left Section */}
           <div className="left-section">
-            <h1>{name}</h1>
+            <h1>{eventName}</h1>
             <div className="fees-section">
               <span className="label">Fees</span>
               <span className="per-team">Per Team</span>
-              <span className="amount">&#8377;{fees}</span>
+              <span className="amount">&#8377;{registrationFees}</span>
             </div>
             <div className="details">
               <p>
                 <strong>Prize Money:</strong> <br />
-                Winners: &#8377;{winnerPrize} &nbsp; <span className="pipe">|</span> &nbsp;
-                Runner Up: &#8377;{runnerUpPrize}
+                Winners: &#8377;{prizeWinner} &nbsp; <span className="pipe">|</span> &nbsp;
+                Runner Up: &#8377;{prizeRunnerUp}
               </p>
               <p>
-                <strong>Schedule:</strong>{" "}
-                {schedule ? (
-                  <a href={schedule} target="_blank" rel="noopener noreferrer">
-                    Download Schedule
-                  </a>
-                ) : (
-                  "Not Available"
-                )}
+                <strong>Team Size:</strong> {minNumber} - {maxNumber} players
               </p>
-              <p>
-                <strong>Rule Book:</strong>{" "}
-                {rulebook ? (
-                  <a href={rulebook} target="_blank" rel="noopener noreferrer">
-                    Download
-                  </a>
-                ) : (
-                  "Not Available"
-                )}
-              </p>
-            </div>
-            <div className="coordinators">
-              <p>
-                <strong>Coordinators:</strong>
-              </p>
-              {Object.keys(coordinators).length > 0 ? (
-                Object.entries(coordinators).map(([key, value], index) => (
-                  <p key={index}>
-                    {key}: {value || "N/A"}
-                  </p>
-                ))
-              ) : (
-                <p>Not Available</p>
-              )}
             </div>
             <div className="button-group">
               <button className="register">Register</button>
@@ -80,7 +49,7 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {} }) => {
           <div className="right-section">
             <img
               src="basketball.png"
-              alt={`${name || "Game"} Player`}
+              alt={`${categoryName || "Game"} Player`}
               className="image"
             />
           </div>
@@ -89,3 +58,5 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {} }) => {
     </div>
   );
 };
+
+export default SportsCard;

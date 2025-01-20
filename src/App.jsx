@@ -18,63 +18,66 @@ function App() {
   const [events, setEvents] = useState();
 
   useEffect(() => {
-      const fetchEvents = async () => {
-        try {
-          const eventResponse = await axios.get(
-            "https://sphurti-backend.onrender.com/api/events"
-          );
-          const categoryResponse = await axios.get(
-            "https://sphurti-backend.onrender.com/api/eventCategory"
-          );
-          console.log("test")
-          if (eventResponse.data && categoryResponse.data.eventCategories) {
-            const mergedEvents = eventResponse.data.map((event) => {
-              const category = categoryResponse.data.eventCategories.find(
-                (cat) => cat.eventId === event._id
-              );
-              return {
-                ...event,
-                category: category || {},
-              };
-            });
-  
-            setEvents(mergedEvents);
-          } else {
-            console.error("Invalid data structure from backend");
-          }
-        } catch (error) {
-          console.error("Error fetching data:", error);
-        } finally {
-          setLoading(false);
+    const fetchEvents = async () => {
+      try {
+        const eventResponse = await axios.get(
+          "https://sphurti-backend.onrender.com/api/events"
+        );
+        const categoryResponse = await axios.get(
+          "https://sphurti-backend.onrender.com/api/eventCategory"
+        );
+        console.log("test", eventResponse);
+        console.log("test2", categoryResponse);
+        if (eventResponse.data && categoryResponse.data.eventCategories) {
+          const mergedEvents = eventResponse.data.map((event) => {
+            const category = categoryResponse.data.eventCategories.filter(
+              (cat) => cat.eventId === event._id
+            );
+            console.log("category -> ",category)
+
+            return {
+              ...event,
+              category: category || [{}],
+            };
+          });
+
+          setEvents(mergedEvents);
+          console.log("test3", events);
+        } else {
+          console.error("Invalid data structure from backend");
         }
-      };
-  
-      fetchEvents();
-    }, []);
-  
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEvents();
+  }, []);
 
   return (
     <>
       <React.Fragment>
-        {!loading && <div className="background-container">
-          <Nav />
-          <Main_HeroPage />
-          {/* <Timer /> */}
-          <MessageSection />
-          {/* <Tribute /> */}
-          <SportsSection events={events}/>
-          <AccomodationCard />
-          <AccommodationSection/>
-          <TeamSec/>
-          <Result />
+        {!loading && (
+          <div className="background-container">
+            <Nav />
+            <Main_HeroPage />
+            {/* <Timer /> */}
+            <MessageSection />
+            {/* <Tribute /> */}
+            <SportsSection gameDetails={events} />
+            <AccomodationCard />
+            <AccommodationSection />
+            <TeamSec />
+            <Result />
 
-          <Footer />
-        </div>}
+            <Footer />
+          </div>
+        )}
         <Lines customLoading={loading} />
       </React.Fragment>
     </>
-
-    
   );
 }
 

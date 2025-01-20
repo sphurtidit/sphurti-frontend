@@ -8,23 +8,24 @@ import footballimg from "../../assets/football.png";
 import volleyballimg from "../../assets/volleyball.png";
 import basketballimg from "../../assets/basketball.png";
 import tabletennisimg from "../../assets/table tennis.png";
-import SportsCard from "../Sport_Card/Sport_Card"; 
+import SportsCard from "../Sport_Card/Sport_Card"; // Import the BasketballEvent component
 
-const SportsSection = ({ rule , events}) => {
+const SportsSection = ({ rule , gameDetails = {}}) => {
+  const [eventName, setEventName] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
-  const [gameDetails, setIsGameDetails] = useState({});
+  const [category, setCategory] = useState()
 
-  const openModal = (game) => {
-    console.log(game)
-    setIsGameDetails(game);
+console.log(gameDetails);
+  const openModal = (category, eventName) => {
     setIsModalOpen(true); // Open the modal
+    setCategory(category)
+    setEventName(eventName)
   };
 
   const closeModal = () => {
     setIsModalOpen(false); // Close the modal
   };
 
-  
   const getImageForEvent = (eventName) => {
     switch (eventName.toLowerCase()) {
       case "badminton":
@@ -47,7 +48,7 @@ const SportsSection = ({ rule , events}) => {
   const getEventType = (index) => {
     return (index % 3) + 1;
   };
-  
+
   return (
     <div className="nav-sports">
         <div className="parent-container-sports">
@@ -55,41 +56,42 @@ const SportsSection = ({ rule , events}) => {
             <h1>SPORTS</h1>
           </div>
           <div className="allsports">
-            {events.map((event, index) => (
+            {gameDetails.map((event, index) => (
               <SportsContainer
                 openModal={openModal}
                 closeModal={closeModal}
                 key={event._id}
                 rule={rule}
-                game={{
-                  name: event.name,
-                  rulebook: event.rulebook,
-                  coordinators: {
-                    [event.coordinator1]: event.coordinator1Contact,
-                    [event.coordinator2]: event.coordinator2Contact,
-                  },
-                  fees: event.category
-                    ? event.category.registrationFees
-                    : "N/A",
-                  winnerPrize: event.category
-                    ? event.category.prizeWinner
-                    : "N/A",
-                  runnerUpPrize: event.category
-                    ? event.category.prizeRunnerUp
-                    : "N/A",
-                  schedule: event.schedule || "",
-                  showprize: true,
-                  separate: event.category
-                    ? event.category.minNumber !== event.category.maxNumber
-                    : false,
-                }}
+                event={event}
+                // game={{
+                //   name: event.name,
+                //   rulebook: event.rulebook,
+                //   coordinators: {
+                //     [event.coordinator1]: event.coordinator1Contact,
+                //     [event.coordinator2]: event.coordinator2Contact,
+                //   },
+                //   fees: event.category
+                //     ? event.category.registrationFees
+                //     : "N/A",
+                //   winnerPrize: event.category
+                //     ? event.category.prizeWinner
+                //     : "N/A",
+                //   runnerUpPrize: event.category
+                //     ? event.category.prizeRunnerUp
+                //     : "N/A",
+                //   schedule: event.schedule || "",
+                //   showprize: true,
+                //   separate: event.category
+                //     ? event.category.minNumber !== event.category.maxNumber
+                //     : false,
+                // }}
                 type={getEventType(index)}
                 image={getImageForEvent(event.name)}
               />
             ))}
           </div>
         </div>
-      <SportsCard isOpen={isModalOpen} onClose={closeModal} gameDetails={gameDetails}/>
+      <SportsCard isOpen={isModalOpen} onClose={closeModal} category={category} eventName={eventName}/>
     </div>
   );
 };
