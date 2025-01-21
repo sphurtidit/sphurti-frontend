@@ -63,28 +63,6 @@ console.log(gameDetails);
                 key={event._id}
                 rule={rule}
                 event={event}
-                // game={{
-                //   name: event.name,
-                //   rulebook: event.rulebook,
-                //   coordinators: {
-                //     [event.coordinator1]: event.coordinator1Contact,
-                //     [event.coordinator2]: event.coordinator2Contact,
-                //   },
-                //   fees: event.category
-                //     ? event.category.registrationFees
-                //     : "N/A",
-                //   winnerPrize: event.category
-                //     ? event.category.prizeWinner
-                //     : "N/A",
-                //   runnerUpPrize: event.category
-                //     ? event.category.prizeRunnerUp
-                //     : "N/A",
-                //   schedule: event.schedule || "",
-                //   showprize: true,
-                //   separate: event.category
-                //     ? event.category.minNumber !== event.category.maxNumber
-                //     : false,
-                // }}
                 type={getEventType(index)}
                 image={getImageForEvent(event.name)}
               />

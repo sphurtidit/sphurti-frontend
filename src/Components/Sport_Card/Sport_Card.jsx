@@ -13,6 +13,7 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {} , eventNa
     minNumber = "N/A",
     maxNumber = "N/A",
   } = category;
+  console.log('details-> ', category)
 
   return (
     <div className="modal-overlay">
