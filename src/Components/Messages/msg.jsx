@@ -92,28 +92,28 @@ const toggle = () => {
   );
 };
 
-FromTheDesk.propTypes = {
-    name: PropTypes.string,
-    desgn: PropTypes.string,
-    type: PropTypes.Number,
-    image: PropTypes.string,
-    text: PropTypes.string
-  };
+// FromTheDesk.propTypes = {
+//     name: PropTypes.string,
+//     desgn: PropTypes.string,
+//     type: PropTypes.Number,
+//     image: PropTypes.string,
+//     text: PropTypes.string
+//   };
 
-  MsgContainer.propTypes = {
-    name: PropTypes.string,
-    desgn: PropTypes.string,
-    type: PropTypes.number,
-    image: PropTypes.string,
-    text: PropTypes.string
-  };  
+//   MsgContainer.propTypes = {
+//     name: PropTypes.string,
+//     desgn: PropTypes.string,
+//     type: PropTypes.number,
+//     image: PropTypes.string,
+//     text: PropTypes.string
+//   };  
 
-  MsgContainerMob.propTypes = {
-    name: PropTypes.string,
-    desgn: PropTypes.string,
-    type: PropTypes.number,
-    image: PropTypes.string,
-    text: PropTypes.string
-  };
+//   MsgContainerMob.propTypes = {
+//     name: PropTypes.string,
+//     desgn: PropTypes.string,
+//     type: PropTypes.number,
+//     image: PropTypes.string,
+//     text: PropTypes.string
+//   };
 
 export default FromTheDesk;
