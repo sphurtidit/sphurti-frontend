@@ -8,6 +8,8 @@ import MessageSection from "./Components/Messages/message-section";
 import Nav from "./Components/Navbar/nav";
 import axios from "axios";
 import { Lines } from "react-preloaders";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import React, { useState, useEffect } from "react";
 import AccommodationSection from "./Components/Accomodation/Accommodation";
@@ -58,6 +60,7 @@ function App() {
 
   return (
     <>
+     <ToastContainer />
       <React.Fragment>
         {!loading && (
           <div className="background-container">

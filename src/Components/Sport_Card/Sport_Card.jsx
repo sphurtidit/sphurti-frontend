@@ -22,7 +22,6 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {} , eventNa
           &times;
         </button>
         <div className="modal-content">
-          {/* Left Section */}
           <div className="left-section">
             <h1>{eventName}</h1>
             <div className="fees-section">
