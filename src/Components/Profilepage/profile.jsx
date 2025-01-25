@@ -45,16 +45,33 @@ function ProfilePage() {
           <div className={profile.image}>
             <h3 className={profile.heading}>Profile photo</h3>
           </div>
-          <div className={profile.contact}>
-            <h3 className={profile.contactinfo}>
-              Phone: {userDetails.phone_no} <br /> Email: {userDetails.email}
-            </h3>
-          </div>
+          <button
+              className="modal-button"
+              onClick={() => handleNavigation("/comingsoon")}
+            >
+              Logout
+            </button>
+            <button
+              className="modal-button"
+              onClick={() => handleNavigation("/comingsoon")}
+            >
+              Payments
+            </button>
         </div>
         <div className={profile.mainheading}>
           <div className={profile.bgplate}>
             <h2 className={profile.text}>
               Your Name: {userDetails.name}
+            </h2>
+          </div>
+          <div className={profile.bgplate}>
+            <h2 className={profile.text}>
+              Phone No.: {userDetails.phone_no}
+            </h2>
+          </div>
+          <div className={profile.bgplate}>
+            <h2 className={profile.text}>
+              Email Id : {userDetails.email}
             </h2>
           </div>
           <div className={profile.bgplate1}>
