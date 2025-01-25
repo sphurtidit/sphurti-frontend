@@ -6,7 +6,7 @@ import DevelopersPage from "./Pages/Developers Page/developers"
 import Loginpage from "./Components/Login/Loginpage"
 import Signinpage from "./Components/signup/Signup"
 import ComingSoon from "./Components/comingsoon/comingsoon"
-
+import RegistrationForm from "./Components/Registration_Page/Registration_Page1"
 export const Home=()=>{
     return(
         <main>
@@ -18,7 +18,7 @@ export const Home=()=>{
         <Route path="/Loginpage" element={<Loginpage/>}/>
         <Route path="/Signinpage" element={<Signinpage/>}/>
         <Route path="/comingsoon" element={<ComingSoon/>}/>
-        
+        <Route path="/Registration" element={<RegistrationForm/>}/>
         </Routes>
        </Router>
        </main>

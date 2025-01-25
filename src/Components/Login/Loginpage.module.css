@@ -1,167 +1,266 @@
+.bgimage {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100vh; 
+    z-index: -2; /* Keep it behind all other elements */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+}
+
 .loginContainer {
-    margin-left: 30vw;
+    position: relative;
+    z-index: 1; /* Bring this above the background image */
+    margin: auto;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    background-color:fff7e0;
-    backdrop-filter: blur(7px);
-    width: 40vw;
-    border: 4px solid #ffcc32;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    height: 100vh;
+    background-color: white; /* Ensure white background */
+    width: 32vw;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+}
+
+.logo_1 {
+    height: 80px;
+    padding: 10px;
+    margin: 70px 10px 10px 10px;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.logo_2 {
+    height: 80px;
+    padding: 20px;
+    margin: 70px 10px 10px 10px;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.logo_3 {
+    height: 80px;
+    padding: 10px;
+    margin: 70px 10px 10px 10px;
+    grid-row: 1;
+    grid-column: 2; 
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr; /* 1fr for left, 3fr for center, 1fr for right */
+    grid-template-rows: auto; /* Automatically adjust row height */
+    height: 100vh; /* Full viewport height */
 }
 
 .loginBox {
-    
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    height: 80%;
+    padding: 2.5rem;
+    border-radius: 1px;
     text-align: center;
+    height:93%;
+    width: 90%; /* Wider box inside */
+    background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Soft gradient */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    grid-column: 2; /* Center it in the grid */
+    grid-row: 1;
 }
 
-h1{
-    margin-bottom: 1.5rem;
-    color: #ffcc32;
-    font-size: 3.2rem;
+.icon{
+height: 80px;
+    padding: 10px;
+    margin: 70px 10px 10px 10px;
+    grid-row: 1/span 2 ;
+    grid-column: 3/span 4;
+}
+
     
-    
+
+h1 {
+    margin-bottom: 2.5rem;
+    color: #4a148c; /* Deep purple */
+    font-size: 2.5rem;
+    font-weight: bold; /* Bold headline */
+    letter-spacing: 0.05em; /* Slight spacing for a polished look */
 }
 
 .formGroup {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem; /* More spacing */
+    font-size: 15%;
 }
 
 label {
-    color: #ee0942;
+    color: #6a1b9a; /* Soft purple */
     text-align: left;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: 500; /* Lighter font for label */
+    font-size: 1rem; /* Balanced size */
+    margin-bottom: 0.5rem; /* Spacing from input */
 }
 
 input {
     padding: 1rem;
-    border: 2px solid #ee0942;
-    border-radius: 10px;
-    width: 90%;
-    height: 5vh;
+    border: none; /* Removed default border */
+    border-radius: 12px;
+    width: 100%; /* Full width */
     font-size: 1rem;
-    background: transparent;
-    color: black;
-    box-sizing:border-box
+    background: linear-gradient(145deg, #fdfbfb, #f1f1f1); /* Subtle gradient */
+    color: #333; /* Text color */
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    box-sizing: border-box;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
-.forpass{
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 8px #7c4dff; /* Soft purple glow */
+    transform: scale(1.02); /* Slight zoom effect */
+}
+
+.forpass {
     text-align: right;
-    font-size: 70%;
-    color: rgb(111, 53, 165);
-    margin-right: 12%;
-   
-  
+    font-size: 0.9rem;
+    color: #7c4dff; /* Purple for link */
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .loginBtn {
-    margin-top: 5%;
-    border:2px solid #7f1bb6;
-    border-radius: 10px;
-    background-color: white;
-    color: #7f1bb6;
+    margin-top: 1rem;
+    border: none; /* Clean button */
+    border-radius: 8px;
+    background: linear-gradient(145deg, #7c4dff, #5e35b1); /* Purple gradient */
+    color: white;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: background-color 0.3s;
-    width: 50%;
-    padding: 0.5rem 1rem;
-    box-sizing:border-box;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; /* Full width button */
+    padding: 0.8rem 1rem;
+    box-sizing: border-box;
+    font-weight: bold;
 }
 
 .loginBtn:hover {
-    background-color:#7f1bb6;
-    color: white;
+    background: #4a148c; /* Deeper purple */
+    transform: translateY(-2px); /* Slight hover lift */
+}
+
+.socialBtn {
+    margin-top: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff; /* Clean white */
+    color: #6a1b9a; /* Purple for button text */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    box-sizing: border-box;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+.socialBtn:hover {
+    background-color: #f7eaf7; /* Soft pastel purple */
+    color: #4a148c;
 }
 
 .signupText {
     font-size: 1rem;
-    margin-top: 1rem;
-    color: rgb(111, 53, 165);
+    margin-top: 1.5rem;
+    color: #555;
 }
 
+.signupText a {
+    color: #7c4dff; /* Vibrant purple */
+    font-weight: bold;
+    text-decoration: none;
+}
 
- @media (max-width: 1024px) {
+.signupText a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
     .loginContainer {
-        width: 60vw;
-        height: 90vh;
-        margin-left: 20vw;
-    } 
+        width: 50vw;
+        height: auto;
+    }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+    }
+    .formGroup {
+        font-size: 0.9rem; /* Reduced font size */
     }
 
     input {
+        font-size: 0.8rem;
+    }
+
+    .loginBtn {
         font-size: 0.9rem;
     }
+}
+
+@media (max-width: 768px) {
+    .loginContainer {
+        width: 70vw;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .formGroup {
+        font-size: 0.8rem; /* Reduced font size */
+    }
+
 
     .loginBtn {
-        font-size: 1rem;
-        width: 50%;
-    } 
-}
- @media (max-width: 768px) {
-    .loginContainer {
-        height: 70vh;
-        width: 70vw;
-        margin-left:15vw;
+        font-size: 0.8rem;
     }
-    h1{
-        font-size: 2rem;
+
+    .socialBtn {
+        font-size: 0.8rem;
     }
-    label{
-        font-size: 0.7rem;
-    }
-    .loginBtn{
-        margin-top: 1px;;
-    }
-    .signupText{
-        margin-top:1px;
-        font-size:0.8rem;
-    }
-   
 }
 
- @media (max-width: 425px) {
-    .loginContainer{
-        width:80vw;
-        height:65vh;
-        margin-left:10vw;
+@media (max-width: 425px) {
+    .loginContainer {
+        width: 90vw;
+        height: auto;
+        padding: 0.75rem;
     }
+
     h1 {
-        
         font-size: 1.5rem;
     }
-    
+    .formGroup {
+        font-size: 0.7rem; /* Reduced font size */
+    }
 
     .loginBtn {
-        font-size: 0.7rem;
-        width: 50%;
-    }
-    label{
-        font-size: 0.7rem;
-        
-    }
-    input{
-        width:90%;
+        font-size: 0.8rem;
     }
 
-    .forpass {
-        margin-right: 2.5rem;
-        font-size: 0.5rem;
+    .socialBtn {
+        font-size: 0.8rem;
     }
 
     .signupText {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
-} 
- 
+}
+

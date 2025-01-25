@@ -4,6 +4,8 @@ import Main_HeroPage from "./Components/Main_HeroPage/Main_HeroPage";
 import Timer from "./Components/timer/timer";
 import TeamSec from "./Components/team_sec/team_sec";
 import Footer from "./Components/Footer/Footer";
+
+
 // import Tribute from "./Components/Tribute/tribute";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -116,9 +118,11 @@ function App() {
           {/* <Tribute /> */}
           <SportsSection/>
           <AccomodationCard />
+        
           <AccommodationSection/>
           <TeamSec/>
           <Result />
+         
 
           <Footer />
         </div>
