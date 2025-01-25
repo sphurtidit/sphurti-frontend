@@ -50,7 +50,7 @@ console.log(gameDetails);
   };
 
   return (
-    <div className="nav-sports">
+    <div className="nav-sports" id="sports-section">
         <div className="parent-container-sports">
           <div className="heading">
             <h1>SPORTS</h1>

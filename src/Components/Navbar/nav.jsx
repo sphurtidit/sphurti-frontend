@@ -7,8 +7,8 @@ import SPHURTI from "../../assets/sphurti.png";
 import SPH from "../../assets/sph.png";
 import { MdClose } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link } from "react-scroll";
-import Gallery_Button from "../Gallery_Button/Gallery_Button";
+import { Link as ScrollLink, scroller } from "react-scroll";
+import Button from "../Button/Button";
 import { FaCaretDown } from "react-icons/fa";
 import image from "../../assets/yellowline.png";
 
@@ -26,39 +26,45 @@ function Nav() {
     navRef.current.classList.toggle("show-nav");
   };
 
+  const handleNavigateAndScroll = (path, section) => {
+    navigate(path); // Navigate to the target page
+    console.log("Navigating to", path);
+    setTimeout(() => {
+      // Scroll to the section after navigation
+      scroller.scrollTo(section, {
+        duration: 500,
+        smooth: true,
+        offset: -80, // Adjust offset for sticky navbar
+      });
+    }, 1000); // Delay to ensure the page is fully loaded
+  };
+
   const handleNavigation = (path) => {
-    toggleModal(); // Close the modal before navigation (if modal is open)
-    navigate(path); // Redirect to the specified path
+    toggleModal();
+    navigate(path);
   };
 
   return (
     <nav>
-      <div className="logo-left">
-        {/* Link the SPHURTI logo to the "home" section */}
-        <Link to="home" offset={-80} smooth={true} duration={500}>
-          <img src={SPH} alt="SPHURTI" className="logo" />
-        </Link>
-      </div>
       <div className="main-nav" ref={navRef}>
-        <div className="nav-logo-container">
-          <img src={DIT} alt="DIT" className="nav-logo" />
-          <img src={NAAC} alt="NAAC" className="nav-logo" />
-          <img src={SPHURTI} alt="SPHURTI" className="nav-logo" />
-        </div>
+      <div className="logo-left">
+        <ScrollLink to="home" offset={-80} smooth={true} duration={500}>
+          <img src={SPH} alt="SPHURTI" className="logo" />
+        </ScrollLink>
+      </div>
         <div className="center-button">
-          <Link to="home" offset={-80} smooth={true} duration={500}>
-            <li onClick={showNav}>HOME</li>
-          </Link>
-          <Link to="" offset={-80}>
+        <ScrollLink>
+            <li onClick={() => handleNavigateAndScroll("/", "home-section")}>HOME</li>
+          </ScrollLink>
+          <ScrollLink to="" offset={-80}>
             <li onClick={showNav}>
               <div className="A_section">ARCHIVE</div>
-              <FaCaretDown />
               <ul className="dropdown">
                 {[...Array(11).keys()].map((i) => {
                   const year = 2024 - i;
                   return (
                     <div key={year} className="content">
-                      <a href="#" onClick={toggleModal}>
+                      <a href="#" onClick={toggleModal}>  
                         {year}
                       </a>
                     </div>
@@ -66,26 +72,20 @@ function Nav() {
                 })}
               </ul>
             </li>
-          </Link>
-          <Link to="nav-sports" offset={-80} smooth={true} duration={500}>
-            <li onClick={showNav}>SPORTS</li>
-          </Link>
-          <Link to="acc-section" offset={-80} smooth={true} duration={500}>
-            <li onClick={showNav}>ACCOMMODATION</li>
-          </Link>
-          <Link to="team-nav" offset={-80} smooth={true} duration={500}>
-            <li onClick={showNav}>CONTACT</li>
-          </Link>
-
-          <Gallery_Button />
-
-          {/* LOGIN and SIGNUP links */}
-          
-          {isLoggedIn ? <li onClick={() => handleNavigation("/profilepage")}>PROFILE</li> : <div className="login_signup">
-            <li onClick={() => handleNavigation("/Loginpage")}>LOGIN</li>
-            <li onClick={() => handleNavigation("/Signinpage")}>SIGNUP</li>
-          </div>}
+          </ScrollLink>
+          <ScrollLink offset={-80}>
+            <li onClick={() => handleNavigateAndScroll("/", "sports-section")}>SPORTS</li>
+          </ScrollLink>
+          <ScrollLink offset={-80}>
+            <li onClick={() => handleNavigateAndScroll("/comingsoon", "cs-section")}>FAQ</li>
+          </ScrollLink>
+          <ScrollLink offset={-80}>
+            <li onClick={() => handleNavigateAndScroll("/gallery", "gallery-section")}>GALLERY</li>
+          </ScrollLink>
         </div>
+        <div className="right-side">
+            <Button text={"LOGIN"} onClick={() => navigate("/Loginpage")}/>
+          </div>
         <button className="nav-button nav-close-button" onClick={showNav}>
           <MdClose />
         </button>
