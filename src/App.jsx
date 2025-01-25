@@ -13,6 +13,7 @@ import { Lines } from "react-preloaders";
 
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Timer from "./Components/timer/timer";
 
 import React, { useState, useEffect } from "react";
 import AccommodationSection from "./Components/Accomodation/Accommodation";
@@ -70,7 +71,7 @@ function App() {
           <div className="background-container">
             <Nav />
             <Main_HeroPage />
-            {/* <Timer /> */}
+            <Timer />
             <MessageSection />
             {/* <Tribute /> */}
             <SportsSection gameDetails={events} />
