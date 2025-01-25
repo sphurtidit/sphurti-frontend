@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import profile from "./profile.module.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function ProfilePage() {
   const [userDetails, setUserDetails] = useState(null); // State to store user details
   const [error, setError] = useState(null); // State to store any error
+  const navigate = useNavigate();
 
   const handleNavigation = (path) => {
-    // toggleModal();
     navigate(path);
   };
 
@@ -53,7 +54,7 @@ function ProfilePage() {
           <button
             className="modal-button"
             onClick={() => {
-                localStorage.removeItem("authToken");
+              localStorage.removeItem("authToken");
               handleNavigation("/");
             }}
           >
