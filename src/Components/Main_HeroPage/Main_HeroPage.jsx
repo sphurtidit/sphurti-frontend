@@ -24,7 +24,7 @@ function MyComponent() {
     }, []);
 
     return (
-        <div className="home">
+        <div className="home" id="home-section">
             {isDesktopView ? <HeroPage /> : <Mobile_HeroPage />}
         </div>
     );

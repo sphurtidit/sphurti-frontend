@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 
 const SportsContainer = ({ rule, game, type, image, openModal, closeModal, event}) => {
   let col = type == 1 ? "yellow" : type == 2 ? "red" : "purple";
-  // let sch = game["schedule"] !== "";
 
   return (
     <div className={`sports-container ${col}`}>

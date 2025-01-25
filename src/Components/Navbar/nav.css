@@ -11,7 +11,8 @@ nav {
     max-width: 100vw;
     z-index: 100;
 }
-nav li{
+
+nav li {
     text-decoration: none;
     color: #000;
     display: flex;
@@ -28,7 +29,8 @@ nav li:hover {
 }
 
 nav li {
-    position: relative; /* Ensure the dropdown positions itself relative to its parent */
+    position: relative;
+    /* Ensure the dropdown positions itself relative to its parent */
 }
 
 nav li ul.dropdown {
@@ -39,7 +41,8 @@ nav li ul.dropdown {
     left: 120%;
     transform: translateX(-120%);
     z-index: 999;
-    display: none; /* Hide by default */
+    display: none;
+    /* Hide by default */
     width: 10vw;
     height: 20vw;
     overflow-y: auto;
@@ -49,7 +52,8 @@ nav li ul.dropdown {
 /* Show the dropdown when hovering over the parent `li` or the dropdown itself */
 nav li:hover ul.dropdown,
 nav li ul.dropdown:hover {
-    display: block; /* Make the dropdown visible */
+    display: block;
+    /* Make the dropdown visible */
 }
 
 nav li ul.dropdown::-webkit-scrollbar {
@@ -72,26 +76,27 @@ nav li ul.dropdown {
 }
 
 
-.content{
+.content {
     background-color: #f9f9f9;
-    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    border: 1px solid #EE0942; 
+    border: 1px solid #EE0942;
     text-align: center;
-   
+
 }
+
 .content a {
-    display: block; 
-    padding: 10px; 
+    display: block;
+    padding: 10px;
     color: #000;
     text-decoration: none;
-    width: 100%; 
+    width: 100%;
 }
 
 .content a:hover {
-    background: #EE0942; 
-    
+    background: #EE0942;
 }
+
 .modal-overlay {
     position: fixed;
     top: 10px;
@@ -104,27 +109,21 @@ nav li ul.dropdown {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    margin-top:2rem ;
+    margin-top: 2rem;
     gap: 10px;
-    
+
 }
 
-
-
-
-
-
-
-.login_signup{
+.login_signup {
     display: flex;
     font-size: 20px;
     color: #EE0942;
 }
 
-.yeldivlin{
-  width:10px;
-  height:30vh;
-  overflow: hidden;
+.yeldivlin {
+    width: 10px;
+    height: 30vh;
+    overflow: hidden;
 }
 
 .modal-content {
@@ -136,7 +135,7 @@ nav li ul.dropdown {
     width: 30vw;
     height: 30vh;
     border: 2px solid black;
-    
+
 }
 
 .modal-close {
@@ -148,6 +147,7 @@ nav li ul.dropdown {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
 .modal-button {
     display: block;
     margin: 10px auto;
@@ -162,31 +162,32 @@ nav li ul.dropdown {
 }
 
 .modal-button:hover {
-    background:  #EE0942;
-    color:white;
+    background: #EE0942;
+    color: white;
 }
 
-nav li:hover ul.dropdown{
+nav li:hover ul.dropdown {
     display: block;
     color: white;
 }
-.center-button a{
+
+.center-button a {
     text-decoration: none;
 }
-.center-button{
+
+.center-button {
     display: flex;
     align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;
+    gap: 20px;
 }
 
-.center-button li{
+.center-button li {
     color: #000;
     font-size: 1.1rem;
     padding: 10px;
-
-
 }
 
 .nav-button {
@@ -199,17 +200,19 @@ nav li:hover ul.dropdown{
     color: #000;
     opacity: 0;
     visibility: hidden;
+    display: none;
 }
 
-.main-nav{
+.main-nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     /* align-items: flex-end; */
     width: 100%;
-    padding: 0 15px;
+    padding: 0 100px;
+    
 }
 
-.main-nav .reg-nav-button{
+.main-nav .reg-nav-button {
     margin-left: 50px;
     padding: 5px 20px;
     color: white;
@@ -218,19 +221,27 @@ nav li:hover ul.dropdown{
     border-radius: 5px;
 }
 
-.nav-logo-container{
+.nav-logo-container {
     display: none;
     visibility: hidden;
     opacity: 0;
 }
 
-@media only screen and (max-width: 1024px){
+.right-side{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    /* width: 30%; */
+}
+
+@media only screen and (max-width: 1024px) {
     .nav-button {
         opacity: 1;
         visibility: visible;
+        display: block;
     }
 
-    .main-nav{
+    .main-nav {
         position: fixed;
         top: 0;
         left: 0;
@@ -244,8 +255,8 @@ nav li:hover ul.dropdown{
         transform: translateX(100%);
         transition: 1s;
     }
-    
-    .show-nav{
+
+    .show-nav {
         transform: none;
     }
 
@@ -257,10 +268,10 @@ nav li:hover ul.dropdown{
 
     .center-button {
         flex-direction: column;
-    
+
     }
 
-    .nav-logo-container{
+    .nav-logo-container {
         visibility: visible;
         opacity: 1;
         display: flex;
@@ -269,16 +280,14 @@ nav li:hover ul.dropdown{
         max-width: 100vw;
     }
 
-    .nav-logo-container img{
+    .nav-logo-container img {
         height: 3rem;
         margin: 10px 10px;
     }
 
-    .main-nav .reg-nav-button{
+    .main-nav .reg-nav-button {
         margin-left: 0;
     }
-    
-    
 }
 
 .logo {
@@ -286,9 +295,6 @@ nav li:hover ul.dropdown{
     padding: .5rem 1rem;
 }
 
-.logo-left{
+.logo-left {
     height: 5rem;
-    margin-left: 5vw;
 }
-
-

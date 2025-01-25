@@ -6,7 +6,7 @@ body {
   color: #333;
 }
 
-.container {
+.cont {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -15,7 +15,6 @@ body {
   padding-left: 20px; /* Added left padding */
   border: 2px solid #800080; /* Purple border color */
   width: 700px; /* Adjusted width */
-  height: 550px; /* Adjusted height */
   margin: 50px auto; /* Center the container */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   background-color: #fff; /* White background */

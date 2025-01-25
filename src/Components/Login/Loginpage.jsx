@@ -1,9 +1,51 @@
 import React, { useState } from "react";
 import logpage from "./Loginpage.module.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { handleSuccess, handleError } from "../../utils"; // Import utility functions
+import { ToastContainer } from "react-toastify"; // Toast container for notifications
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify styles
 
 function Loginpage() {
   const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault(); // Prevent form submission from reloading the page
+    setError(""); // Clear any previous errors
+
+    try {
+      const response = await axios.post(
+        "https://sphurti-backend.onrender.com/api/user/login",
+        { email, password }
+      );
+
+      // Extract data from the response
+      const { token, user } = response.data.data;
+
+      // Save token and user details in localStorage
+      localStorage.setItem("authToken", token);
+      localStorage.setItem("user", JSON.stringify(user));
+
+      // Show success toast
+      handleSuccess("Login successful!");
+
+      // Redirect to the profile page
+      navigate("/");
+    } catch (err) {
+      console.error("Login failed:", err);
+      const errorMessage =
+        err.response?.data?.message || "Something went wrong. Please try again.";
+
+      // Show error toast
+      handleError(errorMessage);
+
+      setError(errorMessage);
+    }
+  };
 
   return (
     <>
@@ -13,14 +55,16 @@ function Loginpage() {
             <p>Welcome to </p>
             Sphurti
           </h1>
-          <form>
+          <form onSubmit={handleLogin}>
             <div className={logpage.formGroup}>
-              <label htmlFor="username">Username</label>
+              <label htmlFor="email">Email</label>
               <input
-                type="text"
-                id="username"
-                name="username"
-                placeholder="Enter your username"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
@@ -31,6 +75,8 @@ function Loginpage() {
                 id="password"
                 name="password"
                 placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
@@ -41,11 +87,14 @@ function Loginpage() {
               Login
             </button>
             <p className={logpage.signupText}>
-              Don't have an account? <a href="#">Sign Up</a>
+              Don't have an account?{" "}
+              <span onClick={() => navigate("/Signinpage")}>Sign Up</span>
             </p>
           </form>
         </div>
       </div>
+      {/* ToastContainer to render the toast notifications */}
+      <ToastContainer />
     </>
   );
 }
