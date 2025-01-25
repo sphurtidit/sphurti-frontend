@@ -18,6 +18,7 @@ import AccomodationCard from "./Components/Accomodation_2nd/Accomodation_2nd";
 function App() {
   const [loading, setLoading] = useState(true);
   const [events, setEvents] = useState();
+  const isLoggedIn = localStorage.getItem("authToken") != null;
 
   useEffect(() => {
     const fetchEvents = async () => {

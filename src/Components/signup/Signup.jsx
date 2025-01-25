@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import { handleError, handleSuccess } from "../../utils";
 import "react-toastify/dist/ReactToastify.css";
 
+
 function Signinpage() {
   const [isOtpVisible, setOtpVisible] = useState(false); // State to toggle OTP visibility
   const [otp, setOtp] = useState(""); // State to store OTP
@@ -48,17 +49,10 @@ function Signinpage() {
       });
       const result = await response.json();
       if (response.ok) {
-        handleSuccess("Signup successful! Please verify your email.");
-        setSignupInfo({
-          name: "",
-          email: "",
-          phone_no: "",
-          password: "",
-          clg_name: "",
-          clg_id: "",
-          branch: "",
-          year: "",
-        });
+        handleSuccess("Signup successful!");
+        console.log(result.data.token)
+        localStorage.setItem("authToken", result.data.token)
+        navigate("/");
         console.log(result); //Remove this line
       } else {
         handleError(result.message || "Signup failed");
