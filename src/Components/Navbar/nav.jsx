@@ -16,6 +16,7 @@ function Nav() {
   const [isModalVisible, setModalVisible] = useState(false);
   const navigate = useNavigate(); // Initialize useNavigate
   const navRef = useRef();
+  const isLoggedIn = localStorage.getItem("authToken") != null;
 
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
@@ -79,10 +80,11 @@ function Nav() {
           <Gallery_Button />
 
           {/* LOGIN and SIGNUP links */}
-          <div className="login_signup">
+          
+          {isLoggedIn ? <li onClick={() => handleNavigation("/profilepage")}>PROFILE</li> : <div className="login_signup">
             <li onClick={() => handleNavigation("/Loginpage")}>LOGIN</li>
             <li onClick={() => handleNavigation("/Signinpage")}>SIGNUP</li>
-          </div>
+          </div>}
         </div>
         <button className="nav-button nav-close-button" onClick={showNav}>
           <MdClose />

@@ -8,6 +8,8 @@ import MessageSection from "./Components/Messages/message-section";
 import Nav from "./Components/Navbar/nav";
 import axios from "axios";
 import { Lines } from "react-preloaders";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import React, { useState, useEffect } from "react";
 import AccommodationSection from "./Components/Accomodation/Accommodation";
@@ -16,6 +18,7 @@ import AccomodationCard from "./Components/Accomodation_2nd/Accomodation_2nd";
 function App() {
   const [loading, setLoading] = useState(true);
   const [events, setEvents] = useState();
+  const isLoggedIn = localStorage.getItem("authToken") != null;
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -58,6 +61,7 @@ function App() {
 
   return (
     <>
+     <ToastContainer />
       <React.Fragment>
         {!loading && (
           <div className="background-container">

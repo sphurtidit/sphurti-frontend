@@ -19,8 +19,8 @@ export const Home=()=>{
         <Route path="/Loginpage" element={<Loginpage/>}/>
         <Route path="/Signinpage" element={<Signinpage/>}/>
         <Route path="/comingsoon" element={<ComingSoon/>}/>
-        
         <Route path="/profilepage" element={<ProfilePage/>}/>
+
         </Routes>
        </Router>
        </main>
