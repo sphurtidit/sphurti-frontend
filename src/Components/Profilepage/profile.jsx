@@ -6,6 +6,11 @@ function ProfilePage() {
   const [userDetails, setUserDetails] = useState(null); // State to store user details
   const [error, setError] = useState(null); // State to store any error
 
+  const handleNavigation = (path) => {
+    // toggleModal();
+    navigate(path);
+  };
+
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -46,33 +51,30 @@ function ProfilePage() {
             <h3 className={profile.heading}>Profile photo</h3>
           </div>
           <button
-              className="modal-button"
-              onClick={() => handleNavigation("/comingsoon")}
-            >
-              Logout
-            </button>
-            <button
-              className="modal-button"
-              onClick={() => handleNavigation("/comingsoon")}
-            >
-              Payments
-            </button>
+            className="modal-button"
+            onClick={() => {
+                localStorage.removeItem("authToken");
+              handleNavigation("/");
+            }}
+          >
+            Logout
+          </button>
+          <button
+            className="modal-button"
+            onClick={() => handleNavigation("/comingsoon")}
+          >
+            Payments
+          </button>
         </div>
         <div className={profile.mainheading}>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>
-              Your Name: {userDetails.name}
-            </h2>
+            <h2 className={profile.text}>Your Name: {userDetails.name}</h2>
           </div>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>
-              Phone No.: {userDetails.phone_no}
-            </h2>
+            <h2 className={profile.text}>Phone No.: {userDetails.phone_no}</h2>
           </div>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>
-              Email Id : {userDetails.email}
-            </h2>
+            <h2 className={profile.text}>Email Id : {userDetails.email}</h2>
           </div>
           <div className={profile.bgplate1}>
             <h2 className={profile.text}>
@@ -85,14 +87,10 @@ function ProfilePage() {
             </h2>
           </div>
           <div className={profile.bgplate1}>
-            <h2 className={profile.text}>
-              Branch: {userDetails.branch}
-            </h2>
+            <h2 className={profile.text}>Branch: {userDetails.branch}</h2>
           </div>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>
-              Year: {userDetails.year}
-            </h2>
+            <h2 className={profile.text}>Year: {userDetails.year}</h2>
           </div>
         </div>
       </div>
