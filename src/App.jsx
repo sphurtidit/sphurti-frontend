@@ -8,6 +8,7 @@ import MessageSection from "./Components/Messages/message-section";
 import Nav from "./Components/Navbar/nav";
 import axios from "axios";
 import { Lines } from "react-preloaders";
+import Timer from "./Components/timer/timer";
 
 import React, { useState, useEffect } from "react";
 import AccommodationSection from "./Components/Accomodation/Accommodation";
@@ -63,7 +64,7 @@ function App() {
           <div className="background-container">
             <Nav />
             <Main_HeroPage />
-            {/* <Timer /> */}
+            <Timer />
             <MessageSection />
             {/* <Tribute /> */}
             <SportsSection gameDetails={events} />
