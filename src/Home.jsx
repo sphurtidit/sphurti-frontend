@@ -21,6 +21,8 @@ export const Home=()=>{
         <Route path="/comingsoon" element={<ComingSoon/>}/>
         
         <Route path="/profilepage" element={<ProfilePage/>}/>
+        <Route path="/profilepage" element={<ProfilePage/>}/>
+
         </Routes>
        </Router>
        </main>

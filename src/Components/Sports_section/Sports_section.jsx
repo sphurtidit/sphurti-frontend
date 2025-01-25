@@ -7,7 +7,7 @@ import cricketimg from "../../assets/cricket.png";
 import footballimg from "../../assets/football.png";
 import volleyballimg from "../../assets/volleyball.png";
 import basketballimg from "../../assets/basketball.png";
-import tabletennisimg from "../../assets/table tennis.png";
+import tabletennisimg from "../../assets/table_tennis.png";
 import SportsCard from "../Sport_Card/Sport_Card"; // Import the BasketballEvent component
 
 const SportsSection = ({ rule , gameDetails = {}}) => {
@@ -50,7 +50,7 @@ console.log(gameDetails);
   };
 
   return (
-    <div className="nav-sports">
+    <div className="nav-sports" id="sports-section">
         <div className="parent-container-sports">
           <div className="heading">
             <h1>SPORTS</h1>
