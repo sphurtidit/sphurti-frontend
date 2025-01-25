@@ -12,7 +12,7 @@ import { PropTypes } from 'prop-types';
 const SportsSection = () => {
 
     return (
-        <div className='nav-sports'>
+        <div className='nav-sports' id='sports-section'>
             {/* {badminton ? () : <div className='loading'>Loading...</div>} */}
             <div className='parent-container-sports'>
                 <div className='heading'><h1>SPORTS</h1></div>
