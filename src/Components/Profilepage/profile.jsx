@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import profile from "./profile.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ProfilePage() {
   const [userDetails, setUserDetails] = useState(null); // State to store user details
@@ -26,9 +28,17 @@ function ProfilePage() {
 
         // Save the user data in state
         setUserDetails(response.data.data.currentUser);
+
+        // Show a success toast
+        toast.success("Logged in successfully!");
       } catch (err) {
         console.error("Error fetching user data:", err);
-        setError("Failed to fetch user details. Please try again.");
+
+        // Set error message and show an error toast
+        const errorMessage =
+          err.response?.data?.message || "Failed to fetch user details.";
+        setError(errorMessage);
+        toast.error(errorMessage);
       }
     };
 
@@ -46,6 +56,7 @@ function ProfilePage() {
 
   return (
     <div className={profile.ProfilePage}>
+      <ToastContainer position="top-right" autoClose={3000} />
       <div className={profile.info}>
         <div>
           <div className={profile.image}>
@@ -56,6 +67,7 @@ function ProfilePage() {
             onClick={() => {
               localStorage.removeItem("authToken");
               handleNavigation("/");
+              toast.info("Logged out successfully.");
             }}
           >
             Logout
@@ -75,7 +87,7 @@ function ProfilePage() {
             <h2 className={profile.text}>Phone No.: {userDetails.phone_no}</h2>
           </div>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>Email Id : {userDetails.email}</h2>
+            <h2 className={profile.text}>Email Id: {userDetails.email}</h2>
           </div>
           <div className={profile.bgplate1}>
             <h2 className={profile.text}>
@@ -104,6 +116,7 @@ function ProfilePage() {
           <img
             src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
             className="events"
+            alt="Event"
           ></img>
         </div>
         <br />

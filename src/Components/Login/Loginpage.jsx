@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import logpage from "./Loginpage.module.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { handleSuccess, handleError } from "../../utils"; // Import utility functions
+import { ToastContainer } from "react-toastify"; // Toast container for notifications
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify styles
 
 function Loginpage() {
   const navigate = useNavigate();
@@ -27,13 +30,20 @@ function Loginpage() {
       localStorage.setItem("authToken", token);
       localStorage.setItem("user", JSON.stringify(user));
 
+      // Show success toast
+      handleSuccess("Login successful!");
+
       // Redirect to the profile page
       navigate("/");
     } catch (err) {
       console.error("Login failed:", err);
-      setError(
-        err.response?.data?.message || "Something went wrong. Please try again."
-      );
+      const errorMessage =
+        err.response?.data?.message || "Something went wrong. Please try again.";
+
+      // Show error toast
+      handleError(errorMessage);
+
+      setError(errorMessage);
     }
   };
 
@@ -70,7 +80,6 @@ function Loginpage() {
                 required
               />
             </div>
-            {error && <p className={logpage.error}>{error}</p>}
             <a href="#">
               <p className={logpage.forpass}>Forgot Password</p>
             </a>
@@ -84,6 +93,8 @@ function Loginpage() {
           </form>
         </div>
       </div>
+      {/* ToastContainer to render the toast notifications */}
+      <ToastContainer />
     </>
   );
 }
