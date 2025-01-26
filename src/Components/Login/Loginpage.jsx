@@ -1,11 +1,11 @@
 import React from "react";
 import logpage from'./Loginpage.module.css';
 import { useNavigate } from "react-router-dom";
+import BGImage from"../../assets/loginbg.jpg";
+import icon from"../../assets/iconsph.png";
 import Sphurti from "../../assets/sphurti.png";
 import Naac from "../../assets/naac.png";
 import Dit from "../../assets/DIT.png";
-import BGImage from"../../assets/loginbg.jpg";
-import icon from"../../assets/iconsph.png";
 
 function Loginpage() {
     const navigate = useNavigate();
@@ -14,10 +14,9 @@ function Loginpage() {
         <>
       <div className={logpage.loginContainer}>
         <div className={logpage.loginBox}>
-           <img src={Sphurti} alt="" className="logo_1"/>
-                  <img src={Naac} alt="" className="logo_2"/>
-                  <img src={Dit} alt="" className="logo_3"/> 
-                  <img src={icon} alt="" className="icon"/>
+        <img src={Sphurti} alt="Sphurti Logo" className={logpage.logo1} />
+                    <img src={Naac} alt="Naac Logo" className={logpage.logo2} />
+                    <img src={Dit} alt="Dit Logo" className={logpage.logo3} />
                 
 
                   <div 

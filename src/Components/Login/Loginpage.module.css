@@ -1,3 +1,16 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white; /* Ensure white background */
+    width: 32vw;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+
+}
+
 .bgimage {
     position: fixed; 
     top: 0;
@@ -27,42 +40,36 @@
     border-radius: 16px;
 }
 
-.logo_1 {
-    height: 80px;
-    padding: 10px;
-    margin: 70px 10px 10px 10px;
-    grid-row: 1;
-    grid-column: 1;
-}
+.logo1, .logo2{
+    height: 60px; /* Adjust logo size */
+    flex: 1; /* Equal spacing */
+    object-fit: contain; /* Prevent distortion */
+    max-width: 33%; /* Prevent oversized logos */
+     gap: 25px;
+    justify-content: space-between;
+    margin-right: 55px;
+margin-bottom: 20px;
+margin-top: 10px;}
 
-.logo_2 {
-    height: 80px;
-    padding: 20px;
-    margin: 70px 10px 10px 10px;
-    grid-row: 1;
-    grid-column: 2;
-}
 
-.logo_3 {
-    height: 80px;
-    padding: 10px;
-    margin: 70px 10px 10px 10px;
-    grid-row: 1;
-    grid-column: 2; 
-}
+    .logo3{
+        height: 60px; /* Adjust logo size */
+    flex: 1; /* Equal spacing */
+    object-fit: contain; /* Prevent distortion */
+    max-width: 33%; /* Prevent oversized logos */
+     gap: 25px;
+    justify-content: space-between;
+    margin-right: 0px;
+margin-bottom:  20px;
+margin-top: 10px;}
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr; /* 1fr for left, 3fr for center, 1fr for right */
-    grid-template-rows: auto; /* Automatically adjust row height */
-    height: 100vh; /* Full viewport height */
-}
+    
 
 .loginBox {
-    padding: 2.5rem;
+    padding: 1rem;
     border-radius: 1px;
     text-align: center;
-    height:93%;
+    height:87.5%;
     width: 90%; /* Wider box inside */
     background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Soft gradient */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
@@ -189,29 +196,6 @@ input:focus {
     text-decoration: underline;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .loginContainer {
-        width: 50vw;
-        height: auto;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-    .formGroup {
-        font-size: 0.9rem; /* Reduced font size */
-    }
-
-    input {
-        font-size: 0.8rem;
-    }
-
-    .loginBtn {
-        font-size: 0.9rem;
-    }
-}
-
 @media (max-width: 768px) {
     .loginContainer {
         width: 70vw;
@@ -224,9 +208,8 @@ input:focus {
     }
 
     .formGroup {
-        font-size: 0.8rem; /* Reduced font size */
+        font-size: 0.8rem;
     }
-
 
     .loginBtn {
         font-size: 0.8rem;
@@ -234,6 +217,15 @@ input:focus {
 
     .socialBtn {
         font-size: 0.8rem;
+    }
+
+    /* Adjust logos for medium screens */
+    .logo1, .logo2, .logo3 {
+        max-width: 25%; /* Ensure logos are smaller */
+        margin-right: 15px;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        justify-content: center; /* Center-align logos */
     }
 }
 
@@ -247,8 +239,9 @@ input:focus {
     h1 {
         font-size: 1.5rem;
     }
+
     .formGroup {
-        font-size: 0.7rem; /* Reduced font size */
+        font-size: 0.7rem;
     }
 
     .loginBtn {
@@ -262,5 +255,58 @@ input:focus {
     .signupText {
         font-size: 0.8rem;
     }
+
+    /* Adjust logos for smaller screens */
+    .logo1, .logo2, .logo3 {
+        max-width: 30%; /* Further reduce logo size */
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        justify-content: center; /* Center-align logos */
+    }
 }
 
+@media (min-width: 426px) and (max-width: 1024px) {
+    .loginContainer {
+        width: 60vw; /* Wider for tablets */
+        height: auto;
+        padding: 1rem;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust headline */
+    }
+
+    .formGroup {
+        font-size: 0.9rem;
+    }
+
+    input {
+        font-size: 1rem;
+    }
+
+    .loginBtn {
+        font-size: 1rem;
+    }
+
+    .socialBtn {
+        font-size: 0.9rem;
+    }
+
+    /* Logo container to handle spacing dynamically */
+    .logo1, .logo2, .logo3 {
+        max-width: 25%; /* Adjust size proportionally */
+        margin: 0 5px; /* Uniform horizontal margin */
+        object-fit: contain; /* Prevent distortion */
+    }
+
+    /* Flex container for logos */
+    .loginBox {
+        display: flex;
+        justify-content: center; /* Center all logos */
+        align-items: center;
+        gap: 10px; /* Even spacing between logos */
+        flex-wrap: wrap; /* Allow logos to wrap if needed */
+    }
+}
