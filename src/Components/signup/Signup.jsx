@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import signpage from './Signup.module.css';
+import signpage from "./Signup.module.css"; // CSS Module import
 import { useNavigate } from "react-router-dom";
+import Sphurti from "../../assets/sphurti.png"; // Left Logo
+import Naac from "../../assets/naac.png"; // Middle Logo
+import Dit from "../../assets/DIT.png"; // Right Logo
+import BGImage from "../../assets/loginbg.jpg"; // Background Image
 
 function Signinpage() {
-    const [isOtpVisible, setOtpVisible] = useState(false); // State to toggle OTP visibility
+    const [isOtpVisible, setOtpVisible] = useState(false);
     const navigate = useNavigate();
 
     // Functions to handle OTP popup
@@ -11,14 +15,27 @@ function Signinpage() {
     const closepopup = () => setOtpVisible(false);
 
     return (
-        <>
-            <div className={`${signpage.Container} ${isOtpVisible ? signpage.blur : ""}`}>
+        <div className={signpage.pageWrapper}>
+            {/* Background image */}
+            <div
+                className={signpage.bgimage}
+                style={{ backgroundImage: `url(${BGImage})` }}
+            ></div>
+            
+
+            {/* Signup Form */}
+            <div
+                className={`${signpage.Container} ${isOtpVisible ? signpage.blur : ""}`}
+            >
                 <div className={signpage.Box}>
-                    <h1>
-                        <p>Welcome to</p>
-                        Sphurti
-                    </h1>
-                    <form>
+                    {/* Logos with proper spacing */}
+                    <div className={signpage.logos}>
+                        <img src={Sphurti} alt="Sphurti Logo" className={signpage.logoLeft} />
+                        <img src={Naac} alt="Naac Logo" className={signpage.logoMiddle} />
+                        <img src={Dit} alt="Dit Logo" className={signpage.logoRight} />
+                    </div>
+                    <h1 className={signpage.heading}>Welcome to Sphurti</h1>
+                    <form className={signpage.form}>
                         <div className={signpage.formGroup}>
                             <input
                                 type="text"
@@ -35,11 +52,8 @@ function Signinpage() {
                                 placeholder="Enter your E-mail"
                                 required
                             />
-                            <div
-                                className={signpage.forpass}
-                                onClick={openpopup} // Pass function reference here
-                            >
-                                <a>Verify </a>
+                            <div className={signpage.forpass} onClick={openpopup}>
+                                <a>Verify</a>
                             </div>
 
                             {/* OTP Popup */}
@@ -62,9 +76,10 @@ function Signinpage() {
                                 required
                             />
                         </div>
-                        <div className={signpage.branch}>
+                        <div className={signpage.branchRow}>
                             <div className={signpage.formGroup}>
-                                <input className={signpage.diff}
+                                <input
+                                    className={signpage.diff}
                                     type="text"
                                     name="branch"
                                     placeholder="Branch"
@@ -72,9 +87,10 @@ function Signinpage() {
                                 />
                             </div>
                             <div className={signpage.formGroup}>
-                                <input className={signpage.diff}
+                                <input
+                                    className={signpage.diff}
                                     type="number"
-                                    name="number"
+                                    name="year"
                                     placeholder="Year"
                                     required
                                 />
@@ -90,38 +106,35 @@ function Signinpage() {
                         </div>
 
                         <button type="submit" className={signpage.signinBtn}>
-                            Sign in
+                            Sign In
                         </button>
                     </form>
                 </div>
             </div>
+
+            {/* OTP Popup */}
             <div
-                                className={`${signpage.otp} ${
-                                    isOtpVisible ? signpage.openpopup : ""
-                                }`}
-                                id="otp"
-                            >
-                                <h1>Enter the OTP</h1>
-                                <input
-                                    type="password"
-                                    placeholder="Enter the OTP"
-                                    required
-                                />
-                                <button
-                                    type="button"
-                                    className={signpage.signinBtn}
-                                    onClick={closepopup}
-                                >
-                                    OK
-                                </button>
-                                <button
-                                    type="button"
-                                    className={signpage.signinBtn}
-                                >
-                                    Resend OTP
-                                </button>
-                            </div>
-        </>
+                className={`${signpage.otp} ${
+                    isOtpVisible ? signpage.openpopup : ""
+                }`}
+                id="otp"
+            >
+                <h1>Enter the OTP</h1>
+                <input type="password" placeholder="Enter the OTP" required />
+                <div className={signpage.otpActions}>
+                    <button
+                        type="button"
+                        className={signpage.signinBtn}
+                        onClick={closepopup}
+                    >
+                        OK
+                    </button>
+                    <button type="button" className={signpage.resendBtn}>
+                        Resend OTP
+                    </button>
+                </div>
+            </div>
+        </div>
     );
 }
 
