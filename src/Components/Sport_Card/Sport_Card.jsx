@@ -5,7 +5,7 @@ import cricketimg from "../../assets/cricket.png";
 import footballimg from "../../assets/football.png";
 import volleyballimg from "../../assets/volleyball.png";
 import basketballimg from "../../assets/basketball.png";
-import tabletennisimg from "../../assets/table tennis.png";
+import tabletennisimg from "../../assets/table_tennis.png";
 
   const getImageForEvent = (eventName) => {
     switch (eventName.toLowerCase()) {
@@ -41,13 +41,13 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {} , eventNa
   const eventImage = getImageForEvent(eventName);
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-container">
-        <button className="close-button" onClick={onClose}>
+    <div className="modolay">
+      <div className="modner">
+        <button className="closeon" onClick={onClose}>
           &times;
         </button>
         <div className="borcontent">
-          {/* Left Section */}
+          
           <div className="left-section">
             <h1>{eventName}</h1>
             <div className="fees-section"><div className="fe">
@@ -57,7 +57,7 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {} , eventNa
             </div>
             <div className="details">
               <div >
-                <p className="strong">Prize Money:</p> <br />
+                <p className="strong">Prize Money:</p> 
                 Winners: &#8377;{prizeWinner} &nbsp; 
                 <span className="pipe">|</span> &nbsp;
                 Runner Up: &#8377;{prizeRunnerUp}
@@ -69,6 +69,12 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {} , eventNa
               <p className="strong">Schedule: <a href="" className="amt">Download Schedule</a></p>
               <p className="strong">Rule Book:  <a href="" className="amt">Download</a></p>
               </div>
+              <div >
+                <p className="strong">Coordinators:</p> 
+               Name:Mobile Number&nbsp; 
+                <span className="pipe">|</span> &nbsp;
+                Name:Mobile Number
+              </div>
             </div>
             <div className="button-group">
               <button className="results">Register</button>
@@ -76,7 +82,7 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {} , eventNa
             </div>
           </div>
 
-          {/* Right Section */}
+          
           <div className="right-section">
             <img
               src={eventImage}

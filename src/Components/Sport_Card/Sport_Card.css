@@ -5,7 +5,7 @@ body {
   background-color: #f4f4f4; /* Light grey background */
   color: #333;
 }
-.modal-overlay {
+.modolay {
   position: fixed;
   top: 0;
   left: 0;
@@ -18,19 +18,19 @@ body {
   z-index: 1000;
 }
 
-.modal-container {
+.modner {
   display: flex;
   align-items: center;
   padding: 0;
   padding-left: 20px; 
   border: 2px solid #800080; /* Purple border color */
-  width: 45vw; /* Adjusted width */
+  width: 70vw; /* Adjusted width */
   height: 80vh; 
   background: #fff; 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   position: relative;
 }
-.close-button {
+.closeon {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -50,15 +50,14 @@ body {
   height: 50vh;
   display:flex;
   flex-direction: row;
-  gap: 2vw;
 }
-.left-section {
+/* .left-section {
   flex: 1;
   padding: 20px; 
-}
+} */
 
 .left-section h1 {
-  font-size: 6rem; 
+  font-size: 3rem; 
   font-weight: bold;
   color: #EE0942;
   text-transform: uppercase;
@@ -82,13 +81,13 @@ body {
 }
 .label {
   display: block;
-  font-size: 2.2rem;
+  font-size: 1.7rem;
   color: #EE0942;
   text-transform: uppercase;
-  font-weight: bold;
+ 
 }
 .per-team {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #000;
   font-weight: bold;
 }
@@ -96,6 +95,7 @@ body {
   font-size: 1.8rem;
   color: #EE0942;
   margin-bottom: 16px;
+  
 }
 .details {
   text-align: left;
@@ -105,30 +105,22 @@ body {
   text-decoration: none;
   color: #EE0942;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  padding: 2px;
 }
 .strong{
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: bolder;
-  padding: 2px;
 }
 .pipe {
   color: #ffcc00;
-  font-weight: bold;
-  padding-top:2px;
+
 }
 .amt{
-  font-size: 1.8rem;
   color: #EE0942;
   margin-bottom: 16px; 
 }
-.coordinators {
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-.coordinators p {
-  margin: 16px 0; 
-}
+
 .button-group {
   margin-top: 2vw;
 
@@ -145,7 +137,7 @@ body {
   color: #EE0942; 
   border: 2px solid #EE0942; 
   height: 6vh;
-  width: 13vw;
+  width: 9vw;
   font-size: 1.5rem;
   text-align: center;
   border-radius: 2px;
@@ -177,4 +169,56 @@ body {
 .spimg{
   overflow: hidden;
   height: 80vh;
+
 }
+ @media only screen and (max-width: 1024px) {
+  .modner {
+    width: 80vw; 
+   height: 80vh; 
+  } 
+  .left-section h1 {
+    font-size: 2.5rem; 
+  }
+  .spimg {
+    height: 80vh;
+  }
+  .results{
+    width: 14vw;;
+  }
+} 
+
+@media only screen and (max-width: 768px) {
+ .modner{
+  width: 70vw;
+ }
+ 
+  .spimg {
+  display: none;
+  }
+  .results{
+    width: 20vw;
+  }
+  
+}
+
+@media only screen and (max-width: 425px) {
+  .modner {
+    width: 75vw;
+    height: 70vh;
+  }
+  .left-section h1 {
+    font-size: 2rem;
+    margin-top: 1px;
+  }
+  .spimg {
+   display: none;
+  }
+ 
+  .results {
+    font-size: 0.8rem; 
+    padding: 6px;
+    width: 26vw;
+    height: 4vh;
+  }
+}
+
