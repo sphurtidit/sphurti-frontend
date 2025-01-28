@@ -24,8 +24,8 @@ body {
   padding: 0;
   padding-left: 20px; 
   border: 2px solid #800080; /* Purple border color */
-  width: 70vw; /* Adjusted width */
-  height: 80vh; 
+  width: 45vw; /* Adjusted width */
+  height: 70vh; 
   background: #fff; 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -63,7 +63,8 @@ body {
   text-transform: uppercase;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
   margin-bottom: 20px;
-  margin-top: -30px;
+  margin-top: -10px;
+  text-align: left;
 }
 
 .fees-section {
@@ -129,6 +130,7 @@ body {
 .results{
   padding: 6px 12px;
   margin-right: 6px;
+  margin-top: -10px;
   border: none;
   border-radius: 5px;
   font-size: 0.8rem;
@@ -137,7 +139,7 @@ body {
   color: #EE0942; 
   border: 2px solid #EE0942; 
   height: 6vh;
-  width: 9vw;
+  width: 10vw;
   font-size: 1.5rem;
   text-align: center;
   border-radius: 2px;
@@ -168,12 +170,13 @@ body {
 }
 .spimg{
   overflow: hidden;
-  height: 80vh;
+  height: 70vh;
+  width: 20vw;
 
 }
  @media only screen and (max-width: 1024px) {
   .modner {
-    width: 80vw; 
+    width: 62vw; 
    height: 80vh; 
   } 
   .left-section h1 {
@@ -181,6 +184,7 @@ body {
   }
   .spimg {
     height: 80vh;
+    width: 30vw;
   }
   .results{
     width: 14vw;;
@@ -189,7 +193,8 @@ body {
 
 @media only screen and (max-width: 768px) {
  .modner{
-  width: 70vw;
+  width: 60vw;
+  height: 60vh;
  }
  
   .spimg {
@@ -207,7 +212,7 @@ body {
     height: 70vh;
   }
   .left-section h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-top: 1px;
   }
   .spimg {

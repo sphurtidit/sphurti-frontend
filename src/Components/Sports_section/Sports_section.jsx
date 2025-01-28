@@ -16,7 +16,7 @@ const SportsSection = ({ rule , gameDetails = {}}) => {
   const [category, setCategory] = useState()
 
 console.log(gameDetails);
-  const openModal = (category, eventName, image) => {
+  const openModal = (category, eventName) => {
     setIsModalOpen(true); // Open the modal
     setCategory(category)
     setEventName(eventName)
