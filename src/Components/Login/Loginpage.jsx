@@ -1,7 +1,7 @@
 import React from "react";
 import logpage from'./Loginpage.module.css';
 import { useNavigate } from "react-router-dom";
-import BGImage from"../../assets/loginbg.jpg";
+import BGImage from"../../assets/signupbg.jpg";
 import icon from"../../assets/iconsph.png";
 import Sphurti from "../../assets/sphurti.png";
 import Naac from "../../assets/naac.png";
@@ -38,7 +38,7 @@ function Loginpage() {
                 </div>
                 <a href="#"><p className={logpage.forpass}>Forgot Password</p></a>
                 <button type="submit" className={logpage.loginBtn}>Login</button>
-                <p className={logpage.signupText}>Don't have an account? <a href="#">Sign Up</a></p>
+                <p className={logpage.signupText}><b>Don't have an account? </b><a href="#">Sign Up</a></p>
                 
             </form>
         </div>

@@ -26,19 +26,33 @@
     background-repeat: no-repeat;
     filter: brightness(0.9);
 } 
-/* Form container */
 .Container {
-    width: 60vw;
-    max-width: 600px;
+    width: 60vh;
+    max-width: 600px; /* Ensures it doesn't become too large */
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    position: relative; 
+    position: relative;
+    overflow: hidden; /* Prevents content from overflowing */
+}
+.branchRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 10vh;
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: nowrap; /* Ensures items stay in one line */
 }
 
-/* Logo section */
+/* Make both inputs take equal space */
+.branchRow input {
+    flex: 1.7;
+    width: 100%;
+    min-width: 0; /* Prevents inputs from exceeding width */
+    box-sizing: border-box; /* Prevents padding from increasing size */
+}
+
 .logos {
     display: flex;
     justify-content: space-between;
@@ -53,9 +67,10 @@
 }
 
 .logoMiddle {
-    width: 70px;
-    height: auto;
+    width: auto;
+    height: 50px;
 }
+
 
 /* Heading */
 .heading {
@@ -124,7 +139,8 @@ input {
     border: 1px solid #7f1bb6;
 }
 
-/* Media queries for responsiveness */
+
+/* Media queries for responsiveness
 @media (max-width: 768px) {
     .Container {
         width: 80vw;
@@ -159,4 +175,29 @@ input {
         font-size: 0.9rem;
     }
 }
+} */
+@media (max-width: 768px) {
+    .branchRow {
+    
+        flex-direction: row; /* Ensures they stay adjacent */
+        gap: 5vh;
+    }
+
+    .branchRow input {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .branchRow {
+        flex-direction: row;
+        gap: 5px;
+        
+    }
+
+    .branchRow input {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
 }

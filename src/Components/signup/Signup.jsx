@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Sphurti from "../../assets/sphurti.png"; // Left Logo
 import Naac from "../../assets/naac.png"; // Middle Logo
 import Dit from "../../assets/DIT.png"; // Right Logo
-import BGImage from "../../assets/loginbg.jpg"; // Background Image
+import BGImage from "../../assets/signupbg.jpg"; // Background Image
 
 function Signinpage() {
     const [isOtpVisible, setOtpVisible] = useState(false);

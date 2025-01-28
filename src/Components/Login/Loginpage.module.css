@@ -3,121 +3,103 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: white; /* Ensure white background */
+    background-color: white;
     width: 32vw;
     border: none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border-radius: 16px;
-
 }
 
 .bgimage {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; 
-    height: 100vh; 
-    z-index: -2; /* Keep it behind all other elements */
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .loginContainer {
     position: relative;
-    z-index: 1; /* Bring this above the background image */
+    z-index: 1;
     margin: auto;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: white; /* Ensure white background */
+    background-color: white;
     width: 32vw;
     border: none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border-radius: 16px;
 }
 
-.logo1, .logo2{
-    height: 60px; /* Adjust logo size */
-    flex: 1; /* Equal spacing */
-    object-fit: contain; /* Prevent distortion */
-    max-width: 33%; /* Prevent oversized logos */
-     gap: 25px;
-    justify-content: space-between;
-    margin-right: 55px;
-margin-bottom: 20px;
-margin-top: 10px;}
-
-
-    .logo3{
-        height: 60px; /* Adjust logo size */
-    flex: 1; /* Equal spacing */
-    object-fit: contain; /* Prevent distortion */
-    max-width: 33%; /* Prevent oversized logos */
-     gap: 25px;
-    justify-content: space-between;
-    margin-right: 0px;
-margin-bottom:  20px;
-margin-top: 10px;}
-
-    
+.logo1, .logo2, .logo3 {
+    height: 60px;
+    flex: 1;
+    object-fit: contain;
+    max-width: 33%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
 
 .loginBox {
-    padding: 1rem;
+    padding: 3rem;
     border-radius: 1px;
     text-align: center;
-    height:87.5%;
-    width: 90%; /* Wider box inside */
-    background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Soft gradient */
+    height: 87.5%;
+    width: 90%;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-    grid-column: 2; /* Center it in the grid */
+    grid-column: 2;
     grid-row: 1;
 }
 
-.icon{
-height: 80px;
+.icon {
+    height: 0px;
     padding: 10px;
     margin: 70px 10px 10px 10px;
-    grid-row: 1/span 2 ;
+    grid-row: 1/span 2;
     grid-column: 3/span 4;
 }
 
-    
-
 h1 {
     margin-bottom: 2.5rem;
-    color: #4a148c; /* Deep purple */
+    color: #4a148c;
     font-size: 2.5rem;
-    font-weight: bold; /* Bold headline */
-    letter-spacing: 0.05em; /* Slight spacing for a polished look */
+    font-weight: bold;
+    letter-spacing: 0.05em;
 }
 
 .formGroup {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem; /* More spacing */
+    margin-bottom: 1.5rem;
     font-size: 15%;
 }
 
 label {
-    color: #6a1b9a; /* Soft purple */
+    color: #6a1b9a;
     text-align: left;
-    font-weight: 500; /* Lighter font for label */
-    font-size: 1rem; /* Balanced size */
-    margin-bottom: 0.5rem; /* Spacing from input */
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 input {
     padding: 1rem;
-    border: none; /* Removed default border */
+    border: none;
     border-radius: 12px;
-    width: 100%; /* Full width */
+    width: 100%;
     font-size: 1rem;
-    background: linear-gradient(145deg, #fdfbfb, #f1f1f1); /* Subtle gradient */
-    color: #333; /* Text color */
+    background: linear-gradient(145deg, #fdfbfb, #f1f1f1);
+    color: #333;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
     box-sizing: border-box;
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
@@ -125,14 +107,14 @@ input {
 
 input:focus {
     outline: none;
-    box-shadow: 0 0 8px #7c4dff; /* Soft purple glow */
-    transform: scale(1.02); /* Slight zoom effect */
+    box-shadow: 0 0 8px #7c4dff;
+    transform: scale(1.02);
 }
 
 .forpass {
     text-align: right;
     font-size: 0.9rem;
-    color: #7c4dff; /* Purple for link */
+    color: #7c4dff;
     margin-top: -0.5rem;
     margin-bottom: 1rem;
     cursor: pointer;
@@ -140,31 +122,26 @@ input:focus {
 }
 
 .loginBtn {
-    margin-top: 1rem;
-    border: none; /* Clean button */
-    border-radius: 8px;
-    background: linear-gradient(145deg, #7c4dff, #5e35b1); /* Purple gradient */
+    padding: 0.8rem 2rem;
+    background-color: #7f1bb6;
     color: white;
-    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    width: 100%; /* Full width button */
-    padding: 0.8rem 1rem;
-    box-sizing: border-box;
-    font-weight: bold;
+    transition: all 0.3s;
 }
 
 .loginBtn:hover {
-    background: #4a148c; /* Deeper purple */
-    transform: translateY(-2px); /* Slight hover lift */
+    background: #4a148c;
+    transform: translateY(-2px);
 }
 
 .socialBtn {
     margin-top: 1rem;
     border: none;
     border-radius: 8px;
-    background-color: #ffffff; /* Clean white */
-    color: #6a1b9a; /* Purple for button text */
+    background-color: #ffffff;
+    color: #6a1b9a;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -176,7 +153,7 @@ input:focus {
 }
 
 .socialBtn:hover {
-    background-color: #f7eaf7; /* Soft pastel purple */
+    background-color: #f7eaf7;
     color: #4a148c;
 }
 
@@ -187,7 +164,7 @@ input:focus {
 }
 
 .signupText a {
-    color: #7c4dff; /* Vibrant purple */
+    color: #7c4dff;
     font-weight: bold;
     text-decoration: none;
 }
@@ -196,15 +173,46 @@ input:focus {
     text-decoration: underline;
 }
 
+@media (max-width: 1024px) {
+    .loginContainer {
+        width: 50vw;
+        height: auto;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .formGroup {
+        font-size: 0.9rem;
+    }
+
+    .loginBtn {
+        font-size: 1rem;
+    }
+
+    .socialBtn {
+        font-size: 0.9rem;
+    }
+
+    .logo1, .logo2, .logo3 {
+        max-width: 25%;
+        margin-right: 15px;
+    }
+}
+
 @media (max-width: 768px) {
     .loginContainer {
         width: 70vw;
         height: auto;
         margin: 0 auto;
+        padding: 1rem;
     }
 
     h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     .formGroup {
@@ -212,32 +220,28 @@ input:focus {
     }
 
     .loginBtn {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .socialBtn {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
-    /* Adjust logos for medium screens */
     .logo1, .logo2, .logo3 {
-        max-width: 25%; /* Ensure logos are smaller */
-        margin-right: 15px;
+        max-width: 30%;
         margin-bottom: 15px;
-        margin-top: 10px;
-        justify-content: center; /* Center-align logos */
     }
 }
 
 @media (max-width: 425px) {
     .loginContainer {
-        width: 90vw;
+        width: 85vw;
         height: auto;
         padding: 0.75rem;
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .formGroup {
@@ -256,57 +260,8 @@ input:focus {
         font-size: 0.8rem;
     }
 
-    /* Adjust logos for smaller screens */
     .logo1, .logo2, .logo3 {
-        max-width: 30%; /* Further reduce logo size */
-        margin-right: 10px;
+        max-width: 50%;
         margin-bottom: 10px;
-        margin-top: 10px;
-        justify-content: center; /* Center-align logos */
-    }
-}
-
-@media (min-width: 426px) and (max-width: 1024px) {
-    .loginContainer {
-        width: 60vw; /* Wider for tablets */
-        height: auto;
-        padding: 1rem;
-        margin: auto;
-    }
-
-    h1 {
-        font-size: 2rem; /* Adjust headline */
-    }
-
-    .formGroup {
-        font-size: 0.9rem;
-    }
-
-    input {
-        font-size: 1rem;
-    }
-
-    .loginBtn {
-        font-size: 1rem;
-    }
-
-    .socialBtn {
-        font-size: 0.9rem;
-    }
-
-    /* Logo container to handle spacing dynamically */
-    .logo1, .logo2, .logo3 {
-        max-width: 25%; /* Adjust size proportionally */
-        margin: 0 5px; /* Uniform horizontal margin */
-        object-fit: contain; /* Prevent distortion */
-    }
-
-    /* Flex container for logos */
-    .loginBox {
-        display: flex;
-        justify-content: center; /* Center all logos */
-        align-items: center;
-        gap: 10px; /* Even spacing between logos */
-        flex-wrap: wrap; /* Allow logos to wrap if needed */
     }
 }
