@@ -63,7 +63,7 @@ function Nav() {
                 {[...Array(11).keys()].map((i) => {
                   const year = 2024 - i;
                   return (
-                    <div key={year} className="content">
+                    <div key={year} className="saaj">
                       <a href="#" onClick={toggleModal}>  
                         {year}
                       </a>
@@ -99,7 +99,7 @@ function Nav() {
           <div className="yeldivlin">
             <img src={image} className="image" />
           </div>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-saaj" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={toggleModal}>
               ✕
             </button>
