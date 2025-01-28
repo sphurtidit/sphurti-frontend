@@ -1,6 +1,5 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('effect.png') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;

@@ -7,7 +7,9 @@ import Loginpage from "./Components/Login/Loginpage"
 import Signinpage from "./Components/signup/Signup"
 import ComingSoon from "./Components/comingsoon/comingsoon"
 import ProfilePage from "./Components/Profilepage/profile"
-
+import RegistrationForm from "./Components/Registration_Page/Registration_Page1";
+import TeamRegistration from "./Components/Registration_Page/Registration_Page2";
+import FAQPage from "./Components/FAQ/FAQ";
 
 export const Home=()=>{
     return(
@@ -20,7 +22,12 @@ export const Home=()=>{
         <Route path="/Loginpage" element={<Loginpage/>}/>
         <Route path="/Signinpage" element={<Signinpage/>}/>
         <Route path="/comingsoon" element={<ComingSoon/>}/>
+
+        <Route path="/Registration_Page1" element={<RegistrationForm/>}/>
+        <Route path="/Registration_Page2" element={<TeamRegistration/>}/>
+        <Route path="/FAQ" element={<FAQPage/>}/>
         
+
         <Route path="/profilepage" element={<ProfilePage/>}/>
 
         </Routes>

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./App.css";
+import "./Result_Table.css";
 
 const ResultTable = () => {
   useEffect(() => {

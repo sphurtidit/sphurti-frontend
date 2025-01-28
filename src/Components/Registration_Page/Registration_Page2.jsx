@@ -1,87 +1,73 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import "./Registration_Page2.css"; // Import CSS for styling
 
 const TeamRegistration = () => {
-  const [members, setMembers] = useState([
-    { id: 1, name: '', college_id: '', aadhar_id: '' }
-  ]);
+  const [members, setMembers] = useState([{ id: 1, name: "", collegeId: "", aadharId: "" }]);
 
-  const handleInputChange = (e, memberId, field) => {
-    const { value } = e.target;
-    setMembers((prevMembers) =>
-      prevMembers.map((member) =>
-        member.id === memberId ? { ...member, [field]: value } : member
-      )
-    );
-  };
-
+  // Function to add a new member
   const addMember = () => {
-    const nextMemberId = members.length + 1;
-    setMembers([
-      ...members,
-      { id: nextMemberId, name: '', college_id: '', aadhar_id: '' }
-    ]);
+    setMembers([...members, { id: members.length + 1, name: "", collegeId: "", aadharId: "" }]);
   };
 
+  // Function to delete a member
   const deleteMember = (id) => {
     setMembers(members.filter((member) => member.id !== id));
   };
 
+  // Handle input change
+  const handleInputChange = (index, field, value) => {
+    const updatedMembers = [...members];
+    updatedMembers[index][field] = value;
+    setMembers(updatedMembers);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can handle form submission here
-    console.log('Form Submitted with Members:', members);
+    console.log("Submitted Team:", members);
   };
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.header}>Team Registration</h1>
+    <div className="Sarfaraj">
+      <h1>Team Registration</h1>
       <form onSubmit={handleSubmit}>
-        <div style={styles.memberDetailsSection} id="members-container">
-          <h2 style={styles.memberSectionHeader}>Member Details</h2>
-          {members.map((member) => (
-            <div key={member.id} style={styles.memberBox}>
-              <h3 style={styles.memberBoxTitle}>Member {member.id}</h3>
+        <div className="member-details-section">
+          <h2>Member Details</h2>
+          {members.map((member, index) => (
+            <div className="member-box" key={member.id}>
+              <h3>Member {index + 1}</h3>
               <input
                 type="text"
                 placeholder="Enter Member Name"
                 value={member.name}
-                onChange={(e) => handleInputChange(e, member.id, 'name')}
+                onChange={(e) => handleInputChange(index, "name", e.target.value)}
                 required
-                style={styles.input}
               />
               <input
                 type="text"
                 placeholder="Enter College ID"
-                value={member.college_id}
-                onChange={(e) => handleInputChange(e, member.id, 'college_id')}
+                value={member.collegeId}
+                onChange={(e) => handleInputChange(index, "collegeId", e.target.value)}
                 required
-                style={styles.input}
               />
               <input
                 type="text"
                 placeholder="Enter Aadhar ID"
-                value={member.aadhar_id}
-                onChange={(e) => handleInputChange(e, member.id, 'aadhar_id')}
+                value={member.aadharId}
+                onChange={(e) => handleInputChange(index, "aadharId", e.target.value)}
                 required
-                style={styles.input}
               />
-              <button
-                type="button"
-                onClick={() => deleteMember(member.id)}
-                style={styles.deleteBtn}
-              >
-                Delete Member
-              </button>
+              {members.length > 1 && (
+                <button type="button" className="delete-btn" onClick={() => deleteMember(member.id)}>
+                  Delete Member
+                </button>
+              )}
             </div>
           ))}
         </div>
-
-        <button type="button" onClick={addMember} style={styles.addMemberBtn}>
+        <button type="button" className="add-member-btn" onClick={addMember}>
           Add Member
         </button>
-        <button type="submit" style={styles.submitBtn}>
-          Submit
-        </button>
+        <button type="submit" className="btn">Submit</button>
       </form>
     </div>
   );
