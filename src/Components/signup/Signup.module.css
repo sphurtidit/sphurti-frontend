@@ -140,7 +140,7 @@ input {
 }
 
 
-/* Media queries for responsiveness
+Media queries for responsiveness
 @media (max-width: 768px) {
     .Container {
         width: 80vw;
@@ -162,8 +162,8 @@ input {
 
 @media (max-width: 425px) {
     .Container {
-        width: 90vw;
-        padding: 1.5rem;
+        width: 77vw;
+        padding: 0.5rem;
     }
     h1 {
 
@@ -175,7 +175,7 @@ input {
         font-size: 0.9rem;
     }
 }
-} */
+}
 @media (max-width: 768px) {
     .branchRow {
     
@@ -193,7 +193,6 @@ input {
     .branchRow {
         flex-direction: row;
         gap: 5px;
-        
     }
 
     .branchRow input {

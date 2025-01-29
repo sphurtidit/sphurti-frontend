@@ -27,7 +27,7 @@
     position: relative;
     z-index: 1;
     margin: auto;
-    padding: 0;
+    padding: 0.5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +44,7 @@
     flex: 1;
     object-fit: contain;
     max-width: 33%;
+    gap: 10px;
     margin-right: 20px;
     margin-bottom: 20px;
     margin-top: 10px;
@@ -173,12 +174,23 @@ input:focus {
     text-decoration: underline;
 }
 
-@media (max-width: 1024px) {
-    .loginContainer {
-        width: 50vw;
-        height: auto;
-        margin: 0 auto;
-        padding: 1rem;
+@media (max-width: 768px) {
+    .container, .loginContainer {
+        width: 80vw;
+        height: auto ;
+        padding: 2rem;
+    }
+
+    .loginBox {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .logo1, .logo2, .logo3 {
+        height: 40px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-top: 5px;
     }
 
     h1 {
@@ -186,82 +198,59 @@ input:focus {
     }
 
     .formGroup {
-        font-size: 0.9rem;
+        margin-bottom: 1rem;
     }
 
-    .loginBtn {
-        font-size: 1rem;
-    }
-
-    .socialBtn {
-        font-size: 0.9rem;
-    }
-
-    .logo1, .logo2, .logo3 {
-        max-width: 25%;
-        margin-right: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .loginContainer {
-        width: 70vw;
-        height: auto;
-        margin: 0 auto;
-        padding: 1rem;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    .formGroup {
+    .forpass {
         font-size: 0.8rem;
     }
 
-    .loginBtn {
+    .loginBtn, .socialBtn {
+        padding: 0.6rem 1.5rem;
         font-size: 0.9rem;
-    }
-
-    .socialBtn {
-        font-size: 0.9rem;
-    }
-
-    .logo1, .logo2, .logo3 {
-        max-width: 30%;
-        margin-bottom: 15px;
-    }
-}
-
-@media (max-width: 425px) {
-    .loginContainer {
-        width: 85vw;
-        height: auto;
-        padding: 0.75rem;
-    }
-
-    h1 {
-        font-size: 1.6rem;
-    }
-
-    .formGroup {
-        font-size: 0.7rem;
-    }
-
-    .loginBtn {
-        font-size: 0.8rem;
-    }
-
-    .socialBtn {
-        font-size: 0.8rem;
     }
 
     .signupText {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container, .loginContainer {
+        width: 60vw;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .loginBox {
+        width: 100%;
+        padding: 2rem;
     }
 
     .logo1, .logo2, .logo3 {
-        max-width: 50%;
-        margin-bottom: 10px;
+        height: 50px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        margin-top: 7px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .formGroup {
+        margin-bottom: 1.2rem;
+    }
+
+    .forpass {
+        font-size: 0.85rem;
+    }
+
+    .loginBtn, .socialBtn {
+        padding: 0.7rem 1.8rem;
+        font-size: 0.95rem;
+    }
+
+    .signupText {
+        font-size: 0.95rem;
     }
 }
