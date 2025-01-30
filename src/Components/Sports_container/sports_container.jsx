@@ -25,8 +25,8 @@ const SportsContainer = ({ rule, game, type, image, openModal, closeModal, event
         </div>
       <div className="right-column">
       <img src={image} className="image" alt="Sports event" />
-      </div>
         {/* Modal Component */}
+    </div>
     </div>
   );
 };

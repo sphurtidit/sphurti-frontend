@@ -70,7 +70,7 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {} , eventNa
               <p className="strong">Rule Book:  <a href="" className="amt">Download</a></p>
               </div>
               <div >
-                <p className="strong">Coordinators:</p> 
+                <p className="strong">Coordinators:  </p> 
                Name:Mobile Number&nbsp; 
                 <span className="pipe">|</span> &nbsp;
                 Name:Mobile Number

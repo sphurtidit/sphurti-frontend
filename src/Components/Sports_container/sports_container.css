@@ -80,43 +80,6 @@
   transition: none;
   object-fit: contain;
 }
-
-/* .fee {
-  border: 1px solid black;
-  line-height: 0.8;
-  display: flex;
-  color: #000;
-  box-sizing: border-box;
-  justify-content: space-evenly;
-  padding: 10px 0;
-  width: 100%;
-}
-
-.fees {
-  color: var(--primary-color);
-  font-weight: bold;
-  font-size: 1.5vw;
-  font-family: 'SF Sports Upright';
-}
-
-.team {
-  color: black;
-  font-size: 0.75vw;
-  font-family: 'DM Sans';
-}
-
-.cate {
-  color: black;
-  font-size: 1.1vw;
-  font-family: 'SF Sports Upright';
-}
-
-.cate-fees {
-  color: var(--primary-color);
-  font-size: 1.1vw;
-  font-family: 'DM Sans';
-} */
-
 .buttons {
   display: flex;
   justify-content: start;
