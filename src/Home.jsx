@@ -24,8 +24,8 @@ export const Home=()=>{
         <Route path="/Signinpage" element={<Signinpage/>}/>
         <Route path="/comingsoon" element={<ComingSoon/>}/>
 
-        <Route path="/Registration_Page1" element={<RegistrationForm/>}/>
-        <Route path="/Registration_Page2" element={<TeamRegistration/>}/>
+        <Route path="/Reg_Pg1" element={<RegistrationForm/>}/>
+        <Route path="/Reg_Pg2" element={<TeamRegistration/>}/>
         <Route path="/FAQ" element={<FAQPage/>}/>
         
 
