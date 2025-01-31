@@ -109,7 +109,7 @@ function Loginpage() {
 ></div>
 
 
-            <h1 ><p >Welcome to </p>
+            {/* <h1 ><p >Welcome to </p>
                       Sphurti</h1>
             <form>
                 <div className={logpage.formGroup}>
@@ -124,7 +124,7 @@ function Loginpage() {
                 <button type="submit" className={logpage.loginBtn}>Login</button>
                 <p className={logpage.signupText}><b>Don't have an account? </b><a href="#">Sign Up</a></p>
                 
-            </form>
+            </form> */}
         </div>
       </div>
       {/* ToastContainer to render the toast notifications */}
