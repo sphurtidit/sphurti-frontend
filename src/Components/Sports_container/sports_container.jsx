@@ -16,7 +16,7 @@ const SportsContainer = ({ rule, game, type, image, openModal, closeModal, event
              // disabled={true}
              title="Registration not open yet"
              className="primary-s"
-             onClick={() => openModal(cate, event.name)} // Open the modal on button click
+             onClick={() => openModal(cate, event.name, image)} // Open the modal on button click
            >
              {cate.categoryName}
            </button>))}

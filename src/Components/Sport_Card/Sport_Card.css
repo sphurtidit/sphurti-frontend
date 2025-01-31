@@ -5,131 +5,7 @@ body {
   background-color: #f4f4f4; /* Light grey background */
   color: #333;
 }
-
-.cont {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0;
-  padding-left: 20px; /* Added left padding */
-  border: 2px solid #800080; /* Purple border color */
-  width: 700px; /* Adjusted width */
-  margin: 50px auto; /* Center the container */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background-color: #fff; /* White background */
-}
-
-.left-section {
-  flex: 1;
-  padding: 20px; /* Increased padding for spacing */
-}
-
-.left-section h1 {
-  font-size: 3rem; /* Larger font size for emphasis */
-  font-weight: bold;
-  color: #d92941; /* Red color for the header */
-  text-transform: uppercase;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  margin-bottom: 20px;
-  margin-top: -30px; /* Adjusted spacing above */
-}
-
-.fees-section {
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: left;
-  margin-bottom: 16px;
-}
-
-.fees-section .label {
-  display: block;
-  font-size: 2.2rem;
-  color: #d92941;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.fees-section .amount {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #d92941;
-  margin-bottom: 16px;
-}
-
-.fees-section .per-team {
-  font-size: 1.5rem;
-  color: #000;
-  font-weight: bold;
-}
-
-.details {
-  margin: 8px 0;
-  line-height: 1.5;
-}
-
-.details a {
-  text-decoration: none;
-  color: #d92941;
-  font-weight: bold;
-}
-
-.pipe {
-  color: #ffcc00;
-  font-weight: bold;
-}
-
-.coordinators {
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-.coordinators p {
-  margin: 16px 0; /* Reduced spacing */
-}
-
-.button-group {
-  margin-top: 12px;
-}
-
-.button-group button {
-  padding: 6px 12px;
-  margin-right: 6px;
-  border: none;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-
-.button-group .register {
-  background-color: #d92941; /* Red background */
-  color: #fff; /* White text */
-}
-
-.button-group .results {
-  background-color: #fff; /* White background */
-  color: #d92941; /* Red text */
-  border: 2px solid #d92941; /* Red border */
-}
-
-.right-section {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0; /* Removed padding */
-  height: 100%; /* Match container height */
-}
-
-.right-section .image {
-  width: 100%; /* Responsive width */
-  height: 100%; /* Responsive height */
-  object-fit: cover; /* Ensure the image fills the section */
-  object-position: top; /* Crop from the top */
-}
-
-/* Modal overlay styling */
-.modal-overlay {
+.modolay {
   position: fixed;
   top: 0;
   left: 0;
@@ -142,27 +18,19 @@ body {
   z-index: 1000;
 }
 
-.modal-container {
-  background: #fff; /* White modal background */
-  width: 90%;
-  max-width: 600px; /* Max modal width */
-  padding: 20px;
-  border-radius: 10px;
+.modner {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  padding-left: 20px; 
+  border: 2px solid #800080; /* Purple border color */
+  width: 45vw; /* Adjusted width */
+  height: 70vh; 
+  background: #fff; 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   position: relative;
 }
-
-.modal-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-content .left-section,
-.modal-content .right-section {
-  margin-bottom: 20px;
-}
-
-.close-button {
+.closeon {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -170,5 +38,192 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  color: #d92941; /* Red color for the close button */
+  color: #EE0942; 
 }
+.borcontent {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  width: 30vw;
+  height: 50vh;
+  display:flex;
+  flex-direction: row;
+}
+/* .left-section {
+  flex: 1;
+  padding: 20px; 
+} */
+
+.left-section h1 {
+  font-size: 3rem; 
+  font-weight: bold;
+  color: #EE0942;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+  margin-bottom: 20px;
+  margin-top: -10px;
+  text-align: left;
+}
+
+.fees-section {
+  font-size: 1rem;
+  font-weight:bolder;
+  text-align: left;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+}
+.fe{
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  display: block;
+  font-size: 1.7rem;
+  color: #EE0942;
+  text-transform: uppercase;
+ 
+}
+.per-team {
+  font-size: 0.8rem;
+  color: #000;
+  font-weight: bold;
+}
+.amount {
+  font-size: 1.8rem;
+  color: #EE0942;
+  margin-bottom: 16px;
+  
+}
+.details {
+  text-align: left;
+  line-height: 1.5;
+}
+.details a {
+  text-decoration: none;
+  color: #EE0942;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 2px;
+}
+.strong{
+  font-size: 1rem;
+  font-weight: bolder;
+}
+.pipe {
+  color: #ffcc00;
+
+}
+.amt{
+  color: #EE0942;
+  margin-bottom: 16px; 
+}
+
+.button-group {
+  margin-top: 2vw;
+
+}
+
+.results{
+  padding: 6px 12px;
+  margin-right: 6px;
+  margin-top: -10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background-color: #fff; 
+  color: #EE0942; 
+  border: 2px solid #EE0942; 
+  height: 6vh;
+  width: 10vw;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.results:hover{
+  background-color: #EE0942 ;
+  color: #fff;
+}
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  height: 100%; 
+}
+
+.right-section .image {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  object-position: top; 
+}
+.button-group{
+  display:flex;
+  flex-direction: row;
+}
+.spimg{
+  overflow: hidden;
+  height: 70vh;
+  width: 20vw;
+
+}
+ @media only screen and (max-width: 1024px) {
+  .modner {
+    width: 62vw; 
+   height: 80vh; 
+  } 
+  .left-section h1 {
+    font-size: 2.5rem; 
+  }
+  .spimg {
+    height: 80vh;
+    width: 30vw;
+  }
+  .results{
+    width: 14vw;;
+  }
+} 
+
+@media only screen and (max-width: 768px) {
+ .modner{
+  width: 60vw;
+  height: 60vh;
+ }
+ 
+  .spimg {
+  display: none;
+  }
+  .results{
+    width: 20vw;
+  }
+  
+}
+
+@media only screen and (max-width: 425px) {
+  .modner {
+    width: 75vw;
+    height: 70vh;
+  }
+  .left-section h1 {
+    font-size: 2.5rem;
+    margin-top: 1px;
+  }
+  .spimg {
+   display: none;
+  }
+ 
+  .results {
+    font-size: 0.8rem; 
+    padding: 6px;
+    width: 26vw;
+    height: 4vh;
+  }
+}
+

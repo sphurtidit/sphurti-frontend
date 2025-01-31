@@ -46,13 +46,19 @@ nav li ul.dropdown {
     width: 10vw;
     height: 20vw;
     overflow-y: auto;
-    border: 3px solid #ffcc32;
+    border: 3px solid #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Show the dropdown when hovering over the parent `li` or the dropdown itself */
 nav li:hover ul.dropdown,
 nav li ul.dropdown:hover {
     display: block;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8); /* Added to create a glowing effect */
+    font-weight: 600; /* Make font bold */
+    color: #EE0942; /* Change the text color to highlight */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
     /* Make the dropdown visible */
 }
 
@@ -61,7 +67,7 @@ nav li ul.dropdown::-webkit-scrollbar {
 }
 
 nav li ul.dropdown::-webkit-scrollbar-thumb {
-    background-color: #EE0942;
+    background-color: #ffcc32;
     border-radius: 10px;
 }
 
@@ -76,16 +82,15 @@ nav li ul.dropdown {
 }
 
 
-.content {
+.saaj {
     background-color: #f9f9f9;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    border: 1px solid #EE0942;
     text-align: center;
 
 }
 
-.content a {
+.saaj a {
     display: block;
     padding: 10px;
     color: #000;
@@ -93,8 +98,9 @@ nav li ul.dropdown {
     width: 100%;
 }
 
-.content a:hover {
+.saaj a:hover {
     background: #EE0942;
+    color:#f1f1f1;
 }
 
 .modal-overlay {
@@ -126,7 +132,7 @@ nav li ul.dropdown {
     overflow: hidden;
 }
 
-.modal-content {
+.modal-saaj {
     background: white;
     padding: 1.5rem;
     border-radius: 8px;
