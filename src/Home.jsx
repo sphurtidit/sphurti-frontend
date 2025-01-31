@@ -10,6 +10,7 @@ import ProfilePage from "./Components/Profilepage/profile"
 import RegistrationForm from "./Components/Registration_Page/Registration_Page1";
 import TeamRegistration from "./Components/Registration_Page/Registration_Page2";
 import FAQPage from "./Components/FAQ/FAQ";
+import ResultTable from "./Components/Result_Table/Result_Table";
 
 export const Home=()=>{
     return(
@@ -26,6 +27,7 @@ export const Home=()=>{
         <Route path="/Registration_Page1" element={<RegistrationForm/>}/>
         <Route path="/Registration_Page2" element={<TeamRegistration/>}/>
         <Route path="/FAQ" element={<FAQPage/>}/>
+        <Route path="/ResultTable" element={<ResultTable/>}/>
         
 
         <Route path="/profilepage" element={<ProfilePage/>}/>
