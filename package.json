@@ -10,6 +10,8 @@
     "test": "git pull origin main && eslint \"src/**/*.{js,jsx,json}\" && vite build && git add . && git commit -m"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "axios": "^1.7.9",
     "firebase": "^10.8.0",
     "react": "^18.2.0",
