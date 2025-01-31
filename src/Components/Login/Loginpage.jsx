@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import logpage from "./Loginpage.module.css";
 import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 import { handleSuccess, handleError } from "../../utils"; // Import utility functions
 import { ToastContainer } from "react-toastify"; // Toast container for notifications
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify styles
+import BGImage from"../../assets/signupbg.jpg";
+import icon from"../../assets/iconsph.png";
+import Sphurti from "../../assets/sphurti.png";
+import Naac from "../../assets/naac.png";
+import Dit from "../../assets/DIT.png";
+
 
 function Loginpage() {
   const navigate = useNavigate();
@@ -59,7 +66,7 @@ function Loginpage() {
             <div className={logpage.formGroup}>
               <label htmlFor="email">Email</label>
               <input
-                type="email"
+                type="email"  
                 id="email"
                 name="email"
                 placeholder="Enter your email"
@@ -91,6 +98,33 @@ function Loginpage() {
               <span onClick={() => navigate("/Signinpage")}>Sign Up</span>
             </p>
           </form>
+        <img src={Sphurti} alt="Sphurti Logo" className={logpage.logo1} />
+                    <img src={Naac} alt="Naac Logo" className={logpage.logo2} />
+                    <img src={Dit} alt="Dit Logo" className={logpage.logo3} />
+                
+
+                  <div 
+    className={logpage.bgimage}
+    style={{ backgroundImage: `url(${BGImage})` }} // Corrected line
+></div>
+
+
+            <h1 ><p >Welcome to </p>
+                      Sphurti</h1>
+            <form>
+                <div className={logpage.formGroup}>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required/>
+                </div>
+                <div className={logpage.formGroup}>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required/>
+                </div>
+                <a href="#"><p className={logpage.forpass}>Forgot Password</p></a>
+                <button type="submit" className={logpage.loginBtn}>Login</button>
+                <p className={logpage.signupText}><b>Don't have an account? </b><a href="#">Sign Up</a></p>
+                
+            </form>
         </div>
       </div>
       {/* ToastContainer to render the toast notifications */}
