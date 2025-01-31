@@ -47,14 +47,16 @@ function Nav() {
   return (
     <nav>
       <div className="main-nav" ref={navRef}>
-      <div className="logo-left">
-        <ScrollLink to="home" offset={-80} smooth={true} duration={500}>
-          <img src={SPH} alt="SPHURTI" className="logo" />
-        </ScrollLink>
-      </div>
+        <div className="logo-left">
+          <ScrollLink to="home" offset={-80} smooth={true} duration={500}>
+            <img src={SPH} alt="SPHURTI" className="logo" />
+          </ScrollLink>
+        </div>
         <div className="center-button">
-        <ScrollLink>
-            <li onClick={() => handleNavigateAndScroll("/", "home-section")}>HOME</li>
+          <ScrollLink>
+            <li onClick={() => handleNavigateAndScroll("/", "home-section")}>
+              HOME
+            </li>
           </ScrollLink>
           <ScrollLink to="" offset={-80}>
             <li onClick={showNav}>
@@ -64,7 +66,7 @@ function Nav() {
                   const year = 2024 - i;
                   return (
                     <div key={year} className="saaj">
-                      <a href="#" onClick={toggleModal}>  
+                      <a href="#" onClick={toggleModal}>
                         {year}
                       </a>
                     </div>
@@ -74,18 +76,36 @@ function Nav() {
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/", "sports-section")}>SPORTS</li>
+            <li onClick={() => handleNavigateAndScroll("/", "sports-section")}>
+              SPORTS
+            </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/comingsoon", "cs-section")}>FAQ</li>
+            <li
+              onClick={() =>
+                handleNavigateAndScroll("/FAQ", "cs-section")
+              }
+            >
+              FAQ
+            </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/gallery", "gallery-section")}>GALLERY</li>
+            <li
+              onClick={() =>
+                handleNavigateAndScroll("/gallery", "gallery-section")
+              }
+            >
+              GALLERY
+            </li>
           </ScrollLink>
         </div>
         <div className="right-side">
-            {isLoggedIn? (<Button text={"PROFILE"} onClick={() => navigate("/ProfilePage")}/>) : (<Button text={"LOGIN"} onClick={() => navigate("/Loginpage")}/>)}
-          </div>
+          {isLoggedIn ? (
+            <Button text={"PROFILE"} onClick={() => navigate("/ProfilePage")} />
+          ) : (
+            <Button text={"LOGIN"} onClick={() => navigate("/Loginpage")} />
+          )}
+        </div>
         <button className="nav-button nav-close-button" onClick={showNav}>
           <MdClose />
         </button>

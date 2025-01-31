@@ -11,6 +11,7 @@ import RegistrationForm from "./Components/Registration_Page/Registration_Page1"
 import TeamRegistration from "./Components/Registration_Page/Registration_Page2";
 import FAQPage from "./Components/FAQ/FAQ";
 
+
 export const Home=()=>{
     return(
         <main>
@@ -29,6 +30,9 @@ export const Home=()=>{
         
 
         <Route path="/profilepage" element={<ProfilePage/>}/>
+
+
+        <Route path="/registrationpage" element={<RegistrationForm/>}/>
 
         </Routes>
        </Router>

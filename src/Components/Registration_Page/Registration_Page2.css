@@ -136,3 +136,93 @@ body {
     background: #6A1B9A;
     color: white;
 }
+
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+        padding: 20px 30px;
+    }
+
+    .container h1 {
+        font-size: 2rem;
+    }
+
+    .input-field input,
+    .input-field textarea {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .member-details-section {
+        margin-top: 15px;
+    }
+
+    .member-box {
+        padding: 10px;
+    }
+
+    .member-box h3 {
+        font-size: 1rem;
+    }
+
+    .member-box input {
+        font-size: 0.9rem;
+    }
+
+    .delete-btn {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+
+    .add-member-btn {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 15px 20px;
+    }
+
+    .container h1 {
+        font-size: 1.8rem;
+    }
+
+    .input-field input,
+    .input-field textarea {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+
+    .member-box {
+        padding: 8px;
+    }
+
+    .member-box h3 {
+        font-size: 0.9rem;
+    }
+
+    .member-box input {
+        font-size: 0.8rem;
+    }
+
+    .delete-btn {
+        font-size: 0.6rem;
+        padding: 3px 6px;
+    }
+
+    .add-member-btn {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+}

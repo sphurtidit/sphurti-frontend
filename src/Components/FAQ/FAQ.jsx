@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './FAQ.css';
+import Nav from '../Navbar/nav';
 
 const FAQPage = () => {
+   
+   
     const [activeIndex, setActiveIndex] = useState(null);
     const [copyMessageVisible, setCopyMessageVisible] = useState(false);
 
@@ -43,7 +46,10 @@ const FAQPage = () => {
     ];
 
     return (
+            <div className='main-div' >
+                <Nav />
         <div className="faq-page">
+         
             <h1 className="faq-title">
                 Frequently Asked <span className="highlight">Questions</span>
             </h1>
@@ -89,6 +95,7 @@ const FAQPage = () => {
                     <p className="copy-message">Email address copied to clipboard!</p>
                 )}
             </div>
+        </div>
         </div>
     );
 };
