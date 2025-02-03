@@ -29,7 +29,7 @@ export const Home = () => {
 
           <Route path="/profilepage" element={<ProfilePage />} />
 
-          <Route path="/registrationpage" element={<RegistrationForm />} />
+          {/* <Route path="/register" element={<RegistrationForm />} /> */}
         </Routes>
       </Router>
     </main>
