@@ -3,6 +3,7 @@
 
 .parent-container{
     margin: 0 5vw;
+    /* cursor: pointer; */
     padding: 10;
     /* line-height: 6vh; */
     --imageurl:url("../../assets/Purple.png");
@@ -25,6 +26,7 @@
     background-size: contain;
     width: 100%;
     height: 50%;
+    /* cursor: pointer; */
 }
 
 .image{

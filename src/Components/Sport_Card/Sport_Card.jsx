@@ -93,7 +93,7 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {}, eventNam
               <button className="results" onClick={() => handleNavigation("/Reg_pg1")}>
                 Register
               </button>
-              <button className="results">Results</button>
+              <button className="results" onClick={()=> handleNavigation("/ResultTable")} >Results</button>
             </div>
           </div>
 
