@@ -4,13 +4,14 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import PropTypes from "prop-types";
 
 const SportsContainer = ({ rule, game, type, image, openModal, closeModal, event}) => {
-  let col = type == 1 ? "yellow" : type == 2 ? "red" : "purple";
+  let col = type == 1 ? "blue" :"red" ;
 
   return (
     <div className={`sports-container ${col}`}>
     <div className="left-column">
-      <div className="container">
+      <div className="containerss">
         <p className="sports-heading">{event.name}</p>
+        
         <div className="buttons">
             {event["category"].map((cate, index) => (<button
              // disabled={true}
