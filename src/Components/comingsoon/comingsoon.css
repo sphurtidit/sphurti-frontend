@@ -8,11 +8,7 @@
   padding-top: 80px;
 }
 
-.main-div-comingsoon {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
+
 .coming-soon-container {
     display: flex;
     justify-content: center;
@@ -59,3 +55,4 @@
       transform: rotate(360deg);
     }
   }
+
