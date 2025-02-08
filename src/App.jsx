@@ -8,6 +8,7 @@ import MessageSection from "./Components/Messages/message-section";
 import Nav from "./Components/Navbar/nav";
 import axios from "axios";
 import { Lines } from "react-preloaders";
+import Timer from "./Components/timer/timer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -67,7 +68,7 @@ function App() {
           <div className="background-container">
             <Nav />
             <Main_HeroPage />
-            {/* <Timer /> */}
+            <Timer />
             <MessageSection />
             {/* <Tribute /> */}
             <SportsSection gameDetails={events} />
