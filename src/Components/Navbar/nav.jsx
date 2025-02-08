@@ -118,7 +118,7 @@ function Nav() {
           <ScrollLink offset={-80}>
             <li
               onClick={() =>
-                handleNavigateAndScroll("/", "contact -section")
+                handleNavigateAndScroll("/", "contact-section")
               }
             >
               CONTACT US
