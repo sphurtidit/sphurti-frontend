@@ -1,5 +1,5 @@
 import './Mobile_HeroPage.css';
-import BgMobile from '../../assets/BgMobile.svg';
+import BgMobile from '../../assets/sphurtiphonebg.png';
 import MobileBG_2 from '../../assets/Mobile_BG_2.svg';
 
 const Mobile_HeroPage = () => {
