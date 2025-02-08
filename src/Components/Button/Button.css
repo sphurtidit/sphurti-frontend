@@ -1,0 +1,10 @@
+.reg-nav-button button{
+    /* margin-left: 50px; */
+    padding: 5px 20px;
+    color: white;
+    list-style: none;
+    background-color: #EE0942;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #fff;
+}

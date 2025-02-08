@@ -6,8 +6,9 @@ import Nav from '../Navbar/nav';
 
 const ComingSoon = ({ message }) => {
   return (
+      
     <div className="main-div-comingsoon">
-      {/* <Nav/> */}
+      <Nav/>
        <div className="coming-soon-container">
         <img className='img' src={soon} alt="" />
     </div>

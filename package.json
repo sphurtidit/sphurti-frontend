@@ -10,14 +10,17 @@
     "test": "git pull origin main && eslint \"src/**/*.{js,jsx,json}\" && vite build && git add . && git commit -m"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "axios": "^1.7.9",
     "firebase": "^10.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "react-preloaders": "^3.0.3",
-    "react-router-dom": "^6.28.1",
-    "react-scroll": "^1.9.0"
+    "react-router-dom": "^6.28.2",
+    "react-scroll": "^1.9.0",
+    "react-toastify": "^11.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
