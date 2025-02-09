@@ -55,7 +55,36 @@ function Nav() {
         <div className="center-button">
           <ScrollLink>
             <li onClick={() => handleNavigateAndScroll("/", "home-section")}>
-              HOME
+              HOME  
+            </li>
+          </ScrollLink>
+          <ScrollLink offset={-80}>
+            <li onClick={() => handleNavigateAndScroll("/", "sports-section")}>
+              SPORTS
+            </li>
+          </ScrollLink>
+          <ScrollLink offset={-80}>
+            <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
+              GENERAL RULES
+            </li>
+          </ScrollLink>
+          <ScrollLink offset={-80}>
+            <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
+              ORGANISING LEADERS
+            </li>
+          </ScrollLink>
+          <ScrollLink offset={-80}>
+            <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
+            AMABASSADORS
+            </li>
+          </ScrollLink>
+          <ScrollLink offset={-80}>
+            <li
+              onClick={() =>
+                handleNavigateAndScroll("/comingsoon")
+              }
+            >
+              FAQ
             </li>
           </ScrollLink>
           <ScrollLink to="" offset={-80}>
@@ -75,21 +104,9 @@ function Nav() {
               </ul>
             </li>
           </ScrollLink>
-          <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/", "sports-section")}>
-              SPORTS
-            </li>
-          </ScrollLink>
-          <ScrollLink offset={-80}>
-            <li
-              onClick={() =>
-                handleNavigateAndScroll("/FAQ", "cs-section")
-              }
-            >
-              FAQ
-            </li>
-          </ScrollLink>
-          <ScrollLink offset={-80}>
+        
+         
+          {/* <ScrollLink offset={-80}>
             <li
               onClick={() =>
                 handleNavigateAndScroll("/gallery", "gallery-section")
@@ -97,13 +114,22 @@ function Nav() {
             >
               GALLERY
             </li>
+          </ScrollLink> */}
+          <ScrollLink offset={-80}>
+            <li
+              onClick={() =>
+                handleNavigateAndScroll("/", "contact-section")
+              }
+            >
+              CONTACT US
+            </li>
           </ScrollLink>
         </div>
         <div className="right-side">
           {isLoggedIn ? (
             <Button text={"PROFILE"} onClick={() => navigate("/ProfilePage")} />
           ) : (
-            <Button text={"LOGIN"} onClick={() => navigate("/Loginpage")} />
+            <Button text={"LOGIN"} onClick={() => navigate("/comingsoon")} />
           )}
         </div>
         <button className="nav-button nav-close-button" onClick={showNav}>

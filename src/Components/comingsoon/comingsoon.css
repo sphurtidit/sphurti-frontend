@@ -8,15 +8,6 @@
   padding-top: 80px;
 }
 
-<<<<<<< HEAD
-
-
-.main-div-comingsoon {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-=======
 .coming-soon-container {
     display: flex;
     justify-content: center;
@@ -64,4 +55,3 @@
     }
   }
   
->>>>>>> 79ac1a34c2e610fc022f90900528fde7f6176030

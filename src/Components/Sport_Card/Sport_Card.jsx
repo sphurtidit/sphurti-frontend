@@ -60,7 +60,7 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {}, eventNam
             <h1>{eventName}</h1>
             <div className="fees-section">
               <div className="fe">
-                <span className="label">Fees</span>
+                <span className="label">Registration Fees</span>
                 <span className="per-team">Per Team</span>
               </div>
               <span className="amount">&#8377;{registrationFees}</span>
@@ -72,28 +72,28 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {}, eventNam
                 <span className="pipe">|</span> &nbsp; Runner Up: &#8377;
                 {prizeRunnerUp}
               </div>
-              <p>
+              {/* <p>
                 <strong>Team Size:</strong> {minNumber} - {maxNumber} players
-              </p>
+              </p> */}
               <div className="details">
-                <p className="strong">
+                {/* <p className="strong">
                   Schedule: <a href="" className="amt">Download Schedule</a>
-                </p>
+                </p> */}
                 <p className="strong">
                   Rule Book: <a href="" className="amt">Download</a>
                 </p>
               </div>
-              <div>
+              {/* <div>
                 <p className="strong">Coordinators:</p>
                 Name:Mobile Number&nbsp;
                 <span className="pipe">|</span> &nbsp; Name:Mobile Number
-              </div>
+              </div> */}
             </div>
             <div className="button-group">
-              <button className="results" onClick={() => handleNavigation("/Reg_pg1")}>
+              <button className="results" onClick={() => handleNavigation("/comingsoon")}>
                 Register
               </button>
-              <button className="results" onClick={()=> handleNavigation("/ResultTable")} >Results</button>
+              <button className="results" onClick={()=> handleNavigation("/comingsoon")} >Results</button>
             </div>
           </div>
 
