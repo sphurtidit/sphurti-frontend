@@ -2,7 +2,7 @@ import "./team_sec.css";
 import TeamCard from "../team_card/team_card";
 import PropTypes from "prop-types";
 import comingsoon from "../../assets/comingsoon.png";
-import sportsOfficer from "../../assets/sportsOfficer.svg";
+import sportsOfficer from "../../assets/sports-officer.png";
 
 function TeamSec({ teams, sport }) {
   // console.log(teams,sport);
@@ -39,6 +39,7 @@ function TeamSec({ teams, sport }) {
       <div className="heading">{/* <h1>OUR TEAM</h1> */}</div>
       <div className="subheading">
         <h1>CONTACT</h1>
+        <h2>FACULTY CO-ORDINATOR</h2>
         {/* <img className='csoon' src={comingsoon} alt="csoon" /> */}
       </div>
       {/* <div className="FacultyCard">
