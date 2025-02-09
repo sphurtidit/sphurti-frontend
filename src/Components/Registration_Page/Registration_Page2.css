@@ -189,18 +189,21 @@ body {
     .Sarfaraj {
         width: 75vw;
         padding: 10px 20px;
-        margin-left: -10vw;
+        margin-left: 10vw;
         
     }
 
     .Sarfaraj h1 {
         font-size: 1.8rem;
     }
+    .input-field label{
+        font-size: 1.2rem;
+    }
 
     .input-field input,
     .input-field textarea {
-        font-size: 0.8rem;
-        padding: 8px;
+        font-size: 1.2rem;
+       width:60vw
     }
 
     .btn {
