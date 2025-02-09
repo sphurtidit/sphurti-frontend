@@ -1,153 +1,136 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
 .faq-container {
-    max-width: 800px;
-    width: 100%;
-    margin: 20px auto;
-    padding: 20px;
-    flex: 1;
-    overflow-y: auto;  /* Makes FAQ section scrollable */
-    margin-bottom: 200px;  /* Prevents contact section from overlapping */
-}
-
-.faq-item {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-    padding: 15px;
-    overflow: hidden;
-}
-
-.faq-item:last-child {
-    margin-bottom: 0;
+    width: 850px;
+    margin: 40px;
+    padding: 60px;
+    text-align: center;
 }
 
 h1 {
-  text-align: center;
-  color: #333;
-  margin-top: 20px;
+    color: #222;
+    font-size: 35px;
+    padding: 5px;
+    margin-top: 20px;
 }
 
-.highlight {
-  background: linear-gradient(to right, #f39c12, #e74c3c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.faq-box {
+    background: white;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ff0000;
+    margin-top: 20px;
 }
 
-.faq-item button {
-    background: none;
-    border: none;
-    text-align: left;
-    font-size: 16px;
-    color: #333;
-    cursor: pointer;
-    padding: 0;
+.faq-item {
+    background: #f8f8f8;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #555;
     width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: bold;
-}
-
-.faq-item button:focus {
-  outline: none;
-}
-
-.answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    margin-top: 10px;
+    font-size: 16px;
     color: #333;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
 }
 
-.faq-item.active .answer {
-    max-height: 500px;
+.faq-item-number {
+    margin-right: 10px;
+}
+
+.faq-text {
+    flex: 1;
+    text-align: left;
 }
 
 .toggle-icon {
     font-size: 18px;
     color: #333;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* Contact Section at the Bottom */
+.toggle-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.answer {
+    padding: 10px;
+    color: #000000;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .contact-section {
-    position: fixed; /* Fixes the contact section at the bottom */
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
+    margin-top: 30px;
     padding: 20px;
     background: #fff;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    width: 100%;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    border: 2px solid #ff0000;
+    border-radius: 25px;
+    text-align: center;
 }
 
-/* Contact Section Text */
-.contact-section p {
-  margin: 10px 0;
-  color: #333;
-}
-
-.contact-section p:first-child {
+.contact-title {
+    font-size: 28px;
+    color: #ff0303;
     font-weight: bold;
-    font-size: 20px;
-    color: #e74c3c;
+}
+
+.contact-section p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .contact-box {
-  display: inline-flex;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px 15px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #f9f9f9;
 }
 
 .email {
     font-size: 16px;
-    color: #333;
-    text-decoration: none;
     font-weight: bold;
+    color: #333;
 }
 
 .copy-button {
-    background-color: #f4f4f4;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    padding: 5px 10px;
-    font-size: 14px;
+    margin-left: 10px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #777;
+    color: white;
+    border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
-    color: #333;
+    gap: 10px;
 }
 
 .copy-button:hover {
-    background-color: #e74c3c;
-    color: #fff;
+    background-color: #b81a3a;
 }
 
 .copy-message {
     color: green;
     font-size: 14px;
     margin-top: 10px;
-    display: block;
+    font-weight: bold;
 }
