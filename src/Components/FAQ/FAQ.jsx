@@ -54,20 +54,17 @@ const FaqComponent = () => {
 
   return (
     <div className="faq-container">
-       <Nav/>
+      <Nav />
       <div className="faq-box">
         <h1>FAQs</h1>
         {faqs.map((faq, index) => (
           <div key={index} className="faq-item">
-            <div className="faq-question">
+            <div className="faq-question" onClick={() => toggleFaq(index)}>
               <span className="faq-item-number">{index + 1}.</span>
               <span className="faq-text">{faq.question}</span>
-              <FaChevronDown
-                className={`toggle-icon ${activeIndex === index ? "rotated" : ""}`}
-                onClick={() => toggleFaq(index)}
-              />
+              <FaChevronDown className={`toggle-icon ${activeIndex === index ? "rotated" : ""}`} />
             </div>
-            {activeIndex === index && <div className="answer">{faq.answer}</div>}
+            <div className={`answer ${activeIndex === index ? "show" : ""}`}>{faq.answer}</div>
           </div>
         ))}
       </div>
