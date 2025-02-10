@@ -2,7 +2,7 @@ import "./team_sec.css";
 import TeamCard from "../team_card/team_card";
 import PropTypes from "prop-types";
 import comingsoon from "../../assets/comingsoon.png";
-import sportsOfficer from "../../assets/sports-officer.png";
+import sportsOfficer from "../../assets/sportsOfficer.svg";
 
 function TeamSec({ teams, sport }) {
   // console.log(teams,sport);

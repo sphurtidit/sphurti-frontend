@@ -5,9 +5,9 @@ const HeroPage = () => {
   return (
     <>
       <div className="main-container-d">
-      <div className="register-button">
+      {/* <div className="register-button">
           <button>Register</button>
-        </div>
+        </div> */}
         
         <div className="center-container">
           <img src={CenterBGI} alt="" className="center"/> {/* Keeping only the center image */}

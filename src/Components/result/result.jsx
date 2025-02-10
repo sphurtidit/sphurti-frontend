@@ -37,11 +37,11 @@ const Result = () => {
         <h1>RESULTS</h1>
       </div>
       <div className="result-container">
-        <div className="left-column">
+        {/* <div className="left-column">
           {/* <div className="leftimage">
             <img src={leftimage} />
-          </div> */}
-        </div>
+          </div> }
+        </div> */}
 
         <div className="middle-column">
           <div className="middlemain">

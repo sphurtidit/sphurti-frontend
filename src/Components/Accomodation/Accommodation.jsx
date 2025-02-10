@@ -23,15 +23,14 @@ const AccommodationSection = ({rules}) => {
           <div className="horizontal-line"></div>
           <div className="registration-box">
             <h1 className="registration-heading">
-              REGISTRATION WILL BE CLOSED 
-            </h1>
+            REGISTRATION ARE OPEN UNTILL             </h1>
             <h1 className="registration-date">
-              <span className="star-red">*</span>
+              {/* <span className="star-red">*</span>
+              <span className="star-yellow">*</span> */}
+              MARCH 10TH 2025
+              {/* <span className="star-red">*</span>
               <span className="star-yellow">*</span>
-              <span className="star-purple">*</span>MARCH 22ND 2025
-              <span className="star-red">*</span>
-              <span className="star-yellow">*</span>
-              <span className="star-purple">*</span>
+              <span className="star-purple">*</span> */}
             </h1>
           </div>
         </div>
