@@ -90,7 +90,7 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {}, eventNam
               </div> */}
             </div>
             <div className="button-group">
-              <button className="results" onClick={() => handleNavigation("/comingsoon")}>
+              <button className="results" onClick={() => handleNavigation("/Reg_Pg1")}>
                 Register
               </button>
               <button className="results" onClick={()=> handleNavigation("/comingsoon")} >Results</button>
