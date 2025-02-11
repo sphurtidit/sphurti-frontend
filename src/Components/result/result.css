@@ -52,6 +52,8 @@
     font-family: 'SF Sports Night';
     color: black;
     font-size: 6vw;
+    font-family: Grofins;
+    font-weight: 500vh;
 
 }
 
@@ -64,7 +66,7 @@
 }
 
 .resultimage {
-    width: 100%;
+    width: 75%;
     height: auto;
     object-fit: contain;
     overflow: hidden;
@@ -88,8 +90,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 65%;
-    padding: 0.8rem;
+    width: 75%;
+    padding: 0.7rem;
     font-family: 'Outfit';
     gap: 0.8rem;
     margin-top: 10px;

@@ -11,6 +11,10 @@ const AccomodationCard = () => {
     <br />
     <img src={comingsoon} className="csoon" alt="comingsoon" />
   <br />
+{/* 
+  <div className="apply">
+          <button>APPLY NOW</button>
+        </div> */}
     {/* <div className="cards">
         <img src={Card} alt="" className="card-img"></img>
     </div>
