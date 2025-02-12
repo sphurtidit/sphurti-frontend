@@ -140,7 +140,6 @@ input {
 }
 
 
-Media queries for responsiveness
 @media (max-width: 768px) {
     .Container {
         width: 80vw;
