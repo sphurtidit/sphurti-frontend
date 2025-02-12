@@ -53,77 +53,30 @@ function Nav() {
           </ScrollLink>
         </div>
         <div className="center-button">
-          <ScrollLink>
-            <li onClick={() => handleNavigateAndScroll("/", "home-section")}>
-              HOME  
-            </li>
+          <ScrollLink to="home-section" smooth={true} duration={500} offset={-40}>
+            <li onClick={() => handleNavigateAndScroll("/", "home-section")}>HOME</li>
           </ScrollLink>
-          <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/", "sports-section")}>
-              SPORTS
-            </li>
+          <ScrollLink to="sports-section" smooth={true} duration={500} offset={-40}>
+            <li onClick={() => handleNavigateAndScroll("/", "sports-section")}>SPORTS</li>
           </ScrollLink>
-          <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
-              GENERAL RULES
-            </li>
-          </ScrollLink>
-          <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
-              ORGANISING LEADERS
-            </li>
-          </ScrollLink>
-          <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
-            AMABASSADORS
-            </li>
-          </ScrollLink>
-          <ScrollLink offset={-80}>
-            <li
-              onClick={() =>
-                handleNavigateAndScroll("/FAQ")
-              }
-            >
-              FAQ
-            </li>
-          </ScrollLink>
-          <ScrollLink to="" offset={-80}>
-            <li onClick={showNav}>
-              <div className="A_section">ARCHIVE</div>
-              <ul className="dropdown">
-                {[...Array(11).keys()].map((i) => {
-                  const year = 2024 - i;
-                  return (
-                    <div key={year} className="saaj">
-                      <a href="#" onClick={toggleModal}>
-                        {year}
-                      </a>
-                    </div>
-                  );
-                })}
-              </ul>
-            </li>
-          </ScrollLink>
-        
-         
-          {/* <ScrollLink offset={-80}>
-            <li
-              onClick={() =>
-                handleNavigateAndScroll("/gallery", "gallery-section")
-              }
-            >
-              GALLERY
-            </li>
-          </ScrollLink> */}
-          <ScrollLink offset={-80}>
-            <li
-              onClick={() =>
-                handleNavigateAndScroll("/", "contact-section")
-              }
-            >
-              CONTACT US
-            </li>
-          </ScrollLink>
+          <li onClick={() => handleNavigateAndScroll("/comingsoon")}>GENERAL RULES</li>
+          <li onClick={() => handleNavigateAndScroll("/comingsoon")}>ORGANISING LEADERS</li>
+          <li onClick={() => handleNavigateAndScroll("/comingsoon")}>AMBASSADORS</li>
+          <li onClick={() => handleNavigateAndScroll("/FAQ")}>FAQ</li>
+          <li onClick={showNav}>
+            <div className="A_section">ARCHIVE</div>
+            <ul className="dropdown">
+              {[...Array(11).keys()].map((i) => {
+                const year = 2024 - i;
+                return (
+                  <div key={year} className="saaj">
+                    <button onClick={toggleModal} className="archive-button">{year}</button>
+                  </div>
+                );
+              })}
+            </ul>
+          </li>
+          <li onClick={() => handleNavigateAndScroll("/", "contact-section")}>CONTACT US</li>
         </div>
         <div className="right-side">
           {isLoggedIn ? (
@@ -146,19 +99,11 @@ function Nav() {
             <img src={image} className="image" />
           </div>
           <div className="modal-saaj" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={toggleModal}>
-              ✕
-            </button>
-            <button
-              className="modal-button"
-              onClick={() => handleNavigation("/comingsoon")}
-            >
+            <button className="modal-close" onClick={toggleModal}>✕</button>
+            <button className="modal-button" onClick={() => handleNavigation("/comingsoon")}>
               Gallery
             </button>
-            <button
-              className="modal-button"
-              onClick={() => handleNavigation("/comingsoon")}
-            >
+            <button className="modal-button" onClick={() => handleNavigation("/comingsoon")}>
               Report
             </button>
           </div>

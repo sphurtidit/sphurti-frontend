@@ -1,5 +1,14 @@
-@import url('https://fonts.cdnfonts.com/css/gutsand'); /* Import Gutsand */
-@import url('https://fonts.cdnfonts.com/css/grofins'); /* Import Grofins */
+@font-face {
+    font-family: "Gutsand";
+    src: url('src/fonts/gutsand/gutsand.woff2') format('woff2');
+    font-display: swap;
+  }
+
+@font-face {
+    font-family: "Grofins";
+    src: url('src/fonts/grofins/grofins.woff2') format('woff2');
+    font-display: swap;
+  }/* Import Grofins */
 
 .heading-text {
     font-family: 'Gutsand', sans-serif !important;
@@ -22,7 +31,7 @@
     margin-bottom: 1rem;
     text-align: start;    
     margin-left: 18vw;
-    font-family: 'SF Sports Upright';
+    font-family: 'Gutsand';
     color: #ee0942;
     line-height: 0.5;
 }
@@ -42,19 +51,19 @@
     align-items: center;
     vertical-align: middle;
     margin: 0 1vw;
-    width: 20vw;
-    height: 15vw;
+    width: 15vw;
+    height: 10vw;
     line-height: 0.8;
 }
 
 .value{
-    color: #7f1bb6;
-    font-family: 'SF Sports Upright';
-    font-size: 10vw;
+    color: #2374E8;
+    font-family: 'Grofins';
+    font-size: 6vw;
 }
 
 .key{
     color: black;
-    font-family: 'SF Sports Upright';
-    font-size: 3.5vw;
+    font-family: 'Grofins';
+    font-size: 2vw;
 }
