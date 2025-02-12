@@ -1,48 +1,81 @@
-.Container {
-    margin-left: 25vw;
-    padding: 0;
+/* Page wrapper and layout */
+.pageWrapper {
+    position: fixed;
     display: flex;
-    justify-content: center;
+    /* flex-direction: column; */
     align-items: center;
-    height: 90vh;
-    background-color:fff7e0;
-    backdrop-filter: blur(7px);
-    width: 50vw;
-    border: 4px solid #ffcc32;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
-    transition: filter 0.3s ease-in-out;
-}
-.blur {
-    filter: blur(5px);
-    pointer-events: none; /* Disable interactions with blurred content */
-}
-
-.Box {
-    
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    /* max-width: 600px; */
-    height: 85%;
-    text-align: center;
-    display:flex;
-    flex-direction: column;
     justify-content: center;
+     height: 100vh;
+    width: 100vw; 
+    margin-bottom: 50%;
+    top: 0;
+    left: 0;
+    overflow: hidden; 
 }
 
-h1{
-    margin-top: 2px;
-    color: black;
-    font-size: 2.9rem;
-     
+/* Background image styling */
+.bgimage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.9);
+} 
+.Container {
+    width: 60vh;
+    max-width: 600px; /* Ensures it doesn't become too large */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Prevents content from overflowing */
 }
-
-.formGroup {
+.branchRow {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 5px;
-    
+    justify-content: space-between;
+    gap: 10vh;
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: nowrap; /* Ensures items stay in one line */
+}
+
+/* Make both inputs take equal space */
+.branchRow input {
+    flex: 1.7;
+    width: 100%;
+    min-width: 0; /* Prevents inputs from exceeding width */
+    box-sizing: border-box; /* Prevents padding from increasing size */
+}
+
+.logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.logoLeft,
+.logoRight {
+    width: 60px;
+    height: auto;
+}
+
+.logoMiddle {
+    width: auto;
+    height: 50px;
+}
+
+
+/* Heading */
+.heading {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 .forpass{
     text-align: left;
@@ -53,126 +86,116 @@ h1{
     margin-left: 5px;
     margin-right: 35vw;
    padding-top: 8px;
-  
 }
+/* Form fields */
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 2px solid #ee0942;
+    font-size: 1rem;
+}
+
+/* OTP popup */
 .otp {
-    width: 400px;
-    background: #fff;
-    border-radius: 10px;
+    width: 300px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) scale(0.1);
     visibility: hidden;
-    opacity: 0; /* Hide with opacity */
+    opacity: 0;
     padding: 20px;
-    transition: opacity 0.4s, transform 0.4s;
-    border: 4px solid #ee0942;
-    text-align: center;
-
-   
+    background-color: white;
+    border: 2px solid #ee0942;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
 .openpopup {
-    visibility: visible;
-    opacity: 1; /* Make it visible */
     transform: translate(-50%, -50%) scale(1);
-    
-    
+    visibility: visible;
+    opacity: 1;
 }
 
-
-.branch{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-      
-}
-.diff{
-    width: 18vw;
-}
-
-
-
-
-input {
-    padding: 1rem;
-    border: 2px solid #ee0942;
-    border-radius: 10px;
-    width: 100%;
-    height: 1rem;
-    font-size: 10px;
-    background: transparent;
-    color: black;
-    box-sizing:border-box
-}
-
-.signBtn{
-    font-size: 1rem;
-    margin-top: 1rem;
-    color: rgb(111, 53, 165);
-}
-
-
+/* Buttons */
 .signinBtn {
-    margin-top: 4px;
-    
-    border:2px solid #7f1bb6;
-    border-radius: 10px;
-    background-color: white;
-    color: #7f1bb6;
-    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    background-color: #7f1bb6;
+    color: white;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    width: 40%;
-    padding: 0.5rem 1rem;
-    box-sizing:border-box;
+    transition: all 0.3s;
 }
 
 .signinBtn:hover {
-    background-color:#7f1bb6;
-    color: white;
+    background-color: white;
+    color: #7f1bb6;
+    border: 1px solid #7f1bb6;
 }
- @media (max-width: 768px) {
+
+
+@media (max-width: 768px) {
     .Container {
-        height: 80vh;
-        width: 70vw;
-        margin-left:15vw;
+        width: 80vw;
     }
-    h1{
+
+    .logoLeft,
+    .logoMiddle,
+    .logoRight {
+        width: 50px;
+    }
+
+    .heading {
         font-size: 2rem;
-    }
-    .formGroup{
-        margin-bottom:5px ;
-    }
-   
-    .signupBtn{
-        margin-top: 1px;
-        height:12px;
     }
     .diff{
         width: 26vw;
-    }
-    
-   
-   
 }
- @media (max-width: 425px) {
-    .loginContainer{
-        width:80vw;
-        height:65vh;
-        margin-left:10vw;
+}
+
+@media (max-width: 425px) {
+    .Container {
+        width: 77vw;
+        padding: 0.5rem;
     }
     h1 {
-        
+
+    .heading {
         font-size: 1.5rem;
     }
+
+    input {
+        font-size: 0.9rem;
+    }
+}
+}
+@media (max-width: 768px) {
+    .branchRow {
     
-    .signupBtn {
-        width: 80%;
+        flex-direction: row; /* Ensures they stay adjacent */
+        gap: 5vh;
     }
-    .diff{
-        width: 20vw;
+
+    .branchRow input {
+        font-size: 1rem;
+        padding: 0.7rem;
     }
-}  
+}
+
+@media (max-width: 425px) {
+    .branchRow {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .branchRow input {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+}

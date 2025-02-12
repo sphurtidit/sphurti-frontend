@@ -35,10 +35,11 @@ function TeamSec({ teams, sport }) {
   // },[])
 
   return (
-    <div className="whole team team-nav">
+    <div className="whole team team-nav" id="contact-section">
       <div className="heading">{/* <h1>OUR TEAM</h1> */}</div>
       <div className="subheading">
         <h1>CONTACT</h1>
+        <h2>FACULTY CO-ORDINATOR</h2>
         {/* <img className='csoon' src={comingsoon} alt="csoon" /> */}
       </div>
       {/* <div className="FacultyCard">

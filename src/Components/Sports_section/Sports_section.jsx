@@ -1,42 +1,77 @@
-import SportsContainer from '../Sports_container/sports_container';
-import './Sports_section.css';
-import badmintonimg from '../../assets/badminton.png'
-import cricketimg from '../../assets/cricket.png'
-import footballimg from '../../assets/football.png'
-import volleyballimg from '../../assets/volleyball.png'
-import basketballimg from '../../assets/basketball.png'
-import tabletennisimg from '../../assets/table tennis.png'
-import { PropTypes } from 'prop-types';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import SportsContainer from "../Sports_container/sports_container";
+import "./Sports_section.css";
+import badmintonimg from "../../assets/badminton.png";
+import cricketimg from "../../assets/cricket.png";
+import footballimg from "../../assets/football.png";
+import volleyballimg from "../../assets/volleyball.png";
+import basketballimg from "../../assets/basketball.png";
+import tabletennisimg from "../../assets/table_tennis.png";
+import SportsCard from "../Sport_Card/Sport_Card"; // Import the BasketballEvent component
 
-// const SportsSection = ({rule ,cricket,badminton ,tabletennis ,football ,volleyball,basketball}) => {
-const SportsSection = () => {
+const SportsSection = ({ rule , gameDetails = {}}) => {
+  const [eventName, setEventName] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+  const [category, setCategory] = useState()
 
-    return (
-        <div className='nav-sports'>
-            {/* {badminton ? () : <div className='loading'>Loading...</div>} */}
-            <div className='parent-container-sports'>
-                <div className='heading'><h1>SPORTS</h1></div>
-                <div className='allsports'>
-                    <SportsContainer type="1" image={badmintonimg} key={'badminton'} name="Badminton"/>
-                    <SportsContainer type="2" image={basketballimg} key={'basketball'} name="Basketball"/>
-                    <SportsContainer type="3" image={cricketimg} key={'cricket'} name="Cricket"/>
-                    <SportsContainer type="3" image={volleyballimg} key={'volleyball'} name="Volley Ball"/>
-                    <SportsContainer type="1" image={tabletennisimg} key={'tabletennis'} name="Table Tennis"/>
-                    <SportsContainer type="2" image={footballimg} key={'football'} name="Football"/>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-SportsSection.propTypes = {
-    cricket: PropTypes.map,
-    badminton: PropTypes.map,
-    tabletennis: PropTypes.map,
-    football: PropTypes.map,
-    volleyball: PropTypes.map,
-    basketball: PropTypes.map,
-    rule: PropTypes.string,
+console.log(gameDetails);
+  const openModal = (category, eventName) => {
+    setIsModalOpen(true); // Open the modal
+    setCategory(category)
+    setEventName(eventName)
   };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal
+  };
+
+  const getImageForEvent = (eventName) => {
+    switch (eventName.toLowerCase()) {
+      case "badminton":
+        return badmintonimg;
+      case "cricket":
+        return cricketimg;
+      case "football":
+        return footballimg;
+      case "volleyball":
+        return volleyballimg;
+      case "basketball":
+        return basketballimg;
+      case "table tennis":
+        return tabletennisimg;
+      default:
+        return "";
+    }
+  };
+
+  const getEventType = (index) => {
+    return (index % 2) + 1;
+  };
+
+  return (
+    <div className="nav-sports" id="sports-section">
+        <div className="parent-container-sports">
+          <div className="heading">
+            <h1>SPORTS</h1>
+          </div>
+          <div className="allsports">
+            {gameDetails.map((event, index) => (
+              <SportsContainer
+                openModal={openModal}
+                closeModal={closeModal}
+                key={event._id}
+                rule={rule}
+                event={event}
+                type={getEventType(index)}
+                image={getImageForEvent(event.name)}
+              />
+            ))}
+          </div>
+        </div>
+      <SportsCard isOpen={isModalOpen} onClose={closeModal} category={category} eventName={eventName}/>
+    </div>
+  );
+};
 
 export default SportsSection;

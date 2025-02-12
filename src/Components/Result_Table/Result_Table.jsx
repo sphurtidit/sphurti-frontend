@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import "./App.css";
+import "./Result_Table.css";
+import Nav from "../Navbar/nav";
 
 const ResultTable = () => {
   useEffect(() => {
@@ -21,12 +22,14 @@ const ResultTable = () => {
   }, []);
 
   return (
-    <div className="frame-container">
-      <div className="header">
-        <div className="results-text">Results</div>
-      </div>
-      <div className="table-container">
-        <table>
+      <div className="frame-container">
+      <Nav/>
+        <div className="header">
+            
+          <div className="results-text">Results</div>
+        </div>
+        <div className="table-container">
+          <table>
           <thead>
             <tr>
               <th className="header-cell team-name">Team A</th>
