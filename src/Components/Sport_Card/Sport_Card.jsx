@@ -27,12 +27,17 @@ const getImageForEvent = (eventName) => {
   }
 };
 
-const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {}, eventName }) => {
+const SportsCard = ({
+  isOpen,
+  onClose,
+  gameDetails = {},
+  category = {},
+  eventName,
+  isOdd, // Add isOdd prop
+}) => {
   const navigate = useNavigate(); // Initialize navigate
 
-  const handleNavigation = (path) => {
-    navigate(path); // Navigate to the desired page
-  };
+  const handleNavigation = (path) => {};
 
   if (!isOpen) return null;
 
@@ -47,10 +52,15 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {}, eventNam
 
   console.log("details-> ", category);
   const eventImage = getImageForEvent(eventName);
+  const col = ["badminton", "cricket", "basketball"].includes(
+    eventName.toLowerCase()
+  )
+    ? "blue"
+    : "red";
 
   return (
     <div className="modolay">
-      <div className="modner">
+      <div className={`modner ${col}`}>
         <button className="closeon" onClick={onClose}>
           &times;
         </button>
@@ -58,18 +68,25 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {}, eventNam
         <div className="borcontent">
           <div className="left-section">
             <h1>{eventName}</h1>
+            <span className="categoryname">{categoryName}</span>
             <div className="fees-section">
               <div className="fe">
                 <span className="label">Registration Fees</span>
-                <span className="per-team">Per Team</span>
               </div>
-              <span className="amount">&#8377;{registrationFees}</span>
+              <span className="amount">
+                &#8377;{registrationFees}
+                <span className="per-team"> Per Team</span>
+              </span>
             </div>
             <div className="details">
               <div>
-                <p className="strong">Prize Money:</p>
-                Winners: &#8377;{prizeWinner} &nbsp;
-                <span className="pipe">|</span> &nbsp; Runner Up: &#8377;
+                <p className="strong Subhodeep">Prize Money:</p>
+                <span className="prize">
+                  {" "}
+                  Winners: &#8377;{prizeWinner} &nbsp;
+                  <span className="pipe">|</span> &nbsp;Runner Up: &#8377;
+                  {prizeRunnerUp}{" "}
+                </span>
                 {prizeRunnerUp}
               </div>
               {/* <p>
@@ -80,7 +97,10 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {}, eventNam
                   Schedule: <a href="" className="amt">Download Schedule</a>
                 </p> */}
                 <p className="strong">
-                  Rule Book: <a href="" className="amt">Download</a>
+                  Rule Book:{" "}
+                  <a href="" className="amt">
+                    Download
+                  </a>
                 </p>
               </div>
               {/* <div>
@@ -90,15 +110,27 @@ const SportsCard = ({ isOpen, onClose, gameDetails = {}, category = {}, eventNam
               </div> */}
             </div>
             <div className="button-group">
-              <button className="results" onClick={() => handleNavigation("/Reg_Pg1")}>
+              <button
+                className="results"
+                onClick={() => handleNavigation("/Reg_Pg1")}
+              >
                 Register
               </button>
-              <button className="results" onClick={()=> handleNavigation("/comingsoon")} >Results</button>
+              <button
+                className="results"
+                onClick={() => handleNavigation("/comingsoon")}
+              >
+                Schedule
+              </button>
             </div>
           </div>
 
           <div className="right-section">
-            <img src={eventImage} alt={`${categoryName || "Game"} Player`} className="spimg" />
+            <img
+              src={eventImage}
+              alt={`${categoryName || "Game"} Player`}
+              className="spimg"
+            />
           </div>
         </div>
       </div>
