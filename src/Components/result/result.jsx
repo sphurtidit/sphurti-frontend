@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
 import "./result.css";
 import leftimage from "../../assets/left-image.png";
-import rightimage from "../../assets/right-image.png";
+import rightimage from "../../assets/resultbg.png";
 import result from "../../assets/result.png";
 import { FaArrowDown } from "react-icons/fa6";
-import { collection, doc, getDoc } from "firebase/firestore";
-import { db } from "../../firebase";
+// import { collection, doc, getDoc } from "firebase/firestore";
+// import { db } from "../../firebase";
 import { Link } from "react-router-dom";
-import REPORT from "../../assets/REPORT.svg";
+import REPORT from "../../assets/resultheader.png";
 
 const Result = () => {
   const [link, setlink] = useState();
 
-  useEffect(() => {
-    const l = getDoc(doc(collection(db, "misc"), "links")).then((docu) => {
-      setlink(docu.data()["2023"]);
-    });
-    return () => {
-      l;
-    };
-  }, []);
+  // useEffect(() => {
+  //   const l = getDoc(doc(collection(db, "misc"), "links")).then((docu) => {
+  //     setlink(docu.data()["2023"]);
+  //   });
+  //   return () => {
+  //     l;
+  //   };
+  // }, []);
 
   const openPdf = () => {
     window.open('/Sphurti-2024 Report.pdf', '_blank');
@@ -34,14 +34,14 @@ const Result = () => {
   return (
     <>
       <div className="heading">
-        <h1>REPORT</h1>
+        <h1>RESULTS</h1>
       </div>
       <div className="result-container">
-        <div className="left-column">
-          <div className="leftimage">
+        {/* <div className="left-column">
+          {/* <div className="leftimage">
             <img src={leftimage} />
-          </div>
-        </div>
+          </div> }
+        </div> */}
 
         <div className="middle-column">
           <div className="middlemain">

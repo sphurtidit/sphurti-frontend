@@ -81,7 +81,7 @@ function Nav() {
           <ScrollLink offset={-80}>
             <li
               onClick={() =>
-                handleNavigateAndScroll("/comingsoon")
+                handleNavigateAndScroll("/FAQ")
               }
             >
               FAQ

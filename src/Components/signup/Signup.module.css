@@ -182,7 +182,7 @@ input:hover,input:active,input:focus,input:hover{
     border: 1px solid #ee0942;
 }
 
-/* Media queries for responsiveness */
+
 @media (max-width: 768px) {
     .Container {
         width: 70vw;  /* Adjusted width */

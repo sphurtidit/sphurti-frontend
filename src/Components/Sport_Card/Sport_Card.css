@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Arial", sans-serif;
-  background-color: #f4f4f4; /* Light grey background */
+  background-color: #f4f4f4; 
   color: #333;
 }
 .modolay {
@@ -11,26 +11,38 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  background: rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100;
 }
-
+.blue {
+  --primary-color: #2374E8;
+  --secondary-color: #2374E8;
+}
+.red {
+  --primary-color: #ee0942;
+  --secondary-color: #ee0942;
+}
 .modner {
   display: flex;
   z-index: 101;
   align-items: center;
   padding: 0;
   padding-left: 20px; 
-  border: 2px solid #800080; /* Purple border color */
-  width: 45vw; /* Adjusted width */
-  height: 70vh; 
+  border: 2px solid #800080;
+  width: 50vw;
+  height: 60vh; 
   background: #fff; 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   position: relative;
+  border-radius: 1rem;
+  margin-top: 10vh;
+  border: 2px solid var(--primary-color);
 }
+
+
 .closeon {
   position: absolute;
   top: 10px;
@@ -39,7 +51,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  color: #EE0942; 
+  color: var(--primary-color); 
   z-index: 102;
 }
 .borcontent {
@@ -48,10 +60,11 @@ body {
   border-radius: 8px;
   text-align: center;
   position: relative;
-  width: 30vw;
-  height: 50vh;
+  width: 50vw;
+  height: 55vh;
   display:flex;
   flex-direction: row;
+  gap:2vw;
 }
 /* .left-section {
   flex: 1;
@@ -59,18 +72,18 @@ body {
 } */
 
 .left-section h1 {
-  font-size: 3rem; 
+  font-family: 'SF Sports Night';
+  font-size: 3.5rem; 
   font-weight: bold;
-  color: #EE0942;
+  color: var(--primary-color);
   text-transform: uppercase;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
   margin-bottom: 20px;
-  margin-top: -10px;
   text-align: left;
 }
 
 .fees-section {
-  font-size: 1rem;
+  font-size: rem;
   font-weight:bolder;
   text-align: left;
   margin-bottom: 16px;
@@ -84,20 +97,25 @@ body {
 }
 .label {
   display: block;
-  font-size: 1.7rem;
-  color: #EE0942;
+  font-size: 2rem;
+  color: var(--primary-color);
   text-transform: uppercase;
  
 }
 .per-team {
+  margin-left: 10px;
   font-size: 0.8rem;
   color: #000;
   font-weight: bold;
+
 }
 .amount {
-  font-size: 1.8rem;
-  color: #EE0942;
-  margin-bottom: 16px;
+  margin-top: 0.1rem;
+  font-size: 3rem;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
 }
 .details {
@@ -106,13 +124,15 @@ body {
 }
 .details a {
   text-decoration: none;
-  color: #EE0942;
+  color: var(--primary-color);
   font-weight: bold;
   font-size: 1.2rem;
   padding: 2px;
 }
 .strong{
-  font-size: 1rem;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #4b4b4b;
   font-weight: bolder;
 }
 .pipe {
@@ -120,10 +140,14 @@ body {
 
 }
 .amt{
+  cursor: pointer;
+  font-size: 1.7rem !important;
   color: #EE0942;
   margin-bottom: 16px; 
 }
-
+.prize{
+  color: #000;
+}
 .button-group {
   margin-top: 2vw;
 
@@ -131,25 +155,25 @@ body {
 
 .results{
   padding: 6px 12px;
-  margin-right: 6px;
+  margin-right: 1rem;
   margin-top: -10px;
   border: none;
   border-radius: 5px;
   font-size: 0.8rem;
   cursor: pointer;
   background-color: #fff; 
-  color: #EE0942; 
-  border: 2px solid #EE0942; 
+  color: var(--primary-color); 
+  border: 2px solid var(--primary-color); 
   height: 6vh;
   width: 10vw;
   font-size: 1.5rem;
   text-align: center;
-  border-radius: 2px;
+  border-radius: 0.9rem;
   z-index: 102;
 }
 
 .results:hover{
-  background-color: #EE0942 ;
+  background-color: var(--primary-color) ;
   color: #fff;
 }
 .right-section {
@@ -173,60 +197,164 @@ body {
 }
 .spimg{
   overflow: hidden;
-  height: 70vh;
   width: 20vw;
 
 }
- @media only screen and (max-width: 1024px) {
-  .modner {
-    width: 62vw; 
-   height: 80vh; 
-  } 
-  .left-section h1 {
-    font-size: 2.5rem; 
-  }
-  .spimg {
-    height: 80vh;
-    width: 30vw;
-  }
-  .results{
-    width: 14vw;;
-  }
-} 
-
-@media only screen and (max-width: 768px) {
- .modner{
-  width: 60vw;
-  height: 60vh;
- }
- 
-  .spimg {
-  display: none;
-  }
-  .results{
-    width: 20vw;
-  }
-  
+.categoryname{
+  position: relative;
+  top: -2rem;
+  left: 12rem;
+  color: var(--primary-color);
+  font-family: 'SF Sports Night';
+  font-size: 1.5rem;
+}
+.right-section {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
-@media only screen and (max-width: 425px) {
+.modner {
+  width: 90%;
+  max-width: 900px; 
+  height: auto;
+  min-height: 400px;
+  padding: 20px;
+  margin: 5vh auto;
+  flex-direction: column;
+}
+
+.borcontent {
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+}
+
+.right-section {
+  order: -1; /* Image first on mobile */
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.spimg {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.button-group button {
+  width: 140px;
+  margin: 10px;
+}
+
+/* ========== 1280x720 Fix (Landscape Tablets/Small Laptops) ========== */
+@media (min-width: 768px) {
   .modner {
-    width: 75vw;
-    height: 70vh;
+    flex-direction: row;
+    padding: 30px;
+    min-height: 500px;
   }
-  .left-section h1 {
-    font-size: 2.5rem;
-    margin-top: 1px;
+
+  .borcontent {
+    flex-direction: row;
+    gap: 30px;
+    padding: 0;
   }
+
+  .left-section {
+    flex: 1.2;
+  }
+
+  .right-section {
+    flex: 1;
+    order: 1;
+    max-width: none;
+    height: 100%;
+    align-self: center;
+  }
+
   .spimg {
-   display: none;
+    max-height: 300px;
+    width: auto;
   }
- 
-  .results {
-    font-size: 0.8rem; 
-    padding: 6px;
-    width: 26vw;
-    height: 4vh;
+
+  .button-group button {
+    width: 160px;
+    font-size: 1.2rem;
   }
 }
 
+/* ========== Desktop HD (1280x720 and similar) ========== */
+@media (min-width: 1024px) and (max-height: 720px) {
+  .modner {
+    min-height: 400px;
+    max-width: 700px;
+  }
+
+  .spimg {
+    max-height: 250px;
+  }
+
+  .left-section h1 {
+    font-size: 2.8rem;
+  }
+
+  .label {
+    font-size: 1.6rem;
+  }
+}
+
+/* ========== Tablet Landscape Fix ========== */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .modner {
+    min-height: 380px;
+    margin: 2vh auto;
+  }
+
+  .spimg {
+    max-height: 180px;
+  }
+}
+
+/* ========== Phone Fixes ========== */
+@media (max-width: 480px) {
+  .modner {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .left-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .categoryname {
+    position: static;
+    margin-top: -15px;
+  }
+
+  .button-group {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .button-group button {
+    width: 45%;
+    min-width: 120px;
+    margin: 5px;
+  }
+}
+
+/* ========== Height Protection ========== */
+@media (max-height: 600px) {
+  .modner {
+    overflow-y: auto;
+    max-height: 90vh;
+  }
+
+  .spimg {
+    max-height: 150px;
+  }
+}

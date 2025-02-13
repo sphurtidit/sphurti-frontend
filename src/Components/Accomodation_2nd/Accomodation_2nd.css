@@ -44,6 +44,33 @@
     transition-duration: 0.4s;
     transform: skew(-10deg);
 }
+.apply {
+    position: absolute;
+    top: 505%;  /* Adjust vertical positioning */
+    /* left: %; Adjust horizontal positioning */
+    z-index: 10;
+}
+
+.apply {
+    background-color: #E90037; /* Red color matching the reference */
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    
+    /* Creating the exact diagonal shape */
+    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+}
+
+/* Hover effect */
+.apply:hover {
+    background-color: #c40022;
+    transform: scale(1.05);
+}
 
 @media only screen  and (max-width: 1200px) {
     .cards img {
