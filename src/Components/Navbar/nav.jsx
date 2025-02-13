@@ -64,7 +64,7 @@ function Nav() {
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
+            <li onClick={() => handleNavigateAndScroll("/RulesSection")}>
               GENERAL RULES
             </li>
           </ScrollLink>
