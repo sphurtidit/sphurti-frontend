@@ -11,7 +11,7 @@ import { Lines } from "react-preloaders";
 import Timer from "./Components/timer/timer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+const url = import.meta.env.VITE_BASE_URL;
 
 import React, { useState, useEffect } from "react";
 import AccommodationSection from "./Components/Accomodation/Accommodation";
@@ -21,7 +21,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [events, setEvents] = useState();
   const isLoggedIn = localStorage.getItem("authToken") != null;
-  const url = process.env.BASE_URL;
+  
 
   useEffect(() => {
     const fetchEvents = async () => {
