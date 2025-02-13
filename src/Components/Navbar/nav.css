@@ -240,7 +240,74 @@ nav li:hover ul.dropdown {
     /* width: 30%; */
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (min-width:1440px){
+    .logo {
+        height: 4rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Intermediate responsive styles (720px - 1440px) */
+@media only screen and (min-width: 721px) and (max-width: 1440px) {
+    .main-nav {
+        padding: 0 50px;
+    }
+
+    .logo {
+        height: 4rem;
+        padding: 0.5rem;
+    }
+
+    .center-button {
+        gap: 15px;
+    }
+
+    .center-button li {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    nav li ul.dropdown {
+        width: 12vw;
+        left: 110%;
+        transform: translateX(-110%);
+    }
+
+    .right-side button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .nav-button {
+        display: none; /* Keep hamburger hidden in this range */
+    }
+
+    /* Adjust header elements scaling */
+    .main-nav {
+        justify-content: space-around;
+    }
+
+    /* Ensure proper spacing */
+    .center-button {
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 80%;
+    }
+
+    /* Prevent text cropping */
+    nav li {
+        white-space: nowrap;
+        margin: 0 5px;
+    }
+
+    /* Scale down dropdowns */
+    .saaj a {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
     .show-nav + .nav-button {
         display: none;
     }
@@ -337,7 +404,7 @@ nav li:hover ul.dropdown {
 }
 
 /* Additional adjustments for smaller screens */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
     .center-button {
         padding: 1rem;
     }

@@ -51,7 +51,7 @@ console.log(gameDetails);
 
   return (
     <div className="nav-sports" id="sports-section">
-        {/* <div className="parent-container-sports">
+        <div className="parent-container-sports">
           <div className="heading">
             <h1>SPORTS</h1>
           </div>
@@ -69,7 +69,7 @@ console.log(gameDetails);
             ))}
           </div>
         </div>
-      <SportsCard isOpen={isModalOpen} onClose={closeModal} category={category} eventName={eventName}/> */}
+      <SportsCard isOpen={isModalOpen} onClose={closeModal} category={category} eventName={eventName}/>
     </div>
   );
 };

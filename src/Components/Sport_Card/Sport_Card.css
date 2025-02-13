@@ -203,7 +203,7 @@ body {
 .categoryname{
   position: relative;
   top: -2rem;
-  left: 12rem;
+  left: -11rem;
   color: var(--primary-color);
   font-family: 'SF Sports Night';
   font-size: 1.5rem;
@@ -331,8 +331,8 @@ body {
   }
 
   .categoryname {
-    position: static;
     margin-top: -15px;
+    left: -10rem;
   }
 
   .button-group {
