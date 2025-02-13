@@ -12,6 +12,7 @@ import Timer from "./Components/timer/timer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 import React, { useState, useEffect } from "react";
 import AccommodationSection from "./Components/Accomodation/Accommodation";
 
@@ -20,15 +21,16 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [events, setEvents] = useState();
   const isLoggedIn = localStorage.getItem("authToken") != null;
+  const url = process.env.BASE_URL;
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         const eventResponse = await axios.get(
-          "https://sphurti-backend.onrender.com/api/events"
+          `${url}/api/events`
         );
         const categoryResponse = await axios.get(
-          "https://sphurti-backend.onrender.com/api/eventCategory"
+          `${url}/api/eventCategory`
         );
         console.log("test", eventResponse);
         console.log("test2", categoryResponse);
