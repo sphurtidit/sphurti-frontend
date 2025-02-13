@@ -129,7 +129,7 @@ function Nav() {
           {isLoggedIn ? (
             <Button text={"PROFILE"} onClick={() => navigate("/ProfilePage")} />
           ) : (
-            <Button text={"LOGIN"} onClick={() => navigate("/comingsoon")} />
+            <Button text={"LOGIN"} onClick={() => navigate("/Loginpage")} />
           )}
         </div>
         <button className="nav-button nav-close-button" onClick={showNav}>

@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import logpage from "./Loginpage.module.css";
 import { useNavigate } from "react-router-dom";
-
+import Navbar from "../Navbar/nav";
 import axios from "axios";
-import { handleSuccess, handleError } from "../../utils"; // Import utility functions
-import { ToastContainer } from "react-toastify"; // Toast container for notifications
-import "react-toastify/dist/ReactToastify.css"; // Import Toastify styles
-import BGImage from"../../assets/signupbg.jpg";
-import icon from"../../assets/iconsph.png";
-import Sphurti from "../../assets/sphurti.png";
-import Naac from "../../assets/naac.png";
-import Dit from "../../assets/DIT.png";
-
+import { handleSuccess, handleError } from "../../utils";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import loginback from "../../assets/loginback.png";
+import loginbackground from "../../assets/loginbackground.png";
 
 function Loginpage() {
   const navigate = useNavigate();
@@ -56,75 +52,62 @@ function Loginpage() {
 
   return (
     <>
-      <div className={logpage.loginContainer}>
-        <div className={logpage.loginBox}>
-          <h1>
-            <p>Welcome to </p>
-            Sphurti
-          </h1>
-          <form onSubmit={handleLogin}>
-            <div className={logpage.formGroup}>
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"  
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className={logpage.formGroup}>
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <a href="#">
-              <p className={logpage.forpass}>Forgot Password</p>
-            </a>
-            <button type="submit" className={logpage.loginBtn}>
-              Login
-            </button>
-            <p className={logpage.signupText}>
-              Don't have an account?{" "}
-              <span onClick={() => navigate("/Signinpage")}>Sign Up</span>
-            </p>
-          </form>
-        <img src={Sphurti} alt="Sphurti Logo" className={logpage.logo1} />
-                    <img src={Naac} alt="Naac Logo" className={logpage.logo2} />
-                    <img src={Dit} alt="Dit Logo" className={logpage.logo3} />
-                
-
-                  <div 
-    className={logpage.bgimage}
-    style={{ backgroundImage: `url(${BGImage})` }} // Corrected line
-></div>
-
-
-            {/* <h1 ><p >Welcome to </p>
-                      Sphurti</h1>
-            <form>
+      <Navbar />
+      <div
+        className={logpage.overlay1}
+        style={{ backgroundImage: `url(${loginback})` }}
+      >
+        <div
+          className={logpage.overlay2}
+          style={{ backgroundImage: `url(${loginbackground})` }}
+        >
+          <div className={logpage.loginContainer}>
+            <div className={logpage.loginBox}>
+              <h1>Welcome to Sphurti</h1>
+              <form onSubmit={handleLogin}>
                 <div className={logpage.formGroup}>
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username" required/>
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
                 </div>
                 <div className={logpage.formGroup}>
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required/>
+                  <label htmlFor="password">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
                 </div>
-                <a href="#"><p className={logpage.forpass}>Forgot Password</p></a>
-                <button type="submit" className={logpage.loginBtn}>Login</button>
-                <p className={logpage.signupText}><b>Don't have an account? </b><a href="#">Sign Up</a></p>
-                
-            </form> */}
+                {error && <p className={logpage.error}>{error}</p>}
+                <a href="#">
+                  <p className={logpage.forpass}>Forgot Password</p>
+                </a>
+                <p className={logpage.signupText}>
+                  Don't have an account?{" "}
+                  <span
+                    className={logpage.signup}
+                    onClick={() => navigate("/Signinpage")}
+                  >
+                    Sign Up
+                  </span>
+                </p>
+                <button type="submit" className={logpage.loginBtn}>
+                  Login
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
       {/* ToastContainer to render the toast notifications */}
