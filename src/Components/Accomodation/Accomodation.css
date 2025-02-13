@@ -84,14 +84,121 @@
     width: 2vw;
     height: 30vw;
 }
-@media (max-width: 1264px) {
+/* Tablets (Portrait & Landscape) */
+@media (max-width: 1024px) {
+  .rules-container {
+    width: 90%;
+    margin: auto;
+    padding: 2vw;
+  }
+
+  .download-heading {
+    font-size: 3.2vw;
+    width: 50vw;
+  }
+
+  .download-button {
+    font-size: 2vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    padding: 2vw 4vw;
+  }
+
+  .registration-heading {
+    font-size: 3vw;
+  }
+
+  .registration-date {
+    font-size: 3.5vw;
+  }
+
+  .strips {
+    width: 3vw;
+    height: 35vw;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .rules-container {
+    width: 95%;
+    padding: 4vw;
+    border: none;
+  }
+
   .download-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .download-heading {
+    font-size: 4vw;
+    width: 80%;
+  }
+
+  .download-button {
+    font-size: 2.5vw;
+    padding: 3vw 6vw;
+  }
+
+  .registration-heading {
+    font-size: 4.5vw;
+    margin-bottom: 2vw;
+  }
+
+  .registration-date {
+    font-size: 5vw;
+  }
+
+  .horizontal-line {
+    width: 90%;
+    margin: 3vw auto;
+  }
+
+  .lines {
     justify-content: center;
   }
-  .download-button{ 
-    margin-top: 1vw;
+
+  .strips {
+    width: 4vw;
+    height: 40vw;
   }
-  .Accommodation-Rules {
-    text-align: center;
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .rules-container {
+    width: 100%;
+    padding: 5vw;
+  }
+
+  .download-heading {
+    font-size: 5vw;
+    width: 90%;
+  }
+
+  .download-button {
+    font-size: 3vw;
+    padding: 4vw 8vw;
+  }
+
+  .registration-heading {
+    font-size: 5.5vw;
+  }
+
+  .registration-date {
+    font-size: 6vw;
+  }
+
+  .strips {
+    width: 5vw;
+    height: 45vw;
   }
 }

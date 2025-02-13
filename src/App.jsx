@@ -1,6 +1,6 @@
 import "./App.css";
 import SportsSection from "./Components/Sports_section/Sports_section";
-import Main_HeroPage from "./Components/Main_HeroPage/Main_HeroPage";
+import Main_HeroPage from "./Components/HeroPage/HeroPage";
 import TeamSec from "./Components/team_sec/team_sec";
 import Footer from "./Components/Footer/Footer";
 import Result from "./Components/result/result";
