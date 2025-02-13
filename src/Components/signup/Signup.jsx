@@ -3,9 +3,9 @@ import signpage from "./Signup.module.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import loginback from '../../assets/loginback.png';
-import loginbackground from '../../assets/loginbackground.png';
-import Navbar from '../Navbar/nav';
+import loginback from "../../assets/loginback.png";
+import loginbackground from "../../assets/loginbackground.png";
+import Navbar from "../Navbar/nav";
 
 function Signinpage() {
   const [isOtpVisible, setOtpVisible] = useState(false); // State to toggle OTP visibility
@@ -123,11 +123,10 @@ function Signinpage() {
       <div className={signpage.pageWrapper}>
         <div className={signpage.overlay1} style={{ backgroundImage: `url(${loginback})` }}>
           <div className={signpage.overlay2} style={{ backgroundImage: `url(${loginbackground})` }}></div>
-          <div className={`${signpage.Container} ${isOtpVisible ? signpage.blur : ""}`}>
+          <div className={`${signpage.Container1} ${isOtpVisible ? signpage.blur : ""}`}>
             <div className={signpage.Box}>
               <h1>
                 <p>Enter Your Details</p>
-                
               </h1>
               <form onSubmit={handleSignup}>
                 <div className={signpage.formGroup}>
@@ -180,7 +179,7 @@ function Signinpage() {
                     value={signupInfo.clg_id}
                   />
                 </div>
-                <div className={signpage.branch}>
+                <div className={signpage.formGroupRow}>
                   <div className={signpage.formGroup}>
                     <input
                       onChange={handleChange}
@@ -189,6 +188,7 @@ function Signinpage() {
                       placeholder="Branch"
                       value={signupInfo.branch}
                     />
+                 
                   </div>
                   <div className={signpage.formGroup}>
                     <input

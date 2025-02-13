@@ -13,24 +13,31 @@ h1 {
     font-size: 2rem;
     margin-bottom: 10px;
 }
-
+input {
+    border: 1px solid #ccc !important;
+  }
+  
+  input:hover,input:focus {
+    border: 1px solid #ee0942 !important;
+  }
 a {
-    font-size: medium;
+    font-size: 1rem;
     font-weight: 400;
-    color: black;
+    color: #ee0942;
+    cursor: pointer !important;
 }
 
-.Container {
-    width: 80vh; /* Further reduced width */
+.Container1{
+    width: 80% !important; /* Further reduced width */
     max-width: 500px; /* Further adjusted max width */
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 1rem 1.5rem; /* Reduced padding */
+    padding: 1rem 4rem; /* Reduced padding */
     border-radius: 20px; /* Smaller radius */
     text-align: center;
     justify-content: center;
     overflow: visible; /* Allow content to overflow */
     border: 2px solid #ee0942;
-    margin-top: 5rem; /* Add margin instead of top */
+    margin-top: 5rem !important; /* Add margin instead of top */
     position: relative; /* Ensure it stays within the flow */
 }
 
@@ -128,12 +135,11 @@ input {
     border-radius: 7px;  /* Smaller radius */
     border: 2px solid rgb(233, 226, 226);
     font-size: 0.85rem;
+    cursor: pointer !important;
     
    
 }
-input:hover,input:active,input:focus,input:hover{
-    border: 2px solid #EE0942 !important;
-}
+
 
 /* OTP popup */
 .otp {
@@ -168,7 +174,7 @@ input:hover,input:active,input:focus,input:hover{
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s;
-    width: 100%; /* Full width for responsiveness */
+    width: 65%; /* Full width for responsiveness */
     max-width: 300px; /* Limit maximum width */
     height: 40px;  /* Reduced height */
     margin: 0 auto; /* Center the button horizontally */
@@ -178,11 +184,11 @@ input:hover,input:active,input:focus,input:hover{
 
 .signinBtn:hover {
     background-color: white;
-    color: #ee0942;
-    border: 1px solid #ee0942;
+    color: #EE0942;
+    border: 1px solid #EE0942;
 }
 
-
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
     .Container {
         width: 70vw;  /* Adjusted width */
@@ -212,6 +218,7 @@ input:hover,input:active,input:focus,input:hover{
     .signinBtn {
         font-size: small; /* Smaller font size for medium screens */
         padding: 0.5rem 1rem; /* Adjusted padding */
+
     }
 }
 
