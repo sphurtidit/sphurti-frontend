@@ -21,10 +21,8 @@ function Navbar() {
           <img src={NAAC} alt="NAAC Logo" className="logo" />
         </div>
 
-        {/* Login Button (Placed between NAAC logo and Hamburger Icon) */}
         <Link to="/login" className="login-btn">Login</Link>
 
-        {/* Hamburger Icon */}
         <span
           className="hamburger-icon"
           onClick={() => setHamburgerOpen((prev) => !prev)}

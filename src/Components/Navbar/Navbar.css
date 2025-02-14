@@ -10,6 +10,11 @@
   top: 0;
   left: 0;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+.nav-container.scrolled {
+  background-color: rgba(26, 26, 46, 0.9);
+  backdrop-filter: blur(10px);
 }
 
 .login-btn {
@@ -19,16 +24,22 @@
   font-size: 14px;
   font-weight: bold;
   background-color: #ff004f;
+  background: linear-gradient(45deg, #ff5733, #c70039);
   color: white;
   border: none;
   cursor: pointer;
   position: absolute;
   right: 70px;
   margin-right: 40px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 4px 8px rgba(199, 0, 57, 0.3);
 }
 
 .login-btn:hover {
   background-color: #d40042;
+  background: linear-gradient(45deg, #c70039, #ff5733);
+  transform: scale(1.05);
+  box-shadow: 4px 6px 12px rgba(199, 0, 57, 0.5);
 }
 
 .hamburger-icon {
@@ -38,6 +49,11 @@
   cursor: pointer;
   padding: 10px;
   z-index: 1000;
+  transition: transform 0.2s ease-in-out;
+}
+
+.hamburger-icon:hover {
+  transform: scale(1.1);
 }
 
 .hamburger-icon svg {
@@ -48,11 +64,11 @@
 
 .dropdown {
   position: absolute;
-  top: 90px;
+  top: 95px;
   right: 0px;
-  width: 100%;
-  height: 90%;
-  background-color: white;
+  width: 30%;
+  height: 86%;
+  background-color: rgb(245, 250, 251);
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -74,7 +90,26 @@
   display: grid;
   padding: 4px 0;
   row-gap: 0px;
+  
 }
+.dropdown a {
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+
+  font-weight: 500;
+  color: #2374E8; /* Light Gray */
+  padding: 10px 0;
+  width: 100%;
+  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.dropdown a:hover {
+  color: #ff5733; /* Orange */
+  background: rgba(255, 87, 51, 0.2);
+  border-radius: 8px;
+}
+
 
 @media (max-width: 768px) {
   .nav-container {
