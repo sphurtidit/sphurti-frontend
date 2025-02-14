@@ -6,7 +6,6 @@ import sportsOfficer from "../../assets/sportsOfficer.svg";
 
 function TeamSec({ teams, sport }) {
   // console.log(teams,sport);
-  console.log(sport);
 
   // useEffect(()=>{
 

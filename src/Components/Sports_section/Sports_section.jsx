@@ -10,12 +10,12 @@ import basketballimg from "../../assets/basketball.png";
 import tabletennisimg from "../../assets/table_tennis.png";
 import SportsCard from "../Sport_Card/Sport_Card"; // Import the BasketballEvent component
 
-const SportsSection = ({ rule , gameDetails = {}}) => {
+const SportsSection = ({ rule , gameDetails}) => {
   const [eventName, setEventName] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
   const [category, setCategory] = useState()
 
-console.log(gameDetails);
+console.log("test2", gameDetails);
   const openModal = (category, eventName) => {
     setIsModalOpen(true); // Open the modal
     setCategory(category)

@@ -15,33 +15,6 @@ function ProfilePage() {
   };
 
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await axios.get(
-          "https://sphurti-backend.onrender.com/api/user/verify-user",
-          {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-            },
-          }
-        );
-
-        // Save the user data in state
-        setUserDetails(response.data.data.currentUser);
-
-        // Show a success toast
-        toast.success("Logged in successfully!");
-      } catch (err) {
-        console.error("Error fetching user data:", err);
-
-        // Set error message and show an error toast
-        const errorMessage =
-          err.response?.data?.message || "Failed to fetch user details.";
-        setError(errorMessage);
-        toast.error(errorMessage);
-      }
-    };
-
     fetchUser();
   }, []);
 
