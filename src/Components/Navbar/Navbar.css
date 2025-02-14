@@ -12,8 +12,38 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.hamburger-icon {
+.login-btn {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #ff004f;
+  color: white;
+  border: none;
   cursor: pointer;
+  position: absolute;
+  right: 70px;
+  margin-right: 40px;
+}
+
+.login-btn:hover {
+  background-color: #d40042;
+}
+
+.hamburger-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.hamburger-icon svg {
+  color: black;
+  width: 32px;
+  height: 32px;
 }
 
 .dropdown {
@@ -34,7 +64,7 @@
 }
 
 .dropdown.show {
-  opacity: 150;
+  opacity: 1;
   transform: translateY(0);
   visibility: visible;
   flex-direction: column;
@@ -44,5 +74,28 @@
   display: grid;
   padding: 4px 0;
   row-gap: 0px;
-/* column-gap: 0vh; */
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+  }
+
+  .login-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    position: absolute;
+    right: 50px;
+    margin: 0;
+  }
+
+  .hamburger-icon {
+    padding: 6px;
+  }
+
+  .dropdown {
+    top: 70px;
+    width: 100%;
+  }
 }
