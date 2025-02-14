@@ -13,12 +13,11 @@ function Navbar() {
   return (
     <div>
       <div className="nav-container">
-        <div>
+        {/* Logo Container */}
+        <div className="logo-container">
           <img src={SPH} alt="SPH Logo" className="logo" />
-        </div>
-
-        <div>
           <img src={NAAC} alt="NAAC Logo" className="logo" />
+          <img src={DIT} alt="DIT Logo" className="logo" />
         </div>
 
         <Link to="/login" className="login-btn">Login</Link>
