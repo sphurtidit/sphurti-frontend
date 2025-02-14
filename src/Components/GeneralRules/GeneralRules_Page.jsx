@@ -32,7 +32,7 @@ const protestRules = [
 
 const RulesSection = () => {
   return (
-    <div className="rules-container">
+    <div className="rules-container-GR">
       <Nav />
       <div className="rules-box">
         <h1>SPHURTI 2025 - General Rules</h1>

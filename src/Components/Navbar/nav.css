@@ -363,7 +363,9 @@ nav li:hover ul.dropdown {
         justify-content: center;
         padding: 1rem;
         font-size: 1.2rem;
-        border-bottom: 1px solid #eee;
+        border: 2px solid  #E90037;
+        border-radius: 5px;
+    
     }
 
     .logo-left {
@@ -416,6 +418,6 @@ nav li:hover ul.dropdown {
     
     .nav-button {
         right: 5px;
-        top: 5px;
+        top: -3px;
     }
 }
