@@ -8,6 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 # How to Contribute
+
  - First of all Clone the git repository by using the command ```git clone```
  - Then checkout to the branch you want to work upon,(Never use main branch for committing your code) by using the command ```git checkout -b <branch name>```
  - Then after writing the code, type the command ```npm run test "<Commit Message>"``` in your terminal. This command comes with 4 commands under the hood which includes ```git pull origin main``` that pulls the code from the main branch in order to avoid the merge conflict being resolved at maintainer level, instead resolve them at the local level. Then it comes with the commant ```eslint \"src/**/*.{js,jsx,json}\"``` which checks the correctness and compliance of the code with the eslint rules such that optimum code gets deployed at the production level. Then it runs the vite build command that checks whether the code written is build safe or not. If not build safe, then it cannot be deployed in the production and thus needs to be fixed. Then it runs the ```git add .``` command and finally ```git commit -m``` command after which it gets your commit message and finally your code is committed.
