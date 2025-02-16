@@ -32,14 +32,14 @@ function App() {
         const categoryResponse = await axios.get(
           `${url}/api/eventCategory`
         );
-        console.log("test", eventResponse);
-        console.log("test2", categoryResponse);
+        // console.log("test", eventResponse);
+        // console.log("test2", categoryResponse);
         if (eventResponse.data && categoryResponse.data.eventCategories) {
           const mergedEvents = eventResponse.data.map((event) => {
             const category = categoryResponse.data.eventCategories.filter(
               (cat) => cat.eventId === event._id
             );
-            console.log("category -> ",category)
+            // console.log("category -> ",category)
 
             return {
               ...event,

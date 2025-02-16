@@ -3,7 +3,7 @@ import "./sports_container.css";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import PropTypes from "prop-types";
 
-const SportsContainer = ({ rule, game, type, image, openModal, closeModal, event}) => {
+const SportsContainer = ({ game, type, image, openModal, closeModal, event}) => {
   let col = type == 1 ? "blue" :"red" ;
 
   return (
