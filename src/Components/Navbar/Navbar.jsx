@@ -22,6 +22,7 @@ function Navbar() {
 
         <Link to="/login" className="login-btn">Login</Link>
 
+        {/* Hamburger Icon */}
         <span
           className="hamburger-icon"
           onClick={() => setHamburgerOpen((prev) => !prev)}
@@ -31,15 +32,17 @@ function Navbar() {
       </div>
 
       {/* Dropdown Menu */}
-      <div className={`dropdown ${hamburgerOpen ? "show" : ""}`}>
-        <Link to="/">HOME</Link>
-        <Link to="/">SPORTS</Link>
-        <Link to="#">GENERAL RULES</Link>
-        <Link to="#">ORGANISING LEADERS</Link>
-        <Link to="#">AMBASSADORS</Link>
-        <Link to="/FAQ">FAQ</Link>
-        <Link to="#">ARCHIVE</Link>
-        <Link to="#">CONTACT US</Link>
+      <div className={`dropdown-container ${hamburgerOpen ? "show" : ""}`}>
+        <div className="dropdown">
+          <Link to="/">Home</Link>
+          <Link to="/">Sports</Link>
+          <Link to="#">General Rules</Link>
+          <Link to="#">Organising Leaders</Link>
+          <Link to="#">Ambassadors</Link>
+          <Link to="/FAQ">FAQ</Link>
+          <Link to="#">Archive</Link>
+          <Link to="#">Contact Us</Link>
+        </div>
       </div>
     </div>
   );
