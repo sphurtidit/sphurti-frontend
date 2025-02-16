@@ -3,6 +3,7 @@
     height: 100%;
     width: 100%;
     padding: 10px;
+    overflow-x:hidden ;
 
 }
 .image{
@@ -15,7 +16,7 @@
     margin-bottom: 15px;
     border: 2px  solid #d5d3d4;
     background-color:#d5d3d4 ;
-    margin-left: 1rem;
+   
     gap: 5rem;
 }
 .daba{
@@ -44,11 +45,11 @@ justify-content: space-between;
     height: 45px;  /* Reduced height */
     margin: 0 auto; /* Center the button horizontally */
     display: block; /* Ensure margin: auto works */
-    margin-top: 4rem;
+
     margin-bottom: 1rem;
 }
 .dox{
-    color: rgb(152, 151, 151);
+    color: rgb(38, 37, 37);
     font-weight: 300;
 }
 .mainbox {
@@ -94,6 +95,7 @@ justify-content: space-between;
 .info{
     display: flex;
     gap: 10rem;
+    margin-top: 2rem;
 }
 
     
@@ -117,6 +119,7 @@ justify-content: space-between;
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
+    
   
 }
 
