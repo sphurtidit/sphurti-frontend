@@ -160,176 +160,123 @@ justify-content: space-between;
 ::-webkit-scrollbar{
     display:block;
 }
-@media only screen and (max-width: 768px){
-   
-    .image{
-        height:40vh;
-        width: 70vw;
-        margin-left: 15%;
-    }
-    .info{
-        display: flex;
-        flex-direction: column;
-    }
-    .contact{
-        width: 70%;
-        margin-top: 30px;
-        height: 75px;
-        width: 70vw;
-        margin-left: 15%;
-        padding: 0;
-    }
-    .mainheading{
-        margin-left: 15%;
-        margin-top: 15px;
-    }
-    .text{
-        width: 70vw;
-    }
-    .bgplate{
-        margin-top: 30px;
-        width: 70vw !important;
-    }
-    .register{
-        font-size: 25px;
-        margin-top: 0px;
-        margin-left: 3%;
-    }
-    .register{
-        size: 50%;
-    }
-    .contactinfo{
-        font-size: 20px;
-       
-    }
-    .events{
-        margin-left: 15px;
-    }
-}
-@media only screen and (max-width: 426px){
-   
-    .image{
-        height:30vh;
-        width: 70vw;
-        margin-left: 15%;
-    }
-    .contact{
-        width: 70%;
-        margin-top: 30px;
-        height: 75px;
-        width: 70vw;
-        margin-left: 15%;
-       
-    }
-    .contactinfo{
-        font-size: 16px;
-        margin-left: 5px;
-       
-    }
-    .mainheading{
-        margin-left: 15%;
-        margin-top: 15px;
-    }
-    .text{
-        width: 70vw;
-        text-wrap: wrap;
-    }
-    .bgplate{
-        width: 70vw !important;
-    }
-}
-@media only screen and (max-width: 375px) {
-    
-        .image{
-            height:30vh;
-            width: 70vw;
-            margin-left: 10%;
-        }
-        .bgplate{
-            margin-bottom: 15px;
-        }
-        .contact{
-            width: 50%;
-            width: 70vw;
-            margin-left: 10%;
-            align-content: center;
-        }
-        .contactinfo{
-            font-size: 14px;
-            margin-left: 5px;
-           
-        }
-        .mainheading{
-            margin-left: 10%;
-        }
-        .text{
-            width: 70vw;
-        }
-        .bgplate{
-            width: 70vw !important;
-        }    
-}
 
 
-.contactinfo{
-    margin-left: 30px;
-    color: black;
-    
-}
-.scroller{
-    width: 100vw;
-    margin-left: 0px;
-
-    
-
-}
-@media only screen and (max-width: 768px) {
-    .image {
-        height: 30vh;
-        width: 50vw;
+/* For smaller tablets and large mobile devices */
+@media (max-width: 768px) {
+    .mainbox {
+        margin-top: 4rem;
+        padding: 10px;
     }
+
     .info {
-        flex-direction: column;
+        gap: 3rem;
     }
-    .contact {
-        width: 80%;
+
+    .image {
+        height: 15rem;
+        width: 15rem;
     }
-    .mainheading, .bgplate, .text {
-        width: 90%;
-        margin: auto;
+
+    .btn, .btn1 {
+        width: 15rem;
+        height: 40px;
+        font-size: small;
+    }
+
+    .mainheading {
+        font-size: small;
+    }
+
+    .events {
+        height: 12rem;
+        width: 12rem;
     }
 }
 
-@media only screen and (max-width: 430px) {
+/* For mobile devices (Android and iOS) */
+@media (max-width: 480px) {
+    .daba{
+        margin: 0;
+    }
+    .mainbox {
+        margin-top: 5rem; 
+        border-radius: 20px; /* Slightly rounded corners */
+    }
+
+    .info {
+        gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .image {
-        height: 25vh;
-        width: 60vw;
+        height: 12rem;
+        width: 12rem;
     }
-    .contact {
-        width: 90%;
-        height: auto;
-        padding: 15px;
-    }
-    .contactinfo {
-        font-size: 0.8rem;
-    }
-    .mainheading {
-        font-size: 1rem;
-    }
+
     .btn, .btn1 {
-        width: 90%;
-        font-size: 0.9rem;
-        height: auto;
+        width: 100%; /* Full width for buttons */
+        max-width: 18rem; /* Limit maximum width */
+        height: 40px;
+        font-size: small;
     }
+
+    .mainheading {
+        width: 100%; /* Full width for text content */
+        font-size: small;
+    }
+
     .bgplate {
-        margin: 15px auto;
-        width: 90%;
+        padding: 8px;
+        margin: 8px 0;
     }
-  
-        .mainbox {
-          max-width: 90%; /* Take up more width on smaller screens */
-          padding: 5px; /* Reduce padding further for better spacing */
-          margin-top: 2rem; /* Reduce top margin to fit smaller screens */
-          border-radius: 10px; /* Adjust border radius for compact design */
-        }
-      }
+
+    .events {
+        height: 10rem;
+        width: 100%; /* Full width for event image */
+        max-width: 18rem; /* Limit maximum width */
+    }
+
+    .register {
+        font-size: medium;
+        text-align: center; /* Center align the heading */
+    }
+}
+
+/* For very small mobile devices */
+@media (max-width: 320px) {
+    .mainbox {
+        margin-top: 2rem; /* Adjusted top margin */
+        padding: 8px; /* Adjusted padding */
+        width: calc(100% - 2rem); /* Occupies full width with 1rem space on left and right */
+        margin-left: 1rem; /* 1rem space on the left */
+        margin-right: 1rem; /* 1rem space on the right */
+    }
+
+    .image {
+        height: 10rem;
+        width: 10rem;
+    }
+
+    .btn, .btn1 {
+        width: 100%; /* Full width for buttons */
+        max-width: 15rem; /* Limit maximum width */
+        height: 35px;
+        font-size: x-small;
+    }
+
+    .mainheading {
+        font-size: x-small;
+    }
+
+    .events {
+        height: 8rem;
+        width: 100%; /* Full width for event image */
+        max-width: 15rem; /* Limit maximum width */
+    }
+
+    .register {
+        font-size: small;
+    }
+}
