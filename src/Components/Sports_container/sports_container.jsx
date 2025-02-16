@@ -19,7 +19,7 @@ const SportsContainer = ({ rule, game, type, image, openModal, closeModal, event
              className="primary-s"
              onClick={() => openModal(cate, event.name, image)} // Open the modal on button click
            >
-             {cate.categoryName}
+            <span className="btn-text">{cate.categoryName}</span>
            </button>))}
           </div>
         </div>
