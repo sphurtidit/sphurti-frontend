@@ -76,11 +76,12 @@ h1 {
 
 .final-statement {
   text-align: center;
-  font-size: 18px;
-  font-weight: 900;
+  font-size: 0.8em;
+  /* font-weight: 900; */
+  font-style: italic;
   color: #222;
   margin-top: 20px;
-  padding: 15px;
+  padding: 10px;
   background-color: #ffeaea;
   border-radius: 10px;
   border: 2px solid red;

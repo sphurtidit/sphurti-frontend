@@ -55,7 +55,7 @@ const RulesSection = () => {
         </div>
       </div>
       <p className="final-statement">
-        The rules and regulations may be amended and organizers have the right to do so.
+        *The rules and regulations may be amended and organizers have the right to do so*.
       </p>
     </div>
   );
