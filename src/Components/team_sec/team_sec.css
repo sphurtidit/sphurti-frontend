@@ -1,117 +1,118 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ffffff;
+  --accent-color: #444;
+  --border-color: #ddd;
+}
+
 .whole {
   width: 100vw;
-  line-height: 5vh;
-  margin-top: 5vh;
+  max-width: 1600px;
+  margin: 5vh auto;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.Heading1 {
-  font-family: "Outfit", sans-serif;
-  font-size: 64px;
-  font-weight: 900;
-  height: 81px;
-  color: #000000;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-h1,h2{
-  color: #000;
-}
-
-.detail {
-  border: 1px solid black;
-  width: 12vw;
-  margin-left: 4px;
-}
-.officer {
-  width: 15vw;
-  height: auto;
-}
-
-/* .csoon{
-  width: 70%;
-  height: auto;
-} */
-.Heading2 {
-  font-family: "Outfit", sans-serif;
-  font-size: 32px;
-  margin: 2.5vh 0;
-  font-weight: 800;
-  color: #000000;
-  text-align: center;
-  text-transform: uppercase;
-}
-.FacultyCard {
+.info-container {
   display: flex;
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--border-color);
+  border-radius: 15px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
 }
-.StudentCard,
-.FacultyCard {
+
+.contact-top {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-
-  row-gap: 2rem;
-  /* column-gap: 3rem; */
+  align-items: stretch;
+  gap: 3rem;
+  width: 100%;
 }
 
-/* .StudentCard>div{
-    flex: 0 0 calc(25% - 80px);
-} */
-
-.StudentCard > div {
-  flex-basis: 22%; /* Calculate width for three items in a row with gap */
+.officer-info {
+  flex: 1.2;
+  max-width: 450px;
+  min-height: 200px;
 }
 
-@media (max-width: 800px) {
-  .StudentCard {
-    /* flex-direction: column; */
-    justify-content: center;
-  }
-  .StudentCard > div {
-    flex-basis: 30%;
-  }
-  .FacultyCard {
-    /* flex-direction: column; */
-    justify-content: center;
-  }
-  .FacultyCard > div {
-    flex-basis: 30%;
-  }
-  .officer {
-    width: 60vw;
-
-  }
-  .whole {
-    line-height: 3vh;
-    margin-top: 5vh;
-  }
-  .Heading1 {
-    font-size: 3rem;
-  }
-  .Heading2 {
-    font-size: 1.5rem;
-  }
+.pr-info {
+  flex: 1.2;
+  max-width: 450px;
+  min-height: 200px;
 }
-@media (max-width: 500px) {
-  .StudentCard {
-    /* flex-direction: column; */
-    justify-content: center;
+
+.officer-info, .pr-info {
+  border: 2px solid var(--border-color);
+  padding: 2rem;
+  background-color: #fff;
+  text-align: center;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.officer-info:hover, .pr-info:hover,.officer-info.hover-effect, .pr-info.hover-effect{
+  background-color: #f9f9f9;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-color);
+}
+
+
+.common-email {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+.bold-text {
+  font-weight: 900;
+  color: #000; /* Ensure it looks bold */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-top {
+    flex-direction: column;
+    align-items: center;
   }
-  .StudentCard > div {
-    flex-basis: 60%;
+
+  .officer-info, .pr-info {
+    width: 90%;
+    min-height: auto;
+    padding: 1.5rem;
+    max-width: none;
   }
-  .FacultyCard {
-    /* flex-direction: column; */
-    justify-content: center;
+
+  .common-email {
+    max-width: none;
   }
-  .FacultyCard > div {
-    flex-basis: 60%;
+  .officer-info:hover, .pr-info:hover {
+    background-color: #fff; /* Keeps original background */
+    box-shadow: none; /* Removes shadow */
+    border-color: var(--border-color); /* Resets border */
+    cursor:pointe;
   }
 }
