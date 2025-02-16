@@ -3,7 +3,7 @@ import "./sports_container.css";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import PropTypes from "prop-types";
 
-const SportsContainer = ({ rule, game, type, image, openModal, closeModal, event}) => {
+const SportsContainer = ({ game, type, image, openModal, closeModal, event}) => {
   let col = type == 1 ? "blue" :"red" ;
 
   return (
@@ -19,7 +19,7 @@ const SportsContainer = ({ rule, game, type, image, openModal, closeModal, event
              className="primary-s"
              onClick={() => openModal(cate, event.name, image)} // Open the modal on button click
            >
-             {cate.categoryName}
+            <span className="btn-text">{cate.categoryName}</span>
            </button>))}
           </div>
         </div>

@@ -57,14 +57,26 @@
   color: white;
   border-radius:1px;
   font-size: 1.5vw;
-  cursor: pointer;
   padding: 0.5vw 0.5vw;
-  border-radius: 0.8rem;
+  border-radius: 0rem;
   margin-top: 1vw;
   margin-right: 1vw;
   border: none;
   pointer-events: auto;
   width: 10vw;
+  -ms-transform: skewX(20deg);
+  -webkit-transform: skewX(20deg);
+  transform: skewX(20deg);
+  position: relative; 
+  overflow: hidden;
+}
+.primary-s .btn-text {
+  -ms-transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+  display: inline-block;
+  padding: 0.1vw; 
+  cursor: pointer;
 }
 .disabled-reg {
   opacity: 0.5;
@@ -101,6 +113,12 @@
     width:15vw;
     font-size: 0.9rem;
    }
+} 
+@media only screen and (max-width: 550px) {
+  .sports-heading{
+    font-size: 1.5rem;
+
+  }
 } 
  @media only screen and (max-width: 320px){
   .sports-heading{

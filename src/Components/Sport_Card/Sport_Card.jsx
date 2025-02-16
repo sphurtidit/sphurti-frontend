@@ -1,29 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./Sport_Card.css";
-import badmintonimg from "../../assets/badminton.png";
-import cricketimg from "../../assets/cricket.png";
-import footballimg from "../../assets/football.png";
-import volleyballimg from "../../assets/volleyball.png";
-import basketballimg from "../../assets/basketball.png";
-import tabletennisimg from "../../assets/table_tennis.png";
 
-const getImageForEvent = (eventName) => {
-  switch (eventName.toLowerCase()) {
-    case "badminton":
-      return badmintonimg;
-    case "cricket":
-      return cricketimg;
-    case "football":
-      return footballimg;
-    case "volleyball":
-      return volleyballimg;
-    case "basketball":
-      return basketballimg;
-    case "table tennis":
-      return tabletennisimg;
-    default:
-      return "";
+
+
+const openRules= (pdf) => {
+  console.log(pdf)
+  if (pdf) {
+    window.open(pdf, "_blank"); // Opens PDF in new tab
   }
 };
 
@@ -32,12 +16,12 @@ const SportsCard = ({
   onClose,
   gameDetails = {},
   category = {},
-  eventName,
-  isOdd, // Add isOdd prop
+  name,
+  isOdd,
+  image,
+  rules,
 }) => {
   const navigate = useNavigate(); // Initialize navigate
-
-  const handleNavigation = (path) => {};
 
   if (!isOpen) return null;
 
@@ -50,10 +34,8 @@ const SportsCard = ({
     maxNumber = "N/A",
   } = category;
 
-  console.log("details-> ", category);
-  const eventImage = getImageForEvent(eventName);
   const col = ["badminton", "cricket", "basketball"].includes(
-    eventName.toLowerCase()
+    name.toLowerCase()
   )
     ? "blue"
     : "red";
@@ -67,7 +49,7 @@ const SportsCard = ({
 
         <div className="borcontent">
           <div className="left-section">
-            <h1>{eventName}</h1>
+            <h1>{name}</h1>
             <span className="categoryname">{categoryName}</span>
             <div className="fees-section">
               <div className="fe">
@@ -92,17 +74,17 @@ const SportsCard = ({
               {/* <p>
                 <strong>Team Size:</strong> {minNumber} - {maxNumber} players
               </p> */}
-              <div className="details">
-                {/* <p className="strong">
+              {/* <div className="details">
+                <p className="strong">
                   Schedule: <a href="" className="amt">Download Schedule</a>
-                </p> */}
+                </p>
                 <p className="strong">
                   Rule Book:{" "}
                   <a href="" className="amt">
                     Download
                   </a>
                 </p>
-              </div>
+              </div> */}
               {/* <div>
                 <p className="strong">Coordinators:</p>
                 Name:Mobile Number&nbsp;
@@ -118,16 +100,16 @@ const SportsCard = ({
               </button>
               <button
                 className="results"
-                onClick={() => handleNavigation("/comingsoon")}
+                onClick={() => openRules(rules)}
               >
-                Schedule
+                Rules
               </button>
             </div>
           </div>
 
           <div className="right-section">
             <img
-              src={eventImage}
+              src={image}
               alt={`${categoryName || "Game"} Player`}
               className="spimg"
             />

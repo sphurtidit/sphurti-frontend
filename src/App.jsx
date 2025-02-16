@@ -1,6 +1,6 @@
 import "./App.css";
 import SportsSection from "./Components/Sports_section/Sports_section";
-import Main_HeroPage from "./Components/Main_HeroPage/Main_HeroPage";
+import Main_HeroPage from "./Components/HeroPage/HeroPage";
 import TeamSec from "./Components/team_sec/team_sec";
 import Footer from "./Components/Footer/Footer";
 import Result from "./Components/result/result";
@@ -32,14 +32,14 @@ function App() {
         const categoryResponse = await axios.get(
           `${url}/api/eventCategory`
         );
-        console.log("test", eventResponse);
-        console.log("test2", categoryResponse);
+        // console.log("test", eventResponse);
+        // console.log("test2", categoryResponse);
         if (eventResponse.data && categoryResponse.data.eventCategories) {
           const mergedEvents = eventResponse.data.map((event) => {
             const category = categoryResponse.data.eventCategories.filter(
               (cat) => cat.eventId === event._id
             );
-            console.log("category -> ",category)
+            // console.log("category -> ",category)
 
             return {
               ...event,

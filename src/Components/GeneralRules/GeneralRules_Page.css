@@ -1,0 +1,89 @@
+.rules-container-GR {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 60px;
+  text-align: center;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #222;
+  font-size: 35px;
+  padding: 5px;
+  margin-top: 20px;
+}
+
+.rules-box {
+  background: white;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ff0000;
+  margin-top: 20px;
+}
+
+.rules-item {
+  background: #f8f8f8;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #555;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.rules-text {
+  font-size: 16px;
+  color: #333 !important;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+
+.protest-box {
+  background: white;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
+  margin-top: 30px;
+}
+
+.protest-box h2 {
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.protest-box .rules-item {
+  background: #fff;
+  border: 1px solid black;
+}
+
+.protest-box .rules-text {
+  color: black !important;
+}
+
+
+.final-statement {
+  text-align: center;
+  font-size: 0.8em;
+  /* font-weight: 900; */
+  font-style: italic;
+  color: #222;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffeaea;
+  border-radius: 10px;
+  border: 2px solid red;
+  display: inline-block;
+}
