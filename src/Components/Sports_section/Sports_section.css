@@ -19,20 +19,37 @@
     margin-top: 10vmin;
 }
 
-.subheading{
+.subheading.h1{
     font-family: 'Outfit';
+    font-weight: 800;
+    size: 64px;
     text-align: center;
     color:black;
     font-size: 0.5rem;
     margin-top: 10vmin;
-    margin-bottom: 5vmin;
+ margin-bottom: 5vmin; 
 }
+
+.subheading.h2{
+    font-family: 'Outfit';
+    font-weight: 800;
+    text-align: center;
+    color:black;
+    size: 32px;
+    font-size: 0.5rem;
+     margin-top: 5%;
+    margin-bottom: 0%; 
+} 
 
 @media only screen  and (max-width: 768px) {
     .heading{
         font-size: 0.75rem;
     }
-    .subheading{
+    .subheading.h1{
         font-size: 0.3rem;
+    }
+    .subheading.h2{
+        font-size: 0.3rem;
+        
     }
 }

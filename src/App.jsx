@@ -1,6 +1,6 @@
 import "./App.css";
 import SportsSection from "./Components/Sports_section/Sports_section";
-import Main_HeroPage from "./Components/Main_HeroPage/Main_HeroPage";
+import Main_HeroPage from "./Components/HeroPage/HeroPage";
 import TeamSec from "./Components/team_sec/team_sec";
 import Footer from "./Components/Footer/Footer";
 import Result from "./Components/result/result";
@@ -11,6 +11,7 @@ import { Lines } from "react-preloaders";
 import Timer from "./Components/timer/timer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+const url = import.meta.env.VITE_BASE_URL;
 
 import React, { useState, useEffect } from "react";
 import AccommodationSection from "./Components/Accomodation/Accommodation";
@@ -20,24 +21,25 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [events, setEvents] = useState();
   const isLoggedIn = localStorage.getItem("authToken") != null;
+  
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         const eventResponse = await axios.get(
-          "https://sphurti-backend.onrender.com/api/events"
+          `${url}/api/events`
         );
         const categoryResponse = await axios.get(
-          "https://sphurti-backend.onrender.com/api/eventCategory"
+          `${url}/api/eventCategory`
         );
-        console.log("test", eventResponse);
-        console.log("test2", categoryResponse);
+        // console.log("test", eventResponse);
+        // console.log("test2", categoryResponse);
         if (eventResponse.data && categoryResponse.data.eventCategories) {
           const mergedEvents = eventResponse.data.map((event) => {
             const category = categoryResponse.data.eventCategories.filter(
               (cat) => cat.eventId === event._id
             );
-            console.log("category -> ",category)
+            // console.log("category -> ",category)
 
             return {
               ...event,

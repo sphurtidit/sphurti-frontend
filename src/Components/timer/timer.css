@@ -1,6 +1,20 @@
+@import url('https://fonts.cdnfonts.com/css/gutsand'); /* Import Gutsand */
+@import url('https://fonts.cdnfonts.com/css/grofins'); /* Import Grofins */
+
+.heading-text {
+    font-family: 'Gutsand', sans-serif !important;
+    font-style: italic;
+    font-weight: 700; /* Ensures bold */
+}
+
+.value, .key {
+    font-family: 'Grofins', sans-serif !important;
+    font-style: italic;
+    font-weight: 700; /* Ensures bold */
+}
 .timer{
     width: 100vw;
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 
 .heading-text {
@@ -34,7 +48,7 @@
 }
 
 .value{
-    color: #7f1bb6;
+    color: #2374E8;
     font-family: 'SF Sports Upright';
     font-size: 10vw;
 }
