@@ -1,14 +1,14 @@
 import './Mobile_HeroPage.css';
-import BgMobile from '../../assets/BgMobile.svg';
-import MobileBG_2 from '../../assets/Mobile_BG_2.svg';
+import BgMobile from '../../assets/sphurtiphonebg.png';
+import MobileBG_2 from '../../assets/mobilebg.png';
 
 const Mobile_HeroPage = () => {
     return (
         <>
         <div className="main-container">
-            <div className="top-section">
+            {<div className="top-section">
                 <img src={BgMobile} alt="" className="top"/>
-            </div>
+            </div> }
             <div className="bottom-section">
                 <img src={MobileBG_2} alt="" className="top"/>
             </div>

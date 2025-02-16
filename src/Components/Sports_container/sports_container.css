@@ -7,72 +7,36 @@
   width: 45vw; 
   justify-content: space-between;
   gap: 4vw;
- 
-  
+  border-radius: 1vw;
 }
-
+.blue {
+  --primary-color: #2374E8;
+  --secondary-color: #2374E8;
+}
 .red {
   --primary-color: #ee0942;
-  --secondary-color: #7f1bb6;
-}
-
-.yellow {
-  --primary-color: #ffcc32;
   --secondary-color: #ee0942;
 }
-
-.purple {
-  --primary-color: #7f1bb6;
-  --secondary-color: #ffcc32;
-}
-
 .sports-heading {
-  /* margin-top: 2.5rem; */
   font-family: 'SF Sports Night';
   color: var(--primary-color);
-  font-size: 2.6rem;
+  font-size: 2.3rem;
   max-width: 100%;
   width: 20vw;
   margin-top: -5vh;
 }
-
-/* .reg {
-  margin-top: 1vh;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-}
-
-.reg img {
-  margin-right: 5px;
-  height: 1.8vw;
-}
-
-.reg-text {
-  font-family: 'SF Sports Upright';
-  font-size: 2.4vw;
-  color: black;
-  margin: 0 5px;
-  margin-bottom: 1px;
-} */
-
 .left-column {
   display: flex;
-  margin-left: 1rem;
   width: 60%;
   justify-content: center;
   align-items: center;
+  margin-left: 4vw;
 }
-
 .right-column {
   width: 40%;
   flex: 1;
   height: 100%;
-  /* overflow: hidden; */
-  
-  /* display: flex; */
 }
-
 .right-column img {
   height: auto;
   width: auto;
@@ -81,50 +45,12 @@
   transition: none;
   object-fit: contain;
 }
-
-/* .fee {
-  border: 1px solid black;
-  line-height: 0.8;
-  display: flex;
-  color: #000;
-  box-sizing: border-box;
-  justify-content: space-evenly;
-  padding: 10px 0;
-  width: 100%;
-}
-
-.fees {
-  color: var(--primary-color);
-  font-weight: bold;
-  font-size: 1.5vw;
-  font-family: 'SF Sports Upright';
-}
-
-.team {
-  color: black;
-  font-size: 0.75vw;
-  font-family: 'DM Sans';
-}
-
-.cate {
-  color: black;
-  font-size: 1.1vw;
-  font-family: 'SF Sports Upright';
-}
-
-.cate-fees {
-  color: var(--primary-color);
-  font-size: 1.1vw;
-  font-family: 'DM Sans';
-} */
-
 .buttons {
   display: flex;
   justify-content: start;
   margin-top: 1vh;
   width: 100%;
 }
-
 .primary-s {
   background-color: var(--primary-color);
   background-color: var(--primary-color);
@@ -132,13 +58,26 @@
   border-radius:1px;
   font-size: 1.5vw;
   padding: 0.5vw 0.5vw;
+  border-radius: 0rem;
   margin-top: 1vw;
   margin-right: 1vw;
   border: none;
   pointer-events: auto;
   width: 10vw;
+  -ms-transform: skewX(20deg);
+  -webkit-transform: skewX(20deg);
+  transform: skewX(20deg);
+  position: relative; 
+  overflow: hidden;
 }
-
+.primary-s .btn-text {
+  -ms-transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+  display: inline-block;
+  padding: 0.1vw; 
+  cursor: pointer;
+}
 .disabled-reg {
   opacity: 0.5;
 }
@@ -150,7 +89,7 @@
 } 
 @media only screen and (max-width: 768px) {
   .sports-container{
-   width: 60vw;
+   width: 70vw;
   }
   
    .sports-heading{
@@ -169,4 +108,25 @@
     margin-left: 0%;
 
   }
+  .primary-s{
+    height: 3vh;
+    width:15vw;
+    font-size: 0.9rem;
+   }
+} 
+@media only screen and (max-width: 550px) {
+  .sports-heading{
+    font-size: 1.5rem;
+
+  }
+} 
+ @media only screen and (max-width: 320px){
+  .sports-heading{
+    font-size: 1.6rem;
+  }
+ .primary-s{
+  height: 3vh;
+  width:15vw;
+  font-size: 0.9rem;
+ }
 } 

@@ -64,7 +64,7 @@ function Nav() {
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
+            <li onClick={() => handleNavigateAndScroll("/RulesSection")}>
               GENERAL RULES
             </li>
           </ScrollLink>
@@ -75,13 +75,13 @@ function Nav() {
           </ScrollLink>
           <ScrollLink offset={-80}>
             <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
-            AMABASSADORS
+            AMBASSADORS
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
             <li
               onClick={() =>
-                handleNavigateAndScroll("/comingsoon")
+                handleNavigateAndScroll("/FAQ")
               }
             >
               FAQ

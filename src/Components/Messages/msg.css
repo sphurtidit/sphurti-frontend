@@ -1,113 +1,145 @@
-
 .main-msg-container {
-    display: flex;
-    background-color: #ffcc32;
+    position: relative;
     padding: 2rem;
-    /* transform:skew(0deg,-2deg); */
-    margin-top: 1rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transform: skewY(-3deg);
+    border-radius: 0;
 }
 
-.yllw{
-    background-color: #ffcc32;
+.left-column-msg, .right-column-msg {
+    transform: skewY(3deg);
 }
 
-.purp{
-    background-color: #7f1bb6;
+.red-bg {
+    background: linear-gradient(to right, #E90037 60%, #C4002E 100%);
 }
 
-.left-column-msg img {
-    width: 90%;
-    height: auto;
+.blue-bg {
+    background: linear-gradient(to right, #2374E8 60%, #1A5AB8 100%);
 }
+
+.main-msg-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    clip-path: polygon(25% 25%, 100% 15%, 100% 85%, 10% 100%);
+    z-index: 0;
+}
+
 .left-column-msg {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
+
+.left-column-msg img {
+    width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
+
 .right-column-msg {
     flex: 4;
-    color: white;
-    line-height: 0.8;
-    /* transform:skew(0deg,+2deg); */
+    padding-left: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
-.name-msg-name{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.name-msg-name{
+.name-msg-name {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     margin-top: 1rem;
 }
 
+.name-msg-designation {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
 .msg-content {
-    padding-top: 2rem;
-    line-height: 1.2;
-    font-size: 1.25rem;
+    padding-top: 1rem;
+    font-size: 1.1rem;
     text-align: justify;
     white-space: pre-wrap;
 }
 
-.toggle-button-msg{
+.toggle-button-msg {
     color: black;
     text-decoration: underline;
-}
-.toggle-button-msg:hover{
     cursor: pointer;
 }
 
-@media only screen and (max-width: 1000px){
-    .left-column-msg{
-        display: flex;
-        justify-content: space-around;
-        /* flex-direction: column; */
-    }
-    .left-column-msg img{
-        width: 100%;
-        height: auto;
-    }
+@media only screen and (max-width: 1000px) {
     .main-msg-container {
         flex-direction: column;
+        text-align: center;
+        align-items: center;
     }
 
-    .msg-details{
-        padding-left: 2rem;
-        flex: 3;
-        display: flex;
-        flex-direction: column;
-        /* align-items: center; */
-        justify-content: start;
-        /* transform:skew(0deg,+2deg); */
+    .left-column-msg {
+        width: 100%;
+        margin-bottom: 1rem;
     }
-    .msg-details-img{
-        flex: 2;
+
+    .left-column-msg img {
+        width: 80%; /* Adjusted width for smaller devices */
     }
-    .msg-details p:nth-child(1){
-        font-size: 2rem;
+
+    .right-column-msg {
+        padding-left: 0;
+        text-align: center;
     }
-    .msg-details p:nth-child(2){
-        font-size: 1.5rem;
+
+    .main-msg-container::before {
+        clip-path: polygon(15% 20%, 100% 15%, 100% 85%, 5% 100%);
     }
 }
 
-@media only screen and (max-width: 450px){
-    .left-column-msg{
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
+@media only screen and (max-width: 768px) {
+    .left-column-msg img {
+        width: 70%;
     }
-    .msg-details{
-        padding-left: 0rem;
+
+    .name-msg-name {
+        font-size: 1.75rem;
     }
-    .msg-details p:nth-child(1){
+
+    .name-msg-designation {
+        font-size: 1.3rem;
+    }
+
+    .msg-content {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .left-column-msg img {
+        width: 60%;
+    }
+
+    .name-msg-name {
         font-size: 1.5rem;
     }
-    .msg-details p:nth-child(2){
+
+    .name-msg-designation {
+        font-size: 1.2rem;
+    }
+
+    .msg-content {
         font-size: 1rem;
     }
 }
