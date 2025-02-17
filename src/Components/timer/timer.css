@@ -14,7 +14,7 @@
 }
 .timer{
     width: 100vw;
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 
 .heading-text {
@@ -48,7 +48,7 @@
 }
 
 .value{
-    color: #7f1bb6;
+    color: #2374E8;
     font-family: 'SF Sports Upright';
     font-size: 10vw;
 }

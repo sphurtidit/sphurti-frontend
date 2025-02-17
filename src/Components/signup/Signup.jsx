@@ -5,7 +5,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useUserStore from "../../store/userStore";
 import useInfoStore from "../../store/infoStore";
-
+import loginback from "../../assets/loginback.png";
+import loginbackground from "../../assets/loginbackground.png";
+import Navbar from "../Navbar/nav";
 
 function Signinpage() {
   const [isOtpVisible, setOtpVisible] = useState(false); // State to toggle OTP visibility
@@ -63,24 +65,25 @@ function Signinpage() {
 
   return (
     <>
-      <div
-        className={`${signpage.Container} ${isOtpVisible ? signpage.blur : ""}`}
-      >
-        <div className={signpage.Box}>
-          <h1>
-            <p>Welcome to</p>
-            Sphurti
-          </h1>
-          <form onSubmit={handleSignup}>
-            <div className={signpage.formGroup}>
-              <input
-                onChange={handleChange}
-                type="text"
-                name="name"
-                placeholder="Enter your username"
-                value={signupInfo.name}
-              />
-            </div>
+      <Navbar />
+      <div className={signpage.pageWrapper}>
+        <div className={signpage.overlay1} style={{ backgroundImage: `url(${loginback})` }}>
+          <div className={signpage.overlay2} style={{ backgroundImage: `url(${loginbackground})` }}></div>
+          <div className={`${signpage.Container1} ${isOtpVisible ? signpage.blur : ""}`}>
+            <div className={signpage.Box}>
+              <h1>
+                <p>Enter Your Details</p>
+              </h1>
+              <form onSubmit={handleSignup}>
+                <div className={signpage.formGroup}>
+                  <input
+                    onChange={handleChange}
+                    type="text"
+                    name="name"
+                    placeholder="Enter your username"
+                    value={signupInfo.name}
+                  />
+                </div>
 
             <div className={signpage.formGroup}>
               <input
@@ -104,90 +107,91 @@ function Signinpage() {
               />
             </div>
 
-            <div className={signpage.formGroup}>
-              <input
-                onChange={handleChange}
-                type="text"
-                name="clg_name"
-                placeholder="Enter your College"
-                value={signupInfo.clg_name}
-              />
-            </div>
-            <div className={signpage.formGroup}>
-              <input
-                onChange={handleChange}
-                type="text"
-                name="clg_id"
-                placeholder="Enter your college ID"
-                value={signupInfo.clg_id}
-              />
-            </div>
-            <div className={signpage.branch}>
-              <div className={signpage.formGroup}>
-                <input
-                  onChange={handleChange}
-                  className={signpage.diff}
-                  type="text"
-                  name="branch"
-                  placeholder="Branch"
-                  value={signupInfo.branch}
-                />
-              </div>
-              <div className={signpage.formGroup}>
-                <input
-                  onChange={handleChange}
-                  className={signpage.diff}
-                  type="number"
-                  name="year"
-                  placeholder="Year"
-                  value={signupInfo.year}
-                />
-              </div>
-            </div>
-            <div className={signpage.formGroup}>
-              <input
-                onChange={handleChange}
-                type="password"
-                name="password"
-                placeholder="Set your password"
-                value={signupInfo.password}
-              />
-            </div>
+                <div className={signpage.formGroup}>
+                  <input
+                    onChange={handleChange}
+                    type="text"
+                    name="clg_name"
+                    placeholder="Enter your College"
+                    value={signupInfo.clg_name}
+                  />
+                </div>
+                <div className={signpage.formGroup}>
+                  <input
+                    onChange={handleChange}
+                    type="text"
+                    name="clg_id"
+                    placeholder="Enter your college ID"
+                    value={signupInfo.clg_id}
+                  />
+                </div>
+                <div className={signpage.formGroupRow}>
+                  <div className={signpage.formGroup}>
+                    <input
+                      onChange={handleChange}
+                      type="text"
+                      name="branch"
+                      placeholder="Branch"
+                      value={signupInfo.branch}
+                    />
+                 
+                  </div>
+                  <div className={signpage.formGroup}>
+                    <input
+                      onChange={handleChange}
+                      type="number"
+                      name="year"
+                      placeholder="Year"
+                      value={signupInfo.year}
+                    />
+                  </div>
+                </div>
+                <div className={signpage.formGroup}>
+                  <input
+                    onChange={handleChange}
+                    type="password"
+                    name="password"
+                    placeholder="Set your password"
+                    value={signupInfo.password}
+                  />
+                </div>
 
-            <button type="submit" className={signpage.signinBtn}>
-              Sign in
-            </button>
-          </form>
-          <ToastContainer />
+                <button type="submit" className={signpage.signinBtn}>
+                  Sign in
+                </button>
+              </form>
+            </div>
+          </div>
+
+          {isOtpVisible && (
+            <div className={`${signpage.otp} ${signpage.openpopup}`} id="otp">
+              <h1>Enter the OTP</h1>
+              <input
+                type="text"
+                placeholder="Enter the OTP"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                className={signpage.signinBtn}
+                onClick={handleVerifyOtp}
+              >
+                OK
+              </button>
+              <button
+                type="button"
+                className={signpage.signinBtn}
+                onClick={handleVerifyEmail}
+              >
+                Resend OTP
+              </button>
+            </div>
+          )}
         </div>
       </div>
-
-      {isOtpVisible && (
-        <div className={`${signpage.otp} ${signpage.openpopup}`} id="otp">
-          <h1>Enter the OTP</h1>
-          <input
-            type="text"
-            placeholder="Enter the OTP"
-            value={otp}
-            onChange={(e) => setOtp(e.target.value)}
-            required
-          />
-          <button
-            type="button"
-            className={signpage.signinBtn}
-            onClick={handleVerifyOtp}
-          >
-            OK
-          </button>
-          <button
-            type="button"
-            className={signpage.signinBtn}
-            onClick={handleVerifyEmail}
-          >
-            Resend OTP
-          </button>
-        </div>
-      )}
+      <ToastContainer />
     </>
   );
 }

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useUserStore from "../../store/userStore";
+import Navbar from "../Navbar/nav";
 
 function ProfilePage() {
   const navigate = useNavigate();
@@ -21,73 +22,74 @@ function ProfilePage() {
 
   return (
     <div className={profile.ProfilePage}>
+         <Navbar />
       <ToastContainer position="top-right" autoClose={3000} />
+<div className={profile.mainbox}>
       <div className={profile.info}>
-        <div>
-          <div className={profile.image}>
-            <h3 className={profile.heading}>Profile photo</h3>
-          </div>
-          <button
-            className="modal-button"
-            onClick={() => {
-              setTimeout(() => {
-                logout();
-              }, 1500);
-              handleNavigation("/");
-            }}
-          >
-            Logout
-          </button>
-          <button
-            className="modal-button"
-            onClick={() => handleNavigation("/comingsoon")}
-          >
-            Payments
-          </button>
-        </div>
+
+      <div className={profile.daba}>
+  <div className={profile.image}>
+  </div>
+  <button
+    className={profile.btn1}
+    onClick={() => handleNavigation("/")}
+  >
+    Payments
+  </button>
+  <button
+    className={profile.btn}
+    onClick={() => {
+      setTimeout(() => {
+        logout();
+      }, 1500);
+    }}
+  >
+   Logout 
+  </button>
+  
+</div>
         <div className={profile.mainheading}>
-          {user ? (
-            <>
-              <div className={profile.bgplate}>
-                <h2 className={profile.text}>Your Name: {user.name}</h2>
-              </div>
-              <div className={profile.bgplate}>
-                <h2 className={profile.text}>Phone No.: {user.phone_no}</h2>
-              </div>
-              <div className={profile.bgplate}>
-                <h2 className={profile.text}>Email Id: {user.email}</h2>
-              </div>
-              <div className={profile.bgplate1}>
-                <h2 className={profile.text}>College: {user.college_name}</h2>
-              </div>
-              <div className={profile.bgplate}>
-                <h2 className={profile.text}>College ID: {user.college_id}</h2>
-              </div>
-              <div className={profile.bgplate1}>
-                <h2 className={profile.text}>Branch: {user.branch}</h2>
-              </div>
-              <div className={profile.bgplate}>
-                <h2 className={profile.text}>Year: {user.year}</h2>
-              </div>
-            </>
-          ) : (
-            <h2 className={profile.text}>Loading user details...</h2>
-          )}
+          <div className={profile.bgplate}>
+            <h2 className={profile.text}> Name: <span className={profile.dox}>{user.name}</span></h2>
+          </div>
+          <div className={profile.bgplate}>
+            <h2 className={profile.text}>Phone No.:<span className={profile.dox}> {user.phone_no}</span></h2>
+          </div>
+          <div className={profile.bgplate}>
+            <h2 className={profile.text}>Email Id:<span className={profile.dox}> {user.email}</span></h2>
+          </div>
+          <div className={profile.bgplate}>
+            <h2 className={profile.text}>
+              College: <span className={profile.dox}>{user.college_name}</span>
+            </h2>
+          </div>
+          <div className={profile.bgplate}>
+            <h2 className={profile.text}>
+              College ID: <span className={profile.dox}>{user.college_id}</span>
+            </h2>
+          </div>
+          <div className={profile.bgplate}>
+            <h2 className={profile.text}>Branch: <span className={profile.dox}>{user.branch}</span></h2>
+          </div>
+          <div className={profile.bgplate}>
+            <h2 className={profile.text}>Year:<span className={profile.dox}> {user.year}</span></h2>
+          </div>
         </div>
       </div>
       <br />
       <br />
       <div className={profile.scroller}>
-        <h1 className={profile.register}>Registered events</h1>
+        <h1 className={profile.register}>Registered Events:</h1>
         <div className={profile.registered}>
           {/* Add your events logic here */}
-          <img
+          <img className={profile.events}
             src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-            className="events"
+          
             alt="Event"
           ></img>
         </div>
         <br />
+      </div>
       </div>
     </div>
   );
