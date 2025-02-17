@@ -10,7 +10,7 @@ import loginbackground from "../../assets/loginbackground.png";
 import Navbar from "../Navbar/nav";
 
 function Signinpage() {
-  const [isOtpVisible, setOtpVisible] = useState(false); // State to toggle OTP visibility
+  const [isOtpVisible, setOtpVisible] = useState(true); // State to toggle OTP visibility
   const [otp, setOtp] = useState(""); // State to store OTP
   const navigate = useNavigate();
   const { signupUser, verifyEmail, verifyOtp } = useUserStore();
