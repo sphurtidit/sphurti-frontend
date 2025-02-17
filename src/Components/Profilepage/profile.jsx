@@ -21,8 +21,9 @@ function ProfilePage() {
   };
 
   return (
-    <div className={profile.ProfilePage}>
+         <>
          <Navbar />
+      <div className={profile.ProfilePage}>
       <ToastContainer position="top-right" autoClose={3000} />
 <div className={profile.mainbox}>
       <div className={profile.info}>
@@ -93,6 +94,7 @@ function ProfilePage() {
       </div>
       </div>
     </div>
+    </>
   );
 }
 
