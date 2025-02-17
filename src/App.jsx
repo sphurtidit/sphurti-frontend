@@ -6,12 +6,10 @@ import Footer from "./Components/Footer/Footer";
 import Result from "./Components/result/result";
 import MessageSection from "./Components/Messages/message-section";
 import Nav from "./Components/Navbar/nav";
-import axios from "axios";
 import { Lines } from "react-preloaders";
 import Timer from "./Components/timer/timer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const url = import.meta.env.VITE_BASE_URL;
 
 import useUserStore from "./store/userStore";
 import useEventStore from "./store/eventStore";
@@ -48,13 +46,11 @@ function App() {
             <Main_HeroPage />
             <Timer />
             <MessageSection />
-            {/* <Tribute /> */}
             <SportsSection gameDetails={events} />
             <AccomodationCard />
             <AccommodationSection />
             <TeamSec />
             <Result />
-
             <Footer />
           </div>
         )}

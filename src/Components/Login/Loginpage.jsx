@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import logpage from "./Loginpage.module.css";
 import { useNavigate } from "react-router-dom";
-
-import axios from "axios";
-import { handleSuccess, handleError } from "../../utils"; // Import utility functions
 import { ToastContainer } from "react-toastify"; // Toast container for notifications
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify styles
 import BGImage from"../../assets/signupbg.jpg";
@@ -11,47 +8,20 @@ import icon from"../../assets/iconsph.png";
 import Sphurti from "../../assets/sphurti.png";
 import Naac from "../../assets/naac.png";
 import Dit from "../../assets/DIT.png";
-
+import useUserStore from "../../store/userStore";
 
 function Loginpage() {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const { loginUser } = useUserStore();
 
   const handleLogin = async (e) => {
-    e.preventDefault(); // Prevent form submission from reloading the page
-    setError(""); // Clear any previous errors
-
-    try {
-      const response = await axios.post(
-        "https://sphurti-backend.onrender.com/api/user/login",
-        { email, password }
-      );
-
-      // Extract data from the response
-      const { token, user } = response.data.data;
-
-      // Save token and user details in localStorage
-      localStorage.setItem("authToken", token);
-      localStorage.setItem("user", JSON.stringify(user));
-
-      // Show success toast
-      handleSuccess("Login successful!");
-
-      // Redirect to the profile page
+    e.preventDefault(); 
+    if(await loginUser(email, password)) {
       navigate("/");
-    } catch (err) {
-      console.error("Login failed:", err);
-      const errorMessage =
-        err.response?.data?.message || "Something went wrong. Please try again.";
-
-      // Show error toast
-      handleError(errorMessage);
-
-      setError(errorMessage);
-    }
+    } 
   };
 
   return (
@@ -127,7 +97,6 @@ function Loginpage() {
             </form> */}
         </div>
       </div>
-      {/* ToastContainer to render the toast notifications */}
       <ToastContainer />
     </>
   );

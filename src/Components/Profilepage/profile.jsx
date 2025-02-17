@@ -1,31 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import profile from "./profile.module.css";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useUserStore from "../../store/userStore";
 
 function ProfilePage() {
-  const [userDetails, setUserDetails] = useState(null); // State to store user details
-  const [error, setError] = useState(null); // State to store any error
   const navigate = useNavigate();
+  const { user, fetchUser, logout } = useUserStore();
+
+  useEffect(() => {
+    if (!user) {
+      fetchUser();
+    }
+  }, [user, fetchUser]);
 
   const handleNavigation = (path) => {
     navigate(path);
   };
-
-  useEffect(() => {
-    fetchUser();
-  }, []);
-
-  if (error) {
-    return <div className={profile.error}>{error}</div>;
-  }
-
-  // Display a loading state while fetching data
-  if (!userDetails) {
-    return <div className={profile.loading}>Loading...</div>;
-  }
 
   return (
     <div className={profile.ProfilePage}>
@@ -38,9 +30,10 @@ function ProfilePage() {
           <button
             className="modal-button"
             onClick={() => {
-              localStorage.removeItem("authToken");
+              setTimeout(() => {
+                logout();
+              }, 1500);
               handleNavigation("/");
-              toast.info("Logged out successfully.");
             }}
           >
             Logout
@@ -53,31 +46,33 @@ function ProfilePage() {
           </button>
         </div>
         <div className={profile.mainheading}>
-          <div className={profile.bgplate}>
-            <h2 className={profile.text}>Your Name: {userDetails.name}</h2>
-          </div>
-          <div className={profile.bgplate}>
-            <h2 className={profile.text}>Phone No.: {userDetails.phone_no}</h2>
-          </div>
-          <div className={profile.bgplate}>
-            <h2 className={profile.text}>Email Id: {userDetails.email}</h2>
-          </div>
-          <div className={profile.bgplate1}>
-            <h2 className={profile.text}>
-              College: {userDetails.college_name}
-            </h2>
-          </div>
-          <div className={profile.bgplate}>
-            <h2 className={profile.text}>
-              College ID: {userDetails.college_id}
-            </h2>
-          </div>
-          <div className={profile.bgplate1}>
-            <h2 className={profile.text}>Branch: {userDetails.branch}</h2>
-          </div>
-          <div className={profile.bgplate}>
-            <h2 className={profile.text}>Year: {userDetails.year}</h2>
-          </div>
+          {user ? (
+            <>
+              <div className={profile.bgplate}>
+                <h2 className={profile.text}>Your Name: {user.name}</h2>
+              </div>
+              <div className={profile.bgplate}>
+                <h2 className={profile.text}>Phone No.: {user.phone_no}</h2>
+              </div>
+              <div className={profile.bgplate}>
+                <h2 className={profile.text}>Email Id: {user.email}</h2>
+              </div>
+              <div className={profile.bgplate1}>
+                <h2 className={profile.text}>College: {user.college_name}</h2>
+              </div>
+              <div className={profile.bgplate}>
+                <h2 className={profile.text}>College ID: {user.college_id}</h2>
+              </div>
+              <div className={profile.bgplate1}>
+                <h2 className={profile.text}>Branch: {user.branch}</h2>
+              </div>
+              <div className={profile.bgplate}>
+                <h2 className={profile.text}>Year: {user.year}</h2>
+              </div>
+            </>
+          ) : (
+            <h2 className={profile.text}>Loading user details...</h2>
+          )}
         </div>
       </div>
       <br />

@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import signpage from "./Signup.module.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { handleError, handleSuccess } from "../../utils";
 import "react-toastify/dist/ReactToastify.css";
+import useUserStore from "../../store/userStore";
+import useInfoStore from "../../store/infoStore";
 
 
 function Signinpage() {
   const [isOtpVisible, setOtpVisible] = useState(false); // State to toggle OTP visibility
   const [otp, setOtp] = useState(""); // State to store OTP
   const navigate = useNavigate();
+  const { signupUser, verifyEmail, verifyOtp } = useUserStore();
+  const { setInfo } = useInfoStore();
+  const [otpVerified, setOtpVerified] = useState(false);
 
-  // Functions to handle OTP popup
   const openpopup = () => setOtpVisible(true);
   const closepopup = () => setOtpVisible(false);
 
@@ -33,92 +36,28 @@ function Signinpage() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    const { name, email, password } = signupInfo;
-    if (!name || !email || !password) {
-      handleError("Name, Email, and Password are required");
+    if (!otpVerified) {
+      setInfo("Please verify your email", "error");
       return;
     }
-    try {
-      const url = "https://sphurti-backend.onrender.com/api/user/signup";
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(signupInfo),
-      });
-      const result = await response.json();
-      if (response.ok) {
-        handleSuccess("Signup successful!");
-        console.log(result.data.token)
-        localStorage.setItem("authToken", result.data.token)
-        navigate("/");
-        console.log(result); //Remove this line
-      } else {
-        handleError(result.message || "Signup failed");
-      }
-    } catch (err) {
-      handleError(err.message);
+
+    if (await signupUser(signupInfo)) {
+      navigate("/");
     }
   };
 
   const handleVerifyEmail = async () => {
     const { email } = signupInfo;
-    if (!email) {
-      handleError("Please enter your email to verify.");
-      return;
-    }
-
-    try {
-      console.log("API Request: Sending email for verification ->", email);
-      const url = "https://sphurti-backend.onrender.com/api/user/verify-email";
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const result = await response.json();
-      console.log("API Response:", result);
-
-      if (response.ok) {
-        handleSuccess("OTP sent to your email.");
-        openpopup();
-      } else {
-        handleError(result.message || "Failed to send OTP");
-      }
-    } catch (err) {
-      console.error("Error occurred:", err);
-      handleError("Something went wrong. Please try again later.");
+    if (await verifyEmail(email)) {
+      openpopup();
     }
   };
 
   const handleVerifyOtp = async () => {
     const { email } = signupInfo;
-    if (!otp) {
-      handleError("Please enter the OTP.");
-      return;
-    }
-    try {
-      const url = "https://sphurti-backend.onrender.com/api/user/verify-otp";
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, otp }),
-      });
-      const result = await response.json();
-      if (response.ok) {
-        handleSuccess("OTP verified successfully!");
-        closepopup();
-      } else {
-        handleError(result.message || "Invalid OTP");
-      }
-    } catch (err) {
-      handleError(err.message);
+    if (await verifyOtp(email, otp)) {
+      closepopup();
+      setOtpVerified(true);
     }
   };
 
@@ -152,7 +91,7 @@ function Signinpage() {
                 value={signupInfo.email}
               />
               <div className={signpage.forpass} onClick={handleVerifyEmail}>
-                <a>Verify</a>
+                <a>{otpVerified ? "Email Verified" : "Verify Email"}</a>
               </div>
             </div>
             <div className={signpage.formGroup}>
