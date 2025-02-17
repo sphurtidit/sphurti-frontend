@@ -32,7 +32,7 @@ function ProfilePage() {
   </div>
   <button
     className={profile.btn1}
-    onClick={() => handleNavigation("/")}
+    onClick={() => handleNavigation("/comingsoon")}
   >
     Payments
   </button>
@@ -42,6 +42,7 @@ function ProfilePage() {
       setTimeout(() => {
         logout();
       }, 1500);
+      handleNavigation("/");
     }}
   >
    Logout 
@@ -81,12 +82,12 @@ function ProfilePage() {
       <div className={profile.scroller}>
         <h1 className={profile.register}>Registered Events:</h1>
         <div className={profile.registered}>
-          {/* Add your events logic here */}
-          <img className={profile.events}
+          <h1>Registered Events coming soon!!</h1>
+          {/* <img className={profile.events}
             src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
           
             alt="Event"
-          ></img>
+          ></img> */}
         </div>
         <br />
       </div>
