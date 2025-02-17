@@ -15,8 +15,6 @@ const SportsSection = ({ gameDetails = {} }) => {
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
   const [category, setCategory] = useState();
   const [displayImg, setDisplayImg] = useState();
-
-  // console.log(gameDetails);
   const openModal = (category, event, image) => {
     setIsModalOpen(true); // Open the modal
     setCategory(category);

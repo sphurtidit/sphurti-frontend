@@ -1,59 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import profile from "./profile.module.css";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useUserStore from "../../store/userStore";
 import Navbar from "../Navbar/nav";
 
 function ProfilePage() {
-  const [userDetails, setUserDetails] = useState(null); // State to store user details
-  const [error, setError] = useState(null); // State to store any error
   const navigate = useNavigate();
+  const { user, fetchUser, logout } = useUserStore();
+
+  useEffect(() => {
+    if (!user) {
+      fetchUser();
+    }
+  }, [user, fetchUser]);
 
   const handleNavigation = (path) => {
     navigate(path);
   };
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await axios.get(
-          "https://sphurti-backend.onrender.com/api/user/verify-user",
-          {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-            },
-          }
-        );
-
-        // Save the user data in state
-        setUserDetails(response.data.data.currentUser);
-
-        // Show a success toast
-        toast.success("Logged in successfully!");
-      } catch (err) {
-        console.error("Error fetching user data:", err);
-
-        // Set error message and show an error toast
-        const errorMessage =
-          err.response?.data?.message || "Failed to fetch user details.";
-        setError(errorMessage);
-        toast.error(errorMessage);
-      }
-    };
-
-    fetchUser();
-  }, []);
-
-  if (error) {
-    return <div className={profile.error}>{error}</div>;
-  }
-
-  // Display a loading state while fetching data
-  if (!userDetails) {
-    return <div className={profile.loading}>Loading...</div>;
-  }
 
   return (
     <div className={profile.ProfilePage}>
@@ -61,52 +26,54 @@ function ProfilePage() {
       <ToastContainer position="top-right" autoClose={3000} />
 <div className={profile.mainbox}>
       <div className={profile.info}>
+
       <div className={profile.daba}>
   <div className={profile.image}>
   </div>
   <button
     className={profile.btn1}
-    onClick={() => handleNavigation("/")}
+    onClick={() => handleNavigation("/comingsoon")}
   >
     Payments
   </button>
   <button
     className={profile.btn}
     onClick={() => {
-      localStorage.removeItem("authToken");
-      handleNavigation("/Loginpage");
-      toast.info("Logged out successfully.");
+      setTimeout(() => {
+        logout();
+      }, 1500);
+      handleNavigation("/");
     }}
   >
-   Login 
+   Logout 
   </button>
   
 </div>
         <div className={profile.mainheading}>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}> Name: <span className={profile.dox}>{userDetails.name}</span></h2>
+            <h2 className={profile.text}> Name: <span className={profile.dox}>{user.name}</span></h2>
           </div>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>Phone No.:<span className={profile.dox}> {userDetails.phone_no}</span></h2>
+            <h2 className={profile.text}>Phone No.:<span className={profile.dox}> {user.phone_no}</span></h2>
           </div>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>Email Id:<span className={profile.dox}> {userDetails.email}</span></h2>
+            <h2 className={profile.text}>Email Id:<span className={profile.dox}> {user.email}</span></h2>
           </div>
           <div className={profile.bgplate}>
             <h2 className={profile.text}>
-              College: <span className={profile.dox}>{userDetails.college_name}</span>
+              College: <span className={profile.dox}>{user.college_name}</span>
             </h2>
           </div>
           <div className={profile.bgplate}>
             <h2 className={profile.text}>
-              College ID: <span className={profile.dox}>{userDetails.college_id}</span>
+              College ID: <span className={profile.dox}>{user.college_id}</span>
             </h2>
           </div>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>Branch: <span className={profile.dox}>{userDetails.branch}</span></h2>
+            <h2 className={profile.text}>Branch: <span className={profile.dox}>{user.branch}</span></h2>
           </div>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>Year:<span className={profile.dox}> {userDetails.year}</span></h2>
+            <h2 className={profile.text}>Year:<span className={profile.dox}> {user.year}</span></h2>
           </div>
         </div>
       </div>
@@ -115,12 +82,12 @@ function ProfilePage() {
       <div className={profile.scroller}>
         <h1 className={profile.register}>Registered Events:</h1>
         <div className={profile.registered}>
-          {/* Add your events logic here */}
-          <img className={profile.events}
+          <h1>Registered Events coming soon!!</h1>
+          {/* <img className={profile.events}
             src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
           
             alt="Event"
-          ></img>
+          ></img> */}
         </div>
         <br />
       </div>
