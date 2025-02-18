@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./FAQ.css";
 import { FaChevronDown, FaRegCopy } from "react-icons/fa";
 import Nav from '../Navbar/nav';
+import Footer from "../Footer/Footer";
 
 const faqs = [
   {
@@ -53,6 +54,7 @@ const FaqComponent = () => {
   };
 
   return (
+    <div className="footer">
     <div className="faq-container">
       <Nav />
       <div className="faq-box">
@@ -80,6 +82,8 @@ const FaqComponent = () => {
         </div>
         {copySuccess && <p className="copy-message">Email copied to clipboard!</p>}
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

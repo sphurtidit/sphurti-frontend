@@ -72,7 +72,7 @@ function Signinpage() {
           <div className={`${signpage.Container1} ${isOtpVisible ? signpage.blur : ""}`}>
             <div className={signpage.Box}>
               <h1>
-                <p>Enter Your Details</p>
+                <p>Create a new Account</p>
               </h1>
               <form onSubmit={handleSignup}>
                 <div className={signpage.formGroup}>
@@ -80,7 +80,7 @@ function Signinpage() {
                     onChange={handleChange}
                     type="text"
                     name="name"
-                    placeholder="Enter your username"
+                    placeholder="Create a username"
                     value={signupInfo.name}
                   />
                 </div>
@@ -157,7 +157,7 @@ function Signinpage() {
                 </div>
 
                 <button type="submit" className={signpage.signinBtn}>
-                  Sign in
+                  Sign up
                 </button>
               </form>
             </div>
