@@ -1,9 +1,14 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./Registration_Page1.css"; // Correct way to import CSS
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import "./Registration_Page1.css";
+import useUserStore from "../../store/userStore";
 
 const RegistrationForm = () => {
+  const location = useLocation();
+  const categorydata = location.state || {};
   const navigate = useNavigate();
+  const { user, fetchUser} = useUserStore();
+
   const [formData, setFormData] = useState({
     team_name: "",
     captain_name: "",
@@ -15,6 +20,13 @@ const RegistrationForm = () => {
     clg_mail: "",
   });
 
+  useEffect(() => {
+    if (!user) {
+      fetchUser();
+    }
+    setFormData({...formData, phone: user.phone_no, clg_mail: user.email, clg_name : user.college_name});
+  }, [user, fetchUser]);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -24,7 +36,8 @@ const RegistrationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/Reg_pg2", { state: formData }); // Redirect with form data
+    console.log(formData);
+    navigate("/Reg_pg2", { state: { formData : formData, categoryData : categorydata} }); // Redirect with form data
   };
 
   return (
@@ -114,6 +127,7 @@ const RegistrationForm = () => {
               value={formData.clg_name}
               onChange={handleChange}
               required
+              disabled
             />
           </div>
           <div className="input-field">

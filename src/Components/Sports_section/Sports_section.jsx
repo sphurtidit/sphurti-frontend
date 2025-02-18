@@ -20,7 +20,6 @@ const SportsSection = ({ gameDetails = {} }) => {
     setCategory(category);
     setEventName(event);
     setDisplayImg(image);
-    console.log(eventName);
   };
 
   const closeModal = () => {
@@ -37,7 +36,7 @@ const SportsSection = ({ gameDetails = {} }) => {
   };
 
   const getImageForEvent = (eventName) => {
-    switch (eventName.toLowerCase()) {
+    switch (eventName.toLowerCase().trim()) {
       case "badminton":
         return badmintonimg;
       case "cricket":
@@ -49,7 +48,7 @@ const SportsSection = ({ gameDetails = {} }) => {
       case "basketball":
         return basketballimg;
       case "table tennis":
-        return tabletennisimg;
+          return tabletennisimg;
       default:
         return "";
     }
