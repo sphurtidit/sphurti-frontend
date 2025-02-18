@@ -46,6 +46,9 @@ h1 {
     width: 100%;
     cursor: pointer;
 }
+.footer{
+    width: 100vw;
+}
 
 .faq-item-number {
     margin-right: 10px;
