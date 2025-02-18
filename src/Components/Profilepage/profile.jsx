@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useUserStore from "../../store/userStore";
 import Navbar from "../Navbar/nav";
+import Footer from "../Footer/Footer";
 
 function ProfilePage() {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ function ProfilePage() {
   };
 
   return (
-         <>
+         <div>
          <Navbar />
       <div className={profile.ProfilePage}>
       <ToastContainer position="top-right" autoClose={3000} />
@@ -94,7 +95,8 @@ function ProfilePage() {
       </div>
       </div>
     </div>
-    </>
+    <Footer/>
+    </div>
   );
 }
 

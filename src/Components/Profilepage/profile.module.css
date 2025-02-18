@@ -137,7 +137,9 @@ justify-content: space-between;
     border: 2px  solid #ee0942; 
 }
 
-
+.text{
+    color: #000;
+}
 
 .events{
     height: 20rem;
