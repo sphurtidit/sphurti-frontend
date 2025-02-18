@@ -1,4 +1,4 @@
-/* Base Styles */
+
 .body-wrapper {
   position: relative; /* Wrapper for proper positioning */
   height: 100vh;
@@ -75,19 +75,33 @@
     margin: 1.2rem 2rem;
 
   }
-  .kash{
+.kash {
     padding: 1rem;
     border: none;
     border-radius: 12px;
     width: 100%;
     font-size: 1rem;
-    
     background: linear-gradient(145deg, #fdfbfb, #f1f1f1);
-    color: #333;
+    color: black;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
     box-sizing: border-box;
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
-  }
+}
+
+.kash input {
+    background-color: black; /* Changes the input field background to black */
+    color: white; /* Makes the text inside the input white for contrast */
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.kash input::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: red;
+}
+
 .bgimage {
     position: fixed;
     top: 0;
@@ -173,7 +187,7 @@ label {
     scale: 1.01;
 }
 
-.socialBtn {
+/* .socialBtn {
     margin-top: 1rem;
     border: none;
     border-radius: 8px;
@@ -187,12 +201,12 @@ label {
     box-sizing: border-box;
     font-weight: bold;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.7);
-}
+} */
 
-.socialBtn:hover {
+/* .socialBtn:hover {
     background-color: #f7eaf7;
     color: #4a148c;
-}
+} */
 
 .signupText {
     font-size: 1rem;
@@ -200,11 +214,11 @@ label {
     color: #555;
 }
 
-.signupText a {
+/* .signupText a {
     color: #7c4dff;
     font-weight: bold;
     text-decoration: none;
-}
+} */
 
 .signupText a:hover {
     text-decoration: underline;
@@ -569,5 +583,66 @@ label {
 
   .loginBtn {
     margin-top: 1.5rem;
+  }
+}
+/* For very small mobile devices (max-width: 400px) */
+@media (max-width: 400px) {
+  .body-wrapper {
+      padding: 5px;
+  }
+
+  .loginContainer {
+      width: 90%;
+      padding: 8px;
+      margin: 0;
+  }
+
+  .loginBox {
+      padding: 1rem 0.5rem;
+  }
+
+  h1 {
+      font-size: 1.3rem;
+  }
+
+  .formGroup {
+      margin-bottom: 1rem;
+  }
+
+  label {
+      font-size: 0.9rem;
+  }
+
+  input {
+      padding: 0.7rem;
+      font-size: 0.9rem;
+  }
+
+  .loginBtn {
+      width: 80%;
+      font-size: 0.9rem;
+  }
+
+  .signupText {
+      font-size: 0.8rem;
+  }
+
+  .logo1, .logo2, .logo3 {
+      height: 40px;
+      margin-right: 5px;
+  }
+
+  .email {
+      margin: 1rem 1rem;
+  }
+
+  .forpass {
+      font-size: 0.8rem;
+      margin-right: 1rem;
+  }
+
+  .socialBtn {
+      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
   }
 }
