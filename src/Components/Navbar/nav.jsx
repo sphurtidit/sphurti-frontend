@@ -1,15 +1,11 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./nav.css";
-import DIT from "../../assets/DIT.png";
-import NAAC from "../../assets/naac.png";
-import SPHURTI from "../../assets/sphurti.png";
 import SPH from "../../assets/sph.png";
 import { MdClose } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link as ScrollLink, scroller } from "react-scroll";
 import Button from "../Button/Button";
-import { FaCaretDown } from "react-icons/fa";
 import image from "../../assets/yellowline.png";
 
 function Nav() {
@@ -64,7 +60,7 @@ function Nav() {
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
+            <li onClick={() => handleNavigateAndScroll("/RulesSection")}>
               GENERAL RULES
             </li>
           </ScrollLink>
@@ -75,7 +71,7 @@ function Nav() {
           </ScrollLink>
           <ScrollLink offset={-80}>
             <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
-            AMABASSADORS
+            AMBASSADORS
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
@@ -129,7 +125,7 @@ function Nav() {
           {isLoggedIn ? (
             <Button text={"PROFILE"} onClick={() => navigate("/ProfilePage")} />
           ) : (
-            <Button text={"LOGIN"} onClick={() => navigate("/comingsoon")} />
+            <Button text={"LOGIN"} onClick={() => navigate("/Loginpage")} />
           )}
         </div>
         <button className="nav-button nav-close-button" onClick={showNav}>

@@ -10,9 +10,9 @@ const AccommodationSection = ({rules}) => {
       <div  className="Accommodation-Rules">
         <h1>ACCOMMODATION RULES</h1>
         <div className="rules-container">
-          <div className="lines">
+          {/* <div className="lines">
             <img className="strips" src={strips} alt="strips" />
-          </div>
+          </div> */}
           <div className="download-box">
             <h3 className="download-heading">
               DOWNLOAD THE RULEBOOK FOR ACCOMMODATION

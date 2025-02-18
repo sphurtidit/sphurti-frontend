@@ -1,17 +1,43 @@
 import React, { useState } from "react";
-import "./Registration_Page2.css"; // Import CSS for styling
+import "./Registration_Page2.css";
+import { useLocation, useNavigate } from "react-router-dom";
+import useInfoStore from "../../store/infoStore";
+import useEventStore from "../../store/eventStore";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Nav from "../Navbar/nav";
 
 const TeamRegistration = () => {
-  const [members, setMembers] = useState([{ id: 1, name: "", collegeId: "", aadharId: "" }]);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { formData, categoryData } = location.state || {};
+  const setInfo = useInfoStore.getState().setInfo;
+  const registerTeam = useEventStore.getState().registerTeam;
+  const [loading, setLoading] = useState(false);
 
-  // Function to add a new member
+  // Get the minimum number of members from categoryData
+  const minMembers = categoryData?.minNumber ? Math.max(1, categoryData.minNumber) : 1;
+  const maxMembers = categoryData?.maxNumber ? Math.max(minMembers, categoryData.maxNumber) : 20;
+
+  // Initialize members based on minMembers
+  const [members, setMembers] = useState(
+    Array.from({ length: minMembers }, () => ({ name: "", collegeId: "", aadharId: "" }))
+  );
+
   const addMember = () => {
-    setMembers([...members, { id: members.length + 1, name: "", collegeId: "", aadharId: "" }]);
+    if (members.length < maxMembers) {
+      setMembers([...members, { name: "", clgId: "", govId: "" }]);
+    } else {
+      setInfo(`You can add up to ${maxMembers} members only.`);
+    }
   };
 
-  // Function to delete a member
-  const deleteMember = (id) => {
-    setMembers(members.filter((member) => member.id !== id));
+  const deleteMember = (index) => {
+    if (members.length > minMembers) {
+      setMembers(members.filter((_, i) => i !== index));
+    } else {
+      alert(`You must have at least ${minMembers} member(s) in the team.`);
+    }
   };
 
   // Handle input change
@@ -21,19 +47,34 @@ const TeamRegistration = () => {
     setMembers(updatedMembers);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if(loading) {
+      return;
+    }
+    setLoading(true);
     console.log("Submitted Team:", members);
+    console.log("Form Data:", formData); 
+    if(await registerTeam({ members, formData, categoryData })) {
+      setInfo("Team registered successfully", "success");
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
+    }
+    setLoading(false);
   };
 
   return (
+    <>
+    <ToastContainer />
+    <Nav/>
     <div className="Sarfaraj">
       <h1>Team Registration</h1>
       <form onSubmit={handleSubmit}>
         <div className="member-details-section">
           <h2>Member Details</h2>
           {members.map((member, index) => (
-            <div className="member-box" key={member.id}>
+            <div className="member-box" key={index}>
               <h3>Member {index + 1}</h3>
               <input
                 type="text"
@@ -56,8 +97,8 @@ const TeamRegistration = () => {
                 onChange={(e) => handleInputChange(index, "aadharId", e.target.value)}
                 required
               />
-              {members.length > 1 && (
-                <button type="button" className="delete-btn" onClick={() => deleteMember(member.id)}>
+              {members.length > minMembers && (
+                <button type="button" className="delete-btn" onClick={() => deleteMember(index)}>
                   Delete Member
                 </button>
               )}
@@ -69,7 +110,9 @@ const TeamRegistration = () => {
         </button>
         <button type="submit" className="btn">Submit</button>
       </form>
+      
     </div>
+    </>
   );
 };
 

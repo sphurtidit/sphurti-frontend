@@ -1,13 +1,105 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: white;
-    width: 32vw;
+
+.body-wrapper {
+  position: relative; /* Wrapper for proper positioning */
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginContainer {
+  position: relative; /* Keeps container independent of overlays */
+  width: 80%; /* Example width */
+  max-width: 500px; /* Example max width */
+  background-color: rgba(255, 255, 255, 0.9); /* Optional background */
+  border: 2px solid #ee0942;
+  padding: 1rem; /* Padding for inner content */
+  border-radius: 10px;
+  z-index: 1; /* Ensures it stays above overlays */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
+.overlay1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Ensure it stays behind the container */
+}
+
+.overlay2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure it's behind everything else */
+}
+  
+  .loginBox {
+   
+    border-radius: 25px;
+    padding: 1.5rem 2.5rem;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+   
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+  
+    z-index: 1;
+   
+    
+  }
+  .email{
+    text-align: left;
+    margin: 1.2rem 2rem;
+
+  }
+.kash {
+    padding: 1rem;
     border: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 16px;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 1rem;
+    background: linear-gradient(145deg, #fdfbfb, #f1f1f1);
+    color: black;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    box-sizing: border-box;
+}
+
+.kash input {
+    background-color: black; /* Changes the input field background to black */
+    color: white; /* Makes the text inside the input white for contrast */
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.kash input::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: red;
 }
 
 .bgimage {
@@ -23,44 +115,9 @@
     background-attachment: fixed;
 }
 
-.loginContainer {
-    position: relative;
-    z-index: 1;
-    margin: auto;
-    padding: 0.5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: white;
-    width: 32vw;
-    border: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 16px;
-}
 
-.logo1, .logo2, .logo3 {
-    height: 60px;
-    flex: 1;
-    object-fit: contain;
-    max-width: 33%;
-    gap: 10px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
 
-.loginBox {
-    padding: 3rem;
-    border-radius: 1px;
-    text-align: center;
-    height: 87.5%;
-    width: 90%;
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-    grid-column: 2;
-    grid-row: 1;
-}
+
 
 .icon {
     height: 0px;
@@ -71,73 +128,66 @@
 }
 
 h1 {
-    margin-bottom: 2.5rem;
-    color: #4a148c;
     font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: 0.05em;
+  margin-bottom: 30px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
 }
 
 .formGroup {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.5rem;
-    font-size: 15%;
+    font-size: 1rem;
 }
 
 label {
-    color: #6a1b9a;
+    color: black;
     text-align: left;
-    font-weight: 500;
+    cursor: pointer;
+    font-weight: 300;
     font-size: 1rem;
     margin-bottom: 0.5rem;
+    opacity: 0.8;
 }
 
-input {
-    padding: 1rem;
-    border: none;
-    border-radius: 12px;
-    width: 100%;
-    font-size: 1rem;
-    background: linear-gradient(145deg, #fdfbfb, #f1f1f1);
-    color: #333;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-    box-sizing: border-box;
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
-}
 
-input:focus {
-    outline: none;
-    box-shadow: 0 0 8px #7c4dff;
-    transform: scale(1.02);
-}
 
 .forpass {
     text-align: right;
     font-size: 0.9rem;
-    color: #7c4dff;
+    align-self: flex-end;
+    color: #ee0942;
+    text-decoration: underline;
     margin-top: -0.5rem;
     margin-bottom: 1rem;
+    margin-right: 2rem;
     cursor: pointer;
     text-decoration: underline;
 }
 
 .loginBtn {
-    padding: 0.8rem 2rem;
-    background-color: #7f1bb6;
-    color: white;
-    border: none;
-    border-radius: 8px;
+    padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background-color: #ee0942;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 50%;
+  align-self: center;
+}
+.signup{
+    color: #ee0942;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
 }
-
 .loginBtn:hover {
-    background: #4a148c;
-    transform: translateY(-2px);
+    scale: 1.01;
 }
 
-.socialBtn {
+/* .socialBtn {
     margin-top: 1rem;
     border: none;
     border-radius: 8px;
@@ -151,12 +201,12 @@ input:focus {
     box-sizing: border-box;
     font-weight: bold;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.7);
-}
+} */
 
-.socialBtn:hover {
+/* .socialBtn:hover {
     background-color: #f7eaf7;
     color: #4a148c;
-}
+} */
 
 .signupText {
     font-size: 1rem;
@@ -164,93 +214,435 @@ input:focus {
     color: #555;
 }
 
-.signupText a {
+/* .signupText a {
     color: #7c4dff;
     font-weight: bold;
     text-decoration: none;
-}
+} */
 
 .signupText a:hover {
     text-decoration: underline;
 }
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem; /* Smaller font size for tablets */
+  }
+
+  .loginContainer {
+    width: 95%; /* Wider container for smaller screens */
+  }
+  .email {
+    margin: 1rem 2rem; /* Adjusted margin for smaller screens */
+  }
+  .loginBtn {
+    width: 100%; /* Full width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  .loginBox {
+    padding: 1rem; /* Reduced padding for smaller screens */
+  }
+
+  .email {
+    margin: 1rem 2rem; /* Adjusted margin for smaller screens */
+  }
+
+  .loginBtn {
+    font-size: 0.9rem; /* Smaller font size for buttons */
+  }
+}
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    width: 50vw;
+  }
+  .loginContainer {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 60vw;
+  }
+  .loginContainer {
+    width: 70vw;
+    margin: 3rem;
+    padding: 1rem;
+  }
+  .loginBox {
+    padding: 1rem 3rem;
+    height: 60%;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .email {
+    margin: 1rem 2rem; /* Adjusted margin for smaller screens */
+  }
+}
 
 @media (max-width: 768px) {
-    .container, .loginContainer {
-        width: 80vw;
-        height: auto ;
-        padding: 2rem;
-    }
-
-    .loginBox {
-        width: 100%;
-        padding: 2rem;
-    }
-
-    .logo1, .logo2, .logo3 {
-        height: 40px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        margin-top: 5px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .formGroup {
-        margin-bottom: 1rem;
-    }
-
-    .forpass {
-        font-size: 0.8rem;
-    }
-
-    .loginBtn, .socialBtn {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.9rem;
-    }
-
-    .signupText {
-        font-size: 0.9rem;
-    }
+  .container {
+    width: 80vw;
+  }
+  .loginContainer {
+    width: 90vw;
+    margin: 2rem;
+    padding: 0.5rem;
+  }
+  .loginBox {
+    padding: 1rem 2rem;
+    width: 100%;
+    height: auto;
+  }
+  .logo1, .logo2, .logo3 {
+    height: 50px;
+    margin-right: 10px;
+  }
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  input {
+    padding: 0.8rem;
+  }
+  .email {
+    margin: 1rem 2rem; /* Adjusted margin for smaller screens */
+  }
 }
-@media (max-width: 1024px) and (min-width: 769px) {
-    .container, .loginContainer {
-        width: 60vw;
-        height: auto;
-        padding: 2rem;
-    }
 
-    .loginBox {
-        width: 100%;
-        padding: 2rem;
-    }
+@media (max-width: 576px) {
+  .container {
+    width: 90vw;
+    height: auto;
+    min-height: 100vh;
+  }
+  .loginContainer {
+    width: 100vw;
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+  .loginBox {
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  .formGroup {
+    margin-bottom: 1rem;
+  }
+  label {
+    font-size: 0.9rem;
+  }
+  input {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+  .loginBtn {
+    width: 70%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .signupText {
+    font-size: 0.9rem;
+  }
+  .logo1, .logo2, .logo3 {
+    height: 40px;
+    margin-right: 5px;
+  }
+}
 
-    .logo1, .logo2, .logo3 {
-        height: 50px;
-        margin-right: 15px;
-        margin-bottom: 15px;
-        margin-top: 7px;
-    }
+@media (max-width: 400px) {
+  .loginBox {
+    padding: 1rem 0.5rem;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+  .loginBtn {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+  .signupText {
+    font-size: 0.8rem;
+  }
+}
 
-    h1 {
-        font-size: 2.2rem;
-    }
+/* Specific adjustments for 1280px x 720px */
+@media (max-width: 1280px) and (max-height: 720px) {
+  .container {
+    width: 40vw;
+    height: auto;
+    min-height: 80vh;
+    padding: 2rem 0;
+  }
 
-    .formGroup {
-        margin-bottom: 1.2rem;
-    }
+  .loginContainer {
+    width: 50vw;
+    margin: 2rem;
+    padding: 1rem;
+    height: auto;
+  }
 
-    .forpass {
-        font-size: 0.85rem;
-    }
+  .loginBox {
+    padding: 1rem 3rem;
+    height: auto;
+    min-height: 500px;
+  }
 
-    .loginBtn, .socialBtn {
-        padding: 0.7rem 1.8rem;
-        font-size: 0.95rem;
-    }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
 
-    .signupText {
-        font-size: 0.95rem;
-    }
+  .formGroup {
+    margin-bottom: 1.2rem;
+  }
+
+  input {
+    padding: 0.8rem;
+  }
+
+  .logo1, .logo2, .logo3 {
+    height: 50px;
+    margin-right: 15px;
+  }
+
+  .loginBtn {
+    width: 60%;
+    padding: 10px;
+    margin-top: 1rem;
+  }
+
+  .signupText {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Adjust background overlays */
+  .overlay1, .overlay2 {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+/* Tablets - Portrait (768px-1024px) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .container {
+    width: 60vw;
+    height: 80vh;
+  }
+
+  .loginContainer {
+    width: 70vw;
+    margin: 3rem;
+    padding: 1.5rem;
+  }
+
+  .loginBox {
+    padding: 1rem 3rem;
+    height: 65%;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .formGroup {
+    margin-bottom: 1.2rem;
+  }
+
+  input {
+    padding: 0.9rem;
+  }
+
+  .logo1, .logo2, .logo3 {
+    height: 55px;
+    margin-right: 15px;
+  }
+
+  .loginBtn {
+    width: 60%;
+    margin-top: 1.2rem;
+  }
+}
+
+/* Tablets - Landscape (1024px-1280px) */
+@media (min-width: 1024px) and (max-width: 1280px) and (orientation: landscape) {
+  .container {
+    width: 50vw;
+    height: 70vh;
+  }
+
+  .loginContainer {
+    width: 60vw;
+    margin: 2rem;
+    padding: 1rem;
+  }
+
+  .loginBox {
+    padding: 1rem 4rem;
+    height: 60%;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+
+  .kash {
+    padding: 1rem;
+  }
+
+  .logo1, .logo2, .logo3 {
+    height: 60px;
+    margin-right: 20px;
+  }
+}
+
+/* Medium Tablets (600px-768px) */
+@media (min-width: 600px) and (max-width: 768px) {
+  .container {
+    width: 70vw;
+    height: 75vh;
+  }
+
+  .loginContainer {
+    width: 80vw;
+    margin: 2rem;
+    padding: 1rem;
+  }
+
+  .loginBox {
+    padding: 1rem 2rem;
+    height: 70%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .formGroup {
+    margin-bottom: 1rem;
+  }
+
+  .kash {
+    padding: 0.8rem;
+  }
+
+  .logo1, .logo2, .logo3 {
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .loginBtn {
+    width: 65%;
+    padding: 0.8rem;
+  }
+}
+
+/* Small Tablets (e.g. 850x1280) */
+@media (min-width: 800px) and (max-width: 900px) and (min-height: 1200px) {
+  .container {
+    width: 65vw;
+    height: 60vh;
+  }
+
+  .loginContainer {
+    width: 75vw;
+    margin: 4rem;
+  }
+
+  .loginBox {
+    padding: 1rem 3rem;
+    height: 55%;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  .logo1, .logo2, .logo3 {
+    height: 45px;
+    margin-right: 12px;
+  }
+
+  .loginBtn {
+    margin-top: 1.5rem;
+  }
+}
+/* For very small mobile devices (max-width: 400px) */
+@media (max-width: 400px) {
+  .body-wrapper {
+      padding: 5px;
+  }
+
+  .loginContainer {
+      width: 90%;
+      padding: 8px;
+      margin: 0;
+  }
+
+  .loginBox {
+      padding: 1rem 0.5rem;
+  }
+
+  h1 {
+      font-size: 1.3rem;
+  }
+
+  .formGroup {
+      margin-bottom: 1rem;
+  }
+
+  label {
+      font-size: 0.9rem;
+  }
+
+  input {
+      padding: 0.7rem;
+      font-size: 0.9rem;
+  }
+
+  .loginBtn {
+      width: 80%;
+      font-size: 0.9rem;
+  }
+
+  .signupText {
+      font-size: 0.8rem;
+  }
+
+  .logo1, .logo2, .logo3 {
+      height: 40px;
+      margin-right: 5px;
+  }
+
+  .email {
+      margin: 1rem 1rem;
+  }
+
+  .forpass {
+      font-size: 0.8rem;
+      margin-right: 1rem;
+  }
+
+  .socialBtn {
+      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
+  }
 }

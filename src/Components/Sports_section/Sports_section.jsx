@@ -8,26 +8,35 @@ import footballimg from "../../assets/football.png";
 import volleyballimg from "../../assets/volleyball.png";
 import basketballimg from "../../assets/basketball.png";
 import tabletennisimg from "../../assets/table_tennis.png";
-import SportsCard from "../Sport_Card/Sport_Card"; // Import the BasketballEvent component
+import SportsCard from "../Sport_Card/Sport_Card";
 
-const SportsSection = ({ rule , gameDetails = {}}) => {
-  const [eventName, setEventName] = useState([]);
+const SportsSection = ({ gameDetails = {} }) => {
+  const [eventName, setEventName] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
-  const [category, setCategory] = useState()
-
-console.log(gameDetails);
-  const openModal = (category, eventName) => {
+  const [category, setCategory] = useState();
+  const [displayImg, setDisplayImg] = useState();
+  const openModal = (category, event, image) => {
     setIsModalOpen(true); // Open the modal
-    setCategory(category)
-    setEventName(eventName)
+    setCategory(category);
+    setEventName(event);
+    setDisplayImg(image);
   };
 
   const closeModal = () => {
     setIsModalOpen(false); // Close the modal
   };
 
+  const rulesPDFs = {
+    badminton: "/pdfs/badminton_rules.pdf",
+    cricket: "/pdfs/cricket_rules.pdf",
+    football: "/pdfs/football_rules.pdf",
+    volleyball: "/pdfs/volleyball_rules.pdf",
+    basketball: "/pdfs/basketball_rules.pdf",
+    // "table tennis": "/pdfs/table_tennis_rules.pdf",
+  };
+
   const getImageForEvent = (eventName) => {
-    switch (eventName.toLowerCase()) {
+    switch (eventName.toLowerCase().trim()) {
       case "badminton":
         return badmintonimg;
       case "cricket":
@@ -39,7 +48,7 @@ console.log(gameDetails);
       case "basketball":
         return basketballimg;
       case "table tennis":
-        return tabletennisimg;
+          return tabletennisimg;
       default:
         return "";
     }
@@ -51,25 +60,32 @@ console.log(gameDetails);
 
   return (
     <div className="nav-sports" id="sports-section">
-        <div className="parent-container-sports">
-          <div className="heading">
-            <h1>SPORTS</h1>
-          </div>
-          <div className="allsports">
-            {gameDetails.map((event, index) => (
-              <SportsContainer
-                openModal={openModal}
-                closeModal={closeModal}
-                key={event._id}
-                rule={rule}
-                event={event}
-                type={getEventType(index)}
-                image={getImageForEvent(event.name)}
-              />
-            ))}
-          </div>
+      <div className="parent-container-sports">
+        <div className="heading">
+          <h1>SPORTS</h1>
         </div>
-      <SportsCard isOpen={isModalOpen} onClose={closeModal} category={category} eventName={eventName}/>
+        <div className="allsports">
+          {gameDetails.map((event, index) => (
+            <SportsContainer
+              openModal={openModal}
+              closeModal={closeModal}
+              key={event._id}
+              rule={rulesPDFs[event.name]}
+              event={event}
+              type={getEventType(index)}
+              image={getImageForEvent(event.name)}
+            />
+          ))}
+        </div>
+      </div>
+      <SportsCard
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        category={category}
+        name={eventName}
+        image={displayImg}
+        rules={rulesPDFs[eventName.toLowerCase()]}
+      />
     </div>
   );
 };
