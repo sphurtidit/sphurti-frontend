@@ -9,7 +9,6 @@ const useUserStore = create(
   persist(
     (set, get) => ({
       user: null,
-      
       setUser: (user) => set({ user }),
 
       logout: () => {
@@ -50,7 +49,6 @@ const useUserStore = create(
             email,
             password,
           });
-          console.log(response);
           const { token, user } = response.data.data;
           localStorage.setItem("authToken", token);
           setTimeout(() => {

@@ -30,7 +30,6 @@ function App() {
       setLoading(true);
       await fetchUser();
       await fetchEvents();
-      console.log("test", events);
       setLoading(false);
     }
     fetchData();
