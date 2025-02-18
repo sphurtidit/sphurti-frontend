@@ -39,10 +39,8 @@ function ProfilePage() {
   <button
     className={profile.btn}
     onClick={() => {
-      setTimeout(() => {
-        logout();
-      }, 1500);
-      handleNavigation("/");
+      logout();
+      navigate("/");
     }}
   >
    Logout 
