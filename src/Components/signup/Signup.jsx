@@ -7,7 +7,7 @@ import useUserStore from "../../store/userStore";
 import useInfoStore from "../../store/infoStore";
 import loginback from "../../assets/loginback.png";
 import loginbackground from "../../assets/loginbackground.png";
-import Navbar from "../Navbar/nav";
+import Navbar from '../Navbar/Navbar';
 
 function Signinpage() {
   const [isOtpVisible, setOtpVisible] = useState(false); // State to toggle OTP visibility

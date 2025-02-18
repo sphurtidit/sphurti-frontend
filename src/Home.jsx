@@ -25,7 +25,7 @@ export const Home = () => {
         <Route path="/Reg_Pg1" element={<RegistrationForm />} />
         <Route path="/Reg_Pg2" element={<TeamRegistration />} />
         <Route path="/FAQ" element={<FAQPage />} />
-        <Route path="/ResultTable" element={<ResultTable />} />
+        <Route path="/ResultTable" element={<ResultTable />} /> 
         <Route path="/profilepage" element={<ProfilePage />} />
         
         <Route path="/RulesSection" element={<RulesSection />} />

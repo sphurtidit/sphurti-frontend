@@ -1,6 +1,6 @@
 import React from "react";
 import "./GeneralRules_Page.css";
-import Nav from "../Navbar/nav";
+import Navbar from '../Navbar/Navbar';
 import Footer from "../Footer/Footer";
 
 const generalRules = [
@@ -35,7 +35,7 @@ const RulesSection = () => {
   return (
     <div className="foot">
     <div className="rules-container-GR">
-      <Nav />
+      <Navbar />
       <div className="rules-box">
         <h1>SPHURTI 2025 - General Rules</h1>
         <ul className="rules-list">
