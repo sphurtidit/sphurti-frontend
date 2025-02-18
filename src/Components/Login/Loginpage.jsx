@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logpage from "./Loginpage.module.css";
 import { useNavigate } from "react-router-dom";
+import useUserStore from "../../store/userStore";
 import Navbar from "../Navbar/nav";
 import axios from "axios";
 import { handleSuccess, handleError } from "../../utils";
@@ -15,40 +16,13 @@ function Loginpage() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const { loginUser } = useUserStore();
 
   const handleLogin = async (e) => {
-    e.preventDefault(); // Prevent form submission from reloading the page
-    setError(""); // Clear any previous errors
-
-    try {
-      const response = await axios.post(
-        "https://sphurti-backend.onrender.com/api/user/login",
-        { email, password }
-      );
-
-      // Extract data from the response
-      const { token, user } = response.data.data;
-
-      // Save token and user details in localStorage
-      localStorage.setItem("authToken", token);
-      localStorage.setItem("user", JSON.stringify(user));
-
-      // Show success toast
-      handleSuccess("Login successful!");
-
-      // Redirect to the profile page
+    e.preventDefault(); 
+    if(await loginUser(email, password)) {
       navigate("/");
-    } catch (err) {
-      console.error("Login failed:", err);
-      const errorMessage =
-        err.response?.data?.message || "Something went wrong. Please try again.";
-
-      // Show error toast
-      handleError(errorMessage);
-
-      setError(errorMessage);
-    }
+    } 
   };
 
   return (
@@ -124,7 +98,6 @@ function Loginpage() {
       </div>
       </div>
       </div>
-      {/* ToastContainer to render the toast notifications */}
       <ToastContainer />
     </>
   );

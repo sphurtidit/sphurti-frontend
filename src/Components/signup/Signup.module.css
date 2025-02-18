@@ -130,6 +130,7 @@ a {
 
 input {
     background-color: white;
+    color: black;
     width: 100%;
     padding: 0.6rem;  /* Further reduced padding */
     border-radius: 7px;  /* Smaller radius */
