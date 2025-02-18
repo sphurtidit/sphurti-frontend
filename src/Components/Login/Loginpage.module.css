@@ -69,20 +69,13 @@
     z-index: 1;
    
     
-
   }
   .email{
     text-align: left;
     margin: 1.2rem 2rem;
 
   }
-  .foot{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    z-index: 9999;
-  }
-  .kash {
+.kash {
     padding: 1rem;
     border: none;
     border-radius: 12px;
@@ -95,8 +88,9 @@
 }
 
 .kash input {
-    background-color: black;
-    color: white; 
+    background-color: black; /* Changes the input field background to black */
+    color: white; /* Makes the text inside the input white for contrast */
+    border: none;
     padding: 0.5rem;
     width: 100%;
     border-radius: 8px;
