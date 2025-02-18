@@ -25,7 +25,7 @@ function TeamSec({ teams, sport }) {
         <div className="info-container">
           <div className="contact-top">
             <div className="officer-info">
-              <h3>Abinav Panwar</h3>
+              <h3>Abhinav Panwar</h3>
               <p>Sports Officer,<br />
                 Dit University</p>
               <p><strong>Phone</strong>: 7017366502</p>

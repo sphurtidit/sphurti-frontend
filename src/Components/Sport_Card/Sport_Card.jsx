@@ -75,12 +75,15 @@ const SportsCard = ({
             </div>
             <div className="details">
               <div>
-                <p className="strong Subhodeep">Prize Money:</p>
+                <p className="strong ">Prize Money:</p>
                 <span className="prize">
                   {" "}
-                  Winners: &#8377;{prizeWinner} &nbsp;
-                  <span className="pipe">|</span> &nbsp;Runner Up: &#8377;
-                  {prizeRunnerUp}{" "}
+                  <span className="pipe">|</span> &nbsp;
+                  Winner: <span className="main-prize" >&#8377;{prizeWinner}/-</span> &nbsp;
+                  <br/>
+                  <span className="pipe">|</span> &nbsp; Runner Up: <span className="main-prize"> &#8377;
+                  {prizeRunnerUp}/-</span>
+                  
                 </span>
                 {prizeRunnerUp}
               </div>
