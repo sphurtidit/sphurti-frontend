@@ -14,7 +14,9 @@ const useUserStore = create(
       logout: () => {
         const setInfo = useInfoStore.getState().setInfo;
         localStorage.removeItem("authToken");
-        setInfo("Logged out successfully", "success");
+        setTimeout(() => {
+          setInfo("Logged out successfully", "success");
+        }, 1500);
         set({ user: null });
       },
 
