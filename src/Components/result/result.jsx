@@ -4,22 +4,22 @@ import leftimage from "../../assets/left-image.png";
 import rightimage from "../../assets/resultbg.png";
 import result from "../../assets/result.png";
 import { FaArrowDown } from "react-icons/fa6";
-import { collection, doc, getDoc } from "firebase/firestore";
-import { db } from "../../firebase";
+// import { collection, doc, getDoc } from "firebase/firestore";
+// import { db } from "../../firebase";
 import { Link } from "react-router-dom";
 import REPORT from "../../assets/resultheader.png";
 
 const Result = () => {
   const [link, setlink] = useState();
 
-  useEffect(() => {
-    const l = getDoc(doc(collection(db, "misc"), "links")).then((docu) => {
-      setlink(docu.data()["2023"]);
-    });
-    return () => {
-      l;
-    };
-  }, []);
+  // useEffect(() => {
+  //   const l = getDoc(doc(collection(db, "misc"), "links")).then((docu) => {
+  //     setlink(docu.data()["2023"]);
+  //   });
+  //   return () => {
+  //     l;
+  //   };
+  // }, []);
 
   const openPdf = () => {
     window.open('/Sphurti-2024 Report.pdf', '_blank');

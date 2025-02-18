@@ -67,7 +67,7 @@ nav li ul.dropdown::-webkit-scrollbar {
 }
 
 nav li ul.dropdown::-webkit-scrollbar-thumb {
-    background-color: #ffcc32;
+    background-color: #2374E8;
     border-radius: 10px;
 }
 
@@ -78,7 +78,7 @@ nav li ul.dropdown::-webkit-scrollbar-track {
 
 /* For Firefox */
 nav li ul.dropdown {
-    scrollbar-color: #ffcc32 #f1f1f1;
+    scrollbar-color: #2374E8 #f1f1f1;
 }
 
 

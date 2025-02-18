@@ -1,74 +1,37 @@
 import "./team_sec.css";
-import TeamCard from "../team_card/team_card";
 import PropTypes from "prop-types";
-import comingsoon from "../../assets/comingsoon.png";
-import sportsOfficer from "../../assets/sportsOfficer.svg";
 
 function TeamSec({ teams, sport }) {
-  // console.log(teams,sport);
-  console.log(sport);
-
-  // useEffect(()=>{
-
-  //   const r=getDocs(collection(db,"Team")).then((querySnapshot)=>{
-  //     const temp=querySnapshot.docs.map((doc)=>doc.data());
-  //     temp.sort((a,b)=>a.precedence-b.precedence);
-  //     const sportss=[]
-  //     const teamss=[]
-  //     temp.map((t)=>{
-  //       if(t.category=="Sports Coordinator"){
-  //         sportss.push(t)
-  //       }
-  //       else{
-  //         teamss.push(t)
-  //       }
-
-  //     })
-  //     setSports(sportss);
-  //     setTeam(teamss)
-
-  //   })
-
-  //   return ()=>{
-  //     r;
-  //   }
-  // },[])
-
   return (
     <div className="whole team team-nav" id="contact-section">
-      <div className="heading">{/* <h1>OUR TEAM</h1> */}</div>
+      <div className="heading"></div>
       <div className="subheading">
         <h1>CONTACT</h1>
-        <h2>FACULTY CO-ORDINATOR</h2>
-        {/* <img className='csoon' src={comingsoon} alt="csoon" /> */}
       </div>
-      {/* <div className="FacultyCard">
-        {sport.map((sport)=>{
-         return <TeamCard key={sport.name} name={sport.name} designation={sport.category} phone={sport.phone} image={sport.image} type={sport.color} />
 
-        })}
-
-      </div> */}
-      
-        <div className="sport-card">
-          <img className="officer" src={sportsOfficer} alt="sportsOfficer" />
-
+      <div className="contact-details">
+        <div className="info-container">
+          <div className="contact-top">
+            <div className="officer-info">
+              <h3>Abinav Panwar</h3>
+              <p>Sports Officer</p>
+              <p>Phone: 7017366502</p>
+            </div>
+            <div className="pr-info">
+              <h3>Suhandha Saini</h3>
+              <p>PR Head</p>
+              <p>Phone: 8307179614</p>
+            </div>
+          </div>
+          
+          {/* Common Email BELOW the two divs but inside info-container */}
+          <p className="common-email">Email: sphurti@dituniversity.edu.in</p>
         </div>
-      
-
-      {/* <TeamCard key={"-----"} name={"-------"} designation={"--------"} phone={"---------"} image={""} type={"---------"} /> */}
-      {/* <div className="subheading">
-        <h1>STUDENT COORDINATOR</h1>
       </div>
-      <div className="StudentCard">
-      {teams.map((sport)=>{
-         return <TeamCard key={sport.name} name={sport.name} designation={sport.category} phone={sport.phone} image={sport.image} type={sport.color} />
-
-        })}
-      </div> */}
     </div>
   );
 }
+
 TeamSec.propTypes = {
   sport: PropTypes.array,
   teams: PropTypes.array,

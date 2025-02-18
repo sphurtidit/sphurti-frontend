@@ -46,7 +46,7 @@ console.log(gameDetails);
   };
 
   const getEventType = (index) => {
-    return (index % 3) + 1;
+    return (index % 2) + 1;
   };
 
   return (

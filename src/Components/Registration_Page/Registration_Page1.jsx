@@ -30,9 +30,7 @@ const RegistrationForm = () => {
   return (
     <div className="registration-container">
       <div className="Sarfaraj">
-        <h1>Sphurti'25</h1>
-        <h2>Welcome</h2>
-        <p>Sign up to continue</p>
+        <h1>Register</h1>
         <form onSubmit={handleSubmit}>
           <div className="input-field">
             <label htmlFor="team_name">Team Name</label>

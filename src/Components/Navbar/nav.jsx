@@ -81,7 +81,7 @@ function Nav() {
           <ScrollLink offset={-80}>
             <li
               onClick={() =>
-                handleNavigateAndScroll("/comingsoon")
+                handleNavigateAndScroll("/FAQ")
               }
             >
               FAQ
@@ -129,7 +129,7 @@ function Nav() {
           {isLoggedIn ? (
             <Button text={"PROFILE"} onClick={() => navigate("/ProfilePage")} />
           ) : (
-            <Button text={"LOGIN"} onClick={() => navigate("/Loginpage")} />
+            <Button text={"LOGIN"} onClick={() => navigate("/comingsoon")} />
           )}
         </div>
         <button className="nav-button nav-close-button" onClick={showNav}>
