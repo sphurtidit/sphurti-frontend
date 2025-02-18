@@ -74,7 +74,7 @@ function Nav() {
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
+            <li onClick={() => handleNavigateAndScroll("/AMBASSADORS_page")}>
             AMBASSADORS
             </li>
           </ScrollLink>
