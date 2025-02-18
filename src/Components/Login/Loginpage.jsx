@@ -3,8 +3,6 @@ import logpage from "./Loginpage.module.css";
 import { useNavigate } from "react-router-dom";
 import useUserStore from "../../store/userStore";
 import Navbar from "../Navbar/nav";
-import axios from "axios";
-import { handleSuccess, handleError } from "../../utils";
 import { ToastContainer } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css"; 
 import loginback from"../../assets/loginback.png";
@@ -17,12 +15,16 @@ function Loginpage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { loginUser } = useUserStore();
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault(); 
+    if(loading) return;
+    setLoading(true);
     if(await loginUser(email, password)) {
       navigate("/");
     } 
+    setLoading(false);
   };
 
   return (

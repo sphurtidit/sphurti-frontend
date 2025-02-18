@@ -13,6 +13,7 @@ const TeamRegistration = () => {
   const { formData, categoryData } = location.state || {};
   const setInfo = useInfoStore.getState().setInfo;
   const registerTeam = useEventStore.getState().registerTeam;
+  const [loading, setLoading] = useState(false);
 
   // Get the minimum number of members from categoryData
   const minMembers = categoryData?.minNumber ? Math.max(1, categoryData.minNumber) : 1;
@@ -48,6 +49,10 @@ const TeamRegistration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(loading) {
+      return;
+    }
+    setLoading(true);
     console.log("Submitted Team:", members);
     console.log("Form Data:", formData); 
     if(await registerTeam({ members, formData, categoryData })) {
@@ -56,6 +61,7 @@ const TeamRegistration = () => {
         navigate("/");
       }, 1500);
     }
+    setLoading(false);
   };
 
   return (

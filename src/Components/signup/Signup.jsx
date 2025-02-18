@@ -16,6 +16,7 @@ function Signinpage() {
   const { signupUser, verifyEmail, verifyOtp } = useUserStore();
   const { setInfo } = useInfoStore();
   const [otpVerified, setOtpVerified] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const openpopup = () => setOtpVisible(true);
   const closepopup = () => setOtpVisible(false);
@@ -38,6 +39,8 @@ function Signinpage() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
+    if(loading) return;
+    setLoading(true);
     if (!otpVerified) {
       setInfo("Please verify your email", "error");
       return;
@@ -46,6 +49,7 @@ function Signinpage() {
     if (await signupUser(signupInfo)) {
       navigate("/");
     }
+    setLoading(false);
   };
 
   const handleVerifyEmail = async () => {
