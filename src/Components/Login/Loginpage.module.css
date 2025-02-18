@@ -571,3 +571,64 @@ label {
     margin-top: 1.5rem;
   }
 }
+/* For very small mobile devices (max-width: 400px) */
+@media (max-width: 400px) {
+  .body-wrapper {
+      padding: 5px;
+  }
+
+  .loginContainer {
+      width: 90%;
+      padding: 8px;
+      margin: 0;
+  }
+
+  .loginBox {
+      padding: 1rem 0.5rem;
+  }
+
+  h1 {
+      font-size: 1.3rem;
+  }
+
+  .formGroup {
+      margin-bottom: 1rem;
+  }
+
+  label {
+      font-size: 0.9rem;
+  }
+
+  input {
+      padding: 0.7rem;
+      font-size: 0.9rem;
+  }
+
+  .loginBtn {
+      width: 80%;
+      font-size: 0.9rem;
+  }
+
+  .signupText {
+      font-size: 0.8rem;
+  }
+
+  .logo1, .logo2, .logo3 {
+      height: 40px;
+      margin-right: 5px;
+  }
+
+  .email {
+      margin: 1rem 1rem;
+  }
+
+  .forpass {
+      font-size: 0.8rem;
+      margin-right: 1rem;
+  }
+
+  .socialBtn {
+      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
+  }
+}
