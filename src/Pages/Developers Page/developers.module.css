@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 20px;
+  }
+  .head{
+    margin-top: 7rem;
+    font-weight:600 ;
+  }
