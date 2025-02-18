@@ -13,7 +13,7 @@ const SportsContainer = ({ game, type, image, openModal, closeModal, event}) => 
         <p className="sports-heading">{event.name}</p>
         
         <div className="buttons">
-            {event["category"].map((cate, index) => (<button
+            {event["eventCategory"].map((cate, index) => (<button
              // disabled={true}
              title="Registration not open yet"
              className="primary-s"
