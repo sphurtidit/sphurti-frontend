@@ -21,12 +21,12 @@ const TeamRegistration = () => {
 
   // Initialize members based on minMembers
   const [members, setMembers] = useState(
-    Array.from({ length: minMembers }, () => ({ name: "", collegeId: "", aadharId: "" }))
+    Array.from({ length: minMembers }, () => ({ memberName: "", clgId: "", govId: "" }))
   );
 
   const addMember = () => {
     if (members.length < maxMembers) {
-      setMembers([...members, { name: "", clgId: "", govId: "" }]);
+      setMembers([...members, { memberName: "", clgId: "", govId: "" }]);
     } else {
       setInfo(`You can add up to ${maxMembers} members only.`);
     }
@@ -79,22 +79,22 @@ const TeamRegistration = () => {
               <input
                 type="text"
                 placeholder="Enter Member Name"
-                value={member.name}
-                onChange={(e) => handleInputChange(index, "name", e.target.value)}
+                value={member.memberName}
+                onChange={(e) => handleInputChange(index, "memberName", e.target.value)}
                 required
               />
               <input
                 type="text"
                 placeholder="Enter College ID"
-                value={member.collegeId}
-                onChange={(e) => handleInputChange(index, "collegeId", e.target.value)}
+                value={member.clgId}
+                onChange={(e) => handleInputChange(index, "clgId", e.target.value)}
                 required
               />
               <input
                 type="text"
                 placeholder="Enter Aadhar ID"
-                value={member.aadharId}
-                onChange={(e) => handleInputChange(index, "aadharId", e.target.value)}
+                value={member.govId}
+                onChange={(e) => handleInputChange(index, "govId", e.target.value)}
                 required
               />
               {members.length > minMembers && (
