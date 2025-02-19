@@ -1,10 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./Sport_Card.css";
+import useUserStore from "../../store/userStore";
+import useInfoStore from "../../store/infoStore";
 
 
-
-const openRules= (pdf) => {
+const openRules = (pdf) => {
   console.log(pdf)
   if (pdf) {
     window.open(pdf, "_blank"); // Opens PDF in new tab
@@ -14,16 +15,28 @@ const openRules= (pdf) => {
 const SportsCard = ({
   isOpen,
   onClose,
-  gameDetails = {},
   category = {},
   name,
   isOdd,
   image,
   rules,
 }) => {
-  const navigate = useNavigate(); // Initialize navigate
-
+  const {user } = useUserStore();
+  const setInfo = useInfoStore.getState().setInfo;
+  const navigate = useNavigate(); 
   if (!isOpen) return null;
+
+  const navigateToRegistraion = () => {
+    if(user){
+      console.log("Category Data:", category);
+      navigate(`/Reg_Pg1`, { state: category })
+    }else{
+      setTimeout(() => {
+        setInfo("Please login to register to events", "error");
+      }, 1000);
+      navigate("/Loginpage");
+    }
+  };
 
   const {
     categoryName = "N/A",
@@ -62,12 +75,15 @@ const SportsCard = ({
             </div>
             <div className="details">
               <div>
-                <p className="strong Subhodeep">Prize Money:</p>
+                <p className="strong ">Prize Money:</p>
                 <span className="prize">
                   {" "}
-                  Winners: &#8377;{prizeWinner} &nbsp;
-                  <span className="pipe">|</span> &nbsp;Runner Up: &#8377;
-                  {prizeRunnerUp}{" "}
+                  <span className="pipe">|</span> &nbsp;
+                  Winner: <span className="main-prize" >&#8377;{prizeWinner}/-</span> &nbsp;
+                  <br/>
+                  <span className="pipe">|</span> &nbsp; Runner Up: <span className="main-prize"> &#8377;
+                  {prizeRunnerUp}/-</span>
+                  
                 </span>
                 {prizeRunnerUp}
               </div>
@@ -94,7 +110,7 @@ const SportsCard = ({
             <div className="button-group">
               <button
                 className="results"
-                onClick={() => handleNavigation("/Reg_Pg1")}
+                onClick={() => navigateToRegistraion()}
               >
                 Register
               </button>
