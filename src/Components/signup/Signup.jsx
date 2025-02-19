@@ -8,6 +8,7 @@ import useInfoStore from "../../store/infoStore";
 import loginback from "../../assets/loginback.png";
 import loginbackground from "../../assets/loginbackground.png";
 import Navbar from "../Navbar/nav";
+import { FaSpinner } from "react-icons/fa";
 
 function Signinpage() {
   const [isOtpVisible, setOtpVisible] = useState(false); // State to toggle OTP visibility
@@ -43,6 +44,7 @@ function Signinpage() {
     setLoading(true);
     if (!otpVerified) {
       setInfo("Please verify your email", "error");
+      setLoading(false);
       return;
     }
 
@@ -160,8 +162,8 @@ function Signinpage() {
                   />
                 </div>
 
-                <button type="submit" className={signpage.signinBtn}>
-                  Sign up
+                <button type="submit" className={signpage.signinBtn} disabled={loading}>
+                  {loading? <FaSpinner/> : "Sign up"}
                 </button>
               </form>
             </div>

@@ -26,6 +26,7 @@ const useEventStore = create((set, get) => ({
         const setInfo = useInfoStore.getState().setInfo;
         console.log("Registering Team:", data);
         const path = `${url}/api/registration`;
+        console.log("members", data.members);
         const body = {
             clgMail : data.formData.clg_mail,
             nameSO : data.formData.name_so,
@@ -34,7 +35,7 @@ const useEventStore = create((set, get) => ({
             payStatus:false,
             teamName:data.formData.team_name,
             alternateNo:data.formData.alternate_phone,
-            members:data.members,
+            member:data.members,
             CaptainName : data.formData.captain_name,
             phoneNo:data.formData.phone,
             eventId: data.categoryData.eventId,
