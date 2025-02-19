@@ -98,6 +98,7 @@ function Signinpage() {
                 name="email"
                 placeholder="Enter your E-mail"
                 value={signupInfo.email}
+                disabled={otpVerified}
               />
               <div className={signpage.forpass} onClick={handleVerifyEmail}>
                 <a>{otpVerified ? "Email Verified" : "Verify Email"}</a>
