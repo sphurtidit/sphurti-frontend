@@ -6,6 +6,7 @@ import useEventStore from "../../store/eventStore";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "../Navbar/nav";
+import { FaSpinner } from "react-icons/fa";
 
 const TeamRegistration = () => {
   const location = useLocation();
@@ -49,13 +50,20 @@ const TeamRegistration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(loading) {
+    if (loading) {
       return;
     }
     setLoading(true);
-    console.log("Submitted Team:", members);
-    console.log("Form Data:", formData); 
-    if(await registerTeam({ members, formData, categoryData })) {
+
+    for (const member of members) {
+      if (member.govId.length !== 12) {
+        setInfo("Each Aadhar ID must be exactly 12 digits long.", "error");
+        setLoading(false);
+        return;
+      }
+    }
+
+    if (await registerTeam({ members, formData, categoryData })) {
       setInfo("Team registered successfully", "success");
       setTimeout(() => {
         navigate("/");
@@ -66,52 +74,52 @@ const TeamRegistration = () => {
 
   return (
     <>
-    <ToastContainer />
-    <Nav/>
-    <div className="Sarfaraj">
-      <h1>Team Registration</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="member-details-section">
-          <h2>Member Details</h2>
-          {members.map((member, index) => (
-            <div className="member-box" key={index}>
-              <h3>Member {index + 1}</h3>
-              <input
-                type="text"
-                placeholder="Enter Member Name"
-                value={member.memberName}
-                onChange={(e) => handleInputChange(index, "memberName", e.target.value)}
-                required
-              />
-              <input
-                type="text"
-                placeholder="Enter College ID"
-                value={member.clgId}
-                onChange={(e) => handleInputChange(index, "clgId", e.target.value)}
-                required
-              />
-              <input
-                type="text"
-                placeholder="Enter Aadhar ID"
-                value={member.govId}
-                onChange={(e) => handleInputChange(index, "govId", e.target.value)}
-                required
-              />
-              {members.length > minMembers && (
-                <button type="button" className="delete-btn" onClick={() => deleteMember(index)}>
-                  Delete Member
-                </button>
-              )}
-            </div>
-          ))}
-        </div>
-        <button type="button" className="add-member-btn" onClick={addMember}>
-          Add Member
-        </button>
-        <button type="submit" className="btn">Submit</button>
-      </form>
-      
-    </div>
+      <ToastContainer />
+      <Nav />
+      <div className="Sarfaraj">
+        <h1>Team Registration</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="member-details-section">
+            <h2>Member Details</h2>
+            {members.map((member, index) => (
+              <div className="member-box" key={index}>
+                <h3>Member {index + 1}</h3>
+                <input
+                  type="text"
+                  placeholder="Enter Member Name"
+                  value={member.memberName}
+                  onChange={(e) => handleInputChange(index, "memberName", e.target.value)}
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Enter College ID"
+                  value={member.clgId}
+                  onChange={(e) => handleInputChange(index, "clgId", e.target.value)}
+                  required
+                />
+                <input
+                  type="number"
+                  placeholder="Enter Aadhar ID"
+                  value={member.govId}
+                  onChange={(e) => handleInputChange(index, "govId", e.target.value)}
+                  required
+                />
+                {members.length > minMembers && (
+                  <button type="button" className="delete-btn" onClick={() => deleteMember(index)}>
+                    Delete Member
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+          <button type="button" className="add-member-btn" onClick={addMember}>
+            Add Member
+          </button>
+          <button type="submit" className="btn" disabled={loading}>{loading ? <FaSpinner /> : "Submit"}</button>
+        </form>
+
+      </div>
     </>
   );
 };
