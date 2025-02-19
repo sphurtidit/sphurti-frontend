@@ -6,50 +6,121 @@
 
 }
 .image{
-    margin-left: 95px;
-    margin-top: 80px;
-    height: 300px;
-    width: 40vw;
-    background: rgba(240, 234, 234, 0.1);
-    border-radius: 25px;
+    
+   
+    height: 18rem;
+    width: 18rem;
+  text-align: center;
+    border-radius: 100%;
     margin-bottom: 15px;
-    border: 2px  solid #ee0942;
+    border: 2px  solid #d5d3d4;
+    background-color:#d5d3d4 ;
+    margin-left: 1rem;
+    gap: 5rem;
 }
-.heading{
-    text-align: center;
-    color: black;
+.daba{
+    display: flex;
+
+    text-align: bottom;
+    flex-direction: column;
+    margin-left: 4rem;
+justify-content: space-between;    
+   
+   
     
 }
+.btn{
+    padding: 0.6rem 1.5rem;  /* Reduced padding */
+    background-color: #EE0942;
+    color: white;
+    font-weight: 600;
+    font-size: medium;  /* Reduced font size */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 18rem; /* Full width for responsiveness */
+    max-width: 300px; /* Limit maximum width */
+    height: 45px;  /* Reduced height */
+    margin: 0 auto; /* Center the button horizontally */
+    display: block; /* Ensure margin: auto works */
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+.dox{
+    color: rgb(152, 151, 151);
+    font-weight: 300;
+}
+.mainbox {
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 2px solid #EE0942;
+    margin-top: 7rem;
+    background-color: white;
+   border-radius: 40px;
+
+  }
+.btn:hover {
+    background-color: white;
+    color: #EE0942;
+    border: 1px solid #EE0942;
+}
+.btn1{
+    padding: 0.6rem 1.5rem;  /* Reduced padding */
+    background-color: white;
+    color: white;
+    font-weight: 600;
+    font-size: medium;  /* Reduced font size */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 18rem; /* Full width for responsiveness */
+    max-width: 300px; /* Limit maximum width */
+    height: 45px;  /* Reduced height */
+    margin: 0 auto; /* Center the button horizontally */
+    display: block; /* Ensure margin: auto works */
+    margin-top: 1rem;
+    margin-bottom: 1rem;  color: #EE0942;
+    border: 1px solid #EE0942;
+}
+.btn1:hover {
+    background-color: #EE0942;
+    color: white;
+    border: 1px solid #EE0942;
+}
+
 .info{
     display: flex;
+    gap: 10rem;
 }
+
+    
+
 .mainheading{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+   
     width: 30vw;
-    text-align: center;
+    
     font-size: smaller;
-    margin-top: 80px; 
+  
     
 }
-.bgplate{
-    margin-bottom: 10px;
-    height: 65px;
-    padding-top: 20px;
-    padding-left: 10px;
-    border: 2px  solid #ee0942;
-    background: #EAC9FF;
-    width: 40vw;
-    border-radius: 25px;
+
+
+.bgplate {
+   
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+  
 }
-.bgplate1{
-    margin-bottom: 10px;
-    height: 65px;
-    padding-top: 20px;
-    padding-left: 10px;
-    border: 2px  solid #ee0942;
-    background: #F7EAFF;
-    width: 40vw;
-    border-radius: 25px;
-}
+
+    
 .contact{
     margin-top: auto;
     width: 40vw;
@@ -57,53 +128,29 @@
     margin-left: 100px;
     margin-right: 50px;
     text-align: center;
-    background: rgb(243, 240, 240);
+    background: rgb(197, 195, 195);
     border-radius: 20px;
     padding-top: 10px;
     border: 2px  solid #ee0942; 
 }
 
-.button{
-    height: 100px;
-    width: 300px;
-    margin-top: 50px;
-    margin-right: 30%;
-}
-.registered{
-    display: flex;
-    margin-left: 2%;
-    flex-wrap: nowrap;
-    font-size: large;
-    background: rgba(85, 84, 84, 0);
-    overflow-x: hidden;
-    flex-direction: row;
-    border-radius: 25px;
-    width: 80%;
-    margin-left: 10vw;
-    overflow-x: scroll;
-    align-items: center;
-    gap: 5px;
-    
-}
+
+
 .events{
-    height: 5px;
-    width: 100px;
-    padding: 5px;
-    border-radius: 35%;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 30px;
+    cursor: pointer;
 }
 .inside{
     align-items: center;
     height: 200px;
     width: 350px;
 }
-.text{
-    padding: 0px;
-    text-align: left;
-    color: black;
-}
+
 .register{
-    text-align: center;
-    width: 95vw;
+    text-align: left;
+
     color: black;
 }
 
@@ -233,4 +280,53 @@
     
 
 }
+@media only screen and (max-width: 768px) {
+    .image {
+        height: 30vh;
+        width: 50vw;
+    }
+    .info {
+        flex-direction: column;
+    }
+    .contact {
+        width: 80%;
+    }
+    .mainheading, .bgplate, .text {
+        width: 90%;
+        margin: auto;
+    }
+}
 
+@media only screen and (max-width: 430px) {
+    .image {
+        height: 25vh;
+        width: 60vw;
+    }
+    .contact {
+        width: 90%;
+        height: auto;
+        padding: 15px;
+    }
+    .contactinfo {
+        font-size: 0.8rem;
+    }
+    .mainheading {
+        font-size: 1rem;
+    }
+    .btn, .btn1 {
+        width: 90%;
+        font-size: 0.9rem;
+        height: auto;
+    }
+    .bgplate {
+        margin: 15px auto;
+        width: 90%;
+    }
+  
+        .mainbox {
+          max-width: 90%; /* Take up more width on smaller screens */
+          padding: 5px; /* Reduce padding further for better spacing */
+          margin-top: 2rem; /* Reduce top margin to fit smaller screens */
+          border-radius: 10px; /* Adjust border radius for compact design */
+        }
+      }

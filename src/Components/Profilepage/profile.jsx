@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "../Navbar/nav";
 
 function ProfilePage() {
   const [userDetails, setUserDetails] = useState(null); // State to store user details
@@ -56,70 +57,73 @@ function ProfilePage() {
 
   return (
     <div className={profile.ProfilePage}>
+         <Navbar />
       <ToastContainer position="top-right" autoClose={3000} />
+<div className={profile.mainbox}>
       <div className={profile.info}>
-        <div>
-          <div className={profile.image}>
-            <h3 className={profile.heading}>Profile photo</h3>
-          </div>
-          <button
-            className="modal-button"
-            onClick={() => {
-              localStorage.removeItem("authToken");
-              handleNavigation("/");
-              toast.info("Logged out successfully.");
-            }}
-          >
-            Logout
-          </button>
-          <button
-            className="modal-button"
-            onClick={() => handleNavigation("/comingsoon")}
-          >
-            Payments
-          </button>
-        </div>
+      <div className={profile.daba}>
+  <div className={profile.image}>
+  </div>
+  <button
+    className={profile.btn1}
+    onClick={() => handleNavigation("/")}
+  >
+    Payments
+  </button>
+  <button
+    className={profile.btn}
+    onClick={() => {
+      localStorage.removeItem("authToken");
+      handleNavigation("/Loginpage");
+      toast.info("Logged out successfully.");
+    }}
+  >
+   Login 
+  </button>
+  
+</div>
         <div className={profile.mainheading}>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>Your Name: {userDetails.name}</h2>
+            <h2 className={profile.text}> Name: <span className={profile.dox}>{userDetails.name}</span></h2>
           </div>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>Phone No.: {userDetails.phone_no}</h2>
+            <h2 className={profile.text}>Phone No.:<span className={profile.dox}> {userDetails.phone_no}</span></h2>
           </div>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>Email Id: {userDetails.email}</h2>
+            <h2 className={profile.text}>Email Id:<span className={profile.dox}> {userDetails.email}</span></h2>
           </div>
-          <div className={profile.bgplate1}>
+          <div className={profile.bgplate}>
             <h2 className={profile.text}>
-              College: {userDetails.college_name}
+              College: <span className={profile.dox}>{userDetails.college_name}</span>
             </h2>
           </div>
           <div className={profile.bgplate}>
             <h2 className={profile.text}>
-              College ID: {userDetails.college_id}
+              College ID: <span className={profile.dox}>{userDetails.college_id}</span>
             </h2>
           </div>
-          <div className={profile.bgplate1}>
-            <h2 className={profile.text}>Branch: {userDetails.branch}</h2>
+          <div className={profile.bgplate}>
+            <h2 className={profile.text}>Branch: <span className={profile.dox}>{userDetails.branch}</span></h2>
           </div>
           <div className={profile.bgplate}>
-            <h2 className={profile.text}>Year: {userDetails.year}</h2>
+            <h2 className={profile.text}>Year:<span className={profile.dox}> {userDetails.year}</span></h2>
           </div>
         </div>
       </div>
       <br />
       <br />
       <div className={profile.scroller}>
-        <h1 className={profile.register}>Registered events</h1>
+        <h1 className={profile.register}>Registered Events:</h1>
         <div className={profile.registered}>
           {/* Add your events logic here */}
-          <img
+          <img className={profile.events}
             src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
-            className="events"
+          
             alt="Event"
           ></img>
         </div>
         <br />
+      </div>
       </div>
     </div>
   );

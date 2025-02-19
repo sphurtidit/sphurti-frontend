@@ -32,7 +32,7 @@
   border: none;
   cursor: pointer;
   position: absolute;
-  right: 70px;
+  right: 2.5%;
   margin-right: 40px;
   transition: all 0.3s ease-in-out;
   box-shadow: 2px 4px 8px rgba(199, 0, 57, 0.3);
@@ -135,8 +135,8 @@
 
   /* Fixing Phone Dropdown */
   .dropdown-container {
-    top: 80px;
-    right: 23%;
+    top: 10%;
+    right: 5%;
     width: 55%;
   }
 
