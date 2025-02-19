@@ -8,11 +8,11 @@ import useInfoStore from "../../store/infoStore";
 import loginback from "../../assets/loginback.png";
 import loginbackground from "../../assets/loginbackground.png";
 import Navbar from "../Navbar/nav";
-import { FaSpinner } from "react-icons/fa";
+import Footer from "../Footer/Footer"; // Import Footer component
 
 function Signinpage() {
-  const [isOtpVisible, setOtpVisible] = useState(false); // State to toggle OTP visibility
-  const [otp, setOtp] = useState(""); // State to store OTP
+  const [isOtpVisible, setOtpVisible] = useState(false);
+  const [otp, setOtp] = useState("");
   const navigate = useNavigate();
   const { signupUser, verifyEmail, verifyOtp } = useUserStore();
   const { setInfo } = useInfoStore();
@@ -40,7 +40,7 @@ function Signinpage() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    if(loading) return;
+    if (loading) return;
     setLoading(true);
     if (!otpVerified) {
       setInfo("Please verify your email", "error");
@@ -91,28 +91,27 @@ function Signinpage() {
                   />
                 </div>
 
-            <div className={signpage.formGroup}>
-              <input
-                onChange={handleChange}
-                type="email"
-                name="email"
-                placeholder="Enter your E-mail"
-                value={signupInfo.email}
-                disabled={otpVerified}
-              />
-              <div className={signpage.forpass} onClick={handleVerifyEmail}>
-                <a>{otpVerified ? "Email Verified" : "Verify Email"}</a>
-              </div>
-            </div>
-            <div className={signpage.formGroup}>
-              <input
-                onChange={handleChange}
-                type="number"
-                name="phone_no"
-                placeholder="Enter your phone number"
-                value={signupInfo.phone_no}
-              />
-            </div>
+                <div className={signpage.formGroup}>
+                  <input
+                    onChange={handleChange}
+                    type="email"
+                    name="email"
+                    placeholder="Enter your E-mail"
+                    value={signupInfo.email}
+                  />
+                  <div className={signpage.forpass} onClick={handleVerifyEmail}>
+                    <a>{otpVerified ? "Email Verified" : "Verify Email"}</a>
+                  </div>
+                </div>
+                <div className={signpage.formGroup}>
+                  <input
+                    onChange={handleChange}
+                    type="number"
+                    name="phone_no"
+                    placeholder="Enter your phone number"
+                    value={signupInfo.phone_no}
+                  />
+                </div>
 
                 <div className={signpage.formGroup}>
                   <input
@@ -141,7 +140,6 @@ function Signinpage() {
                       placeholder="Branch"
                       value={signupInfo.branch}
                     />
-                 
                   </div>
                   <div className={signpage.formGroup}>
                     <input
@@ -180,24 +178,17 @@ function Signinpage() {
                 onChange={(e) => setOtp(e.target.value)}
                 required
               />
-              <button
-                type="button"
-                className={signpage.signinBtn}
-                onClick={handleVerifyOtp}
-              >
+              <button type="button" className={signpage.signinBtn} onClick={handleVerifyOtp}>
                 OK
               </button>
-              <button
-                type="button"
-                className={signpage.signinBtn}
-                onClick={handleVerifyEmail}
-              >
+              <button type="button" className={signpage.signinBtn} onClick={handleVerifyEmail}>
                 Resend OTP
               </button>
             </div>
           )}
         </div>
       </div>
+      <Footer /> {/* Added Footer component here */}
       <ToastContainer />
     </>
   );

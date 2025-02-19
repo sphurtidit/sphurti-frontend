@@ -1,25 +1,37 @@
 .pageWrapper {
-    position: relative; /* Change from fixed to relative */
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Use min-height instead of height */
+    justify-content: space-between;
+    min-height: 100vh;
     width: 100vw;
-    padding: 2rem; /* Add padding to ensure content doesn't touch edges */
-    overflow: auto; /* Allow scrolling */
+    padding: 2rem;
+    overflow: auto;
+    flex-direction: column;
 }
 
 h1 {
     font-size: 2rem;
     margin-bottom: 10px;
 }
+
 input {
-    border: 1px solid #ccc !important;
-  }
-  
-  input:hover,input:focus {
+    border: 1px solid #780c27 !important;
+    padding: 0.6rem;
+    border-radius: 7px;
+    font-size: 0.85rem;
+    background-color: white;
+    color: black;
+    width: 100%;
+    cursor: pointer !important;
+    margin-bottom: 10px;
+}
+
+input:hover, input:focus {
     border: 1px solid #ee0942 !important;
-  }
+    outline: none;
+}
+
 a {
     font-size: 1rem;
     font-weight: 400;
@@ -27,174 +39,69 @@ a {
     cursor: pointer !important;
 }
 
-.Container1{
-    width: 80% !important; /* Further reduced width */
-    max-width: 500px; /* Further adjusted max width */
+.Container1 {
+    width: 80%;
+    max-width: 500px;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 1rem 4rem; /* Reduced padding */
-    border-radius: 20px; /* Smaller radius */
+    padding: 1.5rem 3rem;
+    border-radius: 20px;
     text-align: center;
     justify-content: center;
-    overflow: visible; /* Allow content to overflow */
+    overflow: visible;
     border: 2px solid #ee0942;
-    margin-top: 5rem !important; /* Add margin instead of top */
-    position: relative; /* Ensure it stays within the flow */
+    margin-top: 5rem;
+    position: relative;
 }
 
-
-
-.overlay1 {
+.overlay1, .overlay2 {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
-    background-size: cover;
-    background-position: center;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 0; /* Ensure it stays behind the container */
+    z-index: 0;
 }
 
 .overlay2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1; /* Ensure it's behind everything else */
 }
 
-/* Grid layout for the inputs */
 .branchRow {
     display: grid;
-    grid-template-columns: 1fr 1fr;  /* Two columns */
-    gap: 10px;  /* Space between inputs */
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     width: 100%;
     margin-bottom: 1rem;
 }
 
-/* Style for each input */
 .branchRow input {
-    width: 100%;
-    padding: 0.6rem;  /* Reduced padding */
-    border-radius: 7px;  /* Smaller radius */
-    border: 2px solid #780c27;
-    font-size: 0.85rem;  /* Further reduced font size */
-}
-
-/* Logo styling */
-.logos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.6rem;  /* Further reduced margin */
-}
-
-.logoLeft,
-.logoRight {
-    width: 45px;  /* Further reduced width */
-    height: auto;
-}
-
-.logoMiddle {
-    width: auto;
-    height: 40px;  /* Further reduced height */
-}
-
-/* Heading */
-.heading {
-    font-size: 1.8rem;  /* Reduced font size */
-    margin-bottom: 0.8rem;  /* Reduced bottom margin */
-}
-
-.forpass {
-    text-align: left;
-    font-size: 12px;  /* Reduced font size */
-    color: rgb(234, 231, 237);
-    margin-left: 5px;
-    padding-top: 5px;  /* Reduced padding */
-}
-
-/* Form fields */
-.formGroup {
-    margin-bottom: 1rem;  /* Reduced bottom margin */
-}
-
-input {
-    background-color: white;
-    color: black;
-    width: 100%;
-    padding: 0.6rem;  /* Further reduced padding */
-    border-radius: 7px;  /* Smaller radius */
-    border: 2px solid rgb(233, 226, 226);
     font-size: 0.85rem;
-    cursor: pointer !important;
-    
-   
+    padding: 0.6rem;
+    border: 1px solid #780c27;
+    border-radius: 7px;
+    margin-bottom: 10px;
 }
 
-.blur {
-    filter: blur(5px);
-    pointer-events: none; /* Prevent clicks on blurred area */
-  }
-
-/* OTP popup */
-.otp {
-    max-width: 35rem;
-    width: 80vw;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
-    visibility: hidden;
-    opacity: 0;
-    padding: 2.5rem 1.5rem;  /* Further reduced padding */
-    background-color: white;
-    border: 2px solid #ee0942;
-    border-radius: 2rem;  /* Smaller radius */
-    transition: all 0.3s ease-in-out;
-}
-.otp h1{
-    padding-top: 0;
-    margin: 0 0 2rem 0;
-}
-
-.otp input {
-    margin-bottom: 2rem ;
-}
-
-
-.openpopup {
-    transform: translate(-50%, -50%) scale(1);
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Buttons */
 .signinBtn {
-    padding: 0.6rem 1.5rem;  /* Reduced padding */
+    padding: 0.6rem 1.5rem;
     background-color: #EE0942;
     color: white;
     font-weight: 600;
-    font-size: medium;  /* Reduced font size */
+    font-size: medium;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s;
-    width: 65%; /* Full width for responsiveness */
-    max-width: 300px; /* Limit maximum width */
-    height: 40px;  /* Reduced height */
-    margin: 0 auto; /* Center the button horizontally */
-    display: block; /* Ensure margin: auto works */
-    margin-top: 1rem;  /* Space between inputs and button */
+    width: 65%;
+    max-width: 300px;
+    height: 40px;
+    margin: 1rem auto 0;
+    display: block;
 }
 
 .signinBtn:hover {
@@ -203,133 +110,34 @@ input {
     border: 1px solid #EE0942;
 }
 
-/* Media queries for responsiveness */
 @media (max-width: 768px) {
-    .Container {
-        width: 70vw;  /* Adjusted width */
-        margin-top: 3rem; /* Adjusted margin for smaller screens */
+    .Container1 {
+        width: 70%;
+        margin-top: 3rem;
     }
-
-    .logoLeft,
-    .logoMiddle,
-    .logoRight {
-        width: 40px;  /* Further reduced width */
-    }
-
-    .heading {
-        font-size: 1.6rem;  /* Reduced font size */
-    }
-
     .branchRow {
-        grid-template-columns: 1fr 1fr;  /* 2 columns for medium screens */
-        gap: 5px;  /* Reduced gap */
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
     }
-
-    .branchRow input {
-        font-size: 0.85rem;  /* Reduced font size */
-        padding: 0.5rem;  /* Further reduced padding */
-    }
-
     .signinBtn {
-        font-size: small; /* Smaller font size for medium screens */
-        padding: 0.5rem 1rem; /* Adjusted padding */
-
+        font-size: small;
+        padding: 0.5rem 1rem;
     }
 }
-@media (max-width: 1000px) {
-    .otp {
-        width: 70vw;
-        max-width: none;
-        padding: 1rem;
-      }
-      .otp h1{
-          margin-top: 1rem;
-          font-size: 2.5rem;
-      }
-      
-      .otp input {
-          width: 80%;
-          margin: 0 3rem 1rem 3rem ;
-      }
-      .otp button{
-          font-size: 0.8rem;
-          margin-top: 1rem;
-          height: 2.5rem;
-          width: 40%;
-          
-      }
-  }
-@media (max-width: 600px) {
-    .otp {
-      width: 90vw;
-      max-width: none;
-      padding: 1rem;
-    }
-    .otp h1{
-        margin-top: 1rem;
-        font-size: 2.5rem;
-    }
-    
-    .otp input {
-        width: 80%;
-        margin: 0 1rem 1rem 1rem ;
-    }
-    .otp button{
-        font-size: 0.8rem;
-        margin-top: 1rem;
-        height: 2.5rem;
-        width: 40%;
-        
-    }
-    
-  }
+
 @media (max-width: 425px) {
-    .Container {
-        width: 90vw;  /* Adjusted width */
-        padding: 0.5rem; /* Adjusted padding */
-        margin-top: 2rem; /* Adjusted margin for smaller screens */
+    .Container1 {
+        width: 90%;
+        padding: 1rem;
+        margin-top: 2rem;
     }
-
-    .heading {
-        font-size: 1.3rem;  /* Reduced font size */
-    }
-
-    input {
-        font-size: 0.8rem;  /* Reduced font size */
-    }
-
     .branchRow {
-        grid-template-columns: 1fr;  /* 1 column for smaller screens */
-        gap: 3px;  /* Further reduced gap */
+        grid-template-columns: 1fr;
+        gap: 3px;
     }
-
-    .branchRow input {
-        font-size: 0.8rem;  /* Reduced font size */
-        padding: 0.4rem;  /* Further reduced padding */
-    }
-
     .signinBtn {
-        font-size: small; /* Smaller font size for smaller screens */
-        padding: 0.4rem 0.8rem; /* Adjusted padding */
-        height: 35px; /* Adjusted height */
+        font-size: small;
+        padding: 0.4rem 0.8rem;
+        height: 35px;
     }
-}
-
-/* Grid layout for form columns */
-.formGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 1rem; /* Space between columns */
-}
-
-.leftColumn,
-.rightColumn {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; /* Space between form groups */
-}
-
-.signinBtn {
-    grid-column: span 2; /* Make the button span both columns */
-    margin-top: 1rem; /* Space above the button */
 }
