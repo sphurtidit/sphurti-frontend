@@ -74,7 +74,7 @@ const RegistrationForm = () => {
           <div className="input-field">
             <label htmlFor="phone">Phone Number</label>
             <input
-              type="tel"
+              type="number"
               id="phone"
               name="phone"
               placeholder="Enter Phone Number"
@@ -86,7 +86,7 @@ const RegistrationForm = () => {
           <div className="input-field">
             <label htmlFor="alternate_phone">Alternate Phone Number</label>
             <input
-              type="tel"
+              type="number"
               id="alternate_phone"
               name="alternate_phone"
               placeholder="Enter Alternate Phone Number"

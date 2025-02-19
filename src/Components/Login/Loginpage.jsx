@@ -8,12 +8,14 @@ import "react-toastify/dist/ReactToastify.css";
 import loginback from "../../assets/loginback.png";
 import loginbackground from "../../assets/loginbackground.png";
 import Footer from "../Footer/Footer";
+import { FaSpinner } from "react-icons/fa";
 
 function Loginpage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { loginUser } = useUserStore();
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -72,18 +74,15 @@ function Loginpage() {
                     Sign Up
                   </span>
                 </p>
-                <button type="submit" className={logpage.loginBtn}>
-                  Login
+                <button type="submit" className={logpage.loginBtn} disabled={loading}>
+                  {loading ? <FaSpinner /> : "Login"}
                 </button>
               </form>
             </div>
           </div>
 
-          {/* Footer fixed at the bottom */}
           <div className={logpage.footer}>
-          
           </div>
-          {/* <Footer /> */}
         </div>
     
       </div>
