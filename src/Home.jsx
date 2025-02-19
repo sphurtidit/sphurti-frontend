@@ -19,7 +19,7 @@ export const Home = () => {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/gallery" element={<Gallery_Section />} />
-        <Route path="/developers" element={<DevelopersPage />} />
+        <Route path="/developerspage" element={<DevelopersPage />} />
         <Route path="/Loginpage" element={<Loginpage />} />
         <Route path="/Signinpage" element={<Signinpage />} />
         <Route path="/comingsoon" element={<ComingSoon />} />

@@ -9,6 +9,7 @@
     max-width: 100vw;
     background-color: white;
     border: 1.2px solid black;
+    z-index: 9;
 
 }
 .footercontent{

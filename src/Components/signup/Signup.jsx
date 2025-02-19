@@ -8,6 +8,7 @@ import useInfoStore from "../../store/infoStore";
 import loginback from "../../assets/loginback.png";
 import loginbackground from "../../assets/loginbackground.png";
 import Navbar from "../Navbar/nav";
+import { FaSpinner } from "react-icons/fa";
 
 function Signinpage() {
   const [isOtpVisible, setOtpVisible] = useState(false); // State to toggle OTP visibility
@@ -16,6 +17,7 @@ function Signinpage() {
   const { signupUser, verifyEmail, verifyOtp } = useUserStore();
   const { setInfo } = useInfoStore();
   const [otpVerified, setOtpVerified] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const openpopup = () => setOtpVisible(true);
   const closepopup = () => setOtpVisible(false);
@@ -38,14 +40,18 @@ function Signinpage() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
+    if(loading) return;
+    setLoading(true);
     if (!otpVerified) {
       setInfo("Please verify your email", "error");
+      setLoading(false);
       return;
     }
 
     if (await signupUser(signupInfo)) {
       navigate("/");
     }
+    setLoading(false);
   };
 
   const handleVerifyEmail = async () => {
@@ -72,7 +78,7 @@ function Signinpage() {
           <div className={`${signpage.Container1} ${isOtpVisible ? signpage.blur : ""}`}>
             <div className={signpage.Box}>
               <h1>
-                <p>Enter Your Details</p>
+                <p>Create a new Account</p>
               </h1>
               <form onSubmit={handleSignup}>
                 <div className={signpage.formGroup}>
@@ -80,7 +86,7 @@ function Signinpage() {
                     onChange={handleChange}
                     type="text"
                     name="name"
-                    placeholder="Enter your username"
+                    placeholder="Create a username"
                     value={signupInfo.name}
                   />
                 </div>
@@ -92,6 +98,7 @@ function Signinpage() {
                 name="email"
                 placeholder="Enter your E-mail"
                 value={signupInfo.email}
+                disabled={otpVerified}
               />
               <div className={signpage.forpass} onClick={handleVerifyEmail}>
                 <a>{otpVerified ? "Email Verified" : "Verify Email"}</a>
@@ -156,8 +163,8 @@ function Signinpage() {
                   />
                 </div>
 
-                <button type="submit" className={signpage.signinBtn}>
-                  Sign in
+                <button type="submit" className={signpage.signinBtn} disabled={loading}>
+                  {loading? <FaSpinner/> : "Sign up"}
                 </button>
               </form>
             </div>

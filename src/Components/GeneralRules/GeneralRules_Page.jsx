@@ -1,6 +1,7 @@
 import React from "react";
 import "./GeneralRules_Page.css";
 import Nav from "../Navbar/nav";
+import Footer from "../Footer/Footer";
 
 const generalRules = [
   "The tournament is only open to regular, legitimate university or college students.",
@@ -32,6 +33,7 @@ const protestRules = [
 
 const RulesSection = () => {
   return (
+    <div className="foot">
     <div className="rules-container-GR">
       <Nav />
       <div className="rules-box">
@@ -57,8 +59,13 @@ const RulesSection = () => {
       <p className="final-statement">
         *The rules and regulations may be amended and organizers have the right to do so*.
       </p>
+     
     </div>
+    <Footer />
+    </div>
+       
   );
+ 
 };
 
 export default RulesSection;
