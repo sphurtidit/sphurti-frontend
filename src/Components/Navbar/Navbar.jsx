@@ -49,13 +49,13 @@ function Navbar() {
           <img src={DIT} alt="DIT Logo" className="logo" />
         </div>
         {!isLoggedIn ? (
-        <div className="login-btn" onClick={() => navigate("/Loginpage")}>
-          Login
-        </div>
+          <div className="login-btn" onClick={() => navigate("/Loginpage")}>
+            Login
+          </div>
         ) : (
-        <div className="login-btn" onClick={() => navigate("/ProfilePage")}>
-          Profile
-        </div>
+          <div className="login-btn" onClick={() => navigate("/ProfilePage")}>
+            Profile
+          </div>
         )}
 
         {/* Hamburger Icon */}
@@ -70,7 +70,7 @@ function Navbar() {
       {/* Dropdown Menu */}
       <div className={`dropdown-container ${hamburgerOpen ? "show" : ""}`}>
         <div className="dropdown">
-          <ScrollLink>
+          <ScrollLink offset={-80}>
             <div onClick={() => handleNavigateAndScroll("/", "home-section")}>
               HOME
             </div>
@@ -87,7 +87,7 @@ function Navbar() {
           </ScrollLink>
           <ScrollLink offset={-80}>
             <div onClick={() => handleNavigateAndScroll("/comingsoon")}>
-              ORGANISING LEADERS
+              STUDENT COORDINATORS
             </div>
           </ScrollLink>
           <ScrollLink offset={-80}>

@@ -6,13 +6,18 @@
   padding: 0.5rem 2rem;
   background-color: white;
   align-items: center;
-  position: fixed;
+
   width: 100%;
   z-index: 1000;
-  top: 0;
+  top: 0; /* Required for sticky behavior */
   left: 0;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
+  position: fixed; /* Makes the navbar sticky */
+  overflow: hidden;
+
+  /* Optional styles if the navbar is meant to cover the full width of the screen */
+  position: -webkit-sticky; /* For Safari */
 }
 
 .nav-container.scrolled {
@@ -67,7 +72,7 @@
 
 /* Dropdown Container */
 .dropdown-container {
-  position: absolute;
+  position: fixed;
   top: 70px;
   right: 10px;
   width: 200px;
@@ -79,6 +84,11 @@
   visibility: hidden;
   transform: scale(0.95);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.dropdown a:hover {
+  color: #ff5733;
+  background: rgba(255, 87, 51, 0.1);
 }
 
 .dropdown-container.show {
@@ -96,6 +106,7 @@
   border: 2px solid #d40042;
   border-radius: 10px;
   background: white;
+  cursor: pointer;
 }
 
 .dropdown a {
@@ -107,11 +118,13 @@
   width: 100%;
   text-align: center;
   transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .dropdown a:hover {
   color: #ff5733;
   background: rgba(255, 87, 51, 0.1);
+  cursor: pointer;
 }
 
 /* Responsive Design */
