@@ -172,6 +172,7 @@ function Signinpage() {
 
           {isOtpVisible && (
             <div className={`${signpage.otp} ${signpage.openpopup}`} id="otp">
+                  <div className={signpage.closeBtn} onClick={closepopup}>&times;</div>
               <h1>Enter the OTP</h1>
               <input
                 type="text"
