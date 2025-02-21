@@ -1,7 +1,9 @@
 /* Container */
 .ambassadors-container {
   min-height: 100vh;
-  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
 
 /* Header */
@@ -14,6 +16,7 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  margin-top: 6rem;
   color: #333;
 }
 
@@ -45,23 +48,53 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsive Card Layout */
+@media (max-width: 767px) {
+  .ambassador-card {
+    flex-direction: column;
+    text-align: center;
+    width: 95%;
+  }
+  .image-section {
+    padding: 0;
+  }
+  .ambassador-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ambassador-card {
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+  }
+  .image-section {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ambassador-card {
+    flex-direction: row;
+  }
+}
+
 /* Red and Blue Cards */
 .red-bg {
-  background: linear-gradient(135deg, #e63946, #b71c1c);
+  background: #EE0942;
   color: white;
 }
 
 .blue-bg {
-  background: linear-gradient(135deg, #1d4ed8, #0c2d8a);
+  background: #2374E8;
   color: white;
 }
 
 /* Image Section */
 .image-section {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: left;
   padding: 20px;
 }
 
@@ -69,22 +102,7 @@
   width: 300px;
   height: 300px;
   object-fit: cover;
-
   border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-}
-
-.ambassador-info {
-  text-align: left;
-  margin-top: 10px;
-}
-
-.ambassador-name {
-  font-size: 1.5rem;
-  font-weight: bold;
 }
 
 /* Achievements Section */
@@ -93,76 +111,51 @@
   padding: 1rem;
 }
 
-.achievements-section h3 {
-  font-size: 1.8rem;
+.ambassador-info {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.ambassador-name {
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 1rem;
-  text-align: left;
 }
 
-.achievements-section ul {
+.ambassador-course {
+  font-size: 1.2rem;
+}
+
+.achievements-list {
   list-style-type: none;
-}
-
-.achievements-section ul li {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
   text-align: left;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .ambassador-card {
-    flex-direction: column;
-    text-align: center;
-  }
+.achievements-list li {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
 
-  .ambassador-image {
-    width: 350px;
-    height: 350px;
+/* Footer */
+.footerContainer {
+  width: 100vw;
+  text-align: center;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive Footer */
+@media (max-width: 767px) {
+  .footerContainer {
+    padding: 1rem 0.5rem;
+    position: relative;
   }
 }
 
-@media (max-width: 768px) {
-  .ambassadors-container {
-    padding: 4rem 1.5rem;
-  }
-
-  .ambassador-image {
-    width: 200px;
-    height:200px;
-  }
-
-  .achievements-section h3 {
-    font-size: 1.5rem;
-  }
-
-  .achievements-section ul li {
-    font-size: 0.9rem;
+@media (min-width: 1024px) {
+  .footerContainer {
+    position: relative;
   }
 }
-
-@media (max-width: 480px) {
-  .ambassadors-container {
-    padding: 6rem 2rem;
-  }
-
-  .ambassador-card {
-    padding: 1rem;
-  }
-
-  .ambassador-image {
-    width: 200px;
-    height: 200px;
-  }
-
-  .achievements-section h3 {
-    font-size: 1.3rem;
-  }
-
-  .achievements-section ul li {
-    font-size: 0.8rem;
-  }
-}
-
