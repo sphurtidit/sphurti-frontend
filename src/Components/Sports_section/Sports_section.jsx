@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import SportsContainer from "../Sports_container/sports_container";
 import "./Sports_section.css";
 import badmintonimg from "../../assets/badminton.png";
@@ -9,17 +8,19 @@ import volleyballimg from "../../assets/volleyball.png";
 import basketballimg from "../../assets/basketball.png";
 import tabletennisimg from "../../assets/table_tennis.png";
 import SportsCard from "../Sport_Card/Sport_Card";
+import SportsCard from "../Sport_Card/Sport_Card";
 
-const SportsSection = ({ gameDetails = {} }) => {
+const SportsSection = ({ rule, gameDetails = [] }) => {
   const [eventName, setEventName] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
-  const [category, setCategory] = useState();
-  const [displayImg, setDisplayImg] = useState();
-  const openModal = (category, event, image) => {
-    setIsModalOpen(true); // Open the modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [category, setCategory] = useState("");
+
+  console.log("Game Details:", gameDetails);
+
+  const openModal = (category, eventName) => {
+    setIsModalOpen(true);
     setCategory(category);
-    setEventName(event);
-    setDisplayImg(image);
+    setEventName(eventName);
   };
 
   const closeModal = () => {
@@ -60,6 +61,34 @@ const SportsSection = ({ gameDetails = {} }) => {
 
   return (
     <div className="nav-sports" id="sports-section">
+      <div className="parent-container-sports">
+        <div className="heading">
+          <h1>SPORTS</h1>
+        </div>
+        <div className="allsports">
+          {Array.isArray(gameDetails) && gameDetails.length > 0 ? (
+            gameDetails.map((event, index) => (
+              <SportsContainer
+                openModal={openModal}
+                closeModal={closeModal}
+                key={event._id || index}
+                rule={rule}
+                event={event}
+                type={getEventType(index)}
+                image={getImageForEvent(event.name || "")}
+              />
+            ))
+          ) : (
+            <p>No sports events available</p>
+          )}
+        </div>
+      </div>
+      <SportsCard
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        category={category}
+        eventName={eventName}
+      />
       <div className="parent-container-sports">
         <div className="heading">
           <h1>SPORTS</h1>
