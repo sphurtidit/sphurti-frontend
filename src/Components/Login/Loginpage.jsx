@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import logpage from "./Loginpage.module.css";
 import { useNavigate } from "react-router-dom";
 import useUserStore from "../../store/userStore";
-import Navbar from "../Navbar/nav";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import loginback from "../../assets/loginback.png";
 import loginbackground from "../../assets/loginbackground.png";
 import Footer from "../Footer/Footer";
-import { FaSpinner } from "react-icons/fa";
+import Navbar from '../Navbar/Navbar';
+
 
 function Loginpage() {
   const navigate = useNavigate();

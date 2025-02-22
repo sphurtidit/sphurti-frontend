@@ -5,7 +5,7 @@ import useInfoStore from "../../store/infoStore";
 import useEventStore from "../../store/eventStore";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Nav from "../Navbar/nav";
+import Navbar from '../Navbar/Navbar';
 import { FaSpinner } from "react-icons/fa";
 
 const TeamRegistration = () => {
@@ -75,7 +75,7 @@ const TeamRegistration = () => {
   return (
     <>
       <ToastContainer />
-      <Nav />
+      <Nav bar/>
       <div className="Sarfaraj">
         <h1>Team Registration</h1>
         <form onSubmit={handleSubmit}>

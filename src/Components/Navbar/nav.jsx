@@ -8,6 +8,7 @@ import { Link as ScrollLink, scroller } from "react-scroll";
 import Button from "../Button/Button";
 import image from "../../assets/yellowline.png";
 
+
 function Nav() {
   const [isModalVisible, setModalVisible] = useState(false);
   const navigate = useNavigate(); // Initialize useNavigate
