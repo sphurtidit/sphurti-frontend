@@ -8,7 +8,6 @@ import volleyballimg from "../../assets/volleyball.png";
 import basketballimg from "../../assets/basketball.png";
 import tabletennisimg from "../../assets/table_tennis.png";
 import SportsCard from "../Sport_Card/Sport_Card";
-import SportsCard from "../Sport_Card/Sport_Card";
 
 const SportsSection = ({ rule, gameDetails = [] }) => {
   const [eventName, setEventName] = useState("");
@@ -24,7 +23,7 @@ const SportsSection = ({ rule, gameDetails = [] }) => {
   };
 
   const closeModal = () => {
-    setIsModalOpen(false); // Close the modal
+    setIsModalOpen(false);
   };
 
   const rulesPDFs = {
@@ -33,7 +32,7 @@ const SportsSection = ({ rule, gameDetails = [] }) => {
     football: "/pdfs/football_rules.pdf",
     volleyball: "/pdfs/volleyball_rules.pdf",
     basketball: "/pdfs/basketball_rules.pdf",
-    // "table tennis": "/pdfs/table_tennis_rules.pdf",
+    "table tennis": "/pdfs/table_tennis_rules.pdf",
   };
 
   const getImageForEvent = (eventName) => {
@@ -49,7 +48,7 @@ const SportsSection = ({ rule, gameDetails = [] }) => {
       case "basketball":
         return basketballimg;
       case "table tennis":
-          return tabletennisimg;
+        return tabletennisimg;
       default:
         return "";
     }
@@ -72,7 +71,7 @@ const SportsSection = ({ rule, gameDetails = [] }) => {
                 openModal={openModal}
                 closeModal={closeModal}
                 key={event._id || index}
-                rule={rule}
+                rule={rulesPDFs[event.name?.toLowerCase()] || ""}
                 event={event}
                 type={getEventType(index)}
                 image={getImageForEvent(event.name || "")}
@@ -88,32 +87,8 @@ const SportsSection = ({ rule, gameDetails = [] }) => {
         onClose={closeModal}
         category={category}
         eventName={eventName}
-      />
-      <div className="parent-container-sports">
-        <div className="heading">
-          <h1>SPORTS</h1>
-        </div>
-        <div className="allsports">
-          {gameDetails.map((event, index) => (
-            <SportsContainer
-              openModal={openModal}
-              closeModal={closeModal}
-              key={event._id}
-              rule={rulesPDFs[event.name]}
-              event={event}
-              type={getEventType(index)}
-              image={getImageForEvent(event.name)}
-            />
-          ))}
-        </div>
-      </div>
-      <SportsCard
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        category={category}
-        name={eventName}
-        image={displayImg}
-        rules={rulesPDFs[eventName.toLowerCase()]}
+        image={getImageForEvent(eventName)}
+        rules={rulesPDFs[eventName?.toLowerCase()] || ""}
       />
     </div>
   );
