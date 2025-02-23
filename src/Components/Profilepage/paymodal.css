@@ -1,0 +1,123 @@
+.paymodepage {
+    width: 40vw;
+    height: auto;
+    border: 2px solid #EC2050;
+    border-radius: 24px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(214, 89, 89, 0.5);
+    z-index: 2;
+    padding: 20px;
+    align-items: center;
+    
+}
+.sports-images img{
+    width:4vw;
+    margin-top: 1vh;
+}
+.container1{
+    display: flex;
+    flex-direction: row;
+    margin: 1px;
+    justify-content: space-between;
+    
+}
+.container2{
+    display: flex;
+    flex-direction: row;
+    gap:1vw;
+    margin:5px;
+}
+.text-of-sports{
+    font-size: 1.5rem;
+    display: flex;
+    margin-top: 2vh;
+}
+.prize{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 25px;
+    gap:1vw;
+    
+}
+input[type="checkbox"]{
+ width:2vw;
+ height:1vh;
+ background-color: white;
+ appearance: none;
+ border: 2px solid #ee0942;
+ font-size: 1rem;
+ cursor: pointer;
+ 
+}
+.prize input[type="checkbox"]:checked::after {
+    content: "\2713"; 
+    font-size: 1rem;
+    background-color: #ee0942;
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1.4vh;
+    background: linear-gradient(145deg, #ee0942, #ee0942) !important;
+}
+
+hr {
+    height: 3px;
+    background-color: black;
+    border: none; 
+    margin: 10px 0; 
+  
+}
+
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    
+}
+.total2{
+    margin-left: 4rem;
+}
+.proceedpay{
+    width:20vw;
+    background:white;
+    color:#ee0942;
+    font-size: 1.5rem;
+    border-radius: 40px;
+    border: 2px solid #ee0942;
+    align-items: center;
+    padding: 10px;
+    margin-top: 1vh;
+
+
+}
+.proceedpay:hover{
+    background: #ee0942;
+    color:white;
+}
+@media only screen and (max-width: 768px) {
+    .paymodepage{
+        width:55vw;
+    }
+    .proceedpay{
+        font-size: 1rem;
+        width:40vw;
+    }
+    .sports-images img{
+        width:8vw;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .paymodepage{
+        width:70vw;
+    }
+    .text-of-sports{
+        font-size: 1rem;
+    }
+    .sports-images img{
+        width:10vw;
+    }
+}
