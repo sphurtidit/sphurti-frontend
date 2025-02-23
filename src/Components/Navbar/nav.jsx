@@ -51,7 +51,7 @@ function Nav() {
         <div className="center-button">
           <ScrollLink>
             <li onClick={() => handleNavigateAndScroll("/", "home-section")}>
-              HOME  
+              HOME
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
@@ -70,18 +70,12 @@ function Nav() {
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
+            <li onClick={() => handleNavigateAndScroll("/AMBASSADORS_page")}>
             AMBASSADORS
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
-            <li
-              onClick={() =>
-                handleNavigateAndScroll("/FAQ")
-              }
-            >
-              FAQ
-            </li>
+            <li onClick={() => handleNavigateAndScroll("/FAQ")}>FAQ</li>
           </ScrollLink>
           <ScrollLink to="" offset={-80}>
             <li onClick={showNav}>
@@ -100,8 +94,7 @@ function Nav() {
               </ul>
             </li>
           </ScrollLink>
-        
-         
+
           {/* <ScrollLink offset={-80}>
             <li
               onClick={() =>
@@ -112,11 +105,7 @@ function Nav() {
             </li>
           </ScrollLink> */}
           <ScrollLink offset={-80}>
-            <li
-              onClick={() =>
-                handleNavigateAndScroll("/", "contact-section")
-              }
-            >
+            <li onClick={() => handleNavigateAndScroll("/", "contact-section")}>
               CONTACT US
             </li>
           </ScrollLink>
