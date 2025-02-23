@@ -11,6 +11,7 @@ import TeamRegistration from "./Components/Registration_Page/Registration_Page2"
 import FAQPage from "./Components/FAQ/FAQ";
 import ResultTable from "./Components/Result_Table/Result_Table";
 import RulesSection from "./Components/GeneralRules/GeneralRules_Page";
+import Ambassadors from "./Components/AMBASSADORS/AMBASSADORS_page";
 
 export const Home = () => {
   return (
@@ -27,6 +28,8 @@ export const Home = () => {
         <Route path="/FAQ" element={<FAQPage />} />
         <Route path="/ResultTable" element={<ResultTable />} />
         <Route path="/profilepage" element={<ProfilePage />} />
+
+        <Route path="/AMBASSADORS_page" element={< Ambassadors />} />
         
         <Route path="/RulesSection" element={<RulesSection />} />
 

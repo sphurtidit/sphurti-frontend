@@ -1,0 +1,82 @@
+.redmainbox {
+    width: 25vw;
+    height: auto;
+    border: 2px solid #EC2050;
+    border-radius: 24px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(214, 89, 89, 0.5);
+    z-index: 2;
+    padding: 1px;
+}
+
+.reduppersection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.reduppersection img{
+    width:25vw;
+    z-index: 1;
+    overflow: hidden;
+}
+.icon-container-red{
+    margin-bottom: -0.5rem;
+}
+
+.redlowersection h1 {
+    color: #EC2050;
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.redlowersection p {
+    color: #737373;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.paymentred {
+    background-color: #EC2050;
+    color: white;
+    font-size: 1.2rem;
+    padding:10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 10vw;
+    object-fit: contain;
+    margin-bottom: 3vh;
+}
+
+.paymentred:hover {
+    background-color: #a9092e;
+}
+
+@media (max-width: 768px) {
+    .redmainbox{
+        width:40vw;
+    }
+    .reduppersection img{
+        width:39vw;
+    }
+    .paymentred{
+        width:25vw;
+    }
+}
+
+@media (max-width: 480px){
+    .redmainbox{
+        width:50vw;
+    }
+    .reduppersection img{
+        width:49vw;
+    }
+    .paymentred{
+        font-size: 1rem;
+
+    }
+} 
