@@ -66,7 +66,7 @@ function Nav() {
           </ScrollLink>
           <ScrollLink offset={-80}>
             <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
-              ORGANISING LEADERS
+              STUDENT COORDINATORS
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
