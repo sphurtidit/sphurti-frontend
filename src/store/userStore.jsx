@@ -129,10 +129,8 @@ const useUserStore = create(
 
       getRegisteredEvents: async () => {
         const user = get().user;
-        console.log(user._id);
         const path = `${url}/api/registration/user/${user._id}`;
         const response = await axios.get(path, {headers: {Authorization: `Bearer ${localStorage.getItem("authToken")}`}});
-        console.log(response.data);
         set({registeredEvents: response.data});
       }
     }),
