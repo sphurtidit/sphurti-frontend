@@ -9,12 +9,13 @@ import Footer from "../Footer/Footer";
 
 function ProfilePage() {
   const navigate = useNavigate();
-  const { user, fetchUser, logout } = useUserStore();
+  const { user, fetchUser, logout, getRegisteredEvents } = useUserStore();
 
   useEffect(() => {
     if (!user) {
       fetchUser();
     }
+    getRegisteredEvents();
   }, [user, fetchUser]);
 
   const handleNavigation = (path) => {
