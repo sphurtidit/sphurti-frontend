@@ -9,7 +9,9 @@ const useUserStore = create(
   persist(
     (set, get) => ({
       user: null,
+      registeredEvents:null, 
       setUser: (user) => set({ user }),
+      setRegisteredEvents: (registeredEvents) => set({ registeredEvents }),
 
       logout: () => {
         const setInfo = useInfoStore.getState().setInfo;
@@ -131,6 +133,7 @@ const useUserStore = create(
         const path = `${url}/api/registration/user/${user._id}`;
         const response = await axios.get(path, {headers: {Authorization: `Bearer ${localStorage.getItem("authToken")}`}});
         console.log(response.data);
+        set({registeredEvents: response.data});
       }
     }),
     {
