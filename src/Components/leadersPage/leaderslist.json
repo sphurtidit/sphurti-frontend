@@ -1,0 +1,53 @@
+{
+    "ORGANIZING HEADS": {
+        "MR R.S. CHAUHAN" : {
+            "course" : "XYZ",
+            "phone" : "*********",
+            "image"  :""
+        },
+        "MR R.S. CHAHAN" : {
+            "course" : "XYZ",
+            "phone" : "*********",
+            "image"  :""
+        }
+    }, 
+    "Event  Management Heads" : {
+        "MR R.S. CHAUHAN" : {
+            "course" : "XYZ",
+            "image"  :""
+        },
+        "MR R.S. CHAUHA" : {
+            "course" : "XYZ",
+            "image"  :""
+        },
+        "MR R.S. CHAHAN" : {
+            "course" : "XYZ",
+            "phone" : "*********",
+            "image"  :""
+        }
+    },
+    "Technical Heads" : {
+        "MR R.S. CHAUHAN" : {
+            "course" : "XYZ",
+            "image"  :""
+        },
+        "MR R.S. CHAUH" : {
+            "course" : "XYZ",
+            "image"  :""
+        }
+    },
+    "PR Heads" : {
+        "MR R.S. CHAUHAN" : {
+            "course" : "XYZ",
+            "image"  :""
+        },
+        "MR R.S. CHAUH" : {
+                    "course" : "XYZ",
+                    "image"  :""
+                },
+        "MR R.S. CAUH" : {
+           "course" : "XYZ",
+            "image"  :""
+             }
+    }
+}
