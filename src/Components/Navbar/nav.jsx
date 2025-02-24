@@ -84,10 +84,8 @@ function Nav() {
                 {[...Array(11).keys()].map((i) => {
                   const year = 2024 - i;
                   return (
-                    <div key={year} className="saaj">
-                      <a href="#" onClick={toggleModal}>
+                    <div key={year} className="saaj" onClick={toggleModal}>
                         {year}
-                      </a>
                     </div>
                   );
                 })}
@@ -104,7 +102,7 @@ function Nav() {
               GALLERY
             </li>
           </ScrollLink> */}
-          <ScrollLink offset={-80}>
+          <ScrollLink offset={-80} to="">
             <li onClick={() => handleNavigateAndScroll("/", "contact-section")}>
               CONTACT US
             </li>
