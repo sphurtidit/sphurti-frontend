@@ -3,8 +3,8 @@ import Navbar from "../../Components/Navbar/nav";
 import Card from "../../Components/DeveloperCard/Card";
 import style from "./developers.module.css";
 import Footer from '../../Components/Footer/Footer';
-import basketball from "../../assets/basketball.png";
 import ProfileCard from '../../Components/ProfileCard/ProfileCard';
+import basketball from "../../assets/basketball.png";
 
 const DevelopersPage = () => {
   return (
@@ -18,9 +18,10 @@ const DevelopersPage = () => {
         <Card name="Kashish" des="I worked as a frontend developer on this website. This was my work, I did it for the first time." />
         <Card name="Kashish" des="I worked as a frontend developer on this website. This was my work, I did it for the first time." />
         <Card name="Kashish" des="I worked as a frontend developer on this website. This was my work, I did it for the first time." />
-        
+        <Card name="Kashish" des="I worked as a frontend developer on this website. This was my work, I did it for the first time." />
+        <Card name="Kashish" des="I worked as a frontend developer on this website. This was my work, I did it for the first time." />
+        <ProfileCard image={basketball} isPaid={false}/>
       </div>
-      <ProfileCard type={1} image={basketball} />
       <Footer/>
     </>
   );
