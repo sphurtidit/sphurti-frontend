@@ -1,123 +1,165 @@
-.paymodepage {
-    width: 40vw;
-    height: auto;
-    border: 2px solid #EC2050;
-    border-radius: 24px;
-    background-color: white;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(214, 89, 89, 0.5);
-    z-index: 2;
-    padding: 20px;
-    align-items: center;
-    
-}
-.sports-images img{
-    width:4vw;
-    margin-top: 1vh;
-}
-.container1{
-    display: flex;
-    flex-direction: row;
-    margin: 1px;
-    justify-content: space-between;
-    
-}
-.container2{
-    display: flex;
-    flex-direction: row;
-    gap:1vw;
-    margin:5px;
-}
-.text-of-sports{
-    font-size: 1.5rem;
-    display: flex;
-    margin-top: 2vh;
-}
-.prize{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 25px;
-    gap:1vw;
-    
-}
-input[type="checkbox"]{
- width:2vw;
- height:1vh;
- background-color: white;
- appearance: none;
- border: 2px solid #ee0942;
- font-size: 1rem;
- cursor: pointer;
- 
-}
-.prize input[type="checkbox"]:checked::after {
-    content: "\2713"; 
-    font-size: 1rem;
-    background-color: #ee0942;
-    color: red;
+/* Background overlay */
+.pay-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Slight dark overlay */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -1.4vh;
-    background: linear-gradient(145deg, #ee0942, #ee0942) !important;
+    z-index: 1000;
 }
 
-hr {
-    height: 3px;
-    background-color: black;
-    border: none; 
-    margin: 10px 0; 
-  
+/* Modal box */
+.pay-modal {
+    position: relative;
+    background: white;
+    border: 2px solid red;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.total{
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+/* Sport selection container */
+.container1 {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    
-    
-}
-.total2{
-    margin-left: 4rem;
-}
-.proceedpay{
-    width:20vw;
-    background:white;
-    color:#ee0942;
-    font-size: 1.5rem;
-    border-radius: 40px;
-    border: 2px solid #ee0942;
     align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Left section */
+.container2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sports-images img {
+    width: 40px;
+    height: 40px;
+}
+
+.text-of-sports {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: black;
+}
+
+/* Pricing section */
+.prize {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Custom checkbox */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    border: 2px solid #ee0942;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #ee0942;
+    border-color: #ee0942;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "✔";
+    color: white;
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+    line-height: 16px;
+}
+
+/* Divider */
+hr {
+    height: 1px;
+    background-color: black;
+    border: none;
+    margin: 10px 0;
+}
+
+/* Total amount section */
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Proceed button */
+.proceedpay {
+    width: 100%;
+    background: white;
+    color: #ee0942;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid #ee0942;
     padding: 10px;
-    margin-top: 1vh;
-
-
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
-.proceedpay:hover{
+
+.proceedpay:hover {
     background: #ee0942;
-    color:white;
+    color: white;
 }
-@media only screen and (max-width: 768px) {
-    .paymodepage{
-        width:55vw;
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+    .paymodepage {
+        width: 85%;
+        max-height: 70vh;
     }
-    .proceedpay{
-        font-size: 1rem;
-        width:40vw;
+
+    .sports-images img {
+        width: 35px;
+        height: 35px;
     }
-    .sports-images img{
-        width:8vw;
+
+    .text-of-sports {
+        font-size: 0.9rem;
     }
-}
-@media only screen and (max-width: 425px) {
-    .paymodepage{
-        width:70vw;
+
+    .prize {
+        font-size: 0.9rem;
     }
-    .text-of-sports{
-        font-size: 1rem;
-    }
-    .sports-images img{
-        width:10vw;
+
+    .proceedpay {
+        font-size: 0.9rem;
     }
 }

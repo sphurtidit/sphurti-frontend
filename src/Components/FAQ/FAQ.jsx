@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "Are meals provided to participants?",
-    answer: "Yes, all participants will receive complimentary meals, including breakfast, lunch, and dinner, during the event. Meal coupons will be distributed upon arrival.",
+    answer: "Yes, All teams opting for Accommodation will recieve complementary meals during the event.",
   },
   {
     question: "What should participants bring with them?",
