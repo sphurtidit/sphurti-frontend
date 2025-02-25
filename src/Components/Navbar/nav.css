@@ -196,6 +196,7 @@ nav li:hover ul.dropdown {
     padding: 10px;
 }
 
+
 .nav-button {
     padding: 20px;
     cursor: pointer;
@@ -208,6 +209,7 @@ nav li:hover ul.dropdown {
     visibility: hidden;
     display: none;
 }
+
 
 .main-nav {
     display: flex;
@@ -240,12 +242,6 @@ nav li:hover ul.dropdown {
     /* width: 30%; */
 }
 
-@media only screen and (min-width:1440px){
-    .logo {
-        height: 4rem;
-        padding: 0.5rem;
-    }
-}
 
 /* Intermediate responsive styles (720px - 1440px) */
 @media only screen and (min-width: 721px) and (max-width: 1440px) {
@@ -254,7 +250,7 @@ nav li:hover ul.dropdown {
     }
 
     .logo {
-        height: 4rem;
+        height: 4.5rem;
         padding: 0.5rem;
     }
 
@@ -370,6 +366,7 @@ nav li:hover ul.dropdown {
 
     .logo-left {
         display: none;
+        height: 2vh;
     }
 
     .right-side {
