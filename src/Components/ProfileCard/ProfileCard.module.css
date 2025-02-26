@@ -52,8 +52,8 @@
     margin-top: auto; 
     display: flex;
     align-items: center;
-    border: 2px solid #ee0942;
-    color: #ee0942;
+    border: 2px solid #53b33b;
+    color: #53b33b;
     padding: 0.3rem 0.5rem;
     width: 5rem;
     border-radius: 0.7rem;
@@ -63,8 +63,8 @@
     margin-top: auto; 
     display: flex;
     align-items: center;
-    border: 2px solid #53b33b;
-    color: #53b33b;
+    border: 2px solid #ee0942;
+    color: #ee0942;
     padding: 0.3rem 0.5rem;
     width: 7rem;
     border-radius: 0.7rem;

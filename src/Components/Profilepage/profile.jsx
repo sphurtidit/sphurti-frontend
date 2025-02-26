@@ -6,6 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import useUserStore from "../../store/userStore";
 import Navbar from "../Navbar/nav";
 import Footer from "../Footer/Footer";
+import ProfileCard from "../ProfileCard/ProfileCard";
+import basketball from "../../assets/basketball.png";
 
 function ProfilePage() {
   const navigate = useNavigate();
@@ -82,7 +84,7 @@ function ProfilePage() {
           <div className={profile.scroller}>
             <h1 className={profile.register}>Registered Events:</h1>
             <div className={profile.registered}>
-              <h1>Registered Events coming soon!!</h1>
+            <ProfileCard image={basketball} isPaid={true}/>
               {/* <img className={profile.events}
             src="https://www.joomfreak.com/media/k2/items/cache/245effadf41c6129f4fe7accc564ef86_L.jpg"
           
