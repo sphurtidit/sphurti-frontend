@@ -121,7 +121,7 @@ function ProfilePage() {
                 <h1 className={profile.register}>Registered Events:</h1>
                 <div className={profile.registered}>
                   {registrationData.length > 0 ? (
-                    registrationData.map((event) => <RegisteredEventsCards key={event._id} data={event} />)
+                    registrationData.map((event) => <RegisteredEventsCards isPaid={true} data={event} />)
                   ) : (
                     <h1>No Registered Events Yet!</h1>
                   )}
@@ -132,7 +132,7 @@ function ProfilePage() {
           </div>
         </>
       )}
-      <PayModal show={modalOpen} onClose={() => setModalOpen(false)} data={unpaidEvents} contact = {user?.phone_no} email = {user?.email}/>
+      <PayModal show={modalOpen} onClose={() => setModalOpen(false)} data={unpaidEvents} contact={user?.phone_no} email={user?.email} />
       <Lines customLoading={loading} />
     </div>
   );
