@@ -28,9 +28,7 @@ export const Home = () => {
         <Route path="/FAQ" element={<FAQPage />} />
         <Route path="/ResultTable" element={<ResultTable />} />
         <Route path="/profilepage" element={<ProfilePage />} />
-
         <Route path="/AMBASSADORS_page" element={< Ambassadors />} />
-        
         <Route path="/RulesSection" element={<RulesSection />} />
 
       </Routes>

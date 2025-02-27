@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useUserStore from "../../store/userStore";
-import Navbar from "../Navbar/nav";
+import Navbar from "../../Components/Navbar/nav";
 import { Lines } from "react-preloaders";
 import RegisteredEventsCards from "./RegisteredEventsCards/RegisteredEventsCards";
 import PayModal from "./paymodal";
@@ -132,7 +132,7 @@ function ProfilePage() {
           </div>
         </>
       )}
-      <PayModal show={modalOpen} onClose={() => setModalOpen(false)} data={unpaidEvents} />
+      <PayModal show={modalOpen} onClose={() => setModalOpen(false)} data={unpaidEvents} contact = {user?.phone_no} email = {user?.email}/>
       <Lines customLoading={loading} />
     </div>
   );
