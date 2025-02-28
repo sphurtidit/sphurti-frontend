@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./FAQ.css";
 import { FaChevronDown, FaRegCopy } from "react-icons/fa";
-import Nav from '../../Components/Navbar/nav';
+import Navbar from '../../Components/Navbar/Navbar';
 import Footer from "../../Components/Footer/Footer";
-
 const faqs = [
   {
     question: "Will accommodation be provided for participants?",
@@ -56,7 +55,7 @@ const FaqComponent = () => {
   return (
     <div className="footer">
     <div className="faq-container">
-      <Nav />
+      <Navbar />
       <div className="faq-box">
         <h1>FAQs</h1>
         {faqs.map((faq, index) => (
