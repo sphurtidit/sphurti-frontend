@@ -1,0 +1,161 @@
+/* Container */
+.ambassadors-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+/* Header */
+.ambassadors {
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+.ambassadors h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 6rem;
+  color: #333;
+}
+
+/* Grid Layout */
+.ambassadors-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Card Styling */
+.ambassador-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
+  height: auto;
+}
+
+.ambassador-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Card Layout */
+@media (max-width: 767px) {
+  .ambassador-card {
+    flex-direction: column;
+    text-align: center;
+    width: 95%;
+  }
+  .image-section {
+    padding: 0;
+  }
+  .ambassador-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ambassador-card {
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+  }
+  .image-section {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ambassador-card {
+    flex-direction: row;
+  }
+}
+
+/* Red and Blue Cards */
+.red-bg {
+  background: #EE0942;
+  color: white;
+}
+
+.blue-bg {
+  background: #2374E8;
+  color: white;
+}
+
+/* Image Section */
+.image-section {
+  padding: 20px;
+}
+
+.ambassador-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Achievements Section */
+.achievements-section {
+  flex: 1;
+  padding: 1rem;
+}
+
+.ambassador-info {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.ambassador-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.ambassador-course {
+  font-size: 1.2rem;
+}
+
+.achievements-list {
+  list-style-type: none;
+  text-align: left;
+}
+
+.achievements-list li {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footerContainer {
+  width: 100vw;
+  text-align: center;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive Footer */
+@media (max-width: 767px) {
+  .footerContainer {
+    padding: 1rem 0.5rem;
+    position: relative;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footerContainer {
+    position: relative;
+  }
+}

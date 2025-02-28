@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Registration_Page1.css";
 import useUserStore from "../../store/userStore";
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from "../../Components/Footer/Footer";
 
 const RegistrationForm = () => {
   const location = useLocation();

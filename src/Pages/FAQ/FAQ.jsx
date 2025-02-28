@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./FAQ.css";
 import { FaChevronDown, FaRegCopy } from "react-icons/fa";
-import Navbar from '../Navbar/Navbar';
-import Footer from "../Footer/Footer";
-
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from "../../Components/Footer/Footer";
 const faqs = [
   {
     question: "Will accommodation be provided for participants?",
@@ -15,7 +14,7 @@ const faqs = [
   },
   {
     question: "Are meals provided to participants?",
-    answer: "Yes, all participants will receive complimentary meals, including breakfast, lunch, and dinner, during the event. Meal coupons will be distributed upon arrival.",
+    answer: "Yes, All teams opting for Accommodation will recieve complementary meals during the event.",
   },
   {
     question: "What should participants bring with them?",

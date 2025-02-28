@@ -6,9 +6,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import loginback from "../../assets/loginback.png";
 import loginbackground from "../../assets/loginbackground.png";
-import Footer from "../Footer/Footer";
-import Navbar from '../Navbar/Navbar';
-
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from "../../Components/Footer/Footer";
+import { FaSpinner } from "react-icons/fa";
 
 function Loginpage() {
   const navigate = useNavigate();

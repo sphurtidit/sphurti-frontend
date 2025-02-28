@@ -68,33 +68,33 @@ function Navbar() {
 
       <div className={`dropdown-container ${hamburgerOpen ? "show" : ""}`}>
         <div className="dropdown">
-          <ScrollLink offset={-80}>
-            <div onClick={() => handleNavigateAndScroll("/", "home-section")}>
+          <ScrollLink offset={-80} onClick={() => handleNavigateAndScroll("/", "home-section")}>
+            <div >
               HOME
             </div>
           </ScrollLink>
-          <ScrollLink offset={-80}>
-            <div onClick={() => handleNavigateAndScroll("/", "sports-section")}>
+          <ScrollLink offset={-80} onClick={() => handleNavigateAndScroll("/", "sports-section")}>
+            <div >
               SPORTS
             </div>
           </ScrollLink>
-          <ScrollLink offset={-80}>
-            <div onClick={() => handleNavigateAndScroll("/RulesSection")}>
+          <ScrollLink offset={-80} onClick={() => handleNavigateAndScroll("/RulesSection")}>
+            <div >
               GENERAL RULES
             </div>
           </ScrollLink>
-          <ScrollLink offset={-80}>
-            <div onClick={() => handleNavigateAndScroll("/comingsoon")}>
+          <ScrollLink offset={-80} onClick={() => handleNavigateAndScroll("/comingsoon")}>
+            <div>
               STUDENT COORDINATORS
             </div>
           </ScrollLink>
-          <ScrollLink offset={-80}>
-            <div onClick={() => handleNavigateAndScroll("/comingsoon")}>
+          <ScrollLink offset={-80} onClick={() => handleNavigateAndScroll("/AMBASSADORS_page")}>
+            <div >
               AMBASSADORS
             </div>
           </ScrollLink>
-          <ScrollLink offset={-80}>
-            <div onClick={() => handleNavigateAndScroll("/FAQ")}>FAQ</div>
+          <ScrollLink offset={-80} onClick={() => handleNavigateAndScroll("/FAQ")}>
+            <div >FAQ</div>
           </ScrollLink>
           {/* <ScrollLink to="" offset={-80}>
                       <div onClick={showNav}>
@@ -113,9 +113,9 @@ function Navbar() {
                         </ul>
                       </div>
                     </ScrollLink> */}
-          <ScrollLink offset={-80}>
+          <ScrollLink offset={-80} onClick={() => handleNavigateAndScroll("/", "contact-section")}>
             <div
-              onClick={() => handleNavigateAndScroll("/", "contact-section")}
+              
             >
               CONTACT US
             </div>

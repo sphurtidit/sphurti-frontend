@@ -1,8 +1,7 @@
 import React from "react";
 import "./GeneralRules_Page.css";
-import Navbar from '../Navbar/Navbar';
-import Footer from "../Footer/Footer";
-
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from "../../Components/Footer/Footer";
 const generalRules = [
   "The tournament is only open to regular, legitimate university or college students.",
   "Students enrolled in distance learning programs or open universities are not permitted to play on the squad.",
@@ -18,10 +17,12 @@ const generalRules = [
   "All pupils should retain their decency during the sporting event and it is forbidden to use unparliamentary words/language.",
   "It is strictly forbidden for players, officials, and any support staff to smoke, drink, or use any unlawful substances or medications. Anyone convicted will not be permitted to take part in any of the activities of Sphurti 2025.",
   "Participants are required to follow the guidelines set forth by SPHURTI 2025.",
+  "The general rules are accessible both on the website and via the officials on the ground",
   "The officiating umpires have complete authority and discretion over situations such as walkovers, play abandonment, disputes, and a reduction in match time due to bad weather, bad light, and other unforeseen reasons.",
   "The registration fee will be lost and no claim will be considered if the team does not report within the allotted time and is considered a walkover.",
   "Any team that declines to participate in a match without providing a valid reason will be disqualified from the competition and registration fees will not be refunded.",
-  "Each event has a limited number of spots, so early registration is encouraged."
+  "Each event has a limited number of spots, so early registration is encouraged.",
+  "The registration fee will be lost and no claims will be considered if any teamis disqualifiedforlackof discipline, breaking the code of conduct, or having a player who is not a regular student of theinstitute/university.",
 ];
 
 const protestRules = [
@@ -31,41 +32,53 @@ const protestRules = [
   "No protest shall be entertained after the final whistle/declaration of match over by the officials of the match."
 ];
 
+ 
+
+const pdfFilePath = "/rules.pdf"; // Path to the PDF stored in the public folder
+
 const RulesSection = () => {
   return (
     <div className="foot">
-    <div className="rules-container-GR">
-      <Navbar />
-      <div className="rules-box">
-        <h1>SPHURTI 2025 - General Rules</h1>
-        <ul className="rules-list">
-          {generalRules.map((rule, index) => (
-            <li key={index} className="rules-item">
-              <span className="rules-text">• {rule}</span>
-            </li>
-          ))}
-        </ul>
-        <div className="protest-box">
-          <h2>Protest</h2>
+      <div className="rules-container-GR">
+        <Navbar />
+        <div className="rules-box">
+          <h1>SPHURTI 2025 - General Rules</h1>
           <ul className="rules-list">
-            {protestRules.map((rule, index) => (
+            {generalRules.map((rule, index) => (
               <li key={index} className="rules-item">
                 <span className="rules-text">• {rule}</span>
               </li>
             ))}
           </ul>
+          <div className="protest-box">
+            <h2>Protest</h2>
+            <ul className="rules-list">
+              {protestRules.map((rule, index) => (
+                <li key={index} className="rules-item">
+                  <span className="rules-text">• {rule}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
+
+        {/* ✅ Download PDF Button */}
+        <div className="download-container">
+          <a href={pdfFilePath} download="SPHURTI_2025_Rules.pdf">
+            <button className="download-button">Download Rules PDF</button>
+          </a>
+        </div>
+
+        <p className="final-statement">
+          *The rules and regulations may be amended and organizers have the right to do so*.
+        </p>
       </div>
-      <p className="final-statement">
-        *The rules and regulations may be amended and organizers have the right to do so*.
-      </p>
-     
+      <Footer />
     </div>
-    <Footer />
-    </div>
-       
   );
- 
 };
 
 export default RulesSection;
+
+
+
