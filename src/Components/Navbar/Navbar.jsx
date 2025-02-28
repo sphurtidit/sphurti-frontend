@@ -15,16 +15,15 @@ function Navbar() {
   const navRef = useRef();
   const isLoggedIn = localStorage.getItem("authToken") != null;
   const handleNavigateAndScroll = (path, section) => {
-    navigate(path); // Navigate to the target page
+    navigate(path);
     console.log("Navigating to", path);
     setTimeout(() => {
-      // Scroll to the section after navigation
       scroller.scrollTo(section, {
         duration: 500,
         smooth: true,
-        offset: -80, // Adjust offset for sticky navbar
+        offset: -80,
       });
-    }, 1000); // Delay to ensure the page is fully loaded
+    }, 1000); 
   };
   const showNav = () => {
     navRef.current.classList.toggle("show-nav");
@@ -58,7 +57,6 @@ function Navbar() {
           </div>
         )}
 
-        {/* Hamburger Icon */}
         <span
           className="hamburger-icon"
           onClick={() => setHamburgerOpen((prev) => !prev)}
@@ -67,7 +65,7 @@ function Navbar() {
         </span>
       </div>
 
-      {/* Dropdown Menu */}
+
       <div className={`dropdown-container ${hamburgerOpen ? "show" : ""}`}>
         <div className="dropdown">
           <ScrollLink offset={-80}>
