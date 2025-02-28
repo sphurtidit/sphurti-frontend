@@ -12,7 +12,6 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
   const [loading, setLoading] = useState(false);
   const { createOrder, paymentVerify } = useUserStore();
   const { setInfo } = useInfoStore();
-  console.log(data);
 
   const loadScript = (src) =>
     new Promise((resolve, reject) => {

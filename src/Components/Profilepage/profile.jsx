@@ -33,6 +33,7 @@ function ProfilePage() {
   }, [user, fetchUser, getRegisteredEvents]);
 
   useEffect(() => {
+    
     if (registeredEvents.length > 0 && events.length > 0) {
       const updatedRegistrations = registeredEvents.map((element) => {
         const eventData = events.find((event) => event._id === element.eventId);

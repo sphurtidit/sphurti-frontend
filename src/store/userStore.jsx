@@ -161,6 +161,7 @@ const useUserStore = create(
 
       paymentVerify: async ({ data }) => {
         const setInfo = useInfoStore.getState().setInfo;
+        console.log("ddata", data)
         try {
           const result = await axios.post(`${url}/api/verify-payment`, data, {
             headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}` },
