@@ -2,7 +2,7 @@ import React from 'react';
 import './AMBASSADORS_page.css';
 import Ambassadors1 from "../../assets/Gallery/Ambassadors1.png";
 import Ambassadors2 from "../../assets/Gallery/Ambassadors2.png";
-import Nav from '../../Components/Navbar/nav';
+import Navbar from '../../Components/Navbar/Navbar';
 import Footer from "../../Components/Footer/Footer";
 
 const ambassadorsData = [
@@ -37,7 +37,7 @@ const ambassadorsData = [
 const AmbassadorsPage = () => {
   return (
     <div className="ambassadors-container">
-      <Nav />
+      <Navbar />
       <section className="ambassadors">
         <h2>AMBASSADORS</h2>
         <div className="ambassadors-grid">

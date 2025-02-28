@@ -18,6 +18,7 @@ import React, { useState, useEffect } from "react";
 import AccommodationSection from "./Components/Accomodation/Accommodation";
 
 import AccomodationCard from "./Components/Accomodation_2nd/Accomodation_2nd";
+import Navbar from "./Components/Navbar/Navbar";
 function App() {
   const [loading, setLoading] = useState(true);
   const isLoggedIn = localStorage.getItem("authToken") != null;
@@ -41,7 +42,8 @@ function App() {
       <React.Fragment>
         {!loading && (
           <div className="background-container">
-            <Nav />
+            <Navbar />
+            {/* <Nav />  */}
             <Main_HeroPage />
             <Timer />
             <MessageSection />

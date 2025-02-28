@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Registration_Page1.css";
 import useUserStore from "../../store/userStore";
-import Nav from "../../Components/Navbar/nav";
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from "../../Components/Footer/Footer";
 
 const RegistrationForm = () => {
   const location = useLocation();
@@ -43,7 +44,7 @@ const RegistrationForm = () => {
 
   return (
     <div className="registration-container">
-      <Nav/>
+      <Navbar/>
       <div className="Sarfaraj">
         <h1>Register</h1>
         <form onSubmit={handleSubmit}>
