@@ -1,7 +1,7 @@
 import React from 'react';
 import './comingsoon.css'; 
 import soon from "../../assets/soon.png"
-import Nav from '../Navbar/nav';
+import Nav from '../../Components/Navbar/nav';
 
 
 const ComingSoon = ({ message }) => {

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./FAQ.css";
 import { FaChevronDown, FaRegCopy } from "react-icons/fa";
-import Nav from '../Navbar/nav';
-import Footer from "../Footer/Footer";
+import Nav from '../../Components/Navbar/nav';
+import Footer from "../../Components/Footer/Footer";
 
 const faqs = [
   {

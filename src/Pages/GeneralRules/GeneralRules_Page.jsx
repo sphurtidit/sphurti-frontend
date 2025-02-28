@@ -1,7 +1,7 @@
 import React from "react";
 import "./GeneralRules_Page.css";
-import Nav from "../Navbar/nav";
-import Footer from "../Footer/Footer";
+import Nav from "../../Components/Navbar/nav";
+import Footer from "../../Components/Footer/Footer";
 
 const generalRules = [
   "The tournament is only open to regular, legitimate university or college students.",

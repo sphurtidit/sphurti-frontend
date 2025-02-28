@@ -5,7 +5,7 @@ import useInfoStore from "../../store/infoStore";
 import useEventStore from "../../store/eventStore";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Nav from "../Navbar/nav";
+import Nav from "../../Components/Navbar/nav";
 import { FaSpinner } from "react-icons/fa";
 
 const TeamRegistration = () => {
