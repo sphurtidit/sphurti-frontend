@@ -242,7 +242,6 @@ nav li:hover ul.dropdown {
     /* width: 30%; */
 }
 
-
 /* Intermediate responsive styles (720px - 1440px) */
 @media only screen and (min-width: 721px) and (max-width: 1440px) {
     .main-nav {
@@ -250,7 +249,7 @@ nav li:hover ul.dropdown {
     }
 
     .logo {
-        height: 4.5rem;
+        height: 100%;
         padding: 0.5rem;
     }
 

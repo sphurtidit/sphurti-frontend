@@ -1,57 +1,69 @@
-.ProfilePage{
+.ProfilePage {
     margin-top: 0;
     height: 100vh;
     width: 100vw;
     padding: 10px;
-    overflow-x:hidden ;
+    overflow-x: hidden;
 
 }
-.image{
-    
-   
+
+.image {
+
+
     height: 18rem;
     width: 18rem;
-  text-align: center;
+    text-align: center;
     border-radius: 100%;
     margin-bottom: 15px;
-    border: 2px  solid #d5d3d4;
-    background-color:#d5d3d4 ;
-   
+    border: 2px solid #d5d3d4;
+    background-color: #d5d3d4;
+
     gap: 5rem;
 }
-.daba{
+
+.daba {
     display: flex;
 
     text-align: bottom;
     flex-direction: column;
     margin-left: 4rem;
-justify-content: space-between;    
-   
-   
-    
+    justify-content: space-between;
+
+
+
 }
-.btn{
-    padding: 0.6rem 1.5rem;  /* Reduced padding */
+
+.btn {
+    padding: 0.6rem 1.5rem;
+    /* Reduced padding */
     background-color: #EE0942;
     color: white;
     font-weight: 600;
-    font-size: medium;  /* Reduced font size */
+    font-size: medium;
+    /* Reduced font size */
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s;
-    width: 18rem; /* Full width for responsiveness */
-    max-width: 300px; /* Limit maximum width */
-    height: 45px;  /* Reduced height */
-    margin: 0 auto; /* Center the button horizontally */
-    display: block; /* Ensure margin: auto works */
+    width: 18rem;
+    /* Full width for responsiveness */
+    max-width: 300px;
+    /* Limit maximum width */
+    height: 45px;
+    /* Reduced height */
+    margin: 0 auto;
+    /* Center the button horizontally */
+    display: block;
+    /* Ensure margin: auto works */
 
     margin-bottom: 1rem;
 }
-.dox{
+
+.dox {
     color: rgb(38, 37, 37);
     font-weight: 300;
 }
+
 .mainbox {
     padding: 20px;
     max-width: 1100px;
@@ -59,72 +71,91 @@ justify-content: space-between;
     border: 2px solid #EE0942;
     margin-top: 7rem;
     background-color: white;
-   border-radius: 40px;
+    border-radius: 40px;
 
-  }
+}
+
 .btn:hover {
     background-color: white;
     color: #EE0942;
     border: 1px solid #EE0942;
 }
-.btn1{
-    padding: 0.6rem 1.5rem;  /* Reduced padding */
+
+.btn1 {
+    padding: 0.6rem 1.5rem;
     background-color: white;
     color: white;
     font-weight: 600;
-    font-size: medium;  /* Reduced font size */
-    border: none;
+    font-size: medium;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s;
-    width: 18rem; /* Full width for responsiveness */
-    max-width: 300px; /* Limit maximum width */
-    height: 45px;  /* Reduced height */
-    margin: 0 auto; /* Center the button horizontally */
-    display: block; /* Ensure margin: auto works */
-    margin-top: 1rem;
-    margin-bottom: 1rem;  color: #EE0942;
+    width: 18rem;
+    max-width: 300px;
+    height: 45px;
+    margin: 1rem auto;
+    display: block;
+    color: #EE0942;
     border: 1px solid #EE0942;
 }
+
+.btn1disabled {
+    padding: 0.6rem 1.5rem;
+    background-color: white;
+    color: white;
+    font-weight: 600;
+    font-size: medium;
+    border-radius: 50px;
+    /* cursor: pointer; */
+    transition: all 0.3s;
+    width: 18rem;
+    max-width: 300px;
+    height: 45px;
+    margin: 1rem auto;
+    display: block;
+    color: #999999;
+    border: 1px solid #999;
+}
+
 .btn1:hover {
     background-color: #EE0942;
     color: white;
     border: 1px solid #EE0942;
 }
 
-.info{
+.info {
     display: flex;
     gap: 10rem;
     margin-top: 2rem;
 }
 
-    
 
-.mainheading{
+
+.mainheading {
     display: flex;
     flex-direction: column;
     text-align: left;
-   
+
     width: 30vw;
-    
+
     font-size: smaller;
-  
-    
+
+
 }
 
 
 .bgplate {
-   
+
     background-color: #e8e6e6;
     padding: 10px;
     margin: 10px 0;
     border-radius: 1rem;
-    
-  
+
+
 }
 
-    
-.contact{
+
+.contact {
     margin-top: auto;
     width: 40vw;
     height: 90px;
@@ -134,33 +165,43 @@ justify-content: space-between;
     background: rgb(197, 195, 195);
     border-radius: 20px;
     padding-top: 10px;
-    border: 2px  solid #ee0942; 
+    border: 2px solid #ee0942;
 }
 
-.text{
+.text {
     color: #000;
 }
 
-.events{
+.events {
     height: 20rem;
     width: 20rem;
     border-radius: 30px;
     cursor: pointer;
 }
-.inside{
+
+.inside {
     align-items: center;
     height: 200px;
     width: 350px;
 }
 
-.register{
+.register {
     text-align: left;
 
     color: black;
 }
 
-::-webkit-scrollbar{
-    display:block;
+.registered{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 1rem;
+    flex-direction: row;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    display: block;
 }
 
 
@@ -180,7 +221,8 @@ justify-content: space-between;
         width: 15rem;
     }
 
-    .btn, .btn1 {
+    .btn,
+    .btn1 {
         width: 15rem;
         height: 40px;
         font-size: small;
@@ -198,12 +240,14 @@ justify-content: space-between;
 
 /* For mobile devices (Android and iOS) */
 @media (max-width: 480px) {
-    .daba{
+    .daba {
         margin: 0;
     }
+
     .mainbox {
-        margin-top: 5rem; 
-        border-radius: 20px; /* Slightly rounded corners */
+        margin-top: 5rem;
+        border-radius: 20px;
+        /* Slightly rounded corners */
     }
 
     .info {
@@ -217,15 +261,19 @@ justify-content: space-between;
         width: 12rem;
     }
 
-    .btn, .btn1 {
-        width: 100%; /* Full width for buttons */
-        max-width: 18rem; /* Limit maximum width */
+    .btn,
+    .btn1 {
+        width: 100%;
+        /* Full width for buttons */
+        max-width: 18rem;
+        /* Limit maximum width */
         height: 40px;
         font-size: small;
     }
 
     .mainheading {
-        width: 100%; /* Full width for text content */
+        width: 100%;
+        /* Full width for text content */
         font-size: small;
     }
 
@@ -236,24 +284,32 @@ justify-content: space-between;
 
     .events {
         height: 10rem;
-        width: 100%; /* Full width for event image */
-        max-width: 18rem; /* Limit maximum width */
+        width: 100%;
+        /* Full width for event image */
+        max-width: 18rem;
+        /* Limit maximum width */
     }
 
     .register {
         font-size: medium;
-        text-align: center; /* Center align the heading */
+        text-align: center;
+        /* Center align the heading */
     }
 }
 
 /* For very small mobile devices */
 @media (max-width: 320px) {
     .mainbox {
-        margin-top: 2rem; /* Adjusted top margin */
-        padding: 8px; /* Adjusted padding */
-        width: calc(100% - 2rem); /* Occupies full width with 1rem space on left and right */
-        margin-left: 1rem; /* 1rem space on the left */
-        margin-right: 1rem; /* 1rem space on the right */
+        margin-top: 2rem;
+        /* Adjusted top margin */
+        padding: 8px;
+        /* Adjusted padding */
+        width: calc(100% - 2rem);
+        /* Occupies full width with 1rem space on left and right */
+        margin-left: 1rem;
+        /* 1rem space on the left */
+        margin-right: 1rem;
+        /* 1rem space on the right */
     }
 
     .image {
@@ -261,9 +317,12 @@ justify-content: space-between;
         width: 10rem;
     }
 
-    .btn, .btn1 {
-        width: 100%; /* Full width for buttons */
-        max-width: 15rem; /* Limit maximum width */
+    .btn,
+    .btn1 {
+        width: 100%;
+        /* Full width for buttons */
+        max-width: 15rem;
+        /* Limit maximum width */
         height: 35px;
         font-size: x-small;
     }
@@ -274,8 +333,10 @@ justify-content: space-between;
 
     .events {
         height: 8rem;
-        width: 100%; /* Full width for event image */
-        max-width: 15rem; /* Limit maximum width */
+        width: 100%;
+        /* Full width for event image */
+        max-width: 15rem;
+        /* Limit maximum width */
     }
 
     .register {

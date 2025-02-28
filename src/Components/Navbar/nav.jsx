@@ -8,6 +8,7 @@ import { Link as ScrollLink, scroller } from "react-scroll";
 import Button from "../Button/Button";
 import image from "../../assets/yellowline.png";
 
+
 function Nav() {
   const [isModalVisible, setModalVisible] = useState(false);
   const navigate = useNavigate(); // Initialize useNavigate
@@ -51,7 +52,7 @@ function Nav() {
         <div className="center-button">
           <ScrollLink>
             <li onClick={() => handleNavigateAndScroll("/", "home-section")}>
-              HOME  
+              HOME
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
@@ -66,22 +67,16 @@ function Nav() {
           </ScrollLink>
           <ScrollLink offset={-80}>
             <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
-              ORGANISING LEADERS
+              STUDENT COORDINATORS
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
-            <li onClick={() => handleNavigateAndScroll("/comingsoon")}>
+            <li onClick={() => handleNavigateAndScroll("/AMBASSADORS_page")}>
             AMBASSADORS
             </li>
           </ScrollLink>
           <ScrollLink offset={-80}>
-            <li
-              onClick={() =>
-                handleNavigateAndScroll("/FAQ")
-              }
-            >
-              FAQ
-            </li>
+            <li onClick={() => handleNavigateAndScroll("/FAQ")}>FAQ</li>
           </ScrollLink>
           <ScrollLink to="" offset={-80}>
             <li onClick={showNav}>
@@ -100,8 +95,7 @@ function Nav() {
               </ul>
             </li>
           </ScrollLink>
-        
-         
+
           {/* <ScrollLink offset={-80}>
             <li
               onClick={() =>
@@ -112,11 +106,7 @@ function Nav() {
             </li>
           </ScrollLink> */}
           <ScrollLink offset={-80}>
-            <li
-              onClick={() =>
-                handleNavigateAndScroll("/", "contact-section")
-              }
-            >
+            <li onClick={() => handleNavigateAndScroll("/", "contact-section")}>
               CONTACT US
             </li>
           </ScrollLink>
