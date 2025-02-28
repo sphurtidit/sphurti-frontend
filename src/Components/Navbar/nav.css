@@ -242,7 +242,7 @@ nav li:hover ul.dropdown {
 
 @media only screen and (min-width:1440px){
     .logo {
-        height: 4rem;
+        height: 100%;
         padding: 0.5rem;
     }
 }
@@ -254,7 +254,7 @@ nav li:hover ul.dropdown {
     }
 
     .logo {
-        height: 4rem;
+        height: 100%;
         padding: 0.5rem;
     }
 
