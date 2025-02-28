@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useUserStore from "../../store/userStore";
-import Navbar from "../Navbar/nav";
+import Navbar from "../../Components/Navbar/nav";
 import { Lines } from "react-preloaders";
 import RegisteredEventsCards from "./RegisteredEventsCards/RegisteredEventsCards";
 import PayModal from "./paymodal";
@@ -33,6 +33,7 @@ function ProfilePage() {
   }, [user, fetchUser, getRegisteredEvents]);
 
   useEffect(() => {
+    
     if (registeredEvents.length > 0 && events.length > 0) {
       const updatedRegistrations = registeredEvents.map((element) => {
         const eventData = events.find((event) => event._id === element.eventId);
@@ -121,7 +122,7 @@ function ProfilePage() {
                 <h1 className={profile.register}>Registered Events:</h1>
                 <div className={profile.registered}>
                   {registrationData.length > 0 ? (
-                    registrationData.map((event) => <RegisteredEventsCards key={event._id} data={event} />)
+                    registrationData.map((event) => <RegisteredEventsCards isPaid={true} data={event} />)
                   ) : (
                     <h1>No Registered Events Yet!</h1>
                   )}
@@ -132,7 +133,7 @@ function ProfilePage() {
           </div>
         </>
       )}
-      <PayModal show={modalOpen} onClose={() => setModalOpen(false)} data={unpaidEvents} />
+      <PayModal show={modalOpen} onClose={() => setModalOpen(false)} data={unpaidEvents} contact={user?.phone_no} email={user?.email} />
       <Lines customLoading={loading} />
     </div>
   );

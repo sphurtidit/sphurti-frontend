@@ -44,7 +44,7 @@ const useEventStore = create(
                     teamName: data.formData.team_name,
                     alternateNo: data.formData.alternate_phone,
                     member: data.members,
-                    CaptainName: data.formData.captain_name,
+                    captainName: data.formData.captain_name,
                     phoneNo: data.formData.phone,
                     eventId: data.categoryData.eventId,
                     catId: data.categoryData._id,

@@ -5,7 +5,7 @@ import BgMobile from "../../assets/sphurtiphonebg.png";
 const HeroPage = () => {
   return (
     <>
-        <div className="center-container">
+        <div className="center-container" id="home-section">
           <img src={CenterBGI} alt="" className="center"/> {/* Keeping only the center image */}
         </div>
     </>
