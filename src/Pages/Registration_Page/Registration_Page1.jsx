@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "./Registration_Page1.css";
+import "./registration_page.css";
 import useUserStore from "../../store/userStore";
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from "../../Components/Footer/Footer";
@@ -10,7 +10,6 @@ const RegistrationForm = () => {
   const categorydata = location.state || {};
   const navigate = useNavigate();
   const { user, fetchUser} = useUserStore();
-
   const [formData, setFormData] = useState({
     team_name: "",
     captain_name: "",
@@ -38,15 +37,20 @@ const RegistrationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
     navigate("/Reg_pg2", { state: { formData : formData, categoryData : categorydata} }); // Redirect with form data
   };
 
   return (
     <div className="registration-container">
       <Navbar/>
-      <div className="Sarfaraj">
-        <h1>Register</h1>
+      <div className="reg-form-container">
+      <h1>Registration Form</h1>
+        <div className="reg-heading">
+          {categorydata.eventName}
+        </div>
+        <div className="reg-categoryname">
+          {categorydata.categoryName}
+        </div>
         <form onSubmit={handleSubmit}>
           <div className="input-field">
             <label htmlFor="team_name">Team Name</label>

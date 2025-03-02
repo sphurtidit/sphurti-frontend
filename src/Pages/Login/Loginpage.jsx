@@ -19,9 +19,12 @@ function Loginpage() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    if(loading) return;
+    setLoading(true);
     if (await loginUser(email, password)) {
       navigate("/");
     }
+    setLoading(false);
   };
 
   return (

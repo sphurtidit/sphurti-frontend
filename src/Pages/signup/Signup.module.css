@@ -16,19 +16,19 @@ h1 {
 }
 
 input {
-    border: 1px solid #780c27 !important;
+    border: 1px solid #780c27;
     padding: 0.6rem;
     border-radius: 7px;
     font-size: 0.85rem;
     background-color: white;
     color: black;
     width: 100%;
-    cursor: pointer !important;
+    cursor: pointer;
     margin-bottom: 10px;
 }
 
 input:hover, input:focus {
-    border: 1px solid #ee0942 !important;
+    border: 1px solid #ee0942;
     outline: none;
 }
 
