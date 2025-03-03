@@ -83,7 +83,7 @@ function Navbar() {
               GENERAL RULES
             </div>
           </ScrollLink>
-          <ScrollLink offset={-80} onClick={() => handleNavigateAndScroll("/comingsoon")}>
+          <ScrollLink offset={-80} onClick={() => handleNavigateAndScroll("/Coordinators")}>
             <div>
               STUDENT COORDINATORS
             </div>

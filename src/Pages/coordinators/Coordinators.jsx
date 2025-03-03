@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "coordinators/coordinators.css";
+import "./coordinators.css";
 import Navbar from "../../Components/Navbar/Navbar";
 
 const CoordinatorsPage = () => {
   
   return (
-    <div className="registration-container">
+    <div className="registration-containe1r">
       <Navbar/>
       <div className="surfing">
         <h1>STUDENT COORDINATORS</h1>
-        <div className="branchead">
-            <div>Name and Designations</div>
-            <div>Branch</div>
-        </div>
-        <ul>
+       
+    
         <h2>Web Design And Social Media Team</h2>
       
         <div className="branchname">
@@ -56,7 +53,7 @@ const CoordinatorsPage = () => {
         <h2>Design Team</h2>
         <div className="branchname">
             <div><li>Abhinav Agnihotri</li></div>
-            <div>BDes UX</div>
+            <div>BDes UX 3rd year</div>
         </div>
         <h2>Sponsorship Team</h2>
         <div className="branchname">
@@ -71,10 +68,10 @@ const CoordinatorsPage = () => {
         <h2>Photography Team</h2>
         <div className="branchname">
             <div><li>Abheer Pathak</li></div>
-            <div>B.Des VGA</div>
+            <div>B.Des VGA 3rd year</div>
         </div>
       
-        </ul>
+    
       </div>
     </div>
   );
