@@ -7,8 +7,8 @@ import useUserStore from "../../store/userStore";
 import useInfoStore from "../../store/infoStore";
 import loginback from "../../assets/loginback.png";
 import loginbackground from "../../assets/loginbackground.png";
-import Navbar from "../Navbar/nav";
-import Footer from "../Footer/Footer"; // Import Footer component
+import Navbar from "../../Components/Navbar/nav";
+import Footer from "../../Components/Footer/Footer"; // Import Footer component
 
 function Signinpage() {
   const [isOtpVisible, setOtpVisible] = useState(false);

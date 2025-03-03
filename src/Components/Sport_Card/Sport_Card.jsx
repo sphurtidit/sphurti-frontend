@@ -28,8 +28,7 @@ const SportsCard = ({
 
   const navigateToRegistraion = () => {
     if(user){
-      console.log("Category Data:", category);
-      navigate(`/Reg_Pg1`, { state: category })
+      navigate(`/Reg_Pg1`, { state: {...category, "eventName" : name} })
     }else{
       setTimeout(() => {
         setInfo("Please login to register to events", "error");

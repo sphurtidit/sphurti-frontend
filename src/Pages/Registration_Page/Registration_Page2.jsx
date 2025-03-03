@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import "./Registration_Page2.css";
+import "./registration_page.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import useInfoStore from "../../store/infoStore";
 import useEventStore from "../../store/eventStore";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Nav from "../Navbar/nav";
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from "../../Components/Footer/Footer";
 import { FaSpinner } from "react-icons/fa";
+import { MdDeleteOutline } from "react-icons/md";
 
 const TeamRegistration = () => {
   const location = useLocation();
@@ -14,13 +16,11 @@ const TeamRegistration = () => {
   const { formData, categoryData } = location.state || {};
   const setInfo = useInfoStore.getState().setInfo;
   const registerTeam = useEventStore.getState().registerTeam;
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);\
 
-  // Get the minimum number of members from categoryData
   const minMembers = categoryData?.minNumber ? Math.max(1, categoryData.minNumber) : 1;
   const maxMembers = categoryData?.maxNumber ? Math.max(minMembers, categoryData.maxNumber) : 20;
 
-  // Initialize members based on minMembers
   const [members, setMembers] = useState(
     Array.from({ length: minMembers }, () => ({ memberName: "", clgId: "", govId: "" }))
   );
@@ -41,7 +41,6 @@ const TeamRegistration = () => {
     }
   };
 
-  // Handle input change
   const handleInputChange = (index, field, value) => {
     const updatedMembers = [...members];
     updatedMembers[index][field] = value;
@@ -73,54 +72,69 @@ const TeamRegistration = () => {
   };
 
   return (
-    <>
+    <div className="registration-container">
       <ToastContainer />
-      <Nav />
-      <div className="Sarfaraj">
-        <h1>Team Registration</h1>
+      <Navbar />
+      <div className="reg-form-container">
+        <h1>Team Details</h1>
+        <div className="reg-heading">
+          {categoryData.eventName}
+        </div>
+        <div className="reg-categoryname">
+          {categoryData.categoryName}
+        </div>
         <form onSubmit={handleSubmit}>
           <div className="member-details-section">
-            <h2>Member Details</h2>
             {members.map((member, index) => (
               <div className="member-box" key={index}>
-                <h3>Member {index + 1}</h3>
-                <input
-                  type="text"
-                  placeholder="Enter Member Name"
-                  value={member.memberName}
-                  onChange={(e) => handleInputChange(index, "memberName", e.target.value)}
-                  required
-                />
-                <input
-                  type="text"
-                  placeholder="Enter College ID"
-                  value={member.clgId}
-                  onChange={(e) => handleInputChange(index, "clgId", e.target.value)}
-                  required
-                />
-                <input
-                  type="number"
-                  placeholder="Enter Aadhar ID"
-                  value={member.govId}
-                  onChange={(e) => handleInputChange(index, "govId", e.target.value)}
-                  required
-                />
-                {members.length > minMembers && (
-                  <button type="button" className="delete-btn" onClick={() => deleteMember(index)}>
-                    Delete Member
-                  </button>
-                )}
+                <div className="member-box-title">
+                  <div className="reg-member">Member {index + 1}</div>
+                  {members.length > minMembers && (
+                    <MdDeleteOutline className="delete-btn" onClick={() => deleteMember(index)} />
+                  )}
+                </div>
+                <div className="input-field">
+                  <label htmlFor={`member-${index + 1}-name`}>Name</label>
+                  <input
+                    type="text"
+                    id="team_name"
+                    placeholder="Enter Member Name"
+                    value={member.memberName}
+                    onChange={(e) => handleInputChange(index, "memberName", e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="input-field">
+                  <label htmlFor={`member-${index + 1}-college`}>College ID</label>
+                  <input
+                    type="text"
+                    id="team_name"
+                    placeholder="Enter College ID"
+                    value={member.clgId}
+                    onChange={(e) => handleInputChange(index, "clgId", e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="input-field">
+                  <label htmlFor={`member-${index + 1}-gov`}>Aadhar ID</label>
+                  <input
+                    type="number"
+                    placeholder="Enter Aadhar ID"
+                    value={member.govId}
+                    onChange={(e) => handleInputChange(index, "govId", e.target.value)}
+                    required
+                  />
+                </div>
               </div>
             ))}
           </div>
-          <button type="button" className="add-member-btn" onClick={addMember}>
+          <button type="button" className="btn add-btn" onClick={addMember}>
             Add Member
           </button>
           <button type="submit" className="btn" disabled={loading}>{loading ? <FaSpinner /> : "Submit"}</button>
         </form>
-
       </div>
-    </>
+    </div>
   );
 };
 

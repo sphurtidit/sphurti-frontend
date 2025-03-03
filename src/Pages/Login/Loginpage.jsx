@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import logpage from "./Loginpage.module.css";
 import { useNavigate } from "react-router-dom";
 import useUserStore from "../../store/userStore";
-import Navbar from "../Navbar/nav";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import loginback from "../../assets/loginback.png";
 import loginbackground from "../../assets/loginbackground.png";
-import Footer from "../Footer/Footer";
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from "../../Components/Footer/Footer";
 import { FaSpinner } from "react-icons/fa";
 
 function Loginpage() {
@@ -19,9 +19,12 @@ function Loginpage() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    if(loading) return;
+    setLoading(true);
     if (await loginUser(email, password)) {
       navigate("/");
     }
+    setLoading(false);
   };
 
   return (

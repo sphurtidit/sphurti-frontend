@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useUserStore from "../../store/userStore";
-import Navbar from "../../Components/Navbar/nav";
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from "../../Components/Footer/Footer";
 import { Lines } from "react-preloaders";
 import RegisteredEventsCards from "./RegisteredEventsCards/RegisteredEventsCards";
 import PayModal from "./paymodal";
@@ -65,7 +66,7 @@ function ProfilePage() {
               <div className={profile.info}>
                 <div className={profile.daba}>
                   <div className={profile.image}></div>
-                  <button className={profile.btn1} onClick={() => setModalOpen(true)}>
+                  <button className={profile.btn1disabled} onClick={() => setModalOpen(true)}>
                     Payments
                   </button>
                   <button
