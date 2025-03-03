@@ -16,7 +16,7 @@ const TeamRegistration = () => {
   const { formData, categoryData } = location.state || {};
   const setInfo = useInfoStore.getState().setInfo;
   const registerTeam = useEventStore.getState().registerTeam;
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);\
 
   const minMembers = categoryData?.minNumber ? Math.max(1, categoryData.minNumber) : 1;
   const maxMembers = categoryData?.maxNumber ? Math.max(minMembers, categoryData.maxNumber) : 20;
@@ -133,7 +133,6 @@ const TeamRegistration = () => {
           </button>
           <button type="submit" className="btn" disabled={loading}>{loading ? <FaSpinner /> : "Submit"}</button>
         </form>
-
       </div>
     </div>
   );
