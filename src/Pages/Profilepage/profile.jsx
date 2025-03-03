@@ -66,7 +66,7 @@ function ProfilePage() {
               <div className={profile.info}>
                 <div className={profile.daba}>
                   <div className={profile.image}></div>
-                  <button className={profile.btn1disabled} onClick={() => setModalOpen(true)} disabled>
+                  <button className={profile.btn1} onClick={() => setModalOpen(true)}>
                     Payments
                   </button>
                   <button
