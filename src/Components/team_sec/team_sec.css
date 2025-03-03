@@ -176,14 +176,14 @@ margin-top: 14px;
 
   .officer-info,
   .pr-info {
-    width: 80%;
+    width: 90%;
     height: auto;
     padding: 1.5rem;
   }
 
   .common-email {
-    max-width: 80%;
-    font-size: 1rem;
+    max-width: 90%;
+    font-size: 1.3rem;
   }
 
   .email-container {
@@ -192,7 +192,8 @@ margin-top: 14px;
   }
 
   .copy-button2 {
-    width: 50%;
+    width: 40%;
+    height: auto;
     text-align: center;
   }
 }

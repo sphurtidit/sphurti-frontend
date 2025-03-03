@@ -110,6 +110,24 @@ function Nav() {
               CONTACT US
             </li>
           </ScrollLink>
+          <li onClick={() => handleNavigateAndScroll("/comingsoon")}>GENERAL RULES</li>
+          <li onClick={() => handleNavigateAndScroll("/comingsoon")}>ORGANISING LEADERS</li>
+          <li onClick={() => handleNavigateAndScroll("/comingsoon")}>AMBASSADORS</li>
+          <li onClick={() => handleNavigateAndScroll("/FAQ")}>FAQ</li>
+          <li onClick={showNav}>
+            <div className="A_section">ARCHIVE</div>
+            <ul className="dropdown">
+              {[...Array(11).keys()].map((i) => {
+                const year = 2024 - i;
+                return (
+                  <div key={year} className="saaj">
+                    <button onClick={toggleModal} className="archive-button">{year}</button>
+                  </div>
+                );
+              })}
+            </ul>
+          </li>
+          <li onClick={() => handleNavigateAndScroll("/", "contact-section")}>CONTACT US</li>
         </div>
         <div className="right-side">
           {isLoggedIn ? (
@@ -132,19 +150,11 @@ function Nav() {
             <img src={image} className="image" />
           </div>
           <div className="modal-saaj" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={toggleModal}>
-              ✕
-            </button>
-            <button
-              className="modal-button"
-              onClick={() => handleNavigation("/comingsoon")}
-            >
+            <button className="modal-close" onClick={toggleModal}>✕</button>
+            <button className="modal-button" onClick={() => handleNavigation("/comingsoon")}>
               Gallery
             </button>
-            <button
-              className="modal-button"
-              onClick={() => handleNavigation("/comingsoon")}
-            >
+            <button className="modal-button" onClick={() => handleNavigation("/comingsoon")}>
               Report
             </button>
           </div>

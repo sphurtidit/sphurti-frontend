@@ -1,22 +1,26 @@
 @font-face {
     font-family: 'SF Sports Night';
-    src: url('./fonts/SF/SF Sports Night NS.ttf') format('truetype');
+    src: url('./fonts/SF/SF Sports Night NS.ttf') format('woff2')
 }
 
 @font-face {
     font-family: 'SF Sports Upright';
-    src: url('./fonts/SF/SF Sports Night NS Upright.ttf') format('truetype');
+    src: url('./fonts/SF/SF Sports Night NS Upright.ttf') format('woff2');
 }
 
 @font-face {
     font-family: 'DM Sans';
-    src: url('./fonts/DM/DMSans-Bold.ttf') format('truetype');
+    src: url('./fonts/DM/DMSans-Bold.ttf') format('woff2');
 }
 @font-face {
     font-family: "Outfit";
-    src: url('./fonts/outfit/Outfit-Bold.ttf') format('truetype');
+    src: url('./fonts/outfit/Outfit-Bold.ttf') format('woff2');
 }
-
+@font-face {
+    font-family: "Poppins";
+    src: url('src/fonts/Poppins/Poppins-Regular.ttf') format('woff2');
+  }
+  
 *{
     margin: 0;
     padding: 0;

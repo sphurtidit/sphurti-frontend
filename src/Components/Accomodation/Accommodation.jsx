@@ -18,7 +18,7 @@ const AccommodationSection = ({rules}) => {
               DOWNLOAD THE RULEBOOK FOR ACCOMMODATION
             </h3>
             <a href={rules}>
-            <button  className="download-button"><img src={arrow} alt="arrow" /> Download The Rulebook</button></a>
+            <button  className="download-button1"><img src={arrow} alt="arrow" /> Download The Rulebook</button></a>
           </div>
           <div className="horizontal-line"></div>
           <div className="registration-box">

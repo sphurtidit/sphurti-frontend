@@ -43,12 +43,12 @@ nav li ul.dropdown {
     z-index: 999;
     display: none;
     /* Hide by default */
-    width: 10vw;
+    width: 150px;
     height: 20vw;
     overflow-y: auto;
-    border: 3px solid #ffffff;
+    border: none;
     border-radius: 16px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
 }
 
 /* Show the dropdown when hovering over the parent `li` or the dropdown itself */
@@ -83,8 +83,12 @@ nav li ul.dropdown {
 
 
 .saaj {
+    background:transparent !important;
     background-color: #f9f9f9;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
     z-index: 1;
     text-align: center;
 
@@ -170,6 +174,25 @@ nav li ul.dropdown {
 .modal-button:hover {
     background: #EE0942;
     color: white;
+}
+
+.archive-button {
+    background-color: white !important; /* Ensure background is visible */
+    color: black !important; /* Ensure text is visible */
+    font-family: var(--primary-font) !important;
+    font-weight: 600 !important;
+    /* border: 2px solid #EE0942 !important; Add a visible border */
+    padding: 10px 15px !important; /* Ensure proper spacing */
+    cursor: pointer;
+    /* border-radius: 5px; */
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.archive-button:hover {
+    background-color: #EE0942 !important;
+    color: white !important;
 }
 
 nav li:hover ul.dropdown {
