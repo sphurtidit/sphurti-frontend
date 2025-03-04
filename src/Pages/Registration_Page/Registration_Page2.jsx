@@ -25,6 +25,29 @@ const TeamRegistration = () => {
     Array.from({ length: minMembers }, () => ({ memberName: "", clgId: "", govId: "" }))
   );
 
+  const [facultyMembers, setFacultyMembers] = useState([]);
+  const maxFaculty = 2; // Maximum 2 faculties allowed
+
+  const addFaculty = () => {
+    if (facultyMembers.length < maxFaculty) {
+      setFacultyMembers([...facultyMembers, { facultyName: "", facultyAadhar: "" }]);
+    } else {
+      setInfo(`You can add up to ${maxFaculty} faculty members only.`);
+    }
+  };
+
+  const deleteFaculty = (index) => {
+    setFacultyMembers(facultyMembers.filter((_, i) => i !== index));
+  };
+
+  const handleFacultyInputChange = (index, field, value) => {
+    const updatedFaculty = [...facultyMembers];
+    updatedFaculty[index][field] = value;
+    setFacultyMembers(updatedFaculty);
+  };
+
+
+
   const addMember = () => {
     if (members.length < maxMembers) {
       setMembers([...members, { memberName: "", clgId: "", govId: "" }]);
@@ -62,13 +85,23 @@ const TeamRegistration = () => {
       }
     }
 
-    if (await registerTeam({ members, formData, categoryData })) {
-      setInfo("Team registered successfully", "success");
-      setTimeout(() => {
-        navigate("/");
-      }, 1500);
+    for (const faculty of facultyMembers) {
+      if (faculty.facultyAadhar.length !== 12) {
+        setInfo("Each Aadhar ID must be exactly 12 digits long.", "error");
+        setLoading(false);
+        return;
+      }
     }
+
+    console.log(facultyMembers);
     setLoading(false);
+    // if (await registerTeam({ members, formData, categoryData, facultyMembers })) {
+    //   setInfo("Team registered successfully", "success");
+    //   setTimeout(() => {
+    //     navigate("/");
+    //   }, 1500);
+    // }
+    // setLoading(false);
   };
 
   return (
@@ -84,53 +117,108 @@ const TeamRegistration = () => {
           {categoryData.categoryName}
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="member-details-section">
-            {members.map((member, index) => (
-              <div className="member-box" key={index}>
-                <div className="member-box-title">
-                  <div className="reg-member">Member {index + 1}</div>
-                  {members.length > minMembers && (
-                    <MdDeleteOutline className="delete-btn" onClick={() => deleteMember(index)} />
-                  )}
-                </div>
-                <div className="input-field">
-                  <label htmlFor={`member-${index + 1}-name`}>Name</label>
-                  <input
-                    type="text"
-                    id="team_name"
-                    placeholder="Enter Member Name"
-                    value={member.memberName}
-                    onChange={(e) => handleInputChange(index, "memberName", e.target.value)}
-                    required
-                  />
-                </div>
-                <div className="input-field">
-                  <label htmlFor={`member-${index + 1}-college`}>College ID</label>
-                  <input
-                    type="text"
-                    id="team_name"
-                    placeholder="Enter College ID"
-                    value={member.clgId}
-                    onChange={(e) => handleInputChange(index, "clgId", e.target.value)}
-                    required
-                  />
-                </div>
-                <div className="input-field">
-                  <label htmlFor={`member-${index + 1}-gov`}>Aadhar ID</label>
-                  <input
-                    type="number"
-                    placeholder="Enter Aadhar ID"
-                    value={member.govId}
-                    onChange={(e) => handleInputChange(index, "govId", e.target.value)}
-                    required
-                  />
-                </div>
-              </div>
-            ))}
+          <div className="table-responsive">
+            <table className="member-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>College ID</th>
+                  <th>Aadhar ID</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {members.map((member, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Enter Member Name"
+                        value={member.memberName}
+                        onChange={(e) => handleInputChange(index, "memberName", e.target.value)}
+                        required
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="Enter College ID"
+                        value={member.clgId}
+                        onChange={(e) => handleInputChange(index, "clgId", e.target.value)}
+                        required
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        placeholder="Enter Aadhar ID"
+                        value={member.govId}
+                        onChange={(e) => handleInputChange(index, "govId", e.target.value)}
+                        required
+                      />
+                    </td>
+                    <td>
+                      {members.length > minMembers && (
+                        <MdDeleteOutline className="delete-btn" onClick={() => deleteMember(index)} />
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+
           <button type="button" className="btn add-btn" onClick={addMember}>
             Add Member
           </button>
+          {facultyMembers.length > 0 && (
+            <div className="table-responsive">
+              <table className="member-table"> {/* Using same class for consistent styling */}
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Aadhar ID</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {facultyMembers.map((faculty, index) => (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Enter Faculty Name"
+                          value={faculty.facultyName}
+                          onChange={(e) => handleFacultyInputChange(index, "facultyName", e.target.value)}
+                          required
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="number"
+                          placeholder="Enter Aadhar ID"
+                          value={faculty.facultyAadhar}
+                          onChange={(e) => handleFacultyInputChange(index, "facultyAadhar", e.target.value)}
+                          required
+                        />
+                      </td>
+                      <td>
+                        <MdDeleteOutline className="delete-btn" onClick={() => deleteFaculty(index)} />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          <button type="button" className="btn add-btn" onClick={addFaculty}>
+            Add Faculty
+          </button>
+
           <button type="submit" className="btn" disabled={loading}>{loading ? <FaSpinner /> : "Submit"}</button>
         </form>
       </div>

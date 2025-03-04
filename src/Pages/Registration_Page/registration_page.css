@@ -79,7 +79,8 @@
 }
 
 .input-field input,
-.input-field textarea {
+.input-field textarea,
+.input-field select {  /* Included select for dropdown */
     font-family: 'Inter';
     width: 100%;
     height: 100%;
@@ -100,10 +101,83 @@
     color: rgba(0, 0, 0, 0.5); /* Slightly darker placeholder */
 }
 
-/* Input Focus */
-.input-field input:focus {
+.input-field input:focus,
+.input-field select:focus { 
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.member-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    border-radius: 0;
+}
+
+.member-table th,
+.member-table td {
+    padding: 8px;
+    font-size: 1rem;
+    background-color: white;
+    border: 2px solid #2374E8; /* Blue */
+}
+
+.member-table input {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.delete-btn {
+    font-size: 1.5rem;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    .member-table {
+        min-width: 100%; /* Ensures table adapts */
+    }
+
+    .member-table th,
+    .member-table td {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    .member-table input {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+
+    .delete-btn {
+        font-size: 1.2rem;
+    }
+}
+
+/* Further optimize for very small screens */
+@media screen and (max-width: 480px) {
+    .member-table th {
+        font-size: 0.8rem;
+    }
+
+    .member-table td {
+        font-size: 0.8rem;
+    }
+
+    .member-table input {
+        font-size: 0.75rem;
+        padding: 5px;
+    }
+
+    .delete-btn {
+        font-size: 1rem;
+    }
 }
 
 /* Submit Button */
