@@ -1,6 +1,6 @@
 import "./Accomodation_2nd.css";
-import Card from "../../assets/cards.png";
-import dates from "../../assets/dates.png";
+
+
 import comingsoon from "../../assets/comingsoon.png";
 
 const AccomodationCard = () => {
