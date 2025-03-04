@@ -94,14 +94,15 @@ const TeamRegistration = () => {
     }
 
     console.log(facultyMembers);
-    setLoading(false);
-    // if (await registerTeam({ members, formData, categoryData, facultyMembers })) {
-    //   setInfo("Team registered successfully", "success");
-    //   setTimeout(() => {
-    //     navigate("/");
-    //   }, 1500);
-    // }
-    // setLoading(false);
+    if (await registerTeam({ members, formData, categoryData, facultyMembers })) {
+      setInfo("Team registered successfully", "success");
+      setTimeout(() => {
+        setLoading(false);
+        navigate("/");
+      }, 1000);
+    } else {
+      setLoading(false);
+    }
   };
 
   return (
