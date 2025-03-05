@@ -49,7 +49,9 @@ function App() {
             <MessageSection />
             <SportsSection gameDetails={events} />
             <AccomodationCard />
-            <AccommodationSection />
+            {/* <AccommodationSection /> */}
+            <AccommodationSection/>
+
             <TeamSec />
             <Result />
             <Footer />

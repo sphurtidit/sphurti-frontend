@@ -84,7 +84,6 @@ const SportsCard = ({
                   {prizeRunnerUp}/-</span>
                   
                 </span>
-                {prizeRunnerUp}
               </div>
               {/* <p>
                 <strong>Team Size:</strong> {minNumber} - {maxNumber} players

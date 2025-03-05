@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./result.css";
-import leftimage from "../../assets/left-image.png";
+
 import rightimage from "../../assets/resultbg.png";
 import result from "../../assets/result.png";
 import { FaArrowDown } from "react-icons/fa6";

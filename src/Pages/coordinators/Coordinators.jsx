@@ -13,15 +13,16 @@ const CoordinatorsPage = () => {
        
     
         <h2>Web Design And Social Media Team</h2>
+        <div className="branchname">
+            <div><li>Abdullah Aziz</li></div>
+            <div>BTIT 3rd year</div>
+        </div>
       
         <div className="branchname">
             <div><li>Tanya Yadav</li></div>
             <div>BTCSE 3rd year</div>
         </div>
-        <div className="branchname">
-            <div><li>Abdullah Aziz</li></div>
-            <div>BTIT 3rd year</div>
-        </div>
+       
 
         <h2>Logistic And Support Team</h2>
         <div className="branchname">
