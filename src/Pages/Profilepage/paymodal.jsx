@@ -20,7 +20,7 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
     if (!item.payStatus) {
       filteredData.push({
         type: "Reg",
-        regId : item._id,
+        regId: item._id,
         amount: item.amount,
         teamName: item.teamName,
         eventName: item.eventName,
@@ -29,7 +29,7 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
     if (item.accommodation && !item.payAccommodation) {
       filteredData.push({
         type: "Acc",
-        regId : item._id,
+        regId: item._id,
         amount: (item.member.length + item.faculty.length) * 1000,
         memberCount: item.member.length + item.faculty.length,
         teamName: item.teamName,
@@ -38,7 +38,7 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
     }
   });
 
-  console.log("filter",filteredData);
+  console.log("filter", filteredData);
 
   const loadScript = (src) =>
     new Promise((resolve, reject) => {
@@ -63,11 +63,11 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
       if (!orderId) throw new Error("Error creating order");
 
       const selectedItems = Object.entries(checkedItems)
-      .filter(([_, isChecked]) => isChecked)
-      .map(([key]) => filteredData[key]);
+        .filter(([_, isChecked]) => isChecked)
+        .map(([key]) => filteredData[key]);
 
-    if (!selectedItems.length) throw new Error("No selections made");
-      
+      if (!selectedItems.length) throw new Error("No selections made");
+
       const options = {
         key: apiKey,
         amount: total * 100,
@@ -82,11 +82,16 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
             order_id: response.razorpay_order_id,
             razorpay_signature: response.razorpay_signature,
             amount: total,
-            details : selectedItems
+            details: selectedItems
           };
 
           console.log(paymentData);
-          if (await paymentVerify({ data: paymentData })) onClose();
+          const paymentSuccess = await paymentVerify({ data: paymentData });
+
+          if (paymentSuccess) {
+            onClose(); // Close the modal
+            window.location.reload(); // Reload the page after successful payment
+          }
         },
         prefill: { name: "Sphurti 2025", email: email || "", contact: contact || "" },
       };
@@ -102,12 +107,12 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
   const handleCheckboxChange = (index, amount) => {
     setCheckedItems((prev) => {
       const updatedChecked = { ...prev, [index]: !prev[index] };
-      
+
       // Calculate new total based on filteredData
       const newTotal = Object.entries(updatedChecked)
         .filter(([_, isChecked]) => isChecked)
         .reduce((sum, [key]) => sum + filteredData[key].amount, 0);
-  
+
       setTotal(newTotal);
       return updatedChecked;
     });
