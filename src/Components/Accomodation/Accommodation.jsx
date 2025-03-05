@@ -3,6 +3,11 @@ import "./Accomodation.css";
 import arrow from "../../assets/arrow.png";
 import { PropTypes } from 'prop-types';
 
+
+const pdf = () => {
+  window.open('/rulebook.pdf', '_blank');
+};
+
 const AccommodationSection = ({rules}) => {
 
   return (
@@ -18,19 +23,16 @@ const AccommodationSection = ({rules}) => {
               DOWNLOAD THE RULEBOOK FOR ACCOMMODATION
             </h3>
             <a href={rules}>
-            <button  className="download-button1"><img src={arrow} alt="arrow" /> Download The Rulebook</button></a>
+            <button onClick={pdf} className="download-button1"><img src={arrow} alt="arrow" /> Download The Rulebook</button></a>
           </div>
           <div className="horizontal-line"></div>
           <div className="registration-box">
             <h1 className="registration-heading">
             REGISTRATION ARE OPEN UNTILL             </h1>
             <h1 className="registration-date">
-              {/* <span className="star-red">*</span>
-              <span className="star-yellow">*</span> */}
-              MARCH 10TH 2025
-              {/* <span className="star-red">*</span>
-              <span className="star-yellow">*</span>
-              <span className="star-purple">*</span> */}
+
+              MARCH 22<sup>ND</sup>   2025
+              
             </h1>
           </div>
         </div>

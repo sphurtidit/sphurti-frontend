@@ -11,6 +11,9 @@
   flex-direction: column;
 }
 
+.registration-date sup{
+  font-size: 0.6em;
+}
 
 .Accommodation-Rules h1{
   text-align: center;

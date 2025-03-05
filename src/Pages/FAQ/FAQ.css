@@ -120,7 +120,7 @@ h1 {
 }
 
 .email {
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
     color: #333;
 }
@@ -128,9 +128,9 @@ h1 {
 .copy-button {
     margin-left: 10px;
     padding: 8px 12px;
-    border: none;
-    background-color: #777;
+    background-color: #b81a3a;
     color: white;
+    /* border: 1px solid black; */
     border-radius: 5px;
     cursor: pointer;
     display: flex;
@@ -139,7 +139,9 @@ h1 {
 }
 
 .copy-button:hover {
-    background-color: #b81a3a;
+    background-color: #f8f8f8;
+    color: #b81a3a;
+    /* border: 2px solid #b81a3a; */
 }
 
 .copy-message {
