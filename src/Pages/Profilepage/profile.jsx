@@ -134,7 +134,7 @@ function ProfilePage() {
           </div>
         </>
       )}
-      <PayModal show={modalOpen} onClose={() => setModalOpen(false)} data={unpaidEvents} contact={user?.phone_no} email={user?.email} />
+      <PayModal show={modalOpen} onClose={() => setModalOpen(false)} data={registrationData} contact={user?.phone_no} email={user?.email} />
       <Lines customLoading={loading} />
     </div>
   );

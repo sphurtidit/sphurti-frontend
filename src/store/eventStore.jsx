@@ -50,6 +50,7 @@ const useEventStore = create(
                     catId: data.categoryData._id,
                     faculty: data.facultyMembers,
                     accommodation: data.formData.accommodation,
+                    payAccommodation:false
                 };
 
                 console.log("Request body", body);

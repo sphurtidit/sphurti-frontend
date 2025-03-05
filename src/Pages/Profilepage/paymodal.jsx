@@ -12,6 +12,33 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
   const [loading, setLoading] = useState(false);
   const { createOrder, paymentVerify } = useUserStore();
   const { setInfo } = useInfoStore();
+  console.log(data);
+
+  const filteredData = [];
+
+  data.forEach((item) => {
+    if (!item.payStatus) {
+      filteredData.push({
+        type: "Reg",
+        regId : item._id,
+        amount: item.amount,
+        teamName: item.teamName,
+        eventName: item.eventName,
+      });
+    }
+    if (item.accommodation && !item.payAccommodation) {
+      filteredData.push({
+        type: "Acc",
+        regId : item._id,
+        amount: (item.member.length + item.faculty.length) * 1000,
+        memberCount: item.member.length + item.faculty.length,
+        teamName: item.teamName,
+        eventName: item.eventName,
+      });
+    }
+  });
+
+  console.log("filter",filteredData);
 
   const loadScript = (src) =>
     new Promise((resolve, reject) => {
@@ -35,9 +62,12 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
       const orderId = await createOrder(total);
       if (!orderId) throw new Error("Error creating order");
 
-      const selectedSports = data.filter((_, index) => checkedItems[index]);
-      if (!selectedSports.length) throw new Error("No sports selected");
+      const selectedItems = Object.entries(checkedItems)
+      .filter(([_, isChecked]) => isChecked)
+      .map(([key]) => filteredData[key]);
 
+    if (!selectedItems.length) throw new Error("No selections made");
+      
       const options = {
         key: apiKey,
         amount: total * 100,
@@ -52,10 +82,10 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
             order_id: response.razorpay_order_id,
             razorpay_signature: response.razorpay_signature,
             amount: total,
-            cat_id: selectedSports.map((sport) => sport.catId),
-            reg_id: selectedSports.map((sport) => sport._id),
+            details : selectedItems
           };
 
+          console.log(paymentData);
           if (await paymentVerify({ data: paymentData })) onClose();
         },
         prefill: { name: "Sphurti 2025", email: email || "", contact: contact || "" },
@@ -72,10 +102,12 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
   const handleCheckboxChange = (index, amount) => {
     setCheckedItems((prev) => {
       const updatedChecked = { ...prev, [index]: !prev[index] };
+      
+      // Calculate new total based on filteredData
       const newTotal = Object.entries(updatedChecked)
         .filter(([_, isChecked]) => isChecked)
-        .reduce((sum, [key]) => sum + data[key].amount, 0);
-
+        .reduce((sum, [key]) => sum + filteredData[key].amount, 0);
+  
       setTotal(newTotal);
       return updatedChecked;
     });
@@ -90,13 +122,15 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
           &times;
         </button>
         <h2>Select for Payment</h2>
-        {data.map((sport, index) => (
-          <div className="container1" key={sport._id}>
+        {filteredData.map((sport, index) => (
+          <div className="container1" key={`${sport.regId}-${sport.type}`}>
             <div className="container2">
               <div className="sports-images">
-                <img src={eventImages[sport.eventName.toLowerCase()] || ""} alt={sport.name} />
+                <img src={eventImages[sport.eventName?.toLowerCase()] || ""} alt={sport.name} />
               </div>
-              <div className="text-of-sports">{sport.teamName}</div>
+              <div className="text-of-sports">
+                {sport.teamName} - <span>{sport.type === "Reg" ? "Registration Due" : "Accommodation Due"}</span>
+              </div>
             </div>
             <div className="prize">
               {sport.amount}/-
