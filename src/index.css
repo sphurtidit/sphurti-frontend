@@ -52,8 +52,8 @@ p, span, li {
 button, input, textarea {
   font-family: var(--tertiary-font);
 
-    box-shadow: none !important;
-    border: none !important;
+    box-shadow: none ;
+    border: none ;
 }
 
 /* Media Queries */

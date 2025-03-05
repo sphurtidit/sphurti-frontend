@@ -74,47 +74,29 @@ const SportsCard = ({
             </div>
             <div className="details">
               <div>
-                <p className="strong ">Prize Money:</p>
-                <span className="prize">
-                  {" "}
+                <p className="strong ">Prize Money:&nbsp;</p>
+                <span className="card-prize">
                   <span className="pipe">|</span> &nbsp;
-                  Winner: <span className="main-prize" >&#8377;{prizeWinner}/-</span> &nbsp;
+                  Winner: &nbsp;<span className="main-prize" >&#8377;{prizeWinner}/-</span> &nbsp;
                   <br/>
-                  <span className="pipe">|</span> &nbsp; Runner Up: <span className="main-prize"> &#8377;
+                  <span className="pipe">|</span> &nbsp; Runner Up: &nbsp;<span className="main-prize"> &#8377;
                   {prizeRunnerUp}/-</span>
                   
                 </span>
               </div>
-              {/* <p>
-                <strong>Team Size:</strong> {minNumber} - {maxNumber} players
-              </p> */}
-              {/* <div className="details">
-                <p className="strong">
-                  Schedule: <a href="" className="amt">Download Schedule</a>
-                </p>
-                <p className="strong">
-                  Rule Book:{" "}
-                  <a href="" className="amt">
-                    Download
-                  </a>
-                </p>
-              </div> */}
-              {/* <div>
-                <p className="strong">Coordinators:</p>
-                Name:Mobile Number&nbsp;
-                <span className="pipe">|</span> &nbsp; Name:Mobile Number
-              </div> */}
             </div>
             <div className="button-group">
               <button
-                className="results"
+                className="card-results"
                 onClick={() => navigateToRegistraion()}
+                disabled={name === "Table Tennis "}
               >
                 Register
               </button>
               <button
-                className="results"
+                className="card-results"
                 onClick={() => openRules(rules)}
+                disabled={name === "Table Tennis "}
               >
                 Rules
               </button>
