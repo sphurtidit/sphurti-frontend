@@ -11,7 +11,7 @@ const eventImages = {
   football: footballimg,
   volleyball: volleyballimg,
   basketball: basketballimg,
-  "table tennis": tabletennisimg,
+  "table tennis ": tabletennisimg,
 };
 
 export default eventImages;

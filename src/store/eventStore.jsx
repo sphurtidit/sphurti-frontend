@@ -48,6 +48,9 @@ const useEventStore = create(
                     phoneNo: data.formData.phone,
                     eventId: data.categoryData.eventId,
                     catId: data.categoryData._id,
+                    faculty: data.facultyMembers,
+                    accommodation: data.formData.accommodation,
+                    payAccommodation:false
                 };
 
                 console.log("Request body", body);

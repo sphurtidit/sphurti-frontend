@@ -19,6 +19,7 @@ const RegistrationForm = () => {
     name_so: "",
     clg_name: "",
     clg_mail: "",
+    accommodation: false,
   });
 
   useEffect(() => {
@@ -29,11 +30,13 @@ const RegistrationForm = () => {
   }, [user, fetchUser]);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: name === "accommodation" ? value === "true" : value, // Convert "true"/"false" string to boolean
     });
   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,6 +55,19 @@ const RegistrationForm = () => {
           {categorydata.categoryName}
         </div>
         <form onSubmit={handleSubmit}>
+        <div className="input-field">
+            <label htmlFor="clg_name">College Name</label>
+            <input
+              type="text"
+              id="clg_name"
+              name="clg_name"
+              placeholder="Enter College Name"
+              value={formData.clg_name}
+              onChange={handleChange}
+              required
+              disabled
+            />
+          </div>
           <div className="input-field">
             <label htmlFor="team_name">Team Name</label>
             <input
@@ -125,19 +141,6 @@ const RegistrationForm = () => {
             />
           </div>
           <div className="input-field">
-            <label htmlFor="clg_name">College Name</label>
-            <input
-              type="text"
-              id="clg_name"
-              name="clg_name"
-              placeholder="Enter College Name"
-              value={formData.clg_name}
-              onChange={handleChange}
-              required
-              disabled
-            />
-          </div>
-          <div className="input-field">
             <label htmlFor="clg_mail">College Email</label>
             <input
               type="email"
@@ -148,6 +151,19 @@ const RegistrationForm = () => {
               onChange={handleChange}
               required
             />
+          </div>
+          <div className="input-field">
+            <label htmlFor="accommodation">Do you require accommodation?</label>
+            <select
+              id="accommodation"
+              name="accommodation"
+              value={formData.accommodation}
+              onChange={handleChange}
+              required
+            >
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
           </div>
           <button
             type="submit"
