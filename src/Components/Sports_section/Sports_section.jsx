@@ -32,7 +32,7 @@ const SportsSection = ({ gameDetails = {} }) => {
     football: "/pdfs/football_rules.pdf",
     volleyball: "/pdfs/volleyball_rules.pdf",
     basketball: "/pdfs/basketball_rules.pdf",
-    // "table tennis": "/pdfs/table_tennis_rules.pdf",
+    "table tennis": "/pdfs/table_tennis_rules.pdf",
   };
 
   const getImageForEvent = (eventName) => {

@@ -1,3 +1,13 @@
+/* ✅ Import Poppins Font */
+@font-face {
+    font-family: "Poppins";
+    src: url('./fonts/Poppins/Poppins-Regular.ttf') format('woff2');
+}
+
+:root {
+    --primary-font: "Poppins", sans-serif;
+}
+
 .main-msg-container {
     position: relative;
     padding: 2rem;
@@ -7,12 +17,16 @@
     justify-content: space-between;
     overflow: hidden;
     margin-bottom: 2rem;
+    font-family: var(--primary-font); /* ✅ Apply Poppins */
+    
+    /* ✅ Skew the entire div */
     transform: skewY(-3deg);
     border-radius: 0;
 }
 
 .left-column-msg, .right-column-msg {
     transform: skewY(3deg);
+    font-family: var(--primary-font); /* ✅ Apply Poppins */
 }
 
 .red-bg {
@@ -62,11 +76,13 @@
     font-weight: 700;
     margin-bottom: 0.5rem;
     margin-top: 1rem;
+    font-family: var(--primary-font); /* ✅ Apply Poppins */
 }
 
 .name-msg-designation {
     font-size: 1.5rem;
     opacity: 0.8;
+    font-family: var(--primary-font); /* ✅ Apply Poppins */
 }
 
 .msg-content {
@@ -74,12 +90,14 @@
     font-size: 1.1rem;
     text-align: justify;
     white-space: pre-wrap;
+    font-family: var(--primary-font); /* ✅ Apply Poppins */
 }
 
 .toggle-button-msg {
     color: black;
     text-decoration: underline;
     cursor: pointer;
+    font-family: var(--primary-font); /* ✅ Apply Poppins */
 }
 
 @media only screen and (max-width: 1000px) {
