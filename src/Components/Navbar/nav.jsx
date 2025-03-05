@@ -6,7 +6,7 @@ import { MdClose } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link as ScrollLink, scroller } from "react-scroll";
 import Button from "../Button/Button";
-import image from "../../assets/yellowline.png";
+// import image from "../../assets/yellowline.png";
 
 
 function Nav() {

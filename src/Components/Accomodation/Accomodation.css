@@ -21,7 +21,7 @@
   background-color: white;
   margin-top: 3vmin;
   max-height: 40vh;
-  border: 1px solid #000;
+  border: 2px solid #ee0942;
   width: 100%;
   height: fit-content;
   padding: 0rem auto;
@@ -36,6 +36,7 @@
 .download-heading {
   font-size: 2.5vmin;
   text-align: center;
+  font-weight: 700;
   width: 40vmin;
 }
 .download-button1 {
@@ -88,17 +89,28 @@
     width: 2vw;
     height: 30vw;
 }
-/* Tablets (Portrait & Landscape) */
+
 @media (max-width: 1024px) {
   .rules-container {
-    width: 90%;
-    margin: auto;
+    width: 100%;
     padding: 2vw;
+    border: 2px solid  #ee0942;
+  }
+
+  .download-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
   }
 
   .download-heading {
-    font-size: 3.2vw;
-    width: 50vw;
+    font-size: 1.8em;
+    font-weight: 700;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .download-button1 {
@@ -181,6 +193,7 @@
   .rules-container {
     width: 100%;
     padding: 5vw;
+    border: 2px solid #ee0942;
   }
 
   .download-heading {

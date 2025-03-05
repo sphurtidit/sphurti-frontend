@@ -1,5 +1,5 @@
 import "./Accomodation.css";
-import strips from "../../assets/strips.png";
+
 import arrow from "../../assets/arrow.png";
 import { PropTypes } from 'prop-types';
 
