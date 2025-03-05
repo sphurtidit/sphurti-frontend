@@ -24,6 +24,7 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
         amount: item.amount,
         teamName: item.teamName,
         eventName: item.eventName,
+        categoryName: item.categoryName,
       });
     }
     if (item.accommodation && !item.payAccommodation) {
@@ -34,6 +35,7 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
         memberCount: item.member.length + item.faculty.length,
         teamName: item.teamName,
         eventName: item.eventName,
+        categoryName: item.categoryName,
       });
     }
   });
