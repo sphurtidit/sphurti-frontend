@@ -19,7 +19,7 @@
     border: 2px solid red;
     padding: 20px;
     width: 90%;
-    height: 70%;
+    max-height: 70%;
     max-width: 500px;
     border-radius: 10px;
     color: black;

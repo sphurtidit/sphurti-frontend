@@ -53,8 +53,6 @@ function ProfilePage() {
     navigate(path);
   };
 
-  const unpaidEvents = registrationData.filter(event => !event.payStatus);
-
   return (
     <div>
       {!loading && (
