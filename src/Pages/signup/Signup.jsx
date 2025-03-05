@@ -7,7 +7,7 @@ import useUserStore from "../../store/userStore";
 import useInfoStore from "../../store/infoStore";
 import loginback from "../../assets/loginback.png";
 import loginbackground from "../../assets/loginbackground.png";
-import Navbar from "../../Components/Navbar/nav";
+import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer"; // Import Footer component
 
 function Signinpage() {
