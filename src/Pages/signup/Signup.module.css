@@ -8,6 +8,7 @@
     padding: 2rem;
     overflow: auto;
     flex-direction: column;
+    padding-bottom: 5rem;
 }
 
 h1 {
