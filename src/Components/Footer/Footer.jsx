@@ -1,7 +1,7 @@
 import "./Footer.css";
 import {Link} from 'react-router-dom';
-import LinkIcon from "../../assets/link.svg";
-// import Navbar from "../LogoNavbar/LogoNavbar";
+
+
 import Sphurti from "../../assets/sphurti.png";
 import Naac from "../../assets/naac.png";
 import Dit from "../../assets/DIT.png";

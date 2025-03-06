@@ -38,6 +38,7 @@
   height: auto;
   max-height: 60px;
   object-fit: contain;
+  cursor: pointer;
 }
 
 /* Fixing overlapping logo */
@@ -180,7 +181,7 @@
   .logo-container {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 5px;
+    /* gap: 5px; */
   }
 
   .logo {
@@ -222,25 +223,96 @@
 @media (max-width: 1024px) {
   .nav-container {
     padding: 0.1rem 0.5rem;
-    height: 6.5%;
+    height: 6vh;
     flex-wrap: wrap;
   }
 
   .logo {
-    width: 70px; /* Adjust logo size */
+    width: 30px; /* Adjust logo size */
     max-height: 50px;
   }
 
   .login-btn {
-    font-size: 13px;
+    font-size: 10px;
     padding: 6px 14px;
   }
 
   .hamburger-icon {
-    right: 15px; /* Adjust hamburger position */
-    top:18%;
+    right: 13px; /* Adjust hamburger position */
+    top:10%;
   }
 }
+
+/* Styles for 1024x600 resolution */
+@media (max-width: 1024px) and (max-height: 600px) {
+  .container {
+    width: 60vw;
+    height: auto;
+    min-height: 80vh;
+    padding: 1.5rem 0;
+  }
+
+  .loginContainer {
+    width: 70vw;
+    margin: 1.5rem;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .loginBox {
+    padding: 1rem 2rem;
+    height: auto;
+    min-height: 400px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .formGroup {
+    margin-bottom: 1rem;
+  }
+
+  input {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .logo1, .logo2, .logo3 {
+    height: 45px;
+    margin-right: 10px;
+  }
+
+  .loginBtn {
+    width: 65%;
+    padding: 10px;
+    margin-top: 1rem;
+  }
+
+  .signupText {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .forpass {
+    font-size: 0.8rem;
+  }
+
+  .socialBtn {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  /* Adjust background overlays if applicable */
+  .overlay1, .overlay2 {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+
+
 @media (max-width: 480px) {
   .nav-container {
     flex-direction: row;
