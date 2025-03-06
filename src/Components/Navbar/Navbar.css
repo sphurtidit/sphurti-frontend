@@ -15,6 +15,7 @@
   transition: all 0.3s ease-in-out;
   position: fixed; /* Makes the navbar sticky */
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
 
   /* Optional styles if the navbar is meant to cover the full width of the screen */
   position: -webkit-sticky; /* For Safari */
