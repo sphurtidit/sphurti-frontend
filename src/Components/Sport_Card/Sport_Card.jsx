@@ -89,14 +89,14 @@ const SportsCard = ({
               <button
                 className="card-results"
                 onClick={() => navigateToRegistraion()}
-                disabled={name === "Table Tennis "}
+                disabled={name.toLowerCase().trim() === "table tennis"}
               >
                 Register
               </button>
               <button
                 className="card-results"
                 onClick={() => openRules(rules)}
-                disabled={name === "Table Tennis "}
+                disabled={name.toLowerCase().trim() === "table tennis"}
               >
                 Rules
               </button>
