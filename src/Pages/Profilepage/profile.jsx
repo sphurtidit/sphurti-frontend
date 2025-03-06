@@ -152,7 +152,7 @@ function ProfilePage() {
                   </Swiper>
                 </div>
                 <div className={profile.registered}>
-                  
+
                 </div>
                 <br />
               </div>

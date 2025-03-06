@@ -12,7 +12,6 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
   const [loading, setLoading] = useState(false);
   const { createOrder, paymentVerify } = useUserStore();
   const { setInfo } = useInfoStore();
-  console.log(data);
 
   const filteredData = [];
 
@@ -39,8 +38,6 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
       });
     }
   });
-
-  console.log("filter", filteredData);
 
   const loadScript = (src) =>
     new Promise((resolve, reject) => {
@@ -87,7 +84,6 @@ const PayModal = ({ show, onClose, data, contact, email }) => {
             details: selectedItems
           };
 
-          console.log(paymentData);
           const paymentSuccess = await paymentVerify({ data: paymentData });
 
           if (paymentSuccess) {
