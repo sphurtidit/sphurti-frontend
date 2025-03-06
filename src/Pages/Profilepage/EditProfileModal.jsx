@@ -56,7 +56,6 @@ const EditProfileModal = ({ show, onClose, onSave }) => {
             />
           ))}
         </div>
-        {/* Add form fields for editing profile here */}
         <button className={styles.saveBtn} onClick={handleSaveClick}>
           Save
         </button>

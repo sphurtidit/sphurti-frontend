@@ -12,11 +12,10 @@ import basketballImage from "../../assets/basketball-player.png";
 import RegisteredEventsCards from "./RegisteredEventsCards/RegisteredEventsCards";
 import PayModal from "./paymodal";
 import useEventStore from "../../store/eventStore";
-import EditProfileModal from "./EditProfileModal"; // Import the new modal component
+import EditProfileModal from "./EditProfileModal"; 
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -29,8 +28,8 @@ function ProfilePage() {
   const { events, fetchEvents } = useEventStore();
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
-  const [editModalOpen, setEditModalOpen] = useState(false); // State for edit modal
-  const [profileImage, setProfileImage] = useState(null); // State for profile image
+  const [editModalOpen, setEditModalOpen] = useState(false); 
+  const [profileImage, setProfileImage] = useState(null); 
   const [registrationData, setRegistrationData] = useState([]);
 
   useEffect(() => {
@@ -97,7 +96,7 @@ function ProfilePage() {
                       src={editIcon}
                       alt="Edit"
                       className={profile.editIcon}
-                      onClick={() => setEditModalOpen(true)} // Open edit modal on click
+                      onClick={() => setEditModalOpen(true)} 
                     />
                   </div>
                   <button
@@ -204,7 +203,7 @@ function ProfilePage() {
       <EditProfileModal
         show={editModalOpen}
         onClose={() => setEditModalOpen(false)}
-        onSave={handleSaveImage} // Pass the save handler to the modal
+        onSave={handleSaveImage} 
       />
       <Lines customLoading={loading} />
     </div>

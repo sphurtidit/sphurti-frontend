@@ -47,26 +47,19 @@
 
 .btn {
     padding: 0.6rem 1.5rem;
-    /* Reduced padding */
     background-color: #EE0942;
     color: white;
     font-weight: 600;
     font-size: medium;
-    /* Reduced font size */
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s;
     width: 18rem;
-    /* Full width for responsiveness */
     max-width: 300px;
-    /* Limit maximum width */
     height: 45px;
-    /* Reduced height */
     margin: 0 auto;
-    /* Center the button horizontally */
     display: block;
-    /* Ensure margin: auto works */
 
     margin-bottom: 1rem;
 }
@@ -118,7 +111,6 @@
     font-weight: 600;
     font-size: medium;
     border-radius: 50px;
-    /* cursor: pointer; */
     transition: all 0.3s;
     width: 18rem;
     max-width: 300px;
