@@ -22,7 +22,7 @@ const RegisteredEventsCards = ({ data }) => {
         </div>
         <div className="rcard-body">
           <div className="rcard-left">
-            <p className="rcard-text">TEAM NAME- {data.teamName}</p>
+            <p className="rcard-text"> Team Name: {data.teamName}</p>
             <p className="rcard-text">{data.member.length} members</p>
           </div>
         </div>
@@ -48,6 +48,7 @@ const RegisteredEventsCards = ({ data }) => {
   </div>
 ) : (
   // If accommodation IS opted, check if it's paid or unpaid
+  
   <div className={`rcard-status ${data.payAccommodation ? "paid" : "rcard-unpaid"}`}>
     Accommodation {data.payAccommodation ? "Paid" : "Unpaid"}
     <div className={`rcard-status-box-${data.payAccommodation ? "paid" : "unpaid"}`}></div>

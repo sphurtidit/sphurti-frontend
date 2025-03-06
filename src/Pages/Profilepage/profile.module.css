@@ -8,8 +8,6 @@
 }
 
 .image {
-
-
     height: 18rem;
     width: 18rem;
     text-align: center;
@@ -19,9 +17,6 @@
     background-color: #d5d3d4;
     background-image: url('../../assets/basketball-player.png');
     background-size: cover;
-    
-
-
     gap: 5rem;
 }
 

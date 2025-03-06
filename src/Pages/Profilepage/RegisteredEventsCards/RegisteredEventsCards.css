@@ -1,20 +1,33 @@
-/* Parent container for all event cards */
 .whole-container {
   display: flex;
+  width: 40vh;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   align-items: flex-start;
-  /* width: 26vw;
-   */
-   height: auto;
+  height: auto;
   margin-top: 1rem;
 }
+
+.rcard-container {
+  margin: 1rem;
+  color: black;
+  background-color: white;
+  border: 2px solid #ee0942;
+  border-radius: 20px;
+  padding: 1rem;
+  width: 30vw;
+  height: auto;
+}
 .rcard-heading {
-  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
   font-weight: 800;
   color: #ee0942;
 }
+
 .rcard-events {
   display: flex;
   flex-direction: row-reverse;
@@ -25,48 +38,34 @@
 .rcard-footer {
   display: flex;
   flex-direction: column;
-  /* justify-content: start; */
-  align-items: left;
-  gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .rcard-events img {
   width: 40px;
 }
+
 .rcard-text {
   font-size: 0.8em;
   font-weight: 800;
   color: #2374e8;
 }
-/* Individual card styling */
-.rcard-container {
-  margin: 1rem; /* Adds space around each card */
-  color: black;
-  background-color: white;
-  border: 2px solid #ee0942;
-  border-radius: 20px;
-  padding: 1rem;
-  width: 35rem;
-  height: 40vh;
-  /* display: flex; */
-  /* flex-direction: column; */
-}
 
-/* Ensure text and image inside the card are spaced properly */
 .rcard-body {
   display: flex;
+  margin: 1rem 1rem 0.5rem 1rem;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
+  font-size: 1.4rem;
 }
 
-/* Ensure images stay within bounds */
+
 .rcard-right img {
   width: 100%;
   max-width: 180px;
   border-radius: 25px;
 }
-
 
 .rcard-status {
   display: flex;
@@ -79,7 +78,6 @@
   text-align: center;
   width: fit-content;
 }
-
 
 .accommodation {
   display: flex;
@@ -95,31 +93,105 @@
   width: fit-content;
 }
 
-/* Ensure responsiveness */
-@media only screen and (max-width: 1024px) {
+
+/* For tablets and smaller screens */
+@media (max-width: 2000px) {
   .whole-container {
-    gap: 1rem;
     width: 100%;
-    height: 100%;
   }
 
   .rcard-container {
+    width: 45vw;
+    margin: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .rcard-heading {
+    font-size: 1.1rem;
+  }
+
+  .rcard-text {
+    font-size: 0.7rem;
+  }
+
+  .rcard-events img {
+    width: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .whole-container {
     width: 100%;
-    height: auto;
+  }
+
+  .rcard-container {
+    width: 45vw;
+    margin: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .rcard-heading {
+    font-size: 1.1rem;
+  }
+
+  .rcard-text {
+    font-size: 0.7rem;
+  }
+
+  .rcard-events img {
+    width: 35px;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .whole-container {
+/* For mobile devices */
+@media (max-width: 480px) {
+  .rcard-container {
+    width: 60vw;
+    padding: 0.6rem;
+  }
+
+  .rcard-heading {
+    font-size: 1rem;
+    flex-direction: column;
+  }
+
+  .rcard-events {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    width: 3vw;
-    height: 100%;
+    gap: 0.5rem;
   }
 
-  .rcard-container {
-    width: 100%;
-    height: auto;
+  .rcard-body {
+    margin: 0.5rem;
+  }
+
+  .rcard-status {
+    font-size: 0.8rem;
   }
 }
+
+/* For very small mobile devices */
+@media (max-width: 320px) {
+  .rcard-container {
+    width: 80vw;
+  }
+
+  .rcard-heading {
+    font-size: 0.9rem;
+  }
+
+  .rcard-text {
+    font-size: 0.6rem;
+  }
+
+  .rcard-events img {
+    width: 30px;
+  }
+
+  .rcard-status {
+    font-size: 0.7rem;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
