@@ -73,6 +73,94 @@ const useEventStore = create(
                 }
                 return false;
             },
+
+            updateTeam: async (id, data) => {
+                const setInfo = useInfoStore.getState().setInfo;
+                console.log("Updating Team:", data);
+
+                const path = `${url}/api/registration/${id}`;
+                console.log("members", data.members);
+
+                const body = {
+                    clgMail: data.formData.clg_mail,
+                    nameSO: data.formData.name_so,
+                    nameVC: data.formData.name_vc,
+                    amount: data.categoryData.registrationFees,
+                    payStatus: data.formData.payStatus,
+                    teamName: data.formData.team_name,
+                    alternateNo: data.formData.alternate_phone,
+                    member: data.members,
+                    captainName: data.formData.captain_name,
+                    phoneNo: data.formData.phone,
+                    eventId: data.categoryData.eventId,
+                    catId: data.categoryData._id,
+                    faculty: data.facultyMembers,
+                    accommodation: data.formData.accommodation,
+                    payAccommodation:data.formData.payAccommodation
+                };
+
+                console.log("Request body", body);
+                try {
+                    const response = await axios.put(path, body, {
+                        headers: {
+                            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+                        },
+                    });
+
+                    console.log("regs", response);
+                    if (response.status === 200) {
+                        return true;
+                    }
+                } catch (error) {
+                    console.error("Error fetching data:", error);
+                    setInfo(`Error updating in game: ${error.response?.data?.message}`, "error");
+                    return false;
+                }
+                return false;
+            },
+
+            getRegisteredEvent: async (id) => {
+                const setInfo = useInfoStore.getState().setInfo;
+                console.log("id", id);
+                console.log("authToken", localStorage.getItem("authToken"));
+                try {
+                    const response = await axios.get(`${url}/api/registration/${id}`, {
+                        headers: {
+                            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+                        },
+                    });
+                    console.log("response", response);
+                    if (response.status === 200) {
+                        return response.data;
+                    } else {
+                        console.error("Error fetching data");
+                        throw new Error("Error fetching events data");
+                    }
+                } catch (error) {
+                    console.error("Error fetching data:", error);
+                    setInfo("Error fetching events data", "error");
+                }
+            },
+
+            getEventCategoryData: async (id) => {
+                const setInfo = useInfoStore.getState().setInfo;
+                try {
+                    const response = await axios.get(`${url}/api/eventcategory/${id}`, {
+                        headers: {
+                            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+                        },
+                    });
+                    if (response.status === 200) {
+                        return response.data;
+                    } else {
+                        console.error("Error fetching data");
+                        throw new Error("Error fetching events data");
+                    }
+                } catch (error) {
+                    console.error("Error fetching data:", error);
+                    setInfo("Error fetching events data", "error");
+                }
+            }
         }),
         {
             name: "event-storage", // LocalStorage key

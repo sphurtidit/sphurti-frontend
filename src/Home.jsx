@@ -25,15 +25,15 @@ export const Home = () => {
         <Route path="/Signinpage" element={<Signinpage />} />
         <Route path="/comingsoon" element={<ComingSoon />} />
         <Route path="/Reg_Pg1" element={<RegistrationForm />} />
+        <Route path="/Reg_Pg1/:id" element={<RegistrationForm />} />
         <Route path="/Reg_Pg2" element={<TeamRegistration />} />
+        <Route path="/Reg_Pg2/:id" element={<TeamRegistration />} />
         <Route path="/FAQ" element={<FAQPage />} />
         <Route path="/ResultTable" element={<ResultTable />} /> 
         <Route path="/profilepage" element={<ProfilePage />} />
         <Route path="/AMBASSADORS_page" element={< Ambassadors />} />
         <Route path="/RulesSection" element={<RulesSection />} />
         <Route path="/Coordinators" element={<CoordinatorsPage />} />
-
-
       </Routes>
     </Router>
   );

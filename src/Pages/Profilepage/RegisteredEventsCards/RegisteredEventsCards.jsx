@@ -1,10 +1,15 @@
 import './RegisteredEventsCards.css';
 import eventImages from "../../../utils/eventImages";
+import { useNavigate } from "react-router-dom";
 
 const RegisteredEventsCards = ({ data }) => {
-    console.log(data);
+    // console.log(data);
+
+    const navigate = useNavigate();
+
     return (
         <div className='rcard-container'>
+            <button onClick={() => navigate(`/Reg_Pg1/${data._id}`)}>test button</button>
             <div className="rcard-title">
                 <div className="rcard-events">
                     <p className='rcard-heading'>{data.eventName} - {data.categoryName}</p>

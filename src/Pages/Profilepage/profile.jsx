@@ -135,13 +135,13 @@ function ProfilePage() {
                   pagination={{ clickable: true }}
                 >
                   {registrationData.length > 0 ? (
-                    registrationData.map((event) => <SwiperSlide><RegisteredEventsCards isPaid={true} data={event} /></SwiperSlide>)
+                    registrationData.map((event) => <SwiperSlide><RegisteredEventsCards isPaid={true} data={event}/></SwiperSlide>)
                   ) : (
                     <h1>No Registered Events Yet!</h1>
                   )}
                 </Swiper>
                 <div className={profile.registered}>
-                  
+
                 </div>
                 <br />
               </div>
