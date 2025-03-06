@@ -95,6 +95,16 @@
   width: fit-content;
 }
 
+.edit-btn{
+  background-color: #ee0942;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
 /* Ensure responsiveness */
 @media only screen and (max-width: 1024px) {
   .whole-container {
