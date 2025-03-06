@@ -5,7 +5,7 @@ import TeamSec from "./Components/team_sec/team_sec";
 import Footer from "./Components/Footer/Footer";
 import Result from "./Components/result/result";
 import MessageSection from "./Components/Messages/message-section";
-import Nav from "./Components/Navbar/nav";
+// import Navbar from "./Components/Navbar/Navbar";
 import { Lines } from "react-preloaders";
 import Timer from "./Components/timer/timer";
 import { ToastContainer } from "react-toastify";

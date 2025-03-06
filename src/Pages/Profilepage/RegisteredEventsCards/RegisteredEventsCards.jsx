@@ -24,17 +24,17 @@ const RegisteredEventsCards = ({ data }) => {
                 </div>
             </div>
             <div className="rcard-footer">
-            {!data.accommodation && <div className={`rcard-status ${data.payStatus ? 'paid' : 'rcard-unpaid'}`}>
-                        Accommodation Not Opted
-                        <div className={`rcard-status-box-${data.payStatus ? 'paid' : 'unpaid'}`}></div>
-                    </div>}
-                    {
-                        data.accommodation &&
-                        <div className={`rcard-status ${data.payAccommodation ? 'paid' : 'rcard-unpaid'}`}>
-                            Accommodation {data.member.length + data.faculty.length} members
-                            <div className={`rcard-status-box-${data.payAccommodation ? 'paid' : 'unpaid'}`}></div>
-                        </div>
-                    }
+                {!data.accommodation && <div className={`rcard-status ${data.payStatus ? 'paid' : 'rcard-unpaid'}`}>
+                    Accommodation Not Opted
+                    <div className={`rcard-status-box-${data.payStatus ? 'paid' : 'unpaid'}`}></div>
+                </div>}
+                {
+                    data.accommodation &&
+                    <div className={`rcard-status ${data.payAccommodation ? 'paid' : 'rcard-unpaid'}`}>
+                        Accommodation {data.payAccommodation ? 'paid' : 'unpaid'}
+                        <div className={`rcard-status-box-${data.payAccommodation ? 'paid' : 'unpaid'}`}></div>
+                    </div>
+                }
             </div>
         </div>
     );

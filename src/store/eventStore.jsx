@@ -11,8 +11,9 @@ const useEventStore = create(
             events: [],
 
             fetchEvents: async () => {
+                
                 if (get().events.length > 0) return; // Don't refetch if already available
-
+                console.log("test")
                 const setInfo = useInfoStore.getState().setInfo;
                 try {
                     const response = await axios.get(`${url}/api/events`);
