@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Result_Table.css";
-import Nav from "../Navbar/nav";
+import Nav from "../Navbar/Navbar";
 
 const ResultTable = () => {
   useEffect(() => {

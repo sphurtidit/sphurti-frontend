@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./registration_page.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import useInfoStore from "../../store/infoStore";
 import useEventStore from "../../store/eventStore";
 import { ToastContainer } from "react-toastify";
@@ -13,19 +13,24 @@ import { MdDeleteOutline } from "react-icons/md";
 const TeamRegistration = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { formData, categoryData } = location.state || {};
+  const { formData, categoryData, nextData } = location.state || {};
+  const { id } = useParams();
   const setInfo = useInfoStore.getState().setInfo;
-  const registerTeam = useEventStore.getState().registerTeam;
+  const {registerTeam, updateTeam} = useEventStore();
   const [loading, setLoading] = useState(false);
 
   const minMembers = categoryData?.minNumber ? Math.max(1, categoryData.minNumber) : 1;
   const maxMembers = categoryData?.maxNumber ? Math.max(minMembers, categoryData.maxNumber) : 20;
 
   const [members, setMembers] = useState(
-    Array.from({ length: minMembers }, () => ({ memberName: "", clgId: "", govId: "" }))
+    id && nextData?.member?.length
+      ? nextData.member
+      : Array.from({ length: minMembers }, () => ({ memberName: "", clgId: "", govId: "" }))
   );
-
-  const [facultyMembers, setFacultyMembers] = useState([]);
+  
+  const [facultyMembers, setFacultyMembers] = useState(
+    id && nextData?.faculty?.length ? nextData.faculty : []
+  );
   const maxFaculty = 2; // Maximum 2 faculties allowed
 
   const addFaculty = () => {
@@ -94,13 +99,28 @@ const TeamRegistration = () => {
     }
 
     console.log(facultyMembers);
-    if (await registerTeam({ members, formData, categoryData, facultyMembers })) {
-      setInfo("Team registered successfully", "success");
-      setTimeout(() => {
-        setLoading(false);
-        navigate("/");
-      }, 1000);
-    } else {
+    try {
+      let response;
+      
+      if (id) {
+        // Update existing team if ID is present
+        response = await updateTeam(id, { members, formData, categoryData, facultyMembers });
+      } else {
+        // Register new team if no ID is present
+        response = await registerTeam({ members, formData, categoryData, facultyMembers });
+      }
+  
+      if (response) {
+        setInfo(id ? "Team updated successfully" : "Team registered successfully", "success");
+        setTimeout(() => {
+          setLoading(false);
+          navigate("/");
+        }, 1000);
+      } else {
+        throw new Error("API request failed");
+      }
+    } catch (error) {
+      setInfo("Something went wrong. Please try again.", "error");
       setLoading(false);
     }
   };

@@ -11,6 +11,14 @@ import RegisteredEventsCards from "./RegisteredEventsCards/RegisteredEventsCards
 import PayModal from "./paymodal";
 import useEventStore from "../../store/eventStore";
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 function ProfilePage() {
   const navigate = useNavigate();
   const { user, fetchUser, logout, getRegisteredEvents, registeredEvents } = useUserStore();
@@ -34,7 +42,7 @@ function ProfilePage() {
   }, [user, fetchUser, getRegisteredEvents]);
 
   useEffect(() => {
-    
+
     if (registeredEvents.length > 0 && events.length > 0) {
       const updatedRegistrations = registeredEvents.map((element) => {
         const eventData = events.find((event) => event._id === element.eventId);
@@ -119,12 +127,32 @@ function ProfilePage() {
               <br />
               <div className={profile.scroller}>
                 <h1 className={profile.register}>Registered Events:</h1>
+                <div className="carousel-container">
+                  <Swiper
+                    modules={[Navigation, Pagination, Scrollbar, A11y]}
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    breakpoints={{
+                      640: { slidesPerView: 1 },
+                      768: { slidesPerView: 2 },
+                      1024: { slidesPerView: 3 }
+                    }}
+                    navigation
+                    pagination={{ clickable: true }}
+                  >
+                    {registrationData.length > 0 ? (
+                      registrationData.map((event, index) => (
+                        <SwiperSlide key={index} className="carousel-slide">
+                          <RegisteredEventsCards isPaid={true} data={event} />
+                        </SwiperSlide>
+                      ))
+                    ) : (
+                      <div className="no-events">No Registered Events Yet!</div>
+                    )}
+                  </Swiper>
+                </div>
                 <div className={profile.registered}>
-                  {registrationData.length > 0 ? (
-                    registrationData.map((event) => <RegisteredEventsCards isPaid={true} data={event} />)
-                  ) : (
-                    <h1>No Registered Events Yet!</h1>
-                  )}
+
                 </div>
                 <br />
               </div>

@@ -17,6 +17,10 @@
     margin-bottom: 15px;
     border: 2px solid #d5d3d4;
     background-color: #d5d3d4;
+    background-image: url('../../assets/basketball-player.png');
+    background-size: cover;
+    
+
 
     gap: 5rem;
 }
