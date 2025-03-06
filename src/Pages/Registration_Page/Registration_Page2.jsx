@@ -34,6 +34,11 @@ const TeamRegistration = () => {
   const maxFaculty = 2; // Maximum 2 faculties allowed
 
   const addFaculty = () => {
+    if (formData.accommodation && formData.payAccommodation) {
+      setInfo("Cannot modify member Count when accommodation payment is confirmed.", "error");
+      return;
+    }
+
     if (facultyMembers.length < maxFaculty) {
       setFacultyMembers([...facultyMembers, { facultyName: "", facultyAadhar: "" }]);
     } else {
@@ -42,6 +47,11 @@ const TeamRegistration = () => {
   };
 
   const deleteFaculty = (index) => {
+    if (formData.accommodation && formData.payAccommodation) {
+      setInfo("Cannot modify member Count when accommodation payment is confirmed.", "error");
+      return;
+    }
+
     setFacultyMembers(facultyMembers.filter((_, i) => i !== index));
   };
 
@@ -54,6 +64,11 @@ const TeamRegistration = () => {
 
 
   const addMember = () => {
+    if (formData.accommodation && formData.payAccommodation) {
+      setInfo("Cannot modify members Count when accommodation payment is confirmed.", "error");
+      return;
+    }
+
     if (members.length < maxMembers) {
       setMembers([...members, { memberName: "", clgId: "", govId: "" }]);
     } else {
@@ -62,6 +77,11 @@ const TeamRegistration = () => {
   };
 
   const deleteMember = (index) => {
+    if (formData.accommodation && formData.payAccommodation) {
+      setInfo("Cannot modify member Count when accommodation payment is confirmed.", "error");
+      return;
+    }
+
     if (members.length > minMembers) {
       setMembers(members.filter((_, i) => i !== index));
     } else {
@@ -212,7 +232,7 @@ const TeamRegistration = () => {
                       <td>
                         <input
                           type="text"
-                          placeholder="Enter Faculty Name"
+                          placeholder="Enter Official Name"
                           value={faculty.facultyName}
                           onChange={(e) => handleFacultyInputChange(index, "facultyName", e.target.value)}
                           required
@@ -237,7 +257,7 @@ const TeamRegistration = () => {
             </div>
           )}
           <button type="button" className="btn add-btn" onClick={addFaculty}>
-            Add Faculty
+            Add Officials
           </button>
 
           <button type="submit" className="btn" disabled={loading}>{loading ? <FaSpinner /> : "Submit"}</button>
