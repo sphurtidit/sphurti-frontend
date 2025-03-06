@@ -127,19 +127,30 @@ function ProfilePage() {
               <br />
               <div className={profile.scroller}>
                 <h1 className={profile.register}>Registered Events:</h1>
-                <Swiper
-                  modules={[Navigation, Pagination, Scrollbar, A11y]}
-                  spaceBetween={50}
-                  slidesPerView={3}
-                  navigation
-                  pagination={{ clickable: true }}
-                >
-                  {registrationData.length > 0 ? (
-                    registrationData.map((event) => <SwiperSlide><RegisteredEventsCards isPaid={true} data={event}/></SwiperSlide>)
-                  ) : (
-                    <h1>No Registered Events Yet!</h1>
-                  )}
-                </Swiper>
+                <div className="carousel-container">
+                  <Swiper
+                    modules={[Navigation, Pagination, Scrollbar, A11y]}
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    breakpoints={{
+                      640: { slidesPerView: 1 },
+                      768: { slidesPerView: 2 },
+                      1024: { slidesPerView: 3 }
+                    }}
+                    navigation
+                    pagination={{ clickable: true }}
+                  >
+                    {registrationData.length > 0 ? (
+                      registrationData.map((event, index) => (
+                        <SwiperSlide key={index} className="carousel-slide">
+                          <RegisteredEventsCards isPaid={true} data={event} />
+                        </SwiperSlide>
+                      ))
+                    ) : (
+                      <div className="no-events">No Registered Events Yet!</div>
+                    )}
+                  </Swiper>
+                </div>
                 <div className={profile.registered}>
 
                 </div>
