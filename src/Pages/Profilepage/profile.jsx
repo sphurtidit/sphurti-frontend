@@ -4,27 +4,32 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useUserStore from "../../store/userStore";
-import Navbar from '../../Components/Navbar/Navbar';
+import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
+import editIcon from "../../assets/pen-to-square-solid.svg";
 import { Lines } from "react-preloaders";
+import basketballImage from "../../assets/basketball-player.png";
 import RegisteredEventsCards from "./RegisteredEventsCards/RegisteredEventsCards";
 import PayModal from "./paymodal";
 import useEventStore from "../../store/eventStore";
+import EditProfileModal from "./EditProfileModal"; 
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 function ProfilePage() {
   const navigate = useNavigate();
-  const { user, fetchUser, logout, getRegisteredEvents, registeredEvents } = useUserStore();
+  const { user, fetchUser, logout, getRegisteredEvents, registeredEvents } =
+    useUserStore();
   const { events, fetchEvents } = useEventStore();
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
+  const [editModalOpen, setEditModalOpen] = useState(false); 
+  const [profileImage, setProfileImage] = useState(null); 
   const [registrationData, setRegistrationData] = useState([]);
 
   useEffect(() => {
@@ -42,14 +47,16 @@ function ProfilePage() {
   }, [user, fetchUser, getRegisteredEvents]);
 
   useEffect(() => {
-
     if (registeredEvents.length > 0 && events.length > 0) {
       const updatedRegistrations = registeredEvents.map((element) => {
         const eventData = events.find((event) => event._id === element.eventId);
         return {
           ...element,
           eventName: eventData?.name || "Unknown Event",
-          categoryName: eventData?.eventCategory?.find((category) => category._id === element.catId)?.categoryName || "Unknown Category",
+          categoryName:
+            eventData?.eventCategory?.find(
+              (category) => category._id === element.catId
+            )?.categoryName || "Unknown Category",
         };
       });
 
@@ -59,6 +66,11 @@ function ProfilePage() {
 
   const handleNavigation = (path) => {
     navigate(path);
+  };
+
+  const handleSaveImage = (image) => {
+    setProfileImage(image);
+    setEditModalOpen(false);
   };
 
   return (
@@ -71,8 +83,26 @@ function ProfilePage() {
             <div className={profile.mainbox}>
               <div className={profile.info}>
                 <div className={profile.daba}>
-                  <div className={profile.image}></div>
-                  <button className={profile.btn1} onClick={() => setModalOpen(true)}>
+                  <div className={profile.imageContainer}>
+                    <div
+                      className={profile.image}
+                      style={{
+                        backgroundImage: `url(${
+                          profileImage || basketballImage
+                        })`,
+                      }}
+                    ></div>
+                    <img
+                      src={editIcon}
+                      alt="Edit"
+                      className={profile.editIcon}
+                      onClick={() => setEditModalOpen(true)} 
+                    />
+                  </div>
+                  <button
+                    className={profile.btn1}
+                    onClick={() => setModalOpen(true)}
+                  >
                     Payments
                   </button>
                   <button
@@ -93,27 +123,32 @@ function ProfilePage() {
                   </div>
                   <div className={profile.bgplate}>
                     <h2 className={profile.text}>
-                      Phone No.:<span className={profile.dox}> {user?.phone_no}</span>
+                      Phone No.:
+                      <span className={profile.dox}> {user?.phone_no}</span>
                     </h2>
                   </div>
                   <div className={profile.bgplate}>
                     <h2 className={profile.text}>
-                      Email Id:<span className={profile.dox}> {user?.email}</span>
+                      Email Id:
+                      <span className={profile.dox}> {user?.email}</span>
                     </h2>
                   </div>
                   <div className={profile.bgplate}>
                     <h2 className={profile.text}>
-                      College: <span className={profile.dox}>{user?.college_name}</span>
+                      College:{" "}
+                      <span className={profile.dox}>{user?.college_name}</span>
                     </h2>
                   </div>
                   <div className={profile.bgplate}>
                     <h2 className={profile.text}>
-                      College ID: <span className={profile.dox}>{user?.college_id}</span>
+                      College ID:{" "}
+                      <span className={profile.dox}>{user?.college_id}</span>
                     </h2>
                   </div>
                   <div className={profile.bgplate}>
                     <h2 className={profile.text}>
-                      Branch: <span className={profile.dox}>{user?.branch}</span>
+                      Branch:{" "}
+                      <span className={profile.dox}>{user?.branch}</span>
                     </h2>
                   </div>
                   <div className={profile.bgplate}>
@@ -135,7 +170,7 @@ function ProfilePage() {
                     breakpoints={{
                       640: { slidesPerView: 1 },
                       768: { slidesPerView: 2 },
-                      1024: { slidesPerView: 3 }
+                      1024: { slidesPerView: 3 },
                     }}
                     navigation
                     pagination={{ clickable: true }}
@@ -151,16 +186,25 @@ function ProfilePage() {
                     )}
                   </Swiper>
                 </div>
-                <div className={profile.registered}>
-
-                </div>
+                <div className={profile.registered}></div>
                 <br />
               </div>
             </div>
           </div>
         </>
       )}
-      <PayModal show={modalOpen} onClose={() => setModalOpen(false)} data={registrationData} contact={user?.phone_no} email={user?.email} />
+      <PayModal
+        show={modalOpen}
+        onClose={() => setModalOpen(false)}
+        data={registrationData}
+        contact={user?.phone_no}
+        email={user?.email}
+      />
+      <EditProfileModal
+        show={editModalOpen}
+        onClose={() => setEditModalOpen(false)}
+        onSave={handleSaveImage} 
+      />
       <Lines customLoading={loading} />
     </div>
   );

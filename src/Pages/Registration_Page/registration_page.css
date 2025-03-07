@@ -1,23 +1,25 @@
-.registration-container{
+.registration-container {
     width: 100vw;
 }
 
+/* Form Container */
 .reg-form-container {
     text-align: center;
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(20px) saturate(200%);
-    padding: 1rem 4rem;
+    padding: 1.5rem 4rem;
     border-radius: 40px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
     border: 1px solid #EE0942;
     margin: 8rem 4rem;
 }
 
+/* Heading Styles */
 .reg-form-container h1 {
     font-family: 'SF Sports Night';
-    font-size: 3rem; 
+    font-size: 3rem;
     margin-bottom: 1rem;
-    color: #2374E8; 
+    color: #2374E8;
 }
 
 .reg-heading {
@@ -25,23 +27,24 @@
     color: #EE0942;
     font-size: 2.3rem;
     line-height: normal;
-  }
+}
 
-  .reg-categoryname {
+.reg-categoryname {
     font-family: 'SF Sports Night';
     color: #EE0942;
     font-size: 1.5rem;
     line-height: normal;
-  }
+}
 
-  .reg-member{
+.reg-member {
     font-family: 'SF Sports Night';
     color: #EE0942;
     font-size: 1.3rem;
     text-align: left;
-  }
+}
 
-  .member-box {
+/* Member Box */
+.member-box {
     background: rgba(255, 255, 255, 0.2);
     margin: 10px 0;
     padding: 15px;
@@ -52,18 +55,26 @@
     align-items: flex-start;
 }
 
-.member-box-title{
+/* Member Box Title */
+.member-box-title {
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
 
+/* Delete Button */
 .delete-btn {
     font-size: 2rem;
     color: #EE0942;
     cursor: pointer;
+    transition: color 0.2s ease-in-out;
 }
 
+.delete-btn:hover {
+    color: #b50d35;
+}
+
+/* Input Fields */
 .input-field {
     margin-bottom: 1rem;
     text-align: left;
@@ -75,113 +86,83 @@
     margin-bottom: 5px;
     font-size: 1.3rem;
     font-weight: bold;
-    color: #EE0942; /* Red */
+    color: #EE0942;
 }
 
 .input-field input,
 .input-field textarea,
-.input-field select {  /* Included select for dropdown */
+.input-field select {
     font-family: 'Inter';
     width: 100%;
-    height: 100%;
     padding: 12px;
     border-radius: 10px;
     border: 2px solid #2374E8;
     font-size: 1.5rem;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-    transition: 0.3s ease-in-out;
-    color: black; 
+    transition: all 0.3s ease-in-out;
+    color: black;
     margin-bottom: 0.5rem;
     cursor: pointer;
 }
 
-/* Placeholder */
+/* Input Placeholder */
 .input-field input::placeholder {
-    color: rgba(0, 0, 0, 0.5); /* Slightly darker placeholder */
+    color: rgba(0, 0, 0, 0.5);
 }
 
+/* Focus Effect */
 .input-field input:focus,
-.input-field select:focus { 
+.input-field select:focus {
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
 }
 
+/* Table Styling */
 .table-responsive {
     width: 100%;
     overflow-x: auto;
     margin: 1rem 0;
 }
 
+/* Member Table */
 .member-table {
     width: 100%;
     border-collapse: collapse;
     min-width: 600px;
-    border-radius: 0;
 }
 
 .member-table th,
 .member-table td {
-    padding: 8px;
+    padding: 10px;
     font-size: 1rem;
     background-color: white;
-    border: 2px solid #2374E8; /* Blue */
+    border: 2px solid #2374E8;
     color: black;
+    text-align: center;
 }
 
-.member-table input {
+/* Input Fields inside Table */
+.member-table input,
+.member-table select {
     width: 100%;
     padding: 8px;
     font-size: 0.9rem;
+    border: 1px solid #2374E8;
+    border-radius: 8px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    font-weight: 700;
 }
 
-.delete-btn {
-    font-size: 1.5rem;
+/* Gender Dropdown */
+.member-table select {
+    cursor: pointer;
+    font-size: 1rem;
 }
 
-/* Mobile-specific styles */
-@media screen and (max-width: 768px) {
-    .member-table {
-        min-width: 100%; /* Ensures table adapts */
-    }
-
-    .member-table th,
-    .member-table td {
-        font-size: 0.9rem;
-        padding: 6px;
-    }
-
-    .member-table input {
-        font-size: 0.85rem;
-        padding: 6px;
-    }
-
-    .delete-btn {
-        font-size: 1.2rem;
-    }
-}
-
-/* Further optimize for very small screens */
-@media screen and (max-width: 480px) {
-    .member-table th {
-        font-size: 0.8rem;
-    }
-
-    .member-table td {
-        font-size: 0.8rem;
-    }
-
-    .member-table input {
-        font-size: 0.75rem;
-        padding: 5px;
-    }
-
-    .delete-btn {
-        font-size: 1rem;
-    }
-}
-
-/* Submit Button */
+/* Buttons */
 .btn {
     font-family: 'Inter';
     width: 100%;
@@ -193,7 +174,12 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     background-color: #EE0942;
+    border: none;
     margin: 1rem 0;
+}
+
+.btn:hover {
+    background-color: #b50d35;
 }
 
 .add-btn {
@@ -202,13 +188,64 @@
     border: 2px solid #EE0942;
 }
 
+.add-btn:hover {
+    background-color: #EE0942;
+    color: white;
+}
+
+/* Mobile-Specific Styles */
 @media screen and (max-width: 768px) {
     .reg-form-container {
         padding: 1rem 2rem;
+        margin: 4rem 1rem;
     }
 
     .reg-form-container h1 {
-        font-size: 2.5rem; /* Decreased size */
+        font-size: 2.5rem;
     }
-    
+
+    .member-table {
+        min-width: 100%;
+    }
+
+    .member-table th,
+    .member-table td {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    .member-table input,
+    .member-table select {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+
+    .delete-btn {
+        font-size: 1.2rem;
+    }
+}
+
+/* Further optimize for very small screens */
+@media screen and (max-width: 480px) {
+    .reg-form-container {
+        padding: 1rem;
+    }
+
+    .member-table th {
+        font-size: 0.8rem;
+    }
+
+    .member-table td {
+        font-size: 0.8rem;
+    }
+
+    .member-table input,
+    .member-table select {
+        font-size: 0.75rem;
+        padding: 5px;
+    }
+
+    .delete-btn {
+        font-size: 1rem;
+    }
 }

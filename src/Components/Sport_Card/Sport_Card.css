@@ -207,8 +207,6 @@
 }
 .categoryname{
   position: relative;
-  top: -2rem;
-  left: -11rem;
   color: var(--primary-color);
   font-family: 'SF Sports Night';
   font-size: 1.5rem;
@@ -271,6 +269,10 @@
 
   .left-section {
     flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
   }
 
   .right-section {
