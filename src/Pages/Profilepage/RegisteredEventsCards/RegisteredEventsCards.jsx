@@ -2,9 +2,10 @@ import "./RegisteredEventsCards.css";
 import eventImages from "../../../utils/eventImages";
 import { FaCircleCheck } from "react-icons/fa6";
 import { IoIosCloseCircle } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const RegisteredEventsCards = ({ data }) => {
-  console.log(data);
+    const navigate = useNavigate();
   return (
     <div className="whole-container">
       <div className="rcard-container">
@@ -55,6 +56,10 @@ const RegisteredEventsCards = ({ data }) => {
   </div>
 )}
 
+        </div>
+        <div className="rcard-buttons">
+            {/* <button className="rcard-button">View Details</button> */}
+            <button className="rcard-button" onClick={() => navigate(`/Reg_Pg1/${data._id}`)}>Edit Registration</button>
         </div>
       </div>
     </div>

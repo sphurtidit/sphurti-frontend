@@ -93,6 +93,14 @@
   width: fit-content;
 }
 
+.rcard-button{
+  background-color: white;
+  color: #ee0942;
+  border: 2px solid #ee0942;
+  padding: 1rem;
+  border-radius: 25px;
+}
+
 
 /* For tablets and smaller screens */
 @media (max-width: 2000px) {
