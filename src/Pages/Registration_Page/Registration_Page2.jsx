@@ -28,11 +28,11 @@ const TeamRegistration = () => {
     id && nextData?.member?.length
       ? nextData.member
       : Array.from({ length: minMembers }, () => ({
-          memberName: "",
-          clgId: "",
-          govId: "",
-          gender: isTableTennis ? "" : undefined, // Add gender only for Table Tennis
-        }))
+        memberName: "",
+        clgId: "",
+        govId: "",
+        gender: isTableTennis ? "" : undefined, // Add gender only for Table Tennis
+      }))
   );
 
   const [facultyMembers, setFacultyMembers] = useState(
@@ -201,6 +201,51 @@ const TeamRegistration = () => {
             </table>
           </div>
           <button type="button" className="btn add-btn" onClick={addMember}>Add Member</button>
+          {facultyMembers.length > 0 && (
+            <div className="table-responsive">
+              <table className="member-table"> {/* Using same class for consistent styling */}
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Aadhar ID</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {facultyMembers.map((faculty, index) => (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Enter Official Name"
+                          value={faculty.facultyName}
+                          onChange={(e) => handleFacultyInputChange(index, "facultyName", e.target.value)}
+                          required
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="number"
+                          placeholder="Enter Aadhar ID"
+                          value={faculty.facultyAadhar}
+                          onChange={(e) => handleFacultyInputChange(index, "facultyAadhar", e.target.value)}
+                          required
+                        />
+                      </td>
+                      <td>
+                        <MdDeleteOutline className="delete-btn" onClick={() => deleteFaculty(index)} />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          <button type="button" className="btn add-btn" onClick={addFaculty}>
+            Add Officials
+          </button>
           <button type="submit" className="btn" disabled={loading}>{loading ? <FaSpinner /> : "Submit"}</button>
         </form>
       </div>
