@@ -210,6 +210,7 @@ const RegistrationForm = () => {
                   value={formData.accommodation}
                   onChange={handleChange}
                   required
+                  disabled={formData.payAccommodation}
                 >
                   <option value="false">No</option>
                   <option value="true">Yes</option>
