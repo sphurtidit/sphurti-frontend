@@ -1,0 +1,214 @@
+.registration-container{
+    width: 100vw;
+}
+
+.reg-form-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px) saturate(200%);
+    padding: 1rem 4rem;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); 
+    border: 1px solid #EE0942;
+    margin: 8rem 4rem;
+}
+
+.reg-form-container h1 {
+    font-family: 'SF Sports Night';
+    font-size: 3rem; 
+    margin-bottom: 1rem;
+    color: #2374E8; 
+}
+
+.reg-heading {
+    font-family: 'SF Sports Night';
+    color: #EE0942;
+    font-size: 2.3rem;
+    line-height: normal;
+  }
+
+  .reg-categoryname {
+    font-family: 'SF Sports Night';
+    color: #EE0942;
+    font-size: 1.5rem;
+    line-height: normal;
+  }
+
+  .reg-member{
+    font-family: 'SF Sports Night';
+    color: #EE0942;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+
+  .member-box {
+    background: rgba(255, 255, 255, 0.2);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #2374E8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.member-box-title{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.delete-btn {
+    font-size: 2rem;
+    color: #EE0942;
+    cursor: pointer;
+}
+
+.input-field {
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+.input-field label {
+    font-family: 'Inter';
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #EE0942; /* Red */
+}
+
+.input-field input,
+.input-field textarea,
+.input-field select {  /* Included select for dropdown */
+    font-family: 'Inter';
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #2374E8;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease-in-out;
+    color: black; 
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+/* Placeholder */
+.input-field input::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Slightly darker placeholder */
+}
+
+.input-field input:focus,
+.input-field select:focus { 
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.member-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    border-radius: 0;
+}
+
+.member-table th,
+.member-table td {
+    padding: 8px;
+    font-size: 1rem;
+    background-color: white;
+    border: 2px solid #2374E8; /* Blue */
+    color: black;
+}
+
+.member-table input {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.delete-btn {
+    font-size: 1.5rem;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    .member-table {
+        min-width: 100%; /* Ensures table adapts */
+    }
+
+    .member-table th,
+    .member-table td {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    .member-table input {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+
+    .delete-btn {
+        font-size: 1.2rem;
+    }
+}
+
+/* Further optimize for very small screens */
+@media screen and (max-width: 480px) {
+    .member-table th {
+        font-size: 0.8rem;
+    }
+
+    .member-table td {
+        font-size: 0.8rem;
+    }
+
+    .member-table input {
+        font-size: 0.75rem;
+        padding: 5px;
+    }
+
+    .delete-btn {
+        font-size: 1rem;
+    }
+}
+
+/* Submit Button */
+.btn {
+    font-family: 'Inter';
+    width: 100%;
+    padding: 14px;
+    border-radius: 15px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: #EE0942;
+    margin: 1rem 0;
+}
+
+.add-btn {
+    color: #EE0942;
+    background-color: white;
+    border: 2px solid #EE0942;
+}
+
+@media screen and (max-width: 768px) {
+    .reg-form-container {
+        padding: 1rem 2rem;
+    }
+
+    .reg-form-container h1 {
+        font-size: 2.5rem; /* Decreased size */
+    }
+    
+}

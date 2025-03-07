@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from "../../Components/Navbar/nav";
+import Navbar from "../../Components/Navbar/Navbar";
 import Card from "../../Components/DeveloperCard/Card";
 import style from "./developers.module.css";
 import Footer from '../../Components/Footer/Footer';

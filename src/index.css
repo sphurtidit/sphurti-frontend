@@ -1,5 +1,9 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary-font: "Outfit", sans-serif; /* Headings/Titles */
+  --secondary-font: "Poppins", sans-serif; /* Body text */
+  --tertiary-font: "Outfit", sans-serif; /* Buttons & Inputs */
+
+  font-family: var(--secondary-font);
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,7 +17,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Apply fonts to elements */
 body {
+  font-family: var(--secondary-font);
   margin: 0;
   display: flex;
   place-items: center;
@@ -24,48 +30,33 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  text-align: center;
-  margin: 0;
-}
-
-/* button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+/* Headings/Titles */
+h1, h2,h3, h4, h5, h6 {
+  font-family: var(--primary-font);
   font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-} */
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
-@media (max-width: 768px) {
-  .contact {
-    font-size: 1em;
-    margin: 0.8em 0;
-    text-align: center;
-  }
+  font-style: bold;
+  font-weight: 800;
 }
 
-@media (max-width: 480px) {
-  .contact {
-    font-size: 0.9em;
-    margin: 0.5em 0;
-  }
+/* General text (paragraphs, lists, spans) */
+p, span, li {
+  font-family: var(--secondary-font);
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 400;
 }
+
+/* Buttons and Input Fields */
+button, input, textarea {
+  font-family: var(--tertiary-font);
+
+    box-shadow: none ;
+    border: none ;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
   :root {
     font-size: 90%;
@@ -106,22 +97,25 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
-  /* button {
-    background-color: #f9f9f9;
-  } */
+}
+
+/* Font Definitions */
+@font-face {
+  font-family: "SF Sports";
+  src: url('src/fonts/SF/SF Sports Night NS.ttf') format('woff2');
 }
 
 @font-face {
-  font-family: 'SF Sports';
-    src: url('./fonts/SF/SF Sports Night NS.ttf') format('woff2'); /* IE9 Compat Modes */
-    
+  font-family: "DM Sans";
+  src: url('src/fonts/DM/DMSans-Bold.ttf') format('woff2');
 }
-@font-face {
-  font-family: 'DM Sans';
-  src: url('./fonts/DM/DMSans-Bold.ttf') format('woff2');
-}
+
 @font-face {
   font-family: "Outfit";
-  src: url('./fonts/outfit/Outfit-Bold.ttf') format('woff2');
+  src: url('src/fonts/outfit/Outfit-Bold.ttf') format('woff2');
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url('src/fonts/Poppins/Poppins-Regular.ttf') format('woff2');
+}

@@ -24,93 +24,39 @@
 }
 
 .csoon{
-    width: 45%;
-    /* margin-bottom: 0p5x; */
+    width: 25%;
 }
 .cards img {
     height: 50vh;
     padding: 1rem;
 }
-.apply {
-    background-color: #ee0942;
-    border-radius: 0;
-    color: white;
-    padding: 15px 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    margin: 15px 2px;
-    cursor: pointer;
-    transition-duration: 0.4s;
-    transform: skew(-10deg);
-}
-.apply {
-    position: absolute;
-    top: 505%;  /* Adjust vertical positioning */
-    /* left: %; Adjust horizontal positioning */
-    z-index: 10;
+
+
+
+.csoon {
+    width: 25%;
 }
 
-.apply {
-    background-color: #E90037; /* Red color matching the reference */
-    color: white;
-    border: none;
-    padding: 14px 40px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    
-    /* Creating the exact diagonal shape */
-    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
-}
-
-/* Hover effect */
-.apply:hover {
-    background-color: #c40022;
-    transform: scale(1.05);
-}
-
-@media only screen  and (max-width: 1200px) {
-    .cards img {
-        height: 40vh;
+@media only screen and (max-width: 768px) {
+    .csoon {
+        width: 60%;
     }
 }
 
-@media only screen  and (max-width: 1000px) {
-    .cards img {
-        height: 35vh;
+@media only screen and (max-width: 1024px) {
+    .csoon {
+        width: 40%;
     }
 }
 
-/* @media only screen  and (max-width: 768px) {
-    .cards::-webkit-scrollbar {
-        display: none;
-      }
-      
-      Hide scrollbar for IE, Edge and Firefox
-    .cards {
-        -ms-overflow-style: none;  IE and Edge
-        scrollbar-width: none;  Firefox
-      }
-    
-    .cards {
-        width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
-        justify-content: start;
-        align-items: start;
+@media only screen and (max-width: 480px) {
+    .csoon {
+        width: 60%;
     }
-    .cards img {
-        height: 30vh;
-        width: auto;
-    }
-} */
+}
 
-@media only screen  and (max-width: 768px) {
-    .cards img {
-        height: 30vh;
+@media only screen and (max-width: 320px) {
+    .csoon {
+        width: 80%;
     }
 }

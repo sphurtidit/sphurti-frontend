@@ -28,8 +28,7 @@ const SportsCard = ({
 
   const navigateToRegistraion = () => {
     if(user){
-      console.log("Category Data:", category);
-      navigate(`/Reg_Pg1`, { state: category })
+      navigate(`/Reg_Pg1`, { state: {...category, "eventName" : name} })
     }else{
       setTimeout(() => {
         setInfo("Please login to register to events", "error");
@@ -75,45 +74,29 @@ const SportsCard = ({
             </div>
             <div className="details">
               <div>
-                <p className="strong Subhodeep">Prize Money:</p>
-                <span className="prize">
-                  {" "}
-                  Winners: &#8377;{prizeWinner} &nbsp;
-                  <span className="pipe">|</span> &nbsp;Runner Up: &#8377;
-                  {prizeRunnerUp}{" "}
+                <p className="strong ">Prize Money:&nbsp;</p>
+                <span className="card-prize">
+                  <span className="pipe">|</span> &nbsp;
+                  Winner: &nbsp;<span className="main-prize" >&#8377;{prizeWinner}/-</span> &nbsp;
+                  <br/>
+                  <span className="pipe">|</span> &nbsp; Runner Up: &nbsp;<span className="main-prize"> &#8377;
+                  {prizeRunnerUp}/-</span>
+                  
                 </span>
-                {prizeRunnerUp}
               </div>
-              {/* <p>
-                <strong>Team Size:</strong> {minNumber} - {maxNumber} players
-              </p> */}
-              {/* <div className="details">
-                <p className="strong">
-                  Schedule: <a href="" className="amt">Download Schedule</a>
-                </p>
-                <p className="strong">
-                  Rule Book:{" "}
-                  <a href="" className="amt">
-                    Download
-                  </a>
-                </p>
-              </div> */}
-              {/* <div>
-                <p className="strong">Coordinators:</p>
-                Name:Mobile Number&nbsp;
-                <span className="pipe">|</span> &nbsp; Name:Mobile Number
-              </div> */}
             </div>
             <div className="button-group">
               <button
-                className="results"
+                className="card-results"
                 onClick={() => navigateToRegistraion()}
+                disabled={name === "Table Tennis "}
               >
                 Register
               </button>
               <button
-                className="results"
+                className="card-results"
                 onClick={() => openRules(rules)}
+                disabled={name === "Table Tennis "}
               >
                 Rules
               </button>

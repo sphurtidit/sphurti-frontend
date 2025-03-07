@@ -1,0 +1,432 @@
+
+.body-wrapper {
+  position: relative; /* Wrapper for proper positioning */
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginContainer {
+  position: relative; /* Keeps container independent of overlays */
+  width: 80%; /* Example width */
+  max-width: 500px; /* Example max width */
+  background-color: rgba(255, 255, 255, 0.9); /* Optional background */
+  border: 2px solid #ee0942;
+  padding: 1rem; /* Padding for inner content */
+  border-radius: 10px;
+  z-index: 1; /* Ensures it stays above overlays */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
+.overlay1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Ensure it stays behind the container */
+}
+
+.overlay2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure it's behind everything else */
+}
+  
+  .loginBox {
+   
+    border-radius: 25px;
+    padding: 1.5rem 2.5rem;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+   
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+  
+    z-index: 1;
+   
+    
+  }
+  .email{
+    text-align: left;
+    margin: 1.2rem 2rem;
+
+  }
+.kash {
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 1rem;
+    background: linear-gradient(145deg, #fdfbfb, #f1f1f1);
+    color: black;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    box-sizing: border-box;
+}
+
+.kash input {
+    background-color: black; /* Changes the input field background to black */
+    color: white; /* Makes the text inside the input white for contrast */
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.kash input::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: red;
+}
+
+.bgimage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+
+
+.icon {
+    height: 0px;
+    padding: 10px;
+    margin: 70px 10px 10px 10px;
+    grid-row: 1/span 2;
+    grid-column: 3/span 4;
+}
+
+h1 {
+    font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+label {
+    color: black;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+
+
+.forpass {
+    text-align: right;
+    font-size: 0.9rem;
+    align-self: flex-end;
+    color: #ee0942;
+    text-decoration: underline;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.loginBtn {
+    padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background-color: #ee0942;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 50%;
+  align-self: center;
+}
+.signup{
+    color: #ee0942;
+    font-weight: 600;
+    cursor: pointer;
+}
+.loginBtn:hover {
+    scale: 1.01;
+}
+
+/* .socialBtn {
+    margin-top: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #6a1b9a;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    box-sizing: border-box;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.7);
+} */
+
+/* .socialBtn:hover {
+    background-color: #f7eaf7;
+    color: #4a148c;
+} */
+
+.signupText {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    color: #555;
+}
+
+/* .signupText a {
+    color: #7c4dff;
+    font-weight: bold;
+    text-decoration: none;
+} */
+
+.signupText a:hover {
+    text-decoration: underline;
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem; /* Smaller font size for tablets */
+  }
+
+  .loginContainer {
+    width: 95%; /* Wider container for smaller screens */
+  }
+  .email {
+    margin: 1rem 2rem; /* Adjusted margin for smaller screens */
+  }
+  .loginBtn {
+    width: 100%; /* Full width for smaller screens */
+  }
+}
+
+/* Default styles for Desktop (≥1024px) */
+.container {
+  width: 50vw;
+}
+
+.loginContainer {
+  width: 60vw;
+}
+
+.loginBox {
+  padding: 1.5rem 3rem;
+  height: auto;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.logo1, .logo2, .logo3 {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.loginBtn {
+  width: 60%;
+  padding: 10px;
+  margin-top: 1rem;
+}
+
+.signupText {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) {
+  .container {
+    width: 70vw;
+  }
+
+  .loginContainer {
+    width: 80vw;
+    margin: 2rem;
+    padding: 1rem;
+  }
+
+  .loginBox {
+    padding: 1rem 2rem;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .logo1, .logo2, .logo3 {
+    height: 45px;
+    margin-right: 10px;
+  }
+
+  .loginBtn {
+    width: 70%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .signupText {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile (481px - 767px) */
+@media (max-width: 767px) {
+  .container {
+    width: 90vw;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .loginContainer {
+    width: 100vw;
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  .loginBox {
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .logo1, .logo2, .logo3 {
+    height: 40px;
+    margin-right: 5px;
+  }
+
+  .loginBtn {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+
+  .signupText {
+    font-size: 0.8rem;
+  }
+
+  .email {
+    margin: 1rem;
+  }
+
+  .forpass {
+    font-size: 0.8rem;
+  }
+
+  .socialBtn {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Extra Small Screens (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    width: 95vw;
+    height: auto;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+
+  .loginContainer {
+    width: 100%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .loginBox {
+    padding: 1rem 0.5rem;
+    border-radius: 1rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .formGroup {
+    margin-bottom: 0.8rem;
+  }
+
+  label {
+    font-size: 0.85rem;
+  }
+
+  input {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .loginBtn {
+    width: 85%;
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .signupText {
+    font-size: 0.75rem;
+  }
+
+  .logo1, .logo2, .logo3 {
+    height: 35px;
+    margin-right: 3px;
+  }
+
+  .email {
+    margin: 0.8rem;
+  }
+
+  .forpass {
+    font-size: 0.75rem;
+  }
+
+  .socialBtn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.7rem;
+  }
+}
