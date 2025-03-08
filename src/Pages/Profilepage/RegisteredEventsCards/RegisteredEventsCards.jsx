@@ -38,7 +38,7 @@ const RegisteredEventsCards = ({ data }) => {
             ) : (
               <IoIosCloseCircle style={{ color: "red" }} /> // Show Cross icon if Unpaid
             )}
-            {data.payStatus ? "Paid" : "Non-Paid"}
+            {data.payStatus ? "Payment complete" : "Payment pending"}
           </div>
 
           {!data.accommodation ? (
