@@ -46,23 +46,23 @@ function ProfilePage() {
     setLoading(false);
   }, [user, fetchUser, getRegisteredEvents]);
 
-  // useEffect(() => {
-  //   if (registeredEvents.length > 0 && events.length > 0) {
-  //     const updatedRegistrations = registeredEvents.map((element) => {
-  //       const eventData = events.find((event) => event._id === element.eventId);
-  //       return {
-  //         ...element,
-  //         eventName: eventData?.name || "Unknown Event",
-  //         categoryName:
-  //           eventData?.eventCategory?.find(
-  //             (category) => category._id === element.catId
-  //           )?.categoryName || "Unknown Category",
-  //       };
-  //     });
+  useEffect(() => {
+    if (registeredEvents.length > 0 && events.length > 0) {
+      const updatedRegistrations = registeredEvents.map((element) => {
+        const eventData = events.find((event) => event._id === element.eventId);
+        return {
+          ...element,
+          eventName: eventData?.name || "Unknown Event",
+          categoryName:
+            eventData?.eventCategory?.find(
+              (category) => category._id === element.catId
+            )?.categoryName || "Unknown Category",
+        };
+      });
 
-  //     setRegistrationData(updatedRegistrations);
-  //   }
-  // }, [registeredEvents, events]);
+      setRegistrationData(updatedRegistrations);
+    }
+  }, [registeredEvents, events]);
 
   const handleNavigation = (path) => {
     navigate(path);
