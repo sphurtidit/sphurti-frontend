@@ -14,11 +14,11 @@
 }
 @font-face {
     font-family: "Outfit";
-    src: url('./fonts/outfit/Outfit-Bold.ttf') format('woff2');
+    src: url('./fonts/OUTFIT/Outfit-Bold.ttf') format('woff2');
 }
 @font-face {
     font-family: "Poppins";
-    src: url('src/fonts/Poppins/Poppins-Regular.ttf') format('woff2');
+    src: url('./fonts/POPPINS/Poppins-Bold.ttf') format('woff2');
   }
   
 *{
