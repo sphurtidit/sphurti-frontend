@@ -9,6 +9,7 @@ import loginback from "../../assets/loginback.png";
 import loginbackground from "../../assets/loginbackground.png";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer"; // Import Footer component
+import {FaSpinner} from "react-icons/fa"
 
 function Signinpage() {
   const [isOtpVisible, setOtpVisible] = useState(false);
