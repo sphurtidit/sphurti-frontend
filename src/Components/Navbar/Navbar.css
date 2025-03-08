@@ -318,6 +318,7 @@
   .nav-container {
     flex-direction: row;
     justify-content: space-between;
+    height: 7%;
     padding: 0.5rem;
   }
 
