@@ -1,48 +1,50 @@
-.frame-container {
-   
-    box-sizing: border-box;
-    /* max-width: 1000px;   */
-    background-color: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2);
-    height: 80%;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-}
-nav {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    max-width: 100vw; /* Adjust based on layout */
-    background-color: #fff;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-.header {
-    width: 70vw;
-    max-width: 70vw;
-    height: 8vh;
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fdf3e2;
-    padding: 15px 30px;
-    border-bottom: 2px solid #fdf3e2;
-    border-radius: 15px;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.frame-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    border-radius: 30px;
+    border: 3px solid #559cff;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.header {
+    text-align: center;
+    padding: 15px 30px;
+}
+
 .header .results-text {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 24px;
-    color: #000;
+    color: #035fe0;
+    text-transform: uppercase;
 }
 
 .table-container {
@@ -50,54 +52,113 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow-y: auto;
+    overflow-x: auto;
     flex-grow: 1;
+    border-radius: 30px;
+    background: transparent;
+    width: 100%;
 }
 
 table {
-    width: 90%;
-    border-collapse: collapse;
-    border-radius: 12px;
+    width: 100%;
+    min-width: 600px;
+    border-collapse: separate;
+    border-radius: 20px;
     overflow: hidden;
-    height: 70%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: transparent;
 }
 
+thead {
+    background-color: #2374E8;
+    color: #FFFFFF;
+}
+
+thead tr:first-child th:first-child { border-top-left-radius: 20px; }
+thead tr:first-child th:last-child { border-top-right-radius: 20px; }
+tbody tr:last-child td:first-child { border-bottom-left-radius: 20px; }
+tbody tr:last-child td:last-child { border-bottom-right-radius: 20px; }
+
 .header-cell {
-    background-color: #000;
     font-weight: bold;
     font-size: 18px;
-    color: #fff;
     text-transform: uppercase;
     padding: 12px 15px;
-    border: 2px solid #444;
-    height: 70px;
+    text-align: center;
+    border: none;
+    background: transparent;
 }
 
 .data-cell {
-    color: #000;
-    padding: 10px 12px;
+    padding: 12px;
     text-align: center;
-    border: 2px solid #888;
-    height: 50px;
+    color: #000;
+    font-size: 16px;
+    border: none;
+    background: transparent;
 }
 
-.team-name {
-    width: 30%;
-}
+tbody tr:nth-child(odd) .team-name { background-color: rgba(64, 189, 33, 0.58); }
+tbody tr:nth-child(odd) .opponent-name { background-color: rgba(238, 9, 66, 0.36); }
+tbody tr:nth-child(even) .team-name { background-color: rgba(238, 9, 66, 0.36); }
+tbody tr:nth-child(even) .opponent-name { background-color: rgba(64, 189, 33, 0.58); }
 
-.start-time, .score {
-    width: 20%;
-}
-
-tbody tr:nth-child(odd) {
-    background-color: #fff8e1;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #fdf3e2;
+tbody td:nth-child(-n+4) {
+    background-color: rgba(35, 116, 232, 0.19);
 }
 
 tbody tr:hover {
-    background-color: #f1f1f1;
+    background-color: rgba(241, 241, 241, 0.5);
+}
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #2374E8;
+    color: #FFFFFF;
+    width: 100%;
+    margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+    .frame-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .results-text {
+        font-size: 20px;
+    }
+
+    .header-cell, .data-cell {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    table {
+        min-width: 100%;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .results-text {
+        font-size: 18px;
+    }
+
+    .header-cell, .data-cell {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
 }
