@@ -22,6 +22,7 @@ const RegistrationForm = () => {
     name_so: "",
     clg_name: "",
     clg_mail: "",
+    city: "",
     accommodation: false,
   });
   const [loading, setLoading] = useState(true); // Loading state
@@ -45,6 +46,7 @@ const RegistrationForm = () => {
           phone: fetchedUser?.phone_no || "",
           clg_mail: fetchedUser?.email || "",
           clg_name: fetchedUser?.college_name || "",
+          city: fetchedUser?.city || "",
         }));
 
         // Step 3: Fetch registration and category data if ID exists
@@ -68,6 +70,7 @@ const RegistrationForm = () => {
               name_so: RegData.nameSO || "",
               clg_name: fetchedUser?.college_name || prevForm.clg_name, // Ensure clg_name from user
               clg_mail: RegData.clgMail || prevForm.clg_mail,
+              city: RegData.city || prevForm.city, 
               accommodation: RegData.accommodation || false,
               payStatus: RegData.payStatus || false,
               payAccommodation: RegData.payAccommodation || false,
@@ -201,6 +204,10 @@ const RegistrationForm = () => {
                   onChange={handleChange}
                   required
                 />
+              </div>
+              <div className="input-field">
+                <label htmlFor="city">City</label> {/* New city field */}
+                <input type="text" id="city" name="city" value={formData.city} onChange={handleChange} required />
               </div>
               <div className="input-field">
                 <label htmlFor="accommodation">Do you require accommodation?</label>

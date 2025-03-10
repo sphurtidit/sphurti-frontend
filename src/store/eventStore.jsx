@@ -46,8 +46,10 @@ const useEventStore = create((set, get) => ({
             catId: data.categoryData._id,
             faculty: data.facultyMembers,
             accommodation: data.formData.accommodation,
-            payAccommodation: false
+            payAccommodation: false,
+            city: data.formData.city // Added city variable
         };
+        
 
         console.log("Request body", body);
         try {
