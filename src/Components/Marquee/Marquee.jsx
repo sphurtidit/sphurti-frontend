@@ -1,4 +1,4 @@
-    import React from "react";
+import React from "react";
 import "./Marquee.css"; // Separate CSS file for styling
 
 const Marquee = () => {
