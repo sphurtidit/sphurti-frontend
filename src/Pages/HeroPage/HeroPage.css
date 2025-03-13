@@ -3,8 +3,10 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding-top: 0vh;
     box-sizing: border-box;
     overflow: hidden;
+
   }
   
   .center {
@@ -15,6 +17,12 @@
     object-position: center;
     display: block;
   }
+  
+
+
+
+  
+
   
   @media (max-width: 768px) {
     .center-container {

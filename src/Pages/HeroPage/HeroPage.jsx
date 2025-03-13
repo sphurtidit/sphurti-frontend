@@ -1,13 +1,13 @@
 import "./HeroPage.css";
 import CenterBGI from "../../assets/sphurtibg.png"; // Keeping only the center image
-import BgMobile from "../../assets/sphurtiphonebg.png";
 
 const HeroPage = () => {
   return (
     <>
-        <div className="center-container" id="home-section">
-          <img src={CenterBGI} alt="" className="center"/> {/* Keeping only the center image */}
-        </div>
+      
+      <div className="center-container" id="home-section">
+        <img src={CenterBGI} alt="Hero Background" className="center" />
+      </div>
     </>
   );
 };
