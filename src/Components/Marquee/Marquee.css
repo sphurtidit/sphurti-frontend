@@ -2,11 +2,11 @@
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    top: 10vh;
-    position: fixed;
-    background: #000; /* Optional: Background color */
-    color: #fff; /* Optional: Text color */
-    padding: 10px 0;
+    top: 12vh;
+    position: relative;
+    background: none; /* Optional: Background color */
+    color: #E90037; /* Optional: Text color */
+    /* padding: 10px 0; */
     z-index: 1000;
   }
   
@@ -19,8 +19,8 @@
   .marquee span {
     display: flex;
     white-space: nowrap;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 25px;
+    font-weight: 800;
     padding-right: 50px; /* Adjust spacing */
   }
   

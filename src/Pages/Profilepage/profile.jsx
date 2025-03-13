@@ -182,7 +182,7 @@ function ProfilePage() {
                         </SwiperSlide>
                       ))
                     ) : (
-                      <div className="no-events">No Registered Events Yet!</div>
+                      <div   className={profile.noevents}>No Registered Events Yet!</div>
                     )}
                   </Swiper>
                 </div>
