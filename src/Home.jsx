@@ -13,12 +13,13 @@ import ResultTable from "./Components/Result_Table/Result_Table";
 import RulesSection from "./Pages/GeneralRules/GeneralRules_Page";
 import Ambassadors from "./Pages/AMBASSADORS/AMBASSADORS_page";
 import CoordinatorsPage from "./Pages/coordinators/Coordinators";
-
+import Winner from "./Components/Winner/Winner";  
 export const Home = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/winner" element={<Winner />} />
         <Route path="/gallery" element={<Gallery_Section />} />
         <Route path="/developerspage" element={<DevelopersPage />} />
         <Route path="/Loginpage" element={<Loginpage />} />
