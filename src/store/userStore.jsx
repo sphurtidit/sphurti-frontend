@@ -9,7 +9,9 @@ const useUserStore = create(
   persist(
     (set, get) => ({
       user: null,
+      registeredEvents: null,
       setUser: (user) => set({ user }),
+      setRegisteredEvents: (registeredEvents) => set({ registeredEvents }),
 
       logout: () => {
         const setInfo = useInfoStore.getState().setInfo;
@@ -124,10 +126,59 @@ const useUserStore = create(
           return false;
         }
       },
+
+      getRegisteredEvents: async () => {
+        const setInfo = useInfoStore.getState().setInfo;
+        const user = get().user;
+        const path = `${url}/api/registration/user/${user._id}`;
+        try {
+          const response = await axios.get(path, { headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` } });
+          set({ registeredEvents: response.data });
+        } catch (err) {
+          if (err.status === 404) {
+            set({ registeredEvents: [] });
+            return false;
+          }
+          console.error("Error fetching registered Events", err);
+          setInfo("Error fetching registered events", "error");
+          return false;
+        }
+      },
+
+      createOrder: async (amount) => {
+        const setInfo = useInfoStore.getState().setInfo;
+        const path = `${url}/api/create-order`;
+        try {
+          const response = await axios.post(path, { amount: amount }, { headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` } });
+          console.log(response);
+          return response.data.orderId;
+        } catch (err) {
+          console.error("Error creating order", err);
+          setInfo("Error creating order", "error");
+          return false;
+        }
+      },
+
+      paymentVerify: async ({ data }) => {
+        const setInfo = useInfoStore.getState().setInfo;
+        console.log("ddata", data)
+        try {
+          const result = await axios.post(`${url}/api/verify-payment`, data, {
+            headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}` },
+          });
+          console.log(result);
+          setInfo("Payment successful", "success");
+          return true;
+        } catch (err) {
+          console.error("Error verifying payment", err);
+          setInfo("Error verifying payment", "error");
+          return false;
+        }
+      }
     }),
     {
-      name: "user-storage", // Key under which user data is stored in localStorage
-      getStorage: () => localStorage, // Persist to localStorage
+      name: "user-storage",
+      getStorage: () => localStorage,
     }
   )
 );

@@ -1,10 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Arial", sans-serif;
-  background-color: #f4f4f4; 
-  color: #333;
-}
 .modolay {
   position: fixed;
   top: 0;
@@ -150,16 +143,22 @@ body {
   color: #EE0942;
   margin-bottom: 16px; 
 }
-.prize{
+.card-prize{
   color: #000;
   font-size: 2rem;
 }
+.card-prize {
+  display: flex;
+  align-items: center;
+  /* gap: 10px; */
+  font-size: 1rem;
+  font-weight: bold;
+}
 .button-group {
   margin-top: 2vw;
-
 }
 
-.results{
+.card-results{
   padding: 6px 12px;
   margin-right: 1rem;
   margin-top: -10px;
@@ -208,8 +207,6 @@ body {
 }
 .categoryname{
   position: relative;
-  top: -2rem;
-  left: -11rem;
   color: var(--primary-color);
   font-family: 'SF Sports Night';
   font-size: 1.5rem;
@@ -272,6 +269,10 @@ body {
 
   .left-section {
     flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
   }
 
   .right-section {

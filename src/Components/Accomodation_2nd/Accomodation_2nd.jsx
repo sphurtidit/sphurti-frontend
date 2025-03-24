@@ -1,6 +1,8 @@
 import "./Accomodation_2nd.css";
-import Card from "../../assets/cards.png";
-import dates from "../../assets/dates.png";
+import accomodation from "../../assets/accomodation.png";
+
+
+
 import comingsoon from "../../assets/comingsoon.png";
 
 const AccomodationCard = () => {
@@ -9,7 +11,7 @@ const AccomodationCard = () => {
     <div className="cards-container">
     <div className="heading"><h1>ACCOMMODATION</h1></div>
     <br />
-    <img src={comingsoon} className="csoon" alt="comingsoon" />
+    <img src={accomodation} className="csoon" alt="comingsoon" />
   <br />
 {/* 
   <div className="apply">

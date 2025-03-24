@@ -1,7 +1,7 @@
 import './Gallery_Section.css';
 import Carousel from '../../Components/Carousel/Carousel';
 import Gallery from '../../Components/Gallery/Gallery';
-import Nav from '../../Components/Navbar/nav';
+// import Navbar from '../../Components/Navbar/navbar';
 
 const Gallery_Section = () => {
     return (

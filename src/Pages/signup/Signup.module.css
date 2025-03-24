@@ -1,0 +1,192 @@
+.pageWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 2rem;
+    overflow: auto;
+    flex-direction: column;
+    padding-bottom: 5rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+input {
+    border: 1px solid #780c27;
+    padding: 0.6rem;
+    border-radius: 7px;
+    font-size: 0.85rem;
+    background-color: white;
+    color: black;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+input:hover, input:focus {
+    border: 1px solid #ee0942;
+    outline: none;
+}
+
+a {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ee0942;
+    cursor: pointer !important;
+}
+
+.Container1 {
+    width: 80%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem 3rem;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+    overflow: visible;
+    border: 2px solid #ee0942;
+    margin-top: 5rem;
+    position: relative;
+}
+
+.overlay1, .overlay2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.overlay2 {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.branchRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.branchRow input {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+    border: 1px solid #780c27;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0.7rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #EE0942;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.blur {
+    filter: blur(5px);
+    pointer-events: none; /* Prevent clicks on blurred area */
+  }
+
+/* OTP popup */
+.otp {
+    max-width: 35rem;
+    width: 80vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    opacity: 0;
+    padding: 2.5rem 1.5rem;  /* Further reduced padding */
+    background-color: white;
+    border: 2px solid #ee0942;
+    border-radius: 2rem;  /* Smaller radius */
+    transition: all 0.3s ease-in-out;
+}
+.otp h1{
+    padding-top: 0;
+    margin: 0 0 2rem 0;
+}
+
+.otp input {
+    margin-bottom: 2rem ;
+}
+
+
+.openpopup {
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Buttons */
+.signinBtn {
+    padding: 0.6rem 1.5rem;
+    background-color: #EE0942;
+    color: white;
+    font-weight: 600;
+    font-size: medium;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 65%;
+    max-width: 300px;
+    height: 40px;
+    margin: 1rem auto 0;
+    display: block;
+}
+
+.signinBtn:hover {
+    background-color: white;
+    color: #EE0942;
+    border: 1px solid #EE0942;
+}
+
+@media (max-width: 768px) {
+    .Container1 {
+        width: 70%;
+        margin-top: 3rem;
+    }
+    .branchRow {
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+    }
+    .signinBtn {
+        font-size: small;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .Container1 {
+        width: 90%;
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+    .branchRow {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+    .signinBtn {
+        font-size: small;
+        padding: 0.4rem 0.8rem;
+        height: 35px;
+    }
+}

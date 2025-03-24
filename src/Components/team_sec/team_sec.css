@@ -135,36 +135,16 @@ margin-top: 14px;
   color: #000; /* Ensure it looks bold */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-top {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .officer-info, .pr-info {
-    width: 90%;
-    min-height: auto;
-    padding: 1.5rem;
-    max-width: none;
-  }
-
-  .common-email {
-    max-width: none;
-  }
-  .officer-info:hover, .pr-info:hover {
-    background-color: #fff; /* Keeps original background */
-    box-shadow: none; /* Removes shadow */
-    border-color: var(--border-color); /* Resets border */
-    cursor:pointe;
-  }
-}
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-height: 700px) {  
+  .contact-details{
+    height: 100%;
+  }
   .info-container {
     width: 90%;
-    height: auto;
+    height: 100%;
     padding: 1.5rem;
   }
 
@@ -176,14 +156,14 @@ margin-top: 14px;
 
   .officer-info,
   .pr-info {
-    width: 80%;
+    width: 90%;
     height: auto;
     padding: 1.5rem;
   }
 
   .common-email {
-    max-width: 80%;
-    font-size: 1rem;
+    max-width: 90%;
+    font-size: 1.3rem;
   }
 
   .email-container {
@@ -192,7 +172,8 @@ margin-top: 14px;
   }
 
   .copy-button2 {
-    width: 50%;
+    width: 40%;
+    height: auto;
     text-align: center;
   }
 }
@@ -270,3 +251,4 @@ margin-top: 14px;
   }
 }
 
+ 

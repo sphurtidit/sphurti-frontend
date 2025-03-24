@@ -1,0 +1,207 @@
+.whole-container {
+  display: flex;
+  width: 40vh;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  height: auto;
+  margin-top: 1rem;
+}
+
+.rcard-container {
+  margin: 1rem;
+  color: black;
+  background-color: white;
+  border: 2px solid #ee0942;
+  border-radius: 20px;
+  padding: 1rem;
+  width: 30vw;
+  height: auto;
+}
+.rcard-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ee0942;
+}
+
+.rcard-events {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  gap: 2rem;
+}
+
+.rcard-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* justify-content: start; */
+  align-items: left;
+}
+
+.rcard-events img {
+  width: 40px;
+}
+
+.rcard-text {
+  font-size: 0.8em;
+  font-weight: 800;
+  color: #2374e8;
+}
+
+.rcard-body {
+  display: flex;
+  margin: 1rem 1rem 0.5rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+
+.rcard-right img {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 25px;
+}
+
+.rcard-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.5rem;
+  color: #ee0942;
+  font-weight: 800;
+  text-align: center;
+  width: fit-content;
+}
+
+.accommodation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid #ee0942;
+  padding: 0.5rem;
+  border-radius: 25px;
+  color: #ee0942;
+  font-weight: bold;
+  margin: auto;
+  width: fit-content;
+}
+
+.rcard-button{
+  background-color: white;
+  color: #ee0942;
+  border: 2px solid #ee0942;
+  padding: 1rem;
+  border-radius: 25px;
+}
+
+
+/* For tablets and smaller screens */
+@media (max-width: 2000px) {
+  .whole-container {
+    width: 100%;
+  }
+
+  .rcard-container {
+    width: 45vw;
+    margin: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .rcard-heading {
+    font-size: 1.1rem;
+  }
+
+  .rcard-text {
+    font-size: 0.7rem;
+  }
+
+  .rcard-events img {
+    width: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .whole-container {
+    width: 100%;
+  }
+
+  .rcard-container {
+    width: 45vw;
+    margin: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .rcard-heading {
+    font-size: 1.1rem;
+  }
+
+  .rcard-text {
+    font-size: 0.7rem;
+  }
+
+  .rcard-events img {
+    width: 35px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .rcard-container {
+    width: 60vw;
+    padding: 0.6rem;
+  }
+
+  .rcard-heading {
+    font-size: 1rem;
+    flex-direction: column;
+  }
+
+  .rcard-events {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .rcard-body {
+    margin: 0.5rem;
+  }
+
+  .rcard-status {
+    font-size: 0.8rem;
+  }
+}
+
+/* For very small mobile devices */
+@media (max-width: 320px) {
+  .rcard-container {
+    width: 80vw;
+  }
+
+  .rcard-heading {
+    font-size: 0.9rem;
+  }
+
+  .rcard-text {
+    font-size: 0.6rem;
+  }
+
+  .rcard-events img {
+    width: 30px;
+  }
+
+  .rcard-status {
+    font-size: 0.7rem;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
