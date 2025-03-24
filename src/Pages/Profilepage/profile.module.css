@@ -68,6 +68,9 @@
     color: rgb(38, 37, 37);
     font-weight: 300;
 }
+.noevents{
+    color: black;
+}
 
 .mainbox {
     padding: 20px;

@@ -25,8 +25,13 @@ const SportsCard = ({
   const setInfo = useInfoStore.getState().setInfo;
   const navigate = useNavigate(); 
   if (!isOpen) return null;
+  console.log(category);
 
   const navigateToRegistraion = () => {
+    if(!category.registrationOpen) {
+        setInfo("Registration is closed", "error");
+      return;
+    }
     if(user){
       navigate(`/Reg_Pg1`, { state: {...category, "eventName" : name} })
     }else{
@@ -89,14 +94,12 @@ const SportsCard = ({
               <button
                 className="card-results"
                 onClick={() => navigateToRegistraion()}
-                disabled={name === "Table Tennis "}
               >
                 Register
               </button>
               <button
                 className="card-results"
                 onClick={() => openRules(rules)}
-                disabled={name === "Table Tennis "}
               >
                 Rules
               </button>
