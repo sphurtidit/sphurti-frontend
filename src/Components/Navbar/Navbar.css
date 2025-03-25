@@ -50,6 +50,112 @@
   width: 100px;
   z-index: 10;
 }
+/* Schedule Button (Same style as login) */
+.schedule-btn {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  top: 30%;
+  font-size: 14px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff5733, #c70039);
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 10%;
+  margin-right: 40px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 4px 8px rgba(199, 0, 57, 0.3);
+}
+
+.schedule-btn:hover {
+  transform: scale(1.05);
+  
+}
+
+/* Schedule Dropdown */
+.schedule-dropdown {
+  position: fixed;
+  top: 70px;
+  right: 160px; /* Adjust as needed */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  border: 2px solid #d40042;
+}
+
+.schedule-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Dropdown Items (Sports) */
+.dropdown-item {
+  position: relative;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 87, 51, 0.1);
+}
+
+/* Sub Dropdown (Boys/Girls) */
+.sub-dropdown {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 120px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #d40042;
+}
+
+
+.dropdown-item:hover .sub-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Sub Dropdown Items */
+.sub-dropdown div {
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.sub-dropdown div:hover {
+  background: rgba(255, 87, 51, 0.1);
+}
+
 
 /* Login Button */
 .login-btn {
@@ -69,6 +175,7 @@
   transition: all 0.3s ease-in-out;
   box-shadow: 2px 4px 8px rgba(199, 0, 57, 0.3);
 }
+
 
 .login-btn:hover {
   background: linear-gradient(45deg, #c70039, #ff5733);
@@ -195,6 +302,14 @@
     left: 10%;
     top: 5px;
   }
+  .schedule-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    top: 25%;
+    position: absolute;
+    right: 10%;
+    margin: 0;
+  }
 
   .login-btn {
     font-size: 12px;
@@ -211,7 +326,7 @@
     top: 15%;
   }
 
-  .dropdown-container {
+  .dropdown-container, .schedule-dropdown {
     top: 60px;
     /* transform: translateX(-50); */
   }
@@ -232,7 +347,7 @@
     max-height: 50px;
   }
 
-  .login-btn {
+  .login-btn, .schedule-btn {
     font-size: 10px;
     padding: 6px 14px;
   }
@@ -284,7 +399,7 @@
     margin-right: 10px;
   }
 
-  .loginBtn {
+  .loginBtn, .schedule-btn {
     width: 65%;
     padding: 10px;
     margin-top: 1rem;
@@ -329,6 +444,11 @@
     font-size: 11px;
     padding: 5px 10px;
     right: 14%;
+  }
+  .schedule-btn{
+    font-size: 11px;
+    padding: 5px 10px;
+    right: 25%;
   }
 
   .hamburger-icon {

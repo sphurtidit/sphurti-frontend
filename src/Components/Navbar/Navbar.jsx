@@ -11,6 +11,7 @@ import { Link as ScrollLink, scroller } from "react-scroll";
 
 function Navbar() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const [scheduleOpen, setScheduleOpen] = useState(false);
   const navigate = useNavigate(); // Initialize useNavigate
   const navRef = useRef();
   const isLoggedIn = localStorage.getItem("authToken") != null;
@@ -66,7 +67,24 @@ function Navbar() {
             }
             style={{ cursor: "pointer" }}
           />
+          
+        
+         
         </div>
+        <div className="schedule-btn" onClick={() => setScheduleOpen(!scheduleOpen)}>
+          Schedule
+        </div>
+        <span className={`schedule-dropdown ${scheduleOpen ? "show" : ""}`}>
+          {["Volleyball", "Basketball",  "Cricket", "Table Tennis", "Badminton", "Football"].map((sport) => (
+            <div key={sport} className="dropdown-item">
+              {sport}
+              <div className="sub-dropdown">
+                <div onClick={() => navigate(`/schedule/${sport.toLowerCase()}/boys`)}>Boys</div>
+                <div onClick={() => navigate(`/schedule/${sport.toLowerCase()}/girls`)}>Girls</div>
+              </div>
+            </div>
+          ))}
+        </span>
         {!isLoggedIn ? (
           <div className="login-btn" onClick={() => navigate("/Loginpage")}>
             Login
