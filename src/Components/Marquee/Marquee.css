@@ -7,7 +7,7 @@
     background: none; /* Optional: Background color */
     color: #E90037; /* Optional: Text color */
     /* padding: 10px 0; */
-    z-index: 1000;
+    z-index: 1;
   }
   
   .marquee {
