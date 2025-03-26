@@ -43,7 +43,7 @@ function App() {
         {!loading && (
           <div className="background-container">
             <Navbar />
-            <Marquee/>
+             <Marquee/>
             <Main_HeroPage />   
             <Timer />
             <MessageSection />         

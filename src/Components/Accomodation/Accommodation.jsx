@@ -31,7 +31,7 @@ const AccommodationSection = ({rules}) => {
             REGISTRATION ARE OPEN UNTILL             </h1>
             <h1 className="registration-date">
 
-              MARCH 22<sup>ND</sup>   2025
+              MARCH 24<sup>ND</sup>   2025
               
             </h1>
           </div>

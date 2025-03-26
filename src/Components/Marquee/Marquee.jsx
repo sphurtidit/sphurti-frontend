@@ -5,7 +5,7 @@ const Marquee = () => {
   return (
     <div className="marquee-container">
       <div className="marquee">
-        <span>🚨 Registrations for Cricket are Closed !!! 🚨 Registrations for Cricket are Closed !!! 🚨</span>
+        <span id="text1">🚨 Registrations are Closed !!! 🚨Registrations are Closed !!! 🚨</span>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const Timer = () => {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    const targetDate = new Date(2025, 2, 27, 0, 0, 0);
+    const targetDate = new Date(2025, 2, 27, 10, 0, 0);
     const interval = setInterval(() => {
       const now = new Date();
       const distance = targetDate.getTime() - now.getTime();
