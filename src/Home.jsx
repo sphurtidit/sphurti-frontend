@@ -29,7 +29,7 @@ export const Home = () => {
         <Route path="/Reg_Pg2" element={<TeamRegistration />} />
         <Route path="/Reg_Pg2/:id" element={<TeamRegistration />} />
         <Route path="/FAQ" element={<FAQPage />} />
-        <Route path="/ResultTable" element={<ResultTable />} /> 
+        <Route path="/ResultTable/:id" element={<ResultTable />} /> 
         <Route path="/profilepage" element={<ProfilePage />} />
         <Route path="/AMBASSADORS_page" element={< Ambassadors />} />
         <Route path="/RulesSection" element={<RulesSection />} />
