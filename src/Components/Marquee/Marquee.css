@@ -1,27 +1,27 @@
 .marquee-container {
     width: 100%;
     overflow: hidden;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     top: 12vh;
     position: relative;
     background: none; /* Optional: Background color */
     color: #E90037; /* Optional: Text color */
     /* padding: 10px 0; */
-    z-index: 1000;
+    z-index: 1;
   }
   
   .marquee {
     display: flex;
-    width: max-content;
-    animation: marquee-scroll 10s linear infinite;
+  
+    animation: marquee-scroll 8s linear infinite;
   }
   
-  .marquee span {
+  .marquee text1 {
     display: flex;
     white-space: nowrap;
-    font-size: 25px;
+    font-size: 50px;
     font-weight: 800;
-    padding-right: 50px; /* Adjust spacing */
+    /* padding-right: 20px;  */
   }
   
   @keyframes marquee-scroll {
@@ -37,7 +37,7 @@
   @media screen and (max-width: 768px) {
     .marquee-container {
       top: 5vh;
-      padding: 4px 0px;
+      padding: 0px 0px;
  
     }
   

@@ -141,6 +141,21 @@ const useEventStore = create((set, get) => ({
             setInfo("Error fetching event category data", "error");
             return null;
         }
+    },
+    getScheduleByCategoryId: async (id) => {
+        const setInfo = useInfoStore.getState().setInfo;
+        try {
+            const response = await axios.get(`${url}/api/matches/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+                },
+            });
+            return response.status === 200 ? response.data : null;
+        } catch (error) {
+            console.error("Error fetching schedule data:", error);
+            setInfo("Error fetching schedule data", "error");
+            return null;
+        }
     }
 }));
 
