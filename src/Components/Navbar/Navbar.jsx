@@ -6,14 +6,18 @@ import NAAC from "../../assets/naac.png";
 import SPHURTI from "../../assets/sphurti.png";
 import SPH from "../../assets/sph.png";
 import "./Navbar.css";
-
+import useEventStore from "../../store/eventStore";
 import { Link as ScrollLink, scroller } from "react-scroll";
 
 function Navbar() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const [scheduleOpen, setScheduleOpen] = useState(false);
   const navigate = useNavigate(); // Initialize useNavigate
   const navRef = useRef();
   const isLoggedIn = localStorage.getItem("authToken") != null;
+
+  const events = useEventStore((state) => state.events);
+
   const handleNavigateAndScroll = (path, section) => {
     navigate(path);
     console.log("Navigating to", path);
@@ -25,15 +29,9 @@ function Navbar() {
       });
     }, 1000);
   };
+
   const showNav = () => {
     navRef.current.classList.toggle("show-nav");
-  };
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
-  const handleNavigation = (path) => {
-    toggleModal();
-    navigate(path);
   };
 
   return (
@@ -67,6 +65,27 @@ function Navbar() {
             style={{ cursor: "pointer" }}
           />
         </div>
+
+        <div className="schedule-btn" onClick={() => setScheduleOpen(!scheduleOpen)}>
+          Schedule
+        </div>
+        <span className={`schedule-dropdown ${scheduleOpen ? "show" : ""}`}>
+          {events.map((event) => (
+            <div key={event.name} className="dropdown-item">
+              {event.name}
+              <div className="sub-dropdown">
+               {event["eventCategory"].map((cate, index) => (<div
+              // disabled={true}
+              key={index}
+              onClick={() => navigate(`/ResultTable/${cate._id}`,{state:{...cate, "eventName":event.name}})}
+            >
+              <span className="btn-text">{cate.categoryName}</span>
+            </div>))}
+              </div>
+            </div>
+          ))}
+        </span>
+
         {!isLoggedIn ? (
           <div className="login-btn" onClick={() => navigate("/Loginpage")}>
             Login
@@ -123,23 +142,6 @@ function Navbar() {
           >
             <div>FAQ</div>
           </ScrollLink>
-          {/* <ScrollLink to="" offset={-80}>
-                      <div onClick={showNav}>
-                        <div className="A_section">ARCHIVE</div>
-                        <ul className="dropdown">
-                          {[...Array(11).keys()].map((i) => {
-                            const year = 2024 - i;
-                            return (
-                              <div key={year} className="saaj">
-                                <a href="#" onClick={toggleModal}>
-                                  {year}
-                                </a>
-                              </div>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    </ScrollLink> */}
           <ScrollLink
             offset={-80}
             onClick={() => handleNavigateAndScroll("/", "contact-section")}
