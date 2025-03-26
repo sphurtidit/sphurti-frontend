@@ -15,6 +15,15 @@
     
 
 }
+.link {
+    text-decoration: none;
+    color: rgb(61, 50, 216);
+    cursor: pointer !important; 
+}
+
+.link:hover {
+    text-decoration: underline;
+}
 .footercontent{
     text-transform: uppercase;
     line-height: 1;
@@ -22,10 +31,8 @@
 .footerheader{
     color: black;
     font-size: 0.7vw;
-    /* font-family: Arial, Helvetica; */
     height: fit-content;
     font-weight: 500;
-    /* font-style: italic; */
     margin-bottom: 0;
 }
 .footermiddle{

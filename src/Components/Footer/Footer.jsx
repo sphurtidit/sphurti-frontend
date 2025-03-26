@@ -26,7 +26,7 @@ const Footer = () => {
     <>
       <div className="footerContainer">
         <div className="footercontent">
-        <p className="footerheader">This website is developed and maintained by the <b>IEEE Student Branch , DIT University.</b> </p>
+        <p className="footerheader">This website is developed and maintained by the <Link to="/developerspage" className="link"><b>IEEE Student Branch , DIT University.</b> </Link> </p>
           {/* <Link to="/developers" ><p className="footermiddle"><img src={LinkIcon} alt="Link Icon" />IEEE technical team</p></Link> */}
          {/* <p className="footermiddle">IEEE technical team</p>
 

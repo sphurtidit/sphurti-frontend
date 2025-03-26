@@ -41,13 +41,16 @@
     font-size: larger;
     color: black;
 }
-.description{
+.description {
     color: black;
     width: 100%;
     margin: 1rem 0;
     padding: 0 2rem;
     height: 40%;
     flex-grow: 1;
+    font-size: 0.8rem; /* Smaller font size */
+    font-weight: 400 !important; /* Not bold */
+    line-height: 1.4; /* Better line spacing for readability */
 }
 .btn{
     padding: 0.6rem 1.5rem;  /* Reduced padding */
