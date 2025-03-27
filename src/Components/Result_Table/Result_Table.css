@@ -5,10 +5,11 @@
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2);
-    height: 80%;
+    /* height: 80%; */
+    width: 80vw;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
     justify-content: center;
     align-items: center;
 }
@@ -93,12 +94,27 @@ tbody tr:hover {
 }
 
 @media (max-width: 768px) {
+    .frame-container{
+        width: 95vw;
+    }
     .table-container {
-        width: 100%;
+        width: 90vw;
         overflow-x: scroll; /* Enables horizontal scroll on smaller screens */
     }
-
-    table {
-        width: 100%;
-    }
 }
+@media (max-width: 425px){
+    .frame-container{
+        width: 90vw;
+    }
+    .table-container{
+        width: 85vw;
+        padding: 1px;
+    }
+
+    .header-cell{
+        font-size: 1rem;
+        padding: 6px 6px;
+    }
+    
+    
+} 
