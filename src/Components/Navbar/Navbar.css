@@ -67,6 +67,7 @@
   margin-right: 40px;
   transition: all 0.3s ease-in-out;
   box-shadow: 2px 4px 8px rgba(199, 0, 57, 0.3);
+  
 }
 
 .schedule-btn:hover {
@@ -307,7 +308,7 @@
     padding: 6px 12px;
     top: 25%;
     position: absolute;
-    right: 10%;
+    right: 25%;
     margin: 0;
   }
 
@@ -399,11 +400,12 @@
     margin-right: 10px;
   }
 
-  .loginBtn, .schedule-btn {
+  .loginBtn {
     width: 65%;
     padding: 10px;
     margin-top: 1rem;
   }
+  
 
   .signupText {
     margin-top: 1rem;
@@ -448,7 +450,10 @@
   .schedule-btn{
     font-size: 11px;
     padding: 5px 10px;
-    right: 25%;
+    right: 30%;
+  }
+  .schedule-dropdown{
+    left: 20vw;
   }
 
   .hamburger-icon {
